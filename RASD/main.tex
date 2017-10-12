@@ -1,0 +1,35 @@
+\documentclass[epsfig,a4paper,12pt,titlepage,twoside,openany]{report}
+
+% Main packages used
+\usepackage{epsfig}
+\usepackage{plain}
+\usepackage[paperheight=29.7cm,paperwidth=21cm,outer=1.5cm,inner=2.5cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{titlesec}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+
+\begin{document}
+	\pagenumbering{gobble} 
+  	\input{cover_page}
+  	\clearpage
+  	\tableofcontents
+  	\clearpage
+
+	% Sections
+	\begingroup
+		\input{introduction}
+    	\newpage
+    	\input{overall_description}
+    	\newpage
+    	\input{requirements}
+    	\newpage
+    	\input{modeling}
+    \endgroup
+    
+	\addcontentsline{toc}{chapter}{Bibliography}
+    \bibliographystyle{unsrt}
+    \bibliography{biblio}
+    
+    \appendix
+    \input{appendix}
+\end{document}
