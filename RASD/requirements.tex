@@ -1,2 +1,54 @@
 \chapter{Specific requirements}
 \label{cha:requirements}
+
+\section{Functional Requirements}
+The following are the functional requirements of the software, extracted from our analysis, concerning each actors of the system.
+
+\subsection*{Guest User}
+The system only provide him the possibility to become a registered user, so he's allow to:
+\begin{enumerate}
+	\item registrate to Travlender+ as \textit{User} by compiling a forum or through access to 			different accounts as Google or Facebook.
+\end{enumerate}
+
+\subsection*{Registered user}
+In order to authenticate, the system provide him the functionalities concerning the account management; so the system allows him:
+\begin{enumerate}[resume]
+	\item to login into his account;
+	\item to do a password recovery in case the user has forgotten it;
+	\item to update account data.
+\end{enumerate}
+
+\subsection*{User}
+He's the main user of the application who has availability of all the functionalities that the application gives. So the system allows him:
+\begin{enumerate}[resume]
+	\item to view all the events that have been inserted into his personal calendar;
+	\item to create events, like meetings or appointments, within his calendar, in particular by specifying: 
+	\begin{itemize}
+		\item name of the event;
+		\item start time;
+		\item end time;
+		\item location;
+		\item mobility option.
+	\end{itemize}
+	\item to define general user preferences in which he can select different means of transport, so that the system could arrange all the mobility option in every 			events;
+	\item to change the specification of the events he has created;
+	\item to setting different kind of constraint concerning on the travel arrangements in order to inform the system on which kind of calculation path it have to do. In 			particular the user can have these constraints:
+	\begin{enumerate}[label*=\arabic*.]
+		\item public transportation should not be use after a given time of day;
+		\item walking distances should be less than a given distance;
+		\item combination of transportation that minimize the carbon footprint.
+		\item aggiungiamo altro?
+	\end{enumerate}
+	\item to specify a time frame in which he can define a type of break; in particular:
+	\begin{enumerate}[label*=\arabic*.]
+		\item the user can specify a lunch time, in which the system will reserve at least 30 minutes;
+		\item other types of breaks (quali nel caso).
+	\end{enumerate}
+	\item to use public transportation by buying tickets through the application or by entering his day/week/season pass code;
+	\item to reserve a nearest car or bike of vehicle sharing system, if the application allows these means of transports to reach the location of his meeting/appointments.
+\end{enumerate}
+
+
+
+
+
