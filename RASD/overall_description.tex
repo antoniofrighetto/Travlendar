@@ -1,2 +1,65 @@
 \chapter{Overall description}
 \label{cha:desc}
+
+\section{Product perspective}
+\label{sec:productperspective}
+The product developed will allow the time slotting ahead the upcoming events, allowing the user to get a full view of the day with a prediction of every travel time between the appointments if they are in different locations.
+The event can regard working aspects or personal aspects, and in any case, the application will notify or suggest a different mean of transport based on the weather conditions or strikes of the public transport.
+
+
+\section{Product functions}
+\label{sec:productfunctions}
+The app allows you to schedule events, choose which mean of transport and get warned in case of overlapping events
+On top of the time allocation, there will be a cost estimation provided when possible. 
+This will allow the user to filter the possible mean of transport based on carbon footprint emission, price impact and time.
+
+A User can:
+\begin{itemize}
+\item Create an event:
+\begin{itemize}
+\item Modify an event
+\item Invite other users to their events
+\end{itemize}
+\item Receive help to reach the location of the next event
+\begin{itemize}
+\item Buying tickets for a mean of transport that require tickets
+\item Providing navigation for reaching the spot 
+\end{itemize}
+\end{itemize}
+\begin{itemize}
+\item Get notified
+\begin{itemize}
+\item Upcoming events
+\item Free space
+\end{itemize}
+\end{itemize}
+
+\section{User characteristics}
+\label{sec:usercharacteristics}
+\begin{description}
+\item There is one type of user, which can be interfaced with other users in case of shared meetings. 
+\item The users that receive the invite will have read-only permissions.
+\end{description}
+
+\section{Assumptions, dependencies and constraints}
+\label{sec:assumpdepenconst}
+
+\begin{itemize}
+\item Assumptions
+\begin{itemize}
+\item The user will be able to schedule only future events, with the option to recur on a daily, weekly or monthly basis.
+The working events can only be scheduled within the working hours, reserving at least 30 minutes for the lunch break.
+\end{itemize}
+
+\item Domain
+\begin{itemize}
+\item D1 Two events can be overlapping but cannot start at the same time
+\item D2 The event that overlap the other cannot have an end time previous the event started before
+\item D3 The event located within the same location have no mobility option (navigation/buying tickets)
+\item D4 Working events can be scheduled within the working hours
+\item D5 The user have to configure his habits (working hours, owning a car/bike) at the first use of the app
+
+\end{itemize}
+\end{itemize}
+
+
