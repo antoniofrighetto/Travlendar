@@ -1,2 +1,90 @@
 \chapter{Introduction}
 \label{cha:intro}
+
+\section{Purpose}
+\label{sec:purpose}
+Here is a brief description of what this document, namely \textit{Requirements Analysis and Specification Document} (RASD), aims to cover, and an initial context of the problem and its goals are illustrated thereafter. \\\\
+The ultimate goal of RASD is to give an understanding of the customer requirements by describing the system itself, its functional and non-functional requirements, its components and constraints, and the relationship with the external world so that such system can be modeled with regard to the customers' needs. It is mainly addressed to project managers, systems analysts, developers, testers, and can be useful to final users as well. Being legally binding, it may be used in a contractual requirement.\\\\
+Travlendar+ is an intelligent calendar-based time-aware cross-platform application, whose goal is to simplify and augment the way the final user is used to handling its own events and appointments. Users will feel free to create as many meetings as they may need, and it will be up to the application to manage them by arranging such appointments according to the travel time and the his or her position so as to ensure that he or she is not going to ever be late. This implies that the application must recognize what kind of transport mean is best to reach specific locations, be it public or private, shared or not. Should it be a public mobility option and tickets purchase be available for that city, then the user may be able to buy them directly within the application. Likewise, should a bike sharing system exist nearby, then it would be surely prompted to the user - provided that he would arrive to the destination early enough. In any case, while the application will possibly suggest the best transport mean (or a combination) of them to the user, he or she can eventually choose the one that suits him or her best, according to his or her needs or wishes.
+Besides the aforementioned features, the application is provided with an additional module:
+\begin{description}
+\item[Lunchtime event:] it allows the user to insert an event for lunch at whatever time he or she wants, as long as it fall into a range of hours, and events will be rearranged accordingly.
+\end{description}
+Let us now point out the main goals in more detail. From here on, the term \textit{users} clearly refers to registered users.
+\begin{itemize}
+\item {[G0]} Allow unregistered user to sign up to access to the application.
+\item {[G1]} Allow registered users to log in and access the application and start viewing their appointments.
+\item {[G2]} Allow users to create meetings by entering a title, date and time, and the location of the event, and optionally, a description, and the type of event.
+\item {[G3]} Allow users to select a maximum time interval for a certain event.
+\item {[G4]} Allow users to modify and delete newly created events.
+\item {[G5]} Give users a friendly overview of the day's events and the scheduled time to reach a location alongside the travel mean to be used.
+\item {[G6]} Show users public and private transportations (or a combination of them) available for a specific trip.
+\begin{itemize}
+\item {[G6.1]} Provided results must have been undergone to a selection which may depend on unavailability of specific transport for a particular day or, for instance, climate conditions.
+\item {[G6.2]} Prevent users from suggesting transports which are, say, out of scope (if two locations are pretty near, then they can be reached on foot, or after a certain hour a transport may be suspended). 
+\item {[G6.3]} Allow users to deactivate specific settings, such as driving (in case of inability to drive), tolls (in case of willingness to free-only routes), or enable settings that may use only sustainable transports.
+\item {[G6.4]} Allow users to benefit from results found, like sharing systems or own vehicles, if provided by the user.
+\end{itemize}
+\item {[G7]} Give users the chance to customize the travel mean by themselves, after suggesting the best mobility options that can be taken.
+\item {[G8]} If enabled, alert users whether a specific locations is not reachable in the expected time.
+\item {[G9]} If enabled, alert users whether a specific meeting is taking longer than expected.
+\item {[G10]} Allow users to buy in-app tickets for public transportation or book a taxi.
+\item {[G11]} Allow users to insert events with flexible time occupation (lunch). 
+\end{itemize}
+
+\section{Scope}
+\label{sec:scope}
+There exist phenomena that occur in reality but cannot be observable by the application, and phenomena which are controlled by the system and are unreachable from the outside. The connection between the world and the machine is made possible by the shared phenomena. \\\\
+Here we include an analysis of the world and of the shared phenomena.
+\paragraph{World phenomena}
+\begin{itemize}
+\item User is physically unable to open and use the application.
+\item User's appointment takes longer than expected.
+\item User accidentally messes up or a glitch takes place. 
+\item User's own vehicles run out of gasoline.
+\item A shared bicycle damages.
+\item Public transport goes out of work.
+\item Weather unexpectedly changes.
+\item Location becomes unreachable.
+\item Tickets are sold out.
+\end{itemize}
+\paragraph{Shared phenomena}
+\begin{itemize}
+\item User logs into the system.
+\item User's appointment creation.
+\item Warn if appointment is getting closer.
+\item User buys a bus (or train) ticket or books a taxi.
+\item Following an accident, appointments are rearranged.
+\item Public transports changes are reported in real time.
+\item Potential weather changing is reported in time.
+\end{itemize}
+\section{Definitions}
+\label{sec:defs}
+\begin{description}
+\item[RASD:] Requirements Analysis and Specification Document (this document).
+\item[System:] the whole software system to be developed, comprehensive of all its parts and modules. System and application are often used interchangeably. 
+\item[User:] any user that downloads the application and, after registering, starts using it.
+\item[Calendar-based:] what it shows up is a timeline for the current day or a calendar grid. 
+\item[Time-aware:] it automatically recognizes when specific events occur, prevent events from overlapping among each other.
+\item[Cross-platform:] multiple computing platforms are supported.
+\item[API:] Application Programming Interface.
+\end{description}
+
+\section{References}
+\label{sec:refer}
+
+This document follows the IEEE 29148:2011\cite{ieee-29148} for the requirements engineering for systems and software products and IEEE 830-1998\cite{ieee-830} for the recommended practice for software requirements specifications.
+
+It is based on the specifications document of the RASD assignment\cite{assignment}.
+
+\section{Overview}
+\label{sec:overview}
+
+This document is structured as follows:
+\begin{description}
+\item[\autoref{cha:intro}: Introduction.] It provides a general description of the system purpose and scope, along with some information about this document.
+\item[\autoref{cha:desc}: Overall description.] It provides the underlying perspective over the principal system features, constraints and those factors which affects the product.
+\item[\autoref{cha:requirements}: Specific requirements.] It specifies thoroughly functional and nonfunctional requirements.
+\item[\autoref{cha:modeling}: UML modeling.] It provides the use-case diagram, use cases descriptions, sequential diagrams, and other ones.
+\end{description}
+We conclude with an \textbf{Appendix}, which consists of the Alloy model, software and tools used, and hours of work per each team member and a \textbf{Bibliography}.
