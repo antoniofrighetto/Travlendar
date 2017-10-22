@@ -1,4 +1,4 @@
-\documentclass[epsfig,a4paper,12pt,titlepage,twoside,openany]{report}
+\documentclass[epsfig,a4paper,12pt,titlepage,twoside,openany]{book}
 
 % Main packages used
 \usepackage{epsfig}
@@ -7,29 +7,37 @@
 \usepackage{titlesec}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{enumitem}
-\begin{document}
-	\pagenumbering{gobble} 
-  	\input{cover_page}
-  	\clearpage
-  	\tableofcontents
-  	\clearpage
+\usepackage{float}
+\setlength{\parindent}{0pt}
+\addto\extrasenglish{%
+  \renewcommand{\chapterautorefname}{Chapter}%
+}
 
+\begin{document}
+	\pagenumbering{gobble}
+	\input{cover_page}
+	\clearpage
+
+	\tableofcontents
+	\mainmatter
+    
 	% Sections
 	\begingroup
 		\input{introduction}
-    	\newpage
-    	\input{overall_description}
-    	\newpage
-    	\input{requirements}
-    	\newpage
-    	\input{modeling}
-    \endgroup
-    
+		\newpage
+		\input{overall_description}
+		\newpage
+		\input{requirements}
+		\newpage
+		\input{modeling}
+	\endgroup
+
 	\addcontentsline{toc}{chapter}{Bibliography}
-    \bibliographystyle{unsrt}
-    \bibliography{biblio}
-    
-    \appendix
-    \input{appendix}
+	\bibliographystyle{unsrt}
+	\bibliography{biblio}
+
+	\appendix
+	\input{appendix}
 \end{document}
