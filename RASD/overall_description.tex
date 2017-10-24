@@ -3,8 +3,10 @@
 
 \section{Product perspective}
 \label{sec:productperspective}
-The application developed allow the time slotting ahead the upcoming events so that the user can have a full view of the day with a prediction of every travel time between the appointments if they are in different locations.
-The event can regard working aspects or personal aspects, and in any case, the application will notify or suggest a different mean of transport based on the weather conditions or strikes of the public transport.
+The application will be available through web and mobile devices, keeping the same look and elements along the various implementations.
+The user experience through the application should be easy and natural.
+The application developed allow the time slotting ahead the upcoming events so that the user can have a full view of the day with a prediction of the travel time between the appointments if they are in different locations.
+The event can regard working or personal aspects, and in any case, the application will notify or suggest a different mean of transport based on the weather conditions or strikes of the public transport.
 
 
 \section{Product functions}
@@ -34,6 +36,11 @@ A User can:
 \end{itemize}
 \end{itemize}
 
+
+\begin{figure}[H]
+	\caption{Comprehensive class diagram}   \centerline{\psfig{file=images/ClassDiag.png,width=\textwidth} }
+\end{figure}
+
 \section{User characteristics}
 \label{sec:usercharacteristics}
 \begin{description}
@@ -52,7 +59,7 @@ A User can:
 
 \paragraph{Domain assumptions}
 \begin{itemize}
-\item {[D1]} Two events can be overlapping but cannot start at the same time (for instance, one event occurs throughout the day).
+\item {[D1]} Two events can be overlapping but cannot start and end at the same time (for instance, one event occurs throughout the day).
 \item {[D2]} The event that overlap the other cannot have an end time previous the event started before.
 \item {[D3]} The event located within the same location have no mobility option (navigation/buying tickets).
 \item {[D4]} Working events can be scheduled within the working hours.
