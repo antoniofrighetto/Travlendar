@@ -61,20 +61,38 @@ The following are the functional requirements of the software, extracted from ou
 
 \section{Performance Requirements}
 \label{sec:perf_req}
+The user experience across the application should be fluid and with zero waiting time moving between the sections. Besides, there are a number of requirements that implies third party information retrieved through asynchronous requests so, the previous requirement can allow some tolerance.
+
+\begin{enumerate}
+\item There is no limit to the number of users registered to the application.
+\item There is no limit to the number of the simultaneous users of the application.
+\item The login process must be completed in less than 5 seconds once submitted the data.
+\item The date text fields have to validate dates in real time.
+\item The application going back to foreground has to be in the same state as when it was going to background
+\end{enumerate}
+
 
 \section{Design Constraints}
 \label{sec:design_constraints}
 
 \subsection{Standards compliance}
+\input{requirements/standards_compliance.tex}
 \subsection{Hardware limitations}
+\input{requirements/hardware.tex}
 \subsection{Any other constraint}
+\input{requirements/other.tex}
 
 \section{Software System Attributes}
 \label{sec:sys_attribs}
 
 \subsection{Reliability}
+\input{requirements/reliability.tex}
 \subsection{Availability}
+\input{requirements/availability.tex}
 \subsection{Security}
+\input{requirements/security.tex}
 \subsection{Maintainability}
+\input{requirements/maintanability.tex}
 \subsection{Portability}
 
+\input{requirements/portability.tex}
