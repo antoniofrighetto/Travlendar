@@ -2,13 +2,7 @@
 \label{cha:requirements}
 
 \section{External Interface Requirements}
-\label{sec:ex_req}
-
-\subsection{User Interfaces}
-The main user interface is thought to be user-friendly 
-\subsection{Hardware Interfaces}
-\subsection{Software Interfaces}
-\subsection{Communication Interfaces}
+\input{requirements/external_interface.tex}
 
 \section{Functional Requirements}
 \label{sec:func_req}
@@ -17,47 +11,14 @@ The following are the functional requirements of the software, extracted from ou
 \subsection*{User Login and Registration}
 \input{requirements/user_login_registration.tex}
 
-\subsection*{Create Meeting}
-\input{requirements/create_meeting.tex}
+\subsection*{Appointments overview and creation}
+\input{requirements/appointment_overview_creation.tex}
 
-[TODO] Mockups to be transferred when the use will be finished.
+\subsection*{Time and route travel}
+\input{requirements/time_route_travel.tex}
 
-\begin{figure}[H]
-	\caption{Main application landing}
-	\centerline{\psfig{file=images/home.png,width=0.6\textwidth} } 
-\end{figure}
-\begin{figure}[H]
-	\caption{Menu view}
-	\centerline{\psfig{file=images/menu.png,width=0.6\textwidth} }
-\end{figure}
-\begin{figure}[H]
-	\caption{Create a new appointment}
-	\centerline{\psfig{file=images/appointment.png,width=0.6\textwidth} }
-\end{figure}
-\begin{figure}[H]
-	\caption{Listing view of the appointments}
-	\centerline{\psfig{file=images/listing.png,width=0.6\textwidth} }
-\end{figure}
-\begin{figure}[H]
-	\caption{Notification from the application}
-	\centerline{\psfig{file=images/lockscreen.png,width=0.6\textwidth} }
-\end{figure}
-\begin{figure}[H]
-	\caption{Login}
-	\centerline{\psfig{file=images/login.png,width=0.6\textwidth} }
-\end{figure}
-\begin{figure}[H]
-	\caption{Navigation with car}
-	\centerline{\psfig{file=images/map_car.png,width=0.6\textwidth} }
-\end{figure}
-\begin{figure}[H]
-	\caption{Navigation with public transport}
-	\centerline{\psfig{file=images/map_pt.png,width=0.6\textwidth} }
-\end{figure}
-\begin{figure}[H]
-	\caption{Settings}
-	\centerline{\psfig{file=images/settings.png,width=0.6\textwidth} }
-\end{figure}
+\subsection*{Purchase tickets and use rental service}
+\input{requirements/mobility_selection.tex}
 
 \section{Performance Requirements}
 \label{sec:perf_req}
@@ -71,28 +32,8 @@ The user experience across the application should be fluid and with zero waiting
 \item The application going back to foreground has to be in the same state as when it was going to background
 \end{enumerate}
 
-
 \section{Design Constraints}
-\label{sec:design_constraints}
-
-\subsection{Standards compliance}
-\input{requirements/standards_compliance.tex}
-\subsection{Hardware limitations}
-\input{requirements/hardware.tex}
-\subsection{Any other constraint}
-\input{requirements/other.tex}
+\input{requirements/design_constraints.tex}
 
 \section{Software System Attributes}
-\label{sec:sys_attribs}
-
-\subsection{Reliability}
-\input{requirements/reliability.tex}
-\subsection{Availability}
-\input{requirements/availability.tex}
-\subsection{Security}
-\input{requirements/security.tex}
-\subsection{Maintainability}
-\input{requirements/maintanability.tex}
-\subsection{Portability}
-
-\input{requirements/portability.tex}
+\input{requirements/software_system_attributes.tex}
