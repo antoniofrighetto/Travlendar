@@ -1,0 +1,21 @@
+\subsection{Reliability}
+The application should have a 100\% uptime in each designed scenario. Since the application relies on different systems API’s there is room to accept small shifts in this requirement.
+
+\subsection{Availability}
+Concerning the mobile implementations the application will be available in the App Store and Play Store, rather, the desktop implementation will be available through the web app.
+Eventually, there could be implementations of the project with Xamarin.Mac and UWP on Mac and Desktop available through the App Store and Microsoft Store.
+
+\subsection{Security}
+The applications will perform every request in HTTPS to preserve the security of the user. 
+Data that have to be stored in the device, will be encrypted with third-party libraries to avoid leakage of the user’s information.
+
+\subsection{Maintainability}
+The implementations will be developed with the MVVM architectural pattern allowing a modular integration of future new features or changes in the requirements. 
+The application will rely on Google Maps API in order to maintain its core functionalities and not on other third-party libraries that could be deprecated in future OS versions.
+
+\subsection{Portability}
+The clients are implemented with Xamarin giving support to OS’s 3 versions older than the last one available for each platform. (iOS 9-10-11, Android 6,7,8)
+The applications will rely upon the MvvmCross framework to have the ecosystem needed to share the most code across the platforms.
+The web-app will be based on AngularJS.
+Our back-end service will be based on AWS Cognito Identity Services to allow scalability and integration with the business logic that is required. 
+Changes from the normal workflow will be addressed with AWS Lambda or EC2 instances whenever needed.
