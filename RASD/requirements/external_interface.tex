@@ -22,6 +22,7 @@ The application will require the authorization to access the user’s location, 
 
 \subsection{Software Interfaces}
 The clients will implement the core functionalities interfacing with the Google Maps Distance Matrix API, Yahoo Weather and whenever possible the API exposed by the shared transport systems chosen by the user. 
+Saving user's data will be managed through SQLite, with built-in hooks to encrypt them.
 
 \subsection{Communication Interfaces}
 The application will be based on a service integration layer built upon REST API allowing all the different implementation to retrieve consistent information. 
