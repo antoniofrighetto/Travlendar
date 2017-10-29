@@ -43,7 +43,7 @@ The use case for the travel time arrangement is shown in Table \ref{usecase_trav
 		Flow of events & \begin{enumerate}
 			\item A check of the user preferences is performed the very first time or whenever local settings have been changed.
             \item The system controls date of event. If the event is scheduled for the current day it continues with calculating the path otherwise, otherwise it is not considered for now.
-            \item The system controls the destination location of the newly added event (as well as the start location, if provided) and attempts computing the best travel path to reach the location in time.
+            \item The system asserts that the destination location of the newly added event exists and is reachable and attempts computing the best travel path to reach the location in time.
 			\item The system performs specific checks against the weather condition, the fact that a bike sharing system is in the close proximity and whatnot.
             \item Some confirmation dialog asking if there's a preference for a particular itinerary or public mean may show up in case multiple reasonable routes are found.
             \item The system provides the user the best travel path with selected means of transport (or a combination of them) in accordance with user's preferences.
@@ -65,14 +65,20 @@ The sequence diagram of the handling of checks process carried out by the system
 	\label{fig:TravelTime}
 \end{figure}
 
+\subsubsection{Statechart}
+The statechart of the action undertaken by the system is illustrated in Figure \ref{fig:StateChecks}.
+\begin{figure}
+	\centering
+	\includegraphics[width=5in]{./diagrams/StatechartChecks.png}
+	\caption{Statechart: Travel Time Arrangement.}
+	\label{fig:StateChecks}
+\end{figure}
+
 \subsubsection{Associated functional requirements}
 \begin{enumerate}
 \item The system will ask the user the first time to authorize the use geolocalization (estimation of the current position).
 \item The system calculates the best itinerary only for events for the current day. Events for the following days, after being added to the calendar, are actually evaluated only when that specific day comes.
-\item The system accepts a location as starting point as well. In fact, since the user participates to the event, in the meantime, the user could have been moved to a different place. By default, current position is taken into account.
-\begin{itemize}
-\item When a scheduled event approaches, the system validates the starting point in background. This means that if the starting point doesn't coincide with the current position, the system will warn the user that starting point differs from the current position.
-\end{itemize}
+\item The system takes into account the current position as starting point by default.
 \item The system allows the user to customize travel means to be taken according to his/her preferences.
 \item The system computes the best route based on both user preferences and on factors which cannot be controlled by the user (belong to the external world).
 \begin{itemize}
@@ -85,7 +91,7 @@ The sequence diagram of the handling of checks process carried out by the system
 \item The system will unlikely suggest car or taxis if the user has enabled carbon footprint optimization option.
 \end{itemize}
 \item The system will notify the user - when an event is approaching - that car can be taken if traffic is pretty much smooth, or underground train will be near there within few minutes, if the user is close to a station.
-\item The system will reserve 
+\item The system will reserve at least half an hour for lunchtime, or any other kind of breaks - if requested by the user.
 \end{enumerate}
 
 \subsubsection{Mockup}
@@ -117,3 +123,4 @@ The mockup of the itinerary resolved with navigation with car is shown in Figure
 	\caption{Application notification mockup.}
 	\label{fig:MockupNotifications}
 \end{figure}
+\vspace*{26\baselineskip}

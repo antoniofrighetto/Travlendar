@@ -1,29 +1,25 @@
-\subsection{User Interfaces}
-
-The User Interface in every implementation should be intuitive and give the user the perception of control across the functionalities given from the app. 
-The application has to support multiple languages, with a centralized label manager.
-This should be enforced by the coherence of all the functionalities across every the platform.
-Besides that, every platform must have a User Interface compliant with the latest major commercial standards available:
+\subsection{User interfaces}
+The User Interface in every implementation should be intuitive and give the user the perception of control across the functionalities given from the application. The application has to support multiple languages, with a centralized label manager. This should be enforced by the coherence of all the functionalities across every the platform. Besides that, every platform must have a User Interface compliant with the latest major commercial standards available:
 \begin{itemize}
 \item Mobile
 \begin{itemize}
 \item The application will be developed with Xamarin.Forms and so the UI will be shared across the iOS and Android implementations. On top of that, the 2 versions must follow the iOS Human Interface Guidelines and the Android Material Design Guidelines.
-\item Due to the huge variety of the Android devices, the application will provide the pixel perfect compliance relying on the 2 major screen sizes (normal, large) and 4 different densities(ldpi, mdpi, hdpi, xhdpi) depending on Android OS to auto-scale the missing ones.
+\item Due to the huge variety of the Android devices, the application will provide the pixel perfect compliance relying on the 2 major screen sizes (normal, large) and 4 different densities (ldpi, mdpi, hdpi, xhdpi) depending on Android OS to auto-scale the missing ones.
 \end{itemize}
 
 \item Web
 \begin{itemize}
-\item The web application must be compliant with the W3C standards concerning the HTML and CSS. The UI should be modular and independent from business logic, supporting the major browsers. (IE, Edge, Chrome, Firefox, and Safari)
+\item The web application must be compliant with the W3C standards, concerning HTML and CSS. The UI should be modular and independent from business logic, supporting the major browsers (IE, Edge, Chrome, Firefox, and Safari).
 \end{itemize}
 \end{itemize}
 
-\subsection{Hardware Interfaces}
+\subsection{Hardware interfaces}
 The application will require the authorization to access the user’s location, available through the GPS and/or the WiFi/Data connection. 
 
-\subsection{Software Interfaces}
+\subsection{Software interfaces}
 The clients will implement the core functionalities interfacing with the Google Maps Distance Matrix API, Yahoo Weather and whenever possible the API exposed by the shared transport systems chosen by the user. 
 Saving user's data will be managed through SQLite, with built-in hooks to encrypt them.
 
-\subsection{Communication Interfaces}
+\subsection{Communication interfaces}
 The application will be based on a service integration layer built upon REST API allowing all the different implementation to retrieve consistent information. 
 This will allow the platform to ensure the scalability of the number of user and new features.

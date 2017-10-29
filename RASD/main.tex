@@ -10,10 +10,17 @@
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{enumitem}
 \usepackage{float}
+\usepackage{titlesec}
+\newcommand{\retrievalDate}{25th of October, 2017}
 \setlength{\parindent}{0pt}
 \addto\extrasenglish{%
   \renewcommand{\chapterautorefname}{Chapter}%
 }
+
+% https://github.com/Angtrim/alloy-latex-highlighting
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+\usepackage{./alloy/alloy-style}
 
 \begin{document}
 	\pagenumbering{gobble}
@@ -31,12 +38,12 @@
 		\newpage
 		\input{requirements}
 		\newpage
-		\input{modeling}
+		\input{alloy}
 	\endgroup
-
-	\addcontentsline{toc}{chapter}{Bibliography}
-	\bibliographystyle{unsrt}
-	\bibliography{biblio}
+    
+    \addcontentsline{toc}{chapter}{Bibliography}
+    \bibliographystyle{unsrt}
+    \bibliography{biblio}
 
 	\appendix
 	\input{appendix}
