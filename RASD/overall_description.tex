@@ -71,11 +71,13 @@ A User can:
 \item {[D3]} The event located within the same location have no mobility option (navigation/buying tickets).
 \item {[D4]} Working events can be scheduled within the working hours.
 \item {[D5]} The user have to configure his habits (working hours, owning a car/bike) at the first use of the application.
+\item {[D6]} The usage of public transportation is recommended within its working hours, in our case 6-24.
+\item {[D7]} When the location of 2 events is further than 1.5km, the system won't suggest walking.
 \end{itemize}
 
 \paragraph{Dependencies}
 \begin{description}
-\item We will depend on Google Maps API’s to get the estimation of the time to get the distance between 2 locations. 
+\item We will depend on Google Maps API's to get the estimation of the time to get the distance between 2 locations. 
 We will access the Google Maps Distance Matrix API through an HTTP interface, with requests constructed as a URL string, using origins and destinations.
 \item During the process to buy the tickets of the public transport system we will redirect the user to the provider of the service, or when allowed the user will be deep-linked to the desired application.
 \end{description}
@@ -85,3 +87,4 @@ We will access the Google Maps Distance Matrix API through an HTTP interface, wi
 \begin{description}
 \item To ensure enough level of privacy and avoid security breaches, every request containing the user’s position will be handled within an HTTPS connection.
 \end{description}
+
