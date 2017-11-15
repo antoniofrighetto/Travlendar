@@ -1,2 +1,54 @@
 \chapter{Introduction}
 \label{cha:intro}
+
+\section{Purpose}
+\label{sec:purpose}
+The aim of this document, namely \textit{Design Document} (DD), is to present the underlying architecture of the application Travlendar+, including the user interface and the interactions among various components and the algorithms used by specifying in details the requirements previously show in RASD. It is primarily addressed to project managers, developers, and testers so that they can be shown how the application is expected to be built.
+
+\section{Scope}
+\label{sec:scope}
+The systems aims at offering an advanced calendar where the user can inserts as many appointment as he/she wishes, confident the system is responsible for arranging such appointments and supporting the user in his/her travels.  The architecture is thought to be flexible and maintainable - in case current features are extended or new ones are added. The  foundations make higher components to abstract from them, as well as principles of encapsulation, separation of concerns and strong cohesion are all applied. This has several impacts on how much existing models can be reused, how much code has to be changed and how much the behavior of a component logic is likely to be reviewed if a distinct component is subject to changes.
+
+\section{Definitions, Acronyms, Abbreviations}
+\label{sec:defs}
+\begin{description}
+\item[RASD:] Requirements Analysis and Specification Document (previous document).
+\item[DD:] Design Document (this document).
+\item[DB:] Database layer.
+\item[NRDBMS:] Non Relational Database Management System.
+\item[ACID:] Atomicity, Consistency, Integrity and Durability.
+\item[REST:] Representational State Transfer, an architectural style adopted by web services.
+\item[Back-end:] refers to server-side of the application.
+\item[SoC:] Separation of Concerns, a design principle.
+\item[MVVM:] Model-View-ViewModel, an architectural pattern.
+\item[API:] Application Programming Interface.
+\item[UI:] User Interface.
+\item[UX:] User eXperience.
+\end{description}
+
+\section{Revision history}
+\label{sec:history}
+
+\begin{tabular}{SSSS} \toprule
+    {$Version$} & {$Date$} & {$Authors$} & {$Note$} \\ \midrule
+    1.1 & {22/11/17} & {Antonio Frighetto, Leonardo Givoli, Hichame Yessou} & {Fix \& Review} \\ \midrule
+    1.0 & {26/11/17} & {Antonio Frighetto, Leonardo Givoli, Hichame Yessou} & {Initial version} \\ \bottomrule
+\end{tabular}
+
+\section{Reference Documents}
+\label{sec:refs}
+This document follows the RASD\cite{rasd} one, and is based on the specifications document of the DD assignment\cite{assignment}.
+
+\section{Document Structure}
+\label{sec:structure}
+This document is structured as follows:
+\begin{description}
+\item[\autoref{cha:intro}: Introduction.] This section introduces the design document by providing general information about it.
+\item[\autoref{cha:arch}: Architectural Design.] This section is divided into several parts and shows the main components of the systems together with their relationships, how they have been thought and designed. It shows also in detail choices made from an architectural point of view, patterns and paradigms.
+\item[\autoref{cha:alg}: Algorithm Design.] This section describes the most critical parts expressed through algorithms.
+\item[\autoref{cha:ui}: User Interface Design.] This section shows how the user interface is going to look like and behave through mockups and UX modeling diagrams.
+\item[\autoref{cha:req_trace}: Requirements Traceability.] This section aims at explaining how the decisions taken in the RASD are linked with the design elements shown here in the DD.
+\item[\autoref{cha:impl}: Implementation, Integration and Test Plan.] This section aims at identifying the order in which the implementation of the subcomponents is planned and the order in which the integration of subcomponents is prepared.
+\item[\autoref{cha:effort}: Effort Spent.] Information about the number of hours per each group member are here included.
+\end{description}
+A \textbf{Bibliography} with various references is given at the very end.
