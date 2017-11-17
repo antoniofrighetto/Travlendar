@@ -40,7 +40,33 @@ The following views will cover the major components and technologies that the sy
 
 \subsection*{Server-side application}
 
+Travlendar+ will rely on AWS services.
+Our main core service is Amazon Cognito Sync that will allow us to sync the user's data across multiple clients and platforms.
+The login will be managed by the Amazon Cognito Identity service and it will implement either the social platforms authentications (Facebook and Google) and through the traditional email registration flow.
+This is feasible associating an identity with a dataset containing key-values pairs having a maximum size of 1 MB. Due to AWS limitations, each identity can be associated with maximum 20 datasets.
+Amazon Cognito Sync will create a local cache for the identity data. 
+The application will interact with this local cache when is reading or writing the keys. 
+This allows Travlendar+ to synchronize all the changes made on a device immediately to other devices.
+We will store not only the user preferences but also the user events and means of transports, this could be enhanced in future to other services using Amazon Cognito towards an AWS DynamoDB or and AWS Lambda if we would like to transfer some computational power towards the backend side.
+Amazon Cognito offers a scalable and modular way to react upon peaks in demands and traffic.
+
 \subsection*{Mobile client application}
+The Travlendar+ mobile implementation will be done with Xamarin technologies. 
+This will allow us having a multiplatform presence and speeding up the development phase while maintaining a good degree of modularity.
+Due to this choice, we will have to use the .NET version of the SDKs that we need and whenever it's not possible we have to bind the native Android and iOS libraries.
+We will use the Xamarin.Forms framework, that is a cross-platform UI toolkit that allows us to create a native interface. 
+We can choose to use the main control groups to create the User Interface, which are Pages, Layouts, Views and Cells that will be mapped and rendered to the native equivalent.
+Whenever needed a customized UI component we can use a platform-specific view built with Xamarin.iOS or Xamarin.Android.
+Xamarin.Forms applications are architected in the same way as any other cross-platform application. 
+There are two viable approaches, the most common is with Portable Class Libraries (PCL) while the other is via Shared Projects.
+Our choice is towards the PCL that will result in a DLL usable on the specific platforms for which we provide support.
+This approach has a number of advantages like a centralized code base consumed by the platform projects, refactor operation will affect all the code within the solution and the relief of referencing itself against the platform projects. 
+The downside will concern platform specific libraries, which cannot be referenced inside the PCL. This can be avoided using the Dependency Injection pattern, using an interface in the Portable Class passing platform-specific features.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=6in]{diagrams/PCLDiagram.png} 
+	\caption{PCL Diagram.}   
+\end{figure}
 
 \subsection*{Web application}
 
