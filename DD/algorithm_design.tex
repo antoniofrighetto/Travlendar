@@ -1,2 +1,134 @@
 \chapter{Algorithm Design}
 \label{cha:alg}
+
+Here we focus on the definition of the most relevant algorithmic part of the system. The first one, and perhaps the most important one must be able to provide to the user the best travel mean (or, at most, a combination of them) as quickly as possible. It is supposed to consider the user preferences but it needs to compute its own calculation as well, and in some cases even some predictions. To explain the logic of the algorithm we thought we'd better show it through pseudocode. While it may resembles a specific object-oriented language a lot, code shown is still pseudocode, it just includes some common feature of high-level languages (e.g. object initialization) and instead of returning an artificial type we directly thought what suitable type could have been.\subsection*{Event validation algorithm}
+\begin{tcolorbox}[breakable,enhanced]
+\begin{minted}[breaklines]{csharp}
+/* This function will check that there are no events overlapping with each other and ensures that special types of event are always taken into account. It returns true if the event can be added correctly, false otherwise. */
+bool validateEvent(Event e) {
+  /* Check if event is a type of event that does not last the entire day. */
+  if (!e.allDay) {
+    /* Check if there is another event that has already been inserted at that specific time slot. eventOverlaps(Event) just takes the current event as argument and checks if there's another event whose time interval (start time and end time of same day) coincides with the current one. If it returns true, we return false and event cannot be validated properly. */
+    if (EventOverlaps(e)) {
+      return false;
+    }
+    /* If event is not of a special type (like lunch or a custom event added by user) and there's no more free time slots to insert a normal event, the event is refused. Particularly, NoLeftTimeForEvents(Event) receives the event as argument and checks if the event starts and finish within a range which is reserved for special events. For example, it checks if the event starts at 11:30 (or later) and finishes at 14:30 (or earlier) and ensures that (at least, depends on user preferences) half an hour can still be used for lunch. If there's no more free space except for lunch, it returns true. */
+    if (e.typeEvent != SPECIAL_TYPE && NoLeftTimeForEvents(e)) {
+      return false;
+    }
+    /* If event is adjacent to another one (adjacentEvents(Event)), which means, just as the current event finishes a new event occurs in the very next minutes, and destination of the latter one is far away from the current position (farAwayDestination(Event)), then we make the user aware of it by displaying an alert. We still return true though. */
+    if (adjacentEvents(e) && farAwayDestination(e)) {
+      displayAlert("Event's destination will be hardly reached.");
+    }
+  }
+  
+  /* In the other cases we can safely return true, in fact we allow that there are multiple all-day events occuring in the same day (maybe a recurring event, a birthday or a holiday) and no events are going to overlap with each other. */
+  return true;
+}
+\end{minted}
+\end{tcolorbox}
+
+\subsection*{Travel mean selection algorithm}
+\begin{tcolorbox}[breakable,enhanced]
+\begin{minted}[breaklines]{csharp}
+/* This function will return the best travel mean for the specific route of type Route passed as parameter. Specifically, it returns a list of objects of type TravelMean, whose class, besides containing the travel mean, includes also the duration, start and end points (latitude and logitude) of each travel mean. In fact, if there multiple travel means are suggested, each of them must have a start and end location. Note that from a point of view of implementation choices, adopting a list may not be the best solution since very few means can be returned at most, it is just more to give the idea. */ 
+List<TravelMean> selectBestTravelMeans(Route r) {
+  /* Object travelMeans is initialized */
+  List<TravelMean> travelMeans = new List<TravelMean>();
+  /* Initialitizing three flags, one to check public transport availability, the other one for bad weather conditions, and the latter to see if event type requires user to be in a hurry or, for instance, there are other passengers. */
+  bool availablePublicTransport = badWeather = otherPassengers = false;
+
+  /* We check that the destination is supposedly reachable, since there may be no feasible travel means to be returned. This happens especially if user's destination is considerably far away from his current position. Therefore IsLocationUnreachable(), after checking that longitude and latitude corresponds to a location that can be actually reached, returns true if the location is unreachable, and we return the execution to the caller. */
+  if (IsLocationUnreachable(r.destination)) {
+    return null;
+  }
+  
+  /* If settings have been recently changed or this is the first time that a travel route is computed, then we update userPreferences object (with global scope) by retrieving updated infos from getUserPreferences() function. Both function returns a boolean. */
+  if (SettingsChanged() || IsFirstTimeTravelRoute()) {
+    userPreferences = getUserPreferences();
+  }
+
+  /* We check at the beginning if there's availability for public transportation means. The following function checks in real-time if it's public holiday (and there may be time changes), if there's a strike or means are out of service (for instance, during the night there may be no available public means). It requires the current position to be passed so that checks are performed according to the city which the user is. */
+  if (IsPublicTransportationAvailable(r.origin)) {
+    /* If the function returns true we set availablePublicTransport to true. */
+    availablePublicTransport = true;
+  }
+  
+  /* We check if it might rain right now or within few minutes always based on user's position. */
+  if (IsBadWeather(r.origin)) {
+    badWeather = true;
+  }
+
+  /* We check if the user has specified when adding the event that there should be other passengers. */
+  if (OtherPassengers()) {
+    otherPassengers = true;
+  }
+  
+  /* NearbyDestination() instance method of Route class is called to check whether the distance between the current position of the user and the destination is greater than a certain threshold. Depending on how far the user is and if he/she is with other passengers or not, specific means are suggested. */
+  if (r.NearbyDestination() && !otherPassengers) {
+    /* We check that the flag for the bad weather is false. */
+    if (!badWeather) {
+      /* If the user's option to ride a bike is enabled and has its own bike, we suggest using it... */
+      if (userPreferences.IsBikeEnabled() && userPreferences.HasItsOwnBike()) {
+        /* We add own bike as mean, default origin and destination in this case (and in the others above) are used. */
+        travelMeans.Add(OWN_BIKE);
+      }
+      /* ... otherwise we try locating the nearest bike sharing system via LocateBikeSharingSystem(). It takes the current position as parameter and returns true if a near shared-bike could be located otherwise false. If true, it adjusts the destination argument passed as reference by adding the path to be done to reach the bike. */
+      else if (userPreferences.IsBikeEnabled() && LocateTravelMean(BIKE_SHARING, r.origin, ref r.destination)) {
+        /* We add the bike as possible mean to the list, we pass the arranged destination to the Add() method as well. */
+        travelMeans.Add(r.origin, r.destination, BIKE_SHARING);
+      }
+      /* If no bike sharing could be located, then suggest walking. */
+      else {
+          travelMeans.Add(WALKING);
+      }
+    }
+    /* Options in case it's rainy */
+    else {
+      /* If the flag availablePublicTransport is on and there is an underground train station nearby then we suggest it as possible mean. */
+      if (availablePublicTransport && LocateTravelMean(UNDERGROUND_TRAIN, r.origin, ref r.destination));
+          travelMeans.Add(r.origin, r.destination, UNDERGROUND_TRAIN);
+      }
+      else {
+        /* We still suggest walking as possible mean, even if it's rainy since distance should be pretty short. */
+        travelMeans.Add(WALKING);
+      }
+    }
+  }
+  /* If the user is travelling with its own car across the city, then it doesn't make sense to suggest public transports. */
+  else if (userPreferences.HasItsOwnCar()) {
+    travelMeans.Add(OWN_CAR);
+  }
+  /* All other choices. */
+  else {
+    /* If shared car option is enabled and it can be located nearby, we suggest using it. */
+    if (userPreferences.option == SHARED_CAR && LocateTravelMean(CAR_SHARING, r.origin, ref r.destination)) {
+      travelMeans.Add(CAR_SHARING);
+    }
+    /* If the user expressed the preference to always use a taxi, we suggest using it. */
+    else if (userPreferences.option == TAXI) {
+      travelMeans.Add(TAXI);    
+    }
+    else {
+      if (availablePublicTransport) {
+        /* If there's availability for public transportation means, we pass execution to CalculateRouteWithPublicTransports(bool) function which has the task of calculating the itinerary using underground trains and buses. It may return a single or multiple travel means and takes a boolean as argument. If carbon footprint option is enabled it tries to retrieve the path with - if possible and feasible - a part to do on foot. */
+        travelMeans.AddMultipleMeans(CalculateRoute
+        WithPublicTransports(userPreferences.option == CARBON_FOOTPRINT ? true : false));
+      }
+      /* If no public transports are available our last solution should be suggesting a taxi. */
+      else {
+        travelMeans.Add(TAXI);
+      }
+    }
+  }
+
+  /* We return the transports found. */
+  return travelMeans;
+}
+
+\end{minted}
+\end{tcolorbox}
+\subsection*{Pathfinding algorithm}
+Concerning the algorithm for the optimal path, as said, we will rely on a Google Maps component, so it will be up to Google Maps to find the shortest and the best path. Remind though that it does nothing but applying a graph traversal algorithm. Looks like Google has picked up a slightly different version of the Dijkstra search algorithm\cite{maps}. After adding weights to the graph, it takes the shortest distance between two locations (treated as nodes) among the possible paths (treated as edges).
+
+
