@@ -12,13 +12,13 @@ bool validateEvent(Event e) {
     if (EventOverlaps(e)) {
       return false;
     }
-    /* If event is not of a special type (like lunch or a custom event added by user) and there's no more free time slots to insert a normal event, the event is refused. Particularly, NoLeftTimeForEvents(Event) receives the event as argument and checks if the event starts and finish within a range which is reserved for special events. For example, it checks if the event starts at 11:30 (or later) and finishes at 14:30 (or earlier) and ensures that (at least, depends on user preferences) half an hour can still be used for lunch. If there's no more free space except for lunch, it returns true. */
+    /* If an event is not of a special type (like lunch or a custom event added by the user) and there are no more free time slots to insert a normal event, the event is refused. Particularly, NoLeftTimeForEvents(Event) receives the event as argument and checks if the event starts and finish within a range which is reserved for special events. For example, it checks if the event starts at 11:30 (or later) and finishes at 14:30 (or earlier) and ensures that (at least, depends on user preferences) half an hour can still be used for lunch. If there's no more free space except for lunch, it returns true. */
     if (e.typeEvent != SPECIAL_TYPE && NoLeftTimeForEvents(e)) {
       return false;
     }
     /* If event is adjacent to another one (adjacentEvents(Event)), which means, just as the current event finishes a new event occurs in the very next minutes, and destination of the latter one is far away from the current position (farAwayDestination(Event)), then we make the user aware of it by displaying an alert. We still return true though. */
     if (adjacentEvents(e) && farAwayDestination(e)) {
-      displayAlert("Event's destination will be hardly reached.");
+      displayAlert("Event's destination will be hardly reached on time.");
     }
   }
   
@@ -31,7 +31,7 @@ bool validateEvent(Event e) {
 \subsection*{Travel mean selection algorithm}
 \begin{tcolorbox}[breakable,enhanced]
 \begin{minted}[breaklines]{csharp}
-/* This function will return the best travel mean for the specific route of type Route passed as parameter. Specifically, it returns a list of objects of type TravelMean, whose class, besides containing the travel mean, includes also the duration, start and end points (latitude and logitude) of each travel mean. In fact, if there multiple travel means are suggested, each of them must have a start and end location. Note that from a point of view of implementation choices, adopting a list may not be the best solution since very few means can be returned at most, it is just more to give the idea. */ 
+/* This function will return the best travel mean for the specific route of type Route passed as a parameter. Specifically, it returns a list of objects of type TravelMean, whose class, besides containing the travel mean, includes also the duration, start and end points (latitude and longitude) of each travel mean. In fact, if there are multiple travel means suggested, each of them must have a start and end location. Note that from a point of view of implementation choices, adopting a list may not be the best solution since very few means can be returned at most, it is just more to give the idea. */ 
 List<TravelMean> selectBestTravelMeans(Route r) {
   /* Object travelMeans is initialized */
   List<TravelMean> travelMeans = new List<TravelMean>();
@@ -43,12 +43,12 @@ List<TravelMean> selectBestTravelMeans(Route r) {
     return null;
   }
   
-  /* If settings have been recently changed or this is the first time that a travel route is computed, then we update userPreferences object (with global scope) by retrieving updated infos from getUserPreferences() function. Both function returns a boolean. */
+  /* If settings have been recently changed or this is the first time that a travel route is computed, then we update userPreferences object (with global scope) by retrieving updated info from getUserPreferences() function. Both functions return a boolean. */
   if (SettingsChanged() || IsFirstTimeTravelRoute()) {
     userPreferences = getUserPreferences();
   }
 
-  /* We check at the beginning if there's availability for public transportation means. The following function checks in real-time if it's public holiday (and there may be time changes), if there's a strike or means are out of service (for instance, during the night there may be no available public means). It requires the current position to be passed so that checks are performed according to the city which the user is. */
+  /* We check at the beginning if there's availability for public transportation means. The following function checks in real-time if it's public holiday (and there may be time changes), if there's a strike or means are out of service (for instance, during the night there may be no available public means). It requires the current position to be passed so that checks are performed according to the city. */
   if (IsPublicTransportationAvailable(r.origin)) {
     /* If the function returns true we set availablePublicTransport to true. */
     availablePublicTransport = true;
@@ -101,7 +101,7 @@ List<TravelMean> selectBestTravelMeans(Route r) {
   }
   /* All other choices. */
   else {
-    /* If shared car option is enabled and it can be located nearby, we suggest using it. */
+    /* If car sharing option is enabled and it can be located nearby, we suggest using it. */
     if (userPreferences.option == SHARED_CAR && LocateTravelMean(CAR_SHARING, r.origin, ref r.destination)) {
       travelMeans.Add(CAR_SHARING);
     }
