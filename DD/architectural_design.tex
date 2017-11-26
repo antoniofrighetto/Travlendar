@@ -15,50 +15,52 @@ Angular.js is one of the most popular JavaScript frameworks for web applications
 
 From a high-level point of view, the following components of the system can be identified:
 \begin{description}
-	\item[Client:] Implementation of the application that makes requests to the server and will be provided with a response. In Travlendar+ the clients will be the mobile application and the web application, that interacts with the server through REST APIs.
-	\item[Web Server:] Software running on a server able to communicate with web application clients using the HTTP(S) protocol, known also as back-end.
-	
-	\item[Application Server:] This layer makes the workflow and the business logic for the client applications work. It will be implemented with AWS technologies interacting with a different component for each type of client.
-	\item[Web Browser:] Application for retrieving and presenting web pages and applications.
-	\item[Database:] This layer handles retrieval and storage of data. It will be queried by the application server. This layer must guarantee ACID properties.
+\item[Client:] Implementation of the application that makes requests to the server and will be provided with a response. In Travlendar+ the clients will be the mobile application and the web application, that interacts with the server through REST APIs.
+\item[Web Server:] Software running on a server able to communicate with web application clients using the HTTP(S) protocol, known also as back-end.
+
+\item[Application Server:] This layer makes the workflow and the business logic for the client applications work. It will be implemented with AWS technologies interacting with a different component for each type of client.
+\item[Web Browser:] Application for retrieving and presenting web pages and applications.
+\item[Database:] This layer handles retrieval and storage of data. It will be queried by the application server. This layer must guarantee ACID properties.
 \end{description}
 
 We list also the following components which may not strictly belong to the component view but play a key role in our design approach:
 \begin{description}
-	\item[AWS:] Cloud services that offer computing power, database storage, content delivery and other scalable functionalities.
-	\item [AWS Cognito:] AWS component and client library that enables cross-device syncing of application-related user data.
-	\item[Xamarin:] Framework that delivers native Android, iOS and Windows applications using a shared C\# codebase and same APIs.
+\item[AWS:] Cloud services that offer computing power, database storage, content delivery and other scalable functionalities.
+\item [AWS Cognito:] AWS component and client library that enables cross-device syncing of application-related user data.
+\item[Xamarin:] Framework that delivers native Android, iOS and Windows applications using a shared C\# codebase and same APIs.
 \end{description}
 
 These high-level components are laid down as follows.
 
 \subsection*{Server-side application}
-Since relying on AWS services, one of the main core service used is \textit{Amazon Cognito Sync}, a service which allows us to sync the user's data across multiple clients and platforms.
+Since relying on AWS services, one of the main core service used is \textit{Amazon Cognito Sync}, a service which allows us to sync the user's data across multiple clients and platforms. Its structure is illustrated in Figure \ref{fig:seqCognito}.
 The login is managed by \textit{Amazon Cognito Identity} service and supports either the social platforms authentications (Facebook and Google) or the traditional email registration flow. This can be achieved by associating an identity with a dataset containing key-values pairs having a maximum size of 1 MB. Due to AWS limitations, each identity can be associated with maximum 20 datasets.
 Amazon Cognito Sync functions by creating a local cache for the identity data. An interaction between the application and this local cache occurs when reading or writing the keys. 
 This allows Travlendar+ to synchronize all the changes made on a device immediately to other devices.
 Not only the user preferences are going to be stored but user events and means of transports too, this could be enhanced in future to other services using Amazon Cognito towards an AWS DynamoDB or and AWS Lambda if we would like to transfer some computational power towards the backend side. What's more, Amazon Cognito offers a scalable and modular way to react upon peaks in demands and traffic.
 
-\begin{figure}
+\subsection*{Web Server}
+The mobile application will interface with the application server through the wrapped RESTful APIs while the web application will run on a web server based on an Amazon Elastic Cloud Computing instance.
+Amazon Cognito Sync will play a key role providing a real-time synchronization of the user data and event across the clients.
+It provides a service of identity management within an identity pool, giving secure access to AWS services from all the platforms and synchronizing user's data. 
+The data is persistent to the local storage first, making it available regardless the connectivity. The web application will have a server to filter the request from the clients. 
+It's based mainly on Amazon Web Application Firewall (AWS WAF).
+AWS WAF will help to lower the load on the infrastructure (Layer 3 and Layer 4) from DDoS attack or other techniques and giving control over which traffic to allow or block. It includes full-featured API that can be used to create and/or deploy web security rules. The whole infrastructure is shown in Figure \ref{fig:seqNetworkDiagram}.
+The runtime environment will be operating on Node.js that simplifies the development of the web application thanks to rich and various JS modules. Besides that, we will use nginx on our Amazon EC2 instances to proxy the network traffic to the running Node.js instances. It supports sophisticated Layer 7 load balancing as well as reverse proxy capabilities allowing a multiple web server infrastructure making the application more reliable.
+
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=6in]{./diagrams/CognitoDiagram.png}
+	\includegraphics[width=5.5in]{./diagrams/CognitoDiagram.png}
 	\caption{Structure of the Amazon Cognito Sync service.}
 	\label{fig:seqCognito}
 \end{figure}
 
-\subsection*{Web Server}
-The \textbf{mobile application} will interface with the application server through the wrapped RESTful APIs while the \textbf{web application} will run on a web server based on an Amazon Elastic Cloud Computing instance.
-Amazon Cognito Sync will play a key role providing a real-time synchronization of the user data and event across the clients.
-It provides a service of identity management within an identity pool, giving secure access to AWS services from all the platforms and synchronizing user's data. 
-The data is persistent to the local storage first, making it available regardless the connectivity.
-
-The web application will have a server to filter the request from the clients. 
-It's based mainly on Amazon Web Application Firewall (AWS WAF).
-AWS WAF will help to lower the load on the infrastructure (Layer 3 and Layer 4) from DDoS attack or other techniques and giving control over which traffic to allow or block. 
-Includes full-featured API that can be used to create and/or deploy web security rules.
-The runtime environment will be operating on Node.js that simplifies the development of the web application thanks to a rich and various JS modules. 
-Besides that, we will use nginx on our Amazon EC2 instances to proxy the network traffic to the running Node.js instances.
-It supports sophisticated Layer 7 load balancing as well as reverse proxy capabilities allowing a multiple web server infrastructure making the application more reliable.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=7in]{./diagrams/NetworkDiagram.jpg}
+	\caption{AWS SDK makes use of services exposed by the AWS infrastructure and act as mediator for the client application.}
+	\label{fig:seqNetworkDiagram}
+\end{figure}
 
 \subsection*{Mobile client application}
 Travlendar+ mobile application is thought to be implemented with Xamarin technologies. In addition to being an extremely powerful set of frameworks, it allows us to have a multi-platform presence and speed a little bit up the development phase while maintaining a high degree of modularity.
@@ -66,11 +68,11 @@ As a result, since these technologies make use of C\#, .NET SDKs is used. Partic
 Our choice is more directed towards the PCL that may result in a DLL usable on the specific platforms for which we provide support. Figure \ref{fig:pcld} shows the architecture of a cross-platform application using a PCL to share code. This approach has a number of advantages like a centralized code base consumed by the platform projects, refactoring operation affects all the code within the solution and the relief of referencing itself against the platform projects. 
 The drawback may concern platform specific libraries, which cannot be referenced inside the PCL, but this can be avoided with the Dependency Injection pattern, using an interface in the Portable Class passing platform-specific features.
 
-\begin{figure}
-	\centering
-	\includegraphics[width=6in]{diagrams/PCLDiagram.png} 
-	\caption{PCL Diagram\cite{pcl}.}
-	\label{fig:pcld}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=6in]{diagrams/PCLDiagram.png} 
+  \caption{PCL Diagram\cite{pcl}.}
+  \label{fig:pcld}
 \end{figure}
 
 \subsection*{Web application}
@@ -78,34 +80,41 @@ As regards the web application, in order for it to be dynamic and highly respons
 AWS Cognito still plays a major role. This introduces an extra layer of abstraction from the back-end service, keeping the more sensitive pieces out of the exposed JavaScript.
 The web application is hosted on the AWS infrastructure having resources that will dynamically grow or shrink having a cost-effective solution. Amazon EC2 provides a re-sizable computing capacity, allowing in the most simple way the web-scale of the cloud computing.
 
-\begin{figure}
-	\centering
-	\includegraphics[width=6in]{./diagrams/ClassDiagram.png}
-	\caption{Class Diagram}
-	\label{fig:seqLogin}
-\end{figure}
-
 \subsection*{Specific components}
 In detail, these are the main specific components:
 \begin{description}
-	\item[TravlendarAppGUI:] It provides the user interface to the mobile clients, allowing the usage of the services.
-	\item[TravlendarWebGUI:] It provides the user interface to the web-based clients, allowing the usage of the services.
-	\item[AuthenticationService:] It is responsible for the identification of the users. It provides the possibility to access the application for existing users or the registration for new users.
-	\item[SyncUserInfoService:] It is responsible for the retrieval and synchronization of the user's data across multiple platforms.
-	\item[EventService:] It provides the main functionalities of the application. It allows to create, modify and delete events.
-	\item[MapService:] It provides the map functionalities and computes the optimal travel route through the best combination of mobility options possible.
-	\item[PurchaseService:] It handles the ticket's purchase for the available travel mean. When possible it deep-links the user to the specific application, otherwise it may be redirected to the web-page.
+\item[TravlendarAppGUI:] It provides the user interface to the mobile clients, allowing the usage of the services.
+\item[TravlendarWebGUI:] It provides the user interface to the web-based clients, allowing the usage of the services.
+\item[AuthenticationService:] It is responsible for the identification of the users. It provides the possibility to access the application for existing users or the registration for new users.
+\item[SyncUserInfoService:] It is responsible for the retrieval and synchronization of the user's data across multiple platforms.
+\item[EventService:] It provides the main functionalities of the application. It allows to create, modify and delete events.
+\item[MapService:] It provides the map functionalities and computes the optimal travel route through the best combination of mobility options possible.
+\item[PurchaseService:] It handles the ticket's purchase for the available travel mean. When possible it deep-links the user to the specific application, otherwise it may be redirected to the web-page.
 \end{description}
+
+In Figure \ref{fig:class_diag} is shown the whole class diagram for the system. Compared with the one presented in the RASD, we better specified properties and methods.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=6in]{./diagrams/ClassDiagram.png}
+	\caption{Class Diagram}
+	\label{fig:class_diag}
+\end{figure}
 
 \section{Deployment view}
 \label{sec:depl_view}
-The following items will cover the major components and technologies that the system uses in order to be deployed to the users.
+The deployment diagram for the system is shown in Figure \ref{fig:depl_diagram}.
 
-
+\begin{figure}
+	\centering
+	\includegraphics[width=6in]{./diagrams/DeploymentDiagram.png}
+	\caption{Deployment Diagram}
+	\label{fig:depl_diagram}
+\end{figure}
 
 \section{Runtime view}
 \label{sec:runtime_view}
-Here we describe the dynamic behavior of the system. In particular, the interaction between the software and the aforementioned logical components interact with each other is shown through sequence diagrams.
+Here we describe the dynamic behavior of the system. In particular, how the software and the aforementioned various logical components interact with each other. Such interaction is shown through the following sequence diagrams (Figures \ref{fig:seqLogin}, \ref{fig:seqRegistration}, \ref{fig:seqAddEvent}, \ref{fig:seqNavigateEvent}).
 
 \begin{figure}
 	\centering
@@ -113,7 +122,6 @@ Here we describe the dynamic behavior of the system. In particular, the interact
 	\caption{Sequence diagram of the login with the AWS Web Service.}
 	\label{fig:seqLogin}
 \end{figure}
-
 
 \begin{figure}
 	\centering
@@ -136,6 +144,7 @@ Here we describe the dynamic behavior of the system. In particular, the interact
 	\label{fig:seqNavigateEvent}
 \end{figure}
 
+\vspace*{80px}
 \section{Component interfaces}
 \label{sec:runtime_view}
 The following section describes the interfaces by means of which the components communicate with each other. Note that the front-end of the system (both of the mobile application and the web one) must communicate with the application server through RESTful APIs over HTTPS. The RESTful interface is wrapped by AWS SDK in the application server.
@@ -143,43 +152,43 @@ The following section describes the interfaces by means of which the components 
 \subsubsection*{AuthenticationService}
 Methods implemented by the AuthenticationService interface:
 \begin{description}
-	\item[\texttt{registerUser(info):}] This method creates a new user with AWS Cognito.
-	\item[\texttt{loginUser(data):}] This method authenticates an existing user using the AWS Cognito platform.
-	\item[\texttt{checkSession(token):}] This method validates the current session with AWS Cognito.
+\item[\texttt{registerUser(info):}] This method creates a new user with AWS Cognito.
+\item[\texttt{loginUser(data):}] This method authenticates an existing user using the AWS Cognito platform.
+\item[\texttt{checkSession(token):}] This method validates the current session with AWS Cognito.
 \end{description}
 
 \subsubsection*{UserInformationService}
 Methods implemented by the UserInformationService interface:
 \begin{description}
-	\item[\texttt{synchronizeData(token):}] This method synchronizes the local cache of the AWS Cognito SDK with the AWS Cognito service.
+\item[\texttt{synchronizeData(token):}] This method synchronizes the local cache of the AWS Cognito SDK with the AWS Cognito service.
 \end{description}
 
 \subsubsection*{EventService}
 Methods implemented by the EventService interface:
 \begin{description}
-	\item[\texttt{addEvent(data):}] This method adds an event to the calendar and synchronizes it with AWS Cognito.
-	\item[\texttt{editEvent(eventId, data):}] This method edits a specific event in the calendar and synchronizes it with AWS Cognito.
-	\item[\texttt{removeEvent(eventId):}] This method removes a specific event in the calendar and synchronizes it with AWS Cognito.
-	\item[\texttt{getEvent(eventId):}] This method returns the given event
-	\item[\texttt{getNextEvent():}] This method returns the user's next event.
-	\item[\texttt{getAllEventsPerDay():}] This method returns all the events scheduled by the user per day.
-	\item[\texttt{getAllEventsPerWeek():}] This method returns all the events scheduled by the user per week.
+\item[\texttt{addEvent(data):}] This method adds an event to the calendar and synchronizes it with AWS Cognito.
+\item[\texttt{editEvent(eventId, data):}] This method edits a specific event in the calendar and synchronizes it with AWS Cognito.
+\item[\texttt{removeEvent(eventId):}] This method removes a specific event in the calendar and synchronizes it with AWS Cognito.
+\item[\texttt{getEvent(eventId):}] This method returns the given event
+\item[\texttt{getNextEvent():}] This method returns the user's next event.
+\item[\texttt{getAllEventsPerDay():}] This method returns all the events scheduled by the user per day.
+\item[\texttt{getAllEventsPerWeek():}] This method returns all the events scheduled by the user per week.
 \end{description}
 
 \subsubsection*{MapService}
 Methods implemented by the MapService interface:
 \begin{description}
-	\item[\texttt{getCurrentPosition():}] This method return current user position.
-	\item[\texttt{getETANextEvent():}] This method returns the travel time for the user's next event.
-	\item[\texttt{showTravelRoute(eventId):}] This method shows on the map the route for a specific event.
-	\item[\texttt{changeTravelRoute(eventId):}] This method attempts to select a different route if the previous one did not satisfy the user.
+\item[\texttt{getCurrentPosition():}] This method return current user position.
+\item[\texttt{getETANextEvent():}] This method returns the travel time for the user's next event.
+\item[\texttt{showTravelRoute(eventId):}] This method shows on the map the route for a specific event.
+\item[\texttt{changeTravelRoute(eventId):}] This method attempts to select a different route if the previous one did not satisfy the user.
 \end{description}
 
 \subsubsection*{PurchaseService}
 Methods implemented by the PurchaseService interface:
 \begin{description}
-	\item[\texttt{checkIfAppForTicketExist(idTransportMean, location):}] This method checks if there's a third-party application which handles the purchase ticket for a specific transport mean, and if so redirects the user to the application of the dedicated transport mean to buy tickets.
-	\item[\texttt{getTickets(idTransportMean, eventId):}] This method retrieves through callbacks the ticket bought by the user on the transport mean application.
+\item[\texttt{checkIfAppForTicketExist(idTransportMean, location):}] This method checks if there's a third-party application which handles the purchase ticket for a specific transport mean, and if so redirects the user to the application of the dedicated transport mean to buy tickets.
+\item[\texttt{getTickets(idTransportMean, eventId):}] This method retrieves through callbacks the ticket bought by the user on the transport mean application.
 \end{description}
 
 \section{Selected architectural styles and patterns}
@@ -191,16 +200,18 @@ Here the main architectural styles and design patterns are identified with the r
 \subsubsection*{Client-server model}
 From a network point of view, a well-known structure model is doubtless the client-server one, which is for sure extensively used across networks. Depending on the service provided, such model starts taking place at the following levels:
 \begin{itemize}
-	\item Mobile application (client) talks to APIs located on the server (when querying for specific data or handling records on the database).
-	\item Web application front-end (client) communicates with the server application.
-	\item Web server serves pages when user's browser makes a request.
+\item Mobile application (client) talks to APIs located on the server (when querying for specific data or handling records on the database).
+\item Web application front-end (client) communicates with the server application.
+\item Web server serves pages when user's browser makes a request.
 \end{itemize}
+
+Client-server model is shown in Figure \ref{fig:clientserver}.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=7in]{./diagrams/NetworkDiagram.jpg}
-	\caption{Diagram of the network architecture.}
-	\label{fig:seqNetworkDiagram}
+	\includegraphics[width=6in]{./diagrams/ArchitectureDiagram.png}
+	\caption{Client-server model in our system.}
+	\label{fig:clientserver}
 \end{figure}
 
 \subsection*{Client architecture}
