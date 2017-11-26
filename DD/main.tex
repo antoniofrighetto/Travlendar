@@ -13,7 +13,13 @@
 \usepackage{titlesec}
 \usepackage{booktabs}
 \usepackage{siunitx}
-%\newcommand{\retrievalDate}{15th of November, 2017}
+\usepackage{minted}
+\usemintedstyle{vs}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins,minted}
+\usepackage{etoolbox}
+\usepackage{fancyvrb}
+\newcommand{\retrievalDate}{20th of November, 2017}
 \setlength{\parindent}{0pt}
 \addto\extrasenglish{%
   \renewcommand{\chapterautorefname}{Chapter}%
@@ -39,7 +45,7 @@
 		\newpage
 		\input{req_traceability}
 		\newpage
-		\input{implementation}
+		\input{implementation}	
 	\endgroup
     
     \addcontentsline{toc}{chapter}{Bibliography}

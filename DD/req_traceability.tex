@@ -1,2 +1,27 @@
 \chapter{Requirements Traceability}
 \label{cha:req_trace}
+
+Here we explain how the system's requirements, previously defined in the RASD document, can map the aforementioned design components.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|m{0.7\textwidth}|}
+\hline
+{\bf Component (DD)}  & {\bf Requirements (RASD)}\\
+\hline
+AuthenticationService & \begin{itemize} \item User registration with own form. \item User login through third-party services. \item User profile management. \end{itemize} \\
+\hline
+SyncUserInfoService & \begin{itemize} \item Permits user events to be synchronized across different platforms. \end{itemize} \\
+\hline
+EventService & \begin{itemize} \item Appointment schedules organization. \item Provide overview of appointments through a grid and all schedules through a list view. \item Create a new appointment. \item Modify an existent appointment. \item Delete an appointment. \end{itemize} \\
+\hline
+MapService & \begin{itemize} \item Travel route arrangement (location of sharing systems, find optimal paths, etc.) \end{itemize} \\
+\hline
+PurchaseService & \begin{itemize} \item Permits user to buy tickets within the application (if possible).
+\end{itemize} \\
+\hline
+\end{tabular}
+\caption{Table that maps components to their respective functional requirements.}
+\label{tab:comparisontable}
+\end{center}
+\end{table}
