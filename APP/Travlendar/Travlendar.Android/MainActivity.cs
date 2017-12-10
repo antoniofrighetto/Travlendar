@@ -1,4 +1,5 @@
-﻿using Android.App;
+﻿using Amazon;
+using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
@@ -26,6 +27,13 @@ namespace Travlendar.Droid
             FacebookSdk.SdkInitialize (this.ApplicationContext);
             CallbackManager = CallbackManagerFactory.Create ();
 
+            var loggingConfig = AWSConfigs.LoggingConfig;
+            loggingConfig.LogMetrics = true;
+            loggingConfig.LogResponses = ResponseLoggingOption.Always;
+            loggingConfig.LogMetricsFormat = LogMetricsFormatOption.JSON;
+            loggingConfig.LogTo = LoggingOptions.SystemDiagnostics;
+
+            AWSConfigs.AWSRegion = "eu-west-1";
             //If you are planning to use Parse to authenticate your user via FacebookLogin, configurate here
             //Parse.ParseClient.Initialize("<YOUR .NET ID>", "<YOUR PROJECT ID>");
             //Parse.ParseFacebookUtils.Initialize("<YOUR FACEBOOK APP ID>");

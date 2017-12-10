@@ -119,13 +119,22 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="AWSSDK.CognitoIdentity">
+      <Version>3.3.2.17</Version>
+    </PackageReference>
+    <PackageReference Include="AWSSDK.CognitoSync">
+      <Version>3.3.1.26</Version>
+    </PackageReference>
+    <PackageReference Include="AWSSDK.Core">
+      <Version>3.3.21</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\Travlendar\Travlendar.csproj">
-      <Project>{3244CEF3-CB4E-4276-8F82-DFD707B92677}</Project>
-      <Name>Travlendar</Name>
+    <ProjectReference Include="..\Travlendar.Core\Travlendar.Core.csproj">
+      <Project>{317dfcc6-da6f-4e68-961b-4cca9ba5efcd}</Project>
+      <Name>Travlendar.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

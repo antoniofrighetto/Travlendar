@@ -2,6 +2,124 @@
   "version": 3,
   "targets": {
     "Xamarin.iOS,Version=v1.0": {
+      "AWSSDK.CognitoIdentity/3.3.2.17": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.3.19, 3.4.0)",
+          "AWSSDK.SecurityToken": "[3.3.3.3, 3.4.0)"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/AWSSDK.CognitoIdentity.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/AWSSDK.CognitoIdentity.dll": {}
+        }
+      },
+      "AWSSDK.CognitoSync/3.3.1.26": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.CognitoIdentity": "[3.3.2.17, 3.4.0)",
+          "AWSSDK.Core": "[3.3.19, 3.4.0)",
+          "SQLitePCLRaw.bundle_green": "1.0.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/AWSSDK.CognitoSync.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/AWSSDK.CognitoSync.dll": {}
+        }
+      },
+      "AWSSDK.Core/3.3.21": {
+        "type": "package",
+        "dependencies": {
+          "PCLCrypto": "1.0.2.15130",
+          "PCLStorage": "1.0.2"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/AWSSDK.Core.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/AWSSDK.Core.dll": {}
+        }
+      },
+      "AWSSDK.SecurityToken/3.3.3.3": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.3.19, 3.4.0)"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/AWSSDK.SecurityToken.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/AWSSDK.SecurityToken.dll": {}
+        }
+      },
+      "PCLCrypto/1.0.2.15130": {
+        "type": "package",
+        "dependencies": {
+          "Validation": "[2.0.6, 3.0.0)"
+        },
+        "compile": {
+          "lib/Xamarin.iOS/PCLCrypto.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS/PCLCrypto.dll": {}
+        }
+      },
+      "PCLStorage/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.dll": {},
+          "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll": {}
+        },
+        "runtime": {
+          "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.dll": {},
+          "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll": {}
+        }
+      },
+      "SQLitePCLRaw.bundle_green/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "1.0.1",
+          "SQLitePCLRaw.provider.sqlite3.ios_unified": "1.0.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_green.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_green.dll": {}
+        }
+      },
+      "SQLitePCLRaw.core/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.core.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.core.dll": {}
+        }
+      },
+      "SQLitePCLRaw.provider.sqlite3.ios_unified/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "1.0.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
+        }
+      },
+      "Validation/2.0.6.15003": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10/Validation.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10/Validation.dll": {}
+        }
+      },
       "Xamarin.Forms/2.5.0.121934": {
         "type": "package",
         "compile": {
@@ -125,21 +243,135 @@
           "build/netstandard1.0/Xamarin.Forms.targets": {}
         }
       },
-      "Travlendar/1.0.0": {
+      "Travlendar.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Xamarin.Forms": "2.5.0.121934"
-        },
         "compile": {
-          "bin/placeholder/Travlendar.dll": {}
+          "bin/placeholder/Travlendar.Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Travlendar.dll": {}
+          "bin/placeholder/Travlendar.Core.dll": {}
         }
       }
     },
     "Xamarin.iOS,Version=v1.0/win": {
+      "AWSSDK.CognitoIdentity/3.3.2.17": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.3.19, 3.4.0)",
+          "AWSSDK.SecurityToken": "[3.3.3.3, 3.4.0)"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/AWSSDK.CognitoIdentity.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/AWSSDK.CognitoIdentity.dll": {}
+        }
+      },
+      "AWSSDK.CognitoSync/3.3.1.26": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.CognitoIdentity": "[3.3.2.17, 3.4.0)",
+          "AWSSDK.Core": "[3.3.19, 3.4.0)",
+          "SQLitePCLRaw.bundle_green": "1.0.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/AWSSDK.CognitoSync.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/AWSSDK.CognitoSync.dll": {}
+        }
+      },
+      "AWSSDK.Core/3.3.21": {
+        "type": "package",
+        "dependencies": {
+          "PCLCrypto": "1.0.2.15130",
+          "PCLStorage": "1.0.2"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/AWSSDK.Core.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/AWSSDK.Core.dll": {}
+        }
+      },
+      "AWSSDK.SecurityToken/3.3.3.3": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.3.19, 3.4.0)"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/AWSSDK.SecurityToken.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/AWSSDK.SecurityToken.dll": {}
+        }
+      },
+      "PCLCrypto/1.0.2.15130": {
+        "type": "package",
+        "dependencies": {
+          "Validation": "[2.0.6, 3.0.0)"
+        },
+        "compile": {
+          "lib/Xamarin.iOS/PCLCrypto.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS/PCLCrypto.dll": {}
+        }
+      },
+      "PCLStorage/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.dll": {},
+          "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll": {}
+        },
+        "runtime": {
+          "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.dll": {},
+          "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll": {}
+        }
+      },
+      "SQLitePCLRaw.bundle_green/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "1.0.1",
+          "SQLitePCLRaw.provider.sqlite3.ios_unified": "1.0.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_green.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_green.dll": {}
+        }
+      },
+      "SQLitePCLRaw.core/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.core.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.core.dll": {}
+        }
+      },
+      "SQLitePCLRaw.provider.sqlite3.ios_unified/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "1.0.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
+        }
+      },
+      "Validation/2.0.6.15003": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10/Validation.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10/Validation.dll": {}
+        }
+      },
       "Xamarin.Forms/2.5.0.121934": {
         "type": "package",
         "compile": {
@@ -263,21 +495,135 @@
           "build/netstandard1.0/Xamarin.Forms.targets": {}
         }
       },
-      "Travlendar/1.0.0": {
+      "Travlendar.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Xamarin.Forms": "2.5.0.121934"
-        },
         "compile": {
-          "bin/placeholder/Travlendar.dll": {}
+          "bin/placeholder/Travlendar.Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Travlendar.dll": {}
+          "bin/placeholder/Travlendar.Core.dll": {}
         }
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x64": {
+      "AWSSDK.CognitoIdentity/3.3.2.17": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.3.19, 3.4.0)",
+          "AWSSDK.SecurityToken": "[3.3.3.3, 3.4.0)"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/AWSSDK.CognitoIdentity.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/AWSSDK.CognitoIdentity.dll": {}
+        }
+      },
+      "AWSSDK.CognitoSync/3.3.1.26": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.CognitoIdentity": "[3.3.2.17, 3.4.0)",
+          "AWSSDK.Core": "[3.3.19, 3.4.0)",
+          "SQLitePCLRaw.bundle_green": "1.0.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/AWSSDK.CognitoSync.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/AWSSDK.CognitoSync.dll": {}
+        }
+      },
+      "AWSSDK.Core/3.3.21": {
+        "type": "package",
+        "dependencies": {
+          "PCLCrypto": "1.0.2.15130",
+          "PCLStorage": "1.0.2"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/AWSSDK.Core.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/AWSSDK.Core.dll": {}
+        }
+      },
+      "AWSSDK.SecurityToken/3.3.3.3": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.3.19, 3.4.0)"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/AWSSDK.SecurityToken.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/AWSSDK.SecurityToken.dll": {}
+        }
+      },
+      "PCLCrypto/1.0.2.15130": {
+        "type": "package",
+        "dependencies": {
+          "Validation": "[2.0.6, 3.0.0)"
+        },
+        "compile": {
+          "lib/Xamarin.iOS/PCLCrypto.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS/PCLCrypto.dll": {}
+        }
+      },
+      "PCLStorage/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.dll": {},
+          "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll": {}
+        },
+        "runtime": {
+          "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.dll": {},
+          "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll": {}
+        }
+      },
+      "SQLitePCLRaw.bundle_green/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "1.0.1",
+          "SQLitePCLRaw.provider.sqlite3.ios_unified": "1.0.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_green.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_green.dll": {}
+        }
+      },
+      "SQLitePCLRaw.core/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.core.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.core.dll": {}
+        }
+      },
+      "SQLitePCLRaw.provider.sqlite3.ios_unified/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "1.0.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
+        }
+      },
+      "Validation/2.0.6.15003": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10/Validation.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10/Validation.dll": {}
+        }
+      },
       "Xamarin.Forms/2.5.0.121934": {
         "type": "package",
         "compile": {
@@ -401,21 +747,135 @@
           "build/netstandard1.0/Xamarin.Forms.targets": {}
         }
       },
-      "Travlendar/1.0.0": {
+      "Travlendar.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Xamarin.Forms": "2.5.0.121934"
-        },
         "compile": {
-          "bin/placeholder/Travlendar.dll": {}
+          "bin/placeholder/Travlendar.Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Travlendar.dll": {}
+          "bin/placeholder/Travlendar.Core.dll": {}
         }
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x86": {
+      "AWSSDK.CognitoIdentity/3.3.2.17": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.3.19, 3.4.0)",
+          "AWSSDK.SecurityToken": "[3.3.3.3, 3.4.0)"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/AWSSDK.CognitoIdentity.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/AWSSDK.CognitoIdentity.dll": {}
+        }
+      },
+      "AWSSDK.CognitoSync/3.3.1.26": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.CognitoIdentity": "[3.3.2.17, 3.4.0)",
+          "AWSSDK.Core": "[3.3.19, 3.4.0)",
+          "SQLitePCLRaw.bundle_green": "1.0.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/AWSSDK.CognitoSync.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/AWSSDK.CognitoSync.dll": {}
+        }
+      },
+      "AWSSDK.Core/3.3.21": {
+        "type": "package",
+        "dependencies": {
+          "PCLCrypto": "1.0.2.15130",
+          "PCLStorage": "1.0.2"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/AWSSDK.Core.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/AWSSDK.Core.dll": {}
+        }
+      },
+      "AWSSDK.SecurityToken/3.3.3.3": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.3.19, 3.4.0)"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/AWSSDK.SecurityToken.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/AWSSDK.SecurityToken.dll": {}
+        }
+      },
+      "PCLCrypto/1.0.2.15130": {
+        "type": "package",
+        "dependencies": {
+          "Validation": "[2.0.6, 3.0.0)"
+        },
+        "compile": {
+          "lib/Xamarin.iOS/PCLCrypto.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS/PCLCrypto.dll": {}
+        }
+      },
+      "PCLStorage/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.dll": {},
+          "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll": {}
+        },
+        "runtime": {
+          "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.dll": {},
+          "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll": {}
+        }
+      },
+      "SQLitePCLRaw.bundle_green/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "1.0.1",
+          "SQLitePCLRaw.provider.sqlite3.ios_unified": "1.0.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_green.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_green.dll": {}
+        }
+      },
+      "SQLitePCLRaw.core/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.core.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.core.dll": {}
+        }
+      },
+      "SQLitePCLRaw.provider.sqlite3.ios_unified/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.core": "1.0.1"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
+        }
+      },
+      "Validation/2.0.6.15003": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10/Validation.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10/Validation.dll": {}
+        }
+      },
       "Xamarin.Forms/2.5.0.121934": {
         "type": "package",
         "compile": {
@@ -539,22 +999,310 @@
           "build/netstandard1.0/Xamarin.Forms.targets": {}
         }
       },
-      "Travlendar/1.0.0": {
+      "Travlendar.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Xamarin.Forms": "2.5.0.121934"
-        },
         "compile": {
-          "bin/placeholder/Travlendar.dll": {}
+          "bin/placeholder/Travlendar.Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Travlendar.dll": {}
+          "bin/placeholder/Travlendar.Core.dll": {}
         }
       }
     }
   },
   "libraries": {
+    "AWSSDK.CognitoIdentity/3.3.2.17": {
+      "sha512": "gY7aEPGzldLuxz30H1pH1nOmuU+LlpAKfP2zt25dl9/IJEEYz+wDCsDaCBBb/k7uhdDqwWh1klQfGTzdGdkyQw==",
+      "type": "package",
+      "path": "awssdk.cognitoidentity/3.3.2.17",
+      "files": [
+        "analyzers/dotnet/cs/AWSSDK.CognitoIdentity.CodeAnalysis.dll",
+        "awssdk.cognitoidentity.3.3.2.17.nupkg.sha512",
+        "awssdk.cognitoidentity.nuspec",
+        "lib/MonoAndroid10/AWSSDK.CognitoIdentity.XML",
+        "lib/MonoAndroid10/AWSSDK.CognitoIdentity.dll",
+        "lib/MonoTouch10/AWSSDK.CognitoIdentity.XML",
+        "lib/MonoTouch10/AWSSDK.CognitoIdentity.dll",
+        "lib/MonoTouch10/AWSSDK.CognitoIdentity.pdb",
+        "lib/Xamarin.iOS10/AWSSDK.CognitoIdentity.XML",
+        "lib/Xamarin.iOS10/AWSSDK.CognitoIdentity.dll",
+        "lib/net35/AWSSDK.CognitoIdentity.dll",
+        "lib/net35/AWSSDK.CognitoIdentity.pdb",
+        "lib/net35/AWSSDK.CognitoIdentity.xml",
+        "lib/net45/AWSSDK.CognitoIdentity.dll",
+        "lib/net45/AWSSDK.CognitoIdentity.pdb",
+        "lib/net45/AWSSDK.CognitoIdentity.xml",
+        "lib/netstandard1.3/AWSSDK.CognitoIdentity.dll",
+        "lib/netstandard1.3/AWSSDK.CognitoIdentity.pdb",
+        "lib/netstandard1.3/AWSSDK.CognitoIdentity.xml",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.CognitoIdentity.XML",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.CognitoIdentity.dll",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.CognitoIdentity.pdb",
+        "lib/uap/AWSSDK.CognitoIdentity.XML",
+        "lib/uap/AWSSDK.CognitoIdentity.dll",
+        "lib/uap/AWSSDK.CognitoIdentity.pdb",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "AWSSDK.CognitoSync/3.3.1.26": {
+      "sha512": "OV5yxZATvgl8qJmYiURTxnxn2gepIb8bKZh0oOWR0yys13xMSNHbGa0BToMhjBVGOVcCJysaO1vibkFjYEWriQ==",
+      "type": "package",
+      "path": "awssdk.cognitosync/3.3.1.26",
+      "files": [
+        "analyzers/dotnet/cs/AWSSDK.CognitoSync.CodeAnalysis.dll",
+        "awssdk.cognitosync.3.3.1.26.nupkg.sha512",
+        "awssdk.cognitosync.nuspec",
+        "lib/MonoAndroid10/AWSSDK.CognitoSync.XML",
+        "lib/MonoAndroid10/AWSSDK.CognitoSync.dll",
+        "lib/MonoTouch10/AWSSDK.CognitoSync.XML",
+        "lib/MonoTouch10/AWSSDK.CognitoSync.dll",
+        "lib/MonoTouch10/AWSSDK.CognitoSync.pdb",
+        "lib/Xamarin.iOS10/AWSSDK.CognitoSync.XML",
+        "lib/Xamarin.iOS10/AWSSDK.CognitoSync.dll",
+        "lib/net35/AWSSDK.CognitoSync.dll",
+        "lib/net35/AWSSDK.CognitoSync.pdb",
+        "lib/net35/AWSSDK.CognitoSync.xml",
+        "lib/net45/AWSSDK.CognitoSync.dll",
+        "lib/net45/AWSSDK.CognitoSync.pdb",
+        "lib/net45/AWSSDK.CognitoSync.xml",
+        "lib/netstandard1.3/AWSSDK.CognitoSync.dll",
+        "lib/netstandard1.3/AWSSDK.CognitoSync.pdb",
+        "lib/netstandard1.3/AWSSDK.CognitoSync.xml",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.CognitoSync.XML",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.CognitoSync.dll",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.CognitoSync.pdb",
+        "lib/uap/AWSSDK.CognitoSync.XML",
+        "lib/uap/AWSSDK.CognitoSync.dll",
+        "lib/uap/AWSSDK.CognitoSync.pdb",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "AWSSDK.Core/3.3.21": {
+      "sha512": "LhYxfgZ2gP+SxB+Hx85vfy43E4bVQjPYsF9h4F2XB+NqgqPINJIXEh9rQP2FmgTK2hUphlPiMzBCbabDSgdtgw==",
+      "type": "package",
+      "path": "awssdk.core/3.3.21",
+      "files": [
+        "awssdk.core.3.3.21.nupkg.sha512",
+        "awssdk.core.nuspec",
+        "lib/MonoAndroid10/AWSSDK.Core.XML",
+        "lib/MonoAndroid10/AWSSDK.Core.dll",
+        "lib/MonoAndroid10/AWSSDK.Core.pdb",
+        "lib/MonoTouch10/AWSSDK.Core.XML",
+        "lib/MonoTouch10/AWSSDK.Core.dll",
+        "lib/Xamarin.Mac20/AWSSDK.Core.XML",
+        "lib/Xamarin.Mac20/AWSSDK.Core.dll",
+        "lib/Xamarin.iOS10/AWSSDK.Core.XML",
+        "lib/Xamarin.iOS10/AWSSDK.Core.dll",
+        "lib/net35/AWSSDK.Core.dll",
+        "lib/net35/AWSSDK.Core.pdb",
+        "lib/net35/AWSSDK.Core.xml",
+        "lib/net45/AWSSDK.Core.dll",
+        "lib/net45/AWSSDK.Core.pdb",
+        "lib/net45/AWSSDK.Core.xml",
+        "lib/netstandard1.3/AWSSDK.Core.dll",
+        "lib/netstandard1.3/AWSSDK.Core.pdb",
+        "lib/netstandard1.3/AWSSDK.Core.xml",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.Core.XML",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.Core.dll",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.Core.pdb",
+        "lib/uap/AWSSDK.Core.XML",
+        "lib/uap/AWSSDK.Core.dll",
+        "lib/uap/AWSSDK.Core.pdb",
+        "lib/win8/AWSSDK.Core.XML",
+        "lib/win8/AWSSDK.Core.dll",
+        "lib/win8/AWSSDK.Core.pdb",
+        "lib/wp8/AWSSDK.Core.XML",
+        "lib/wp8/AWSSDK.Core.dll",
+        "lib/wp8/AWSSDK.Core.pdb",
+        "lib/wpa81/AWSSDK.Core.XML",
+        "lib/wpa81/AWSSDK.Core.dll",
+        "lib/wpa81/AWSSDK.Core.pdb",
+        "tools/account-management.ps1"
+      ]
+    },
+    "AWSSDK.SecurityToken/3.3.3.3": {
+      "sha512": "98WGEo7DEcIrI2LPqlVSUAbeVt72WEfEzFXk7kxhdvUT476eAQbNFs4XvtjEIPh54xlvwXW22BMe+dC2ufYezA==",
+      "type": "package",
+      "path": "awssdk.securitytoken/3.3.3.3",
+      "files": [
+        "analyzers/dotnet/cs/AWSSDK.SecurityToken.CodeAnalysis.dll",
+        "awssdk.securitytoken.3.3.3.3.nupkg.sha512",
+        "awssdk.securitytoken.nuspec",
+        "lib/MonoAndroid10/AWSSDK.SecurityToken.XML",
+        "lib/MonoAndroid10/AWSSDK.SecurityToken.dll",
+        "lib/MonoTouch10/AWSSDK.SecurityToken.XML",
+        "lib/MonoTouch10/AWSSDK.SecurityToken.dll",
+        "lib/MonoTouch10/AWSSDK.SecurityToken.pdb",
+        "lib/Xamarin.iOS10/AWSSDK.SecurityToken.XML",
+        "lib/Xamarin.iOS10/AWSSDK.SecurityToken.dll",
+        "lib/net35/AWSSDK.SecurityToken.dll",
+        "lib/net35/AWSSDK.SecurityToken.pdb",
+        "lib/net35/AWSSDK.SecurityToken.xml",
+        "lib/net45/AWSSDK.SecurityToken.dll",
+        "lib/net45/AWSSDK.SecurityToken.pdb",
+        "lib/net45/AWSSDK.SecurityToken.xml",
+        "lib/netstandard1.3/AWSSDK.SecurityToken.dll",
+        "lib/netstandard1.3/AWSSDK.SecurityToken.pdb",
+        "lib/netstandard1.3/AWSSDK.SecurityToken.xml",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.SecurityToken.XML",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.SecurityToken.dll",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.SecurityToken.pdb",
+        "lib/uap/AWSSDK.SecurityToken.XML",
+        "lib/uap/AWSSDK.SecurityToken.dll",
+        "lib/uap/AWSSDK.SecurityToken.pdb",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "PCLCrypto/1.0.2.15130": {
+      "sha512": "FbqU/mbtemApQTSLHTlLHmzR55oB9O8FJ6cEiQdJr2PMpzGM6k4yroHpJKBcl+bZ6SplTClK3SS6xxlskyLgHg==",
+      "type": "package",
+      "path": "pclcrypto/1.0.2.15130",
+      "files": [
+        "lib/Xamarin.iOS/PCLCrypto.dll",
+        "lib/Xamarin.iOS/PCLCrypto.xml",
+        "lib/monoandroid/PCLCrypto.dll",
+        "lib/monoandroid/PCLCrypto.xml",
+        "lib/monotouch/PCLCrypto.dll",
+        "lib/monotouch/PCLCrypto.xml",
+        "lib/net40-Client/PCLCrypto.dll",
+        "lib/net40-Client/PCLCrypto.xml",
+        "lib/portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/PCLCrypto.dll",
+        "lib/portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10/PCLCrypto.xml",
+        "lib/sl5/PCLCrypto.dll",
+        "lib/sl5/PCLCrypto.xml",
+        "lib/win81/PCLCrypto.dll",
+        "lib/win81/PCLCrypto.pri",
+        "lib/win81/PCLCrypto.xml",
+        "lib/wp8/PCLCrypto.dll",
+        "lib/wp8/PCLCrypto.xml",
+        "lib/wpa81/PCLCrypto.dll",
+        "lib/wpa81/PCLCrypto.pri",
+        "lib/wpa81/PCLCrypto.xml",
+        "pclcrypto.1.0.2.15130.nupkg.sha512",
+        "pclcrypto.nuspec"
+      ]
+    },
+    "PCLStorage/1.0.2": {
+      "sha512": "9If+1ZFCk3QaT/asfiL+J9FMnx2CTMrLCU8tDMUOI/aCGWGWl9vJ1/KcMkjf92op23ZknenvYJZBLDAqE3sFlg==",
+      "type": "package",
+      "path": "pclstorage/1.0.2",
+      "files": [
+        "lib/monoandroid/PCLStorage.Abstractions.dll",
+        "lib/monoandroid/PCLStorage.Abstractions.xml",
+        "lib/monoandroid/PCLStorage.dll",
+        "lib/monoandroid/PCLStorage.xml",
+        "lib/monotouch/PCLStorage.Abstractions.dll",
+        "lib/monotouch/PCLStorage.Abstractions.xml",
+        "lib/monotouch/PCLStorage.dll",
+        "lib/monotouch/PCLStorage.xml",
+        "lib/net45/PCLStorage.Abstractions.dll",
+        "lib/net45/PCLStorage.Abstractions.xml",
+        "lib/net45/PCLStorage.dll",
+        "lib/net45/PCLStorage.xml",
+        "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.dll",
+        "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.xml",
+        "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll",
+        "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.xml",
+        "lib/portable-net45+sl5+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.dll",
+        "lib/portable-net45+sl5+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.xml",
+        "lib/portable-net45+sl5+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.dll",
+        "lib/portable-net45+sl5+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.xml",
+        "lib/portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.dll",
+        "lib/portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.xml",
+        "lib/portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.dll",
+        "lib/portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.xml",
+        "lib/portable-win8+wpa81/PCLStorage.Abstractions.dll",
+        "lib/portable-win8+wpa81/PCLStorage.Abstractions.xml",
+        "lib/portable-win8+wpa81/PCLStorage.dll",
+        "lib/portable-win8+wpa81/PCLStorage.xml",
+        "lib/sl5/PCLStorage.Abstractions.dll",
+        "lib/sl5/PCLStorage.Abstractions.xml",
+        "lib/sl5/PCLStorage.dll",
+        "lib/sl5/PCLStorage.xml",
+        "lib/wp8/PCLStorage.Abstractions.dll",
+        "lib/wp8/PCLStorage.Abstractions.xml",
+        "lib/wp8/PCLStorage.dll",
+        "lib/wp8/PCLStorage.xml",
+        "pclstorage.1.0.2.nupkg.sha512",
+        "pclstorage.nuspec"
+      ]
+    },
+    "SQLitePCLRaw.bundle_green/1.0.1": {
+      "sha512": "OzRbh0SBB1c+Kwfm/oHsWT2eAP2XouRVr6hWDg/ckhzmigCmQm/5MooNd8KotiiQtIc8ukYqKL8hfX6NOwX2UQ==",
+      "type": "package",
+      "path": "sqlitepclraw.bundle_green/1.0.1",
+      "files": [
+        "build/wp8/SQLitePCLRaw.bundle_green.targets",
+        "build/wp80/arm/SQLitePCLRaw.batteries_green.dll",
+        "build/wp80/x86/SQLitePCLRaw.batteries_green.dll",
+        "lib/MonoAndroid/SQLitePCLRaw.batteries_green.dll",
+        "lib/MonoTouch/SQLitePCLRaw.batteries_green.dll",
+        "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_green.dll",
+        "lib/net35/SQLitePCLRaw.batteries_green.dll",
+        "lib/net40/SQLitePCLRaw.batteries_green.dll",
+        "lib/net45/SQLitePCLRaw.batteries_green.dll",
+        "lib/netcoreapp/SQLitePCLRaw.batteries_green.dll",
+        "lib/netstandard1.1/SQLitePCLRaw.batteries_green.dll",
+        "lib/portable-net40+sl5+netcore45+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_green.dll",
+        "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_green.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_green.dll",
+        "lib/uap10.0/SQLitePCLRaw.batteries_green.dll",
+        "lib/win8/SQLitePCLRaw.batteries_green.dll",
+        "lib/win81/SQLitePCLRaw.batteries_green.dll",
+        "lib/wp8/_._",
+        "lib/wpa81/SQLitePCLRaw.batteries_green.dll",
+        "sqlitepclraw.bundle_green.1.0.1.nupkg.sha512",
+        "sqlitepclraw.bundle_green.nuspec"
+      ]
+    },
+    "SQLitePCLRaw.core/1.0.1": {
+      "sha512": "ih45uNC9JVk3xxkxuy1vGl6Ukn6KJkOeEXQcMoxCaGg4OrcYZQFcm9/Sq5WTElGZJ/LynpV6/OrIaLqrmsC8eQ==",
+      "type": "package",
+      "path": "sqlitepclraw.core/1.0.1",
+      "files": [
+        "lib/MonoAndroid/SQLitePCLRaw.core.dll",
+        "lib/MonoTouch/SQLitePCLRaw.core.dll",
+        "lib/Xamarin.iOS10/SQLitePCLRaw.core.dll",
+        "lib/net35/SQLitePCLRaw.core.dll",
+        "lib/net40/SQLitePCLRaw.core.dll",
+        "lib/net45/SQLitePCLRaw.core.dll",
+        "lib/netstandard1.0/SQLitePCLRaw.core.dll",
+        "lib/netstandard1.1/SQLitePCLRaw.core.dll",
+        "lib/portable-net40+sl5+netcore45+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.core.dll",
+        "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.core.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.core.dll",
+        "lib/uap10.0/SQLitePCLRaw.core.dll",
+        "lib/win8/SQLitePCLRaw.core.dll",
+        "lib/win81/SQLitePCLRaw.core.dll",
+        "lib/wpa81/SQLitePCLRaw.core.dll",
+        "sqlitepclraw.core.1.0.1.nupkg.sha512",
+        "sqlitepclraw.core.nuspec"
+      ]
+    },
+    "SQLitePCLRaw.provider.sqlite3.ios_unified/1.0.1": {
+      "sha512": "8MwRJq7sTbDXf+gfhLg7RZhQ6s1y4uB2azCJgKyFNf4+DTzUxfscndyNW8Xk7i2XIu0hPm6mMpuBbi79YAJUaw==",
+      "type": "package",
+      "path": "sqlitepclraw.provider.sqlite3.ios_unified/1.0.1",
+      "files": [
+        "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll",
+        "sqlitepclraw.provider.sqlite3.ios_unified.1.0.1.nupkg.sha512",
+        "sqlitepclraw.provider.sqlite3.ios_unified.nuspec"
+      ]
+    },
+    "Validation/2.0.6.15003": {
+      "sha512": "8vgCOG9mPeOd3xwyL20OT9RyOKq9PmJb0Iltzwj6eay38Cq2v6ojvpSDbc+sc6YXit+iAVyyvHTS29rBvDpdDQ==",
+      "type": "package",
+      "path": "validation/2.0.6.15003",
+      "files": [
+        "lib/portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10/Validation.dll",
+        "lib/portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10/Validation.xml",
+        "validation.2.0.6.15003.nupkg.sha512",
+        "validation.nuspec"
+      ]
+    },
     "Xamarin.Forms/2.5.0.121934": {
       "sha512": "H3Gh6nvximMk9i8LdfhPnARo+kEsh8hDXWRboiUPb1r22gkIGA8i8tbnRcSXJWk4fCW/kdMTom6SFN0L+NhItw==",
       "type": "package",
@@ -741,15 +1489,18 @@
         "xamarin.forms.nuspec"
       ]
     },
-    "Travlendar/1.0.0": {
+    "Travlendar.Core/1.0.0": {
       "type": "project",
-      "path": "../Travlendar/Travlendar.csproj",
-      "msbuildProject": "../Travlendar/Travlendar.csproj"
+      "path": "../Travlendar.Core/Travlendar.Core.csproj",
+      "msbuildProject": "../Travlendar.Core/Travlendar.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
-      "Travlendar >= 1.0.0",
+      "AWSSDK.CognitoIdentity >= 3.3.2.17",
+      "AWSSDK.CognitoSync >= 3.3.1.26",
+      "AWSSDK.Core >= 3.3.21",
+      "Travlendar.Core >= 1.0.0",
       "Xamarin.Forms >= 2.5.0.121934"
     ]
   },
@@ -775,14 +1526,13 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\Hichame\\Documents\\FrighettoGivoliYessou\\APP\\Nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Hichame\\Documents\\FrighettoGivoliYessou\\APP\\Travlendar\\Travlendar\\Travlendar.csproj": {
-              "projectPath": "C:\\Users\\Hichame\\Documents\\FrighettoGivoliYessou\\APP\\Travlendar\\Travlendar\\Travlendar.csproj"
+            "C:\\Users\\Hichame\\Documents\\FrighettoGivoliYessou\\APP\\Travlendar\\Travlendar.Core\\Travlendar.Core.csproj": {
+              "projectPath": "C:\\Users\\Hichame\\Documents\\FrighettoGivoliYessou\\APP\\Travlendar\\Travlendar.Core\\Travlendar.Core.csproj"
             }
           }
         }
@@ -791,6 +1541,18 @@
     "frameworks": {
       "xamarinios10": {
         "dependencies": {
+          "AWSSDK.CognitoIdentity": {
+            "target": "Package",
+            "version": "[3.3.2.17, )"
+          },
+          "AWSSDK.CognitoSync": {
+            "target": "Package",
+            "version": "[3.3.1.26, )"
+          },
+          "AWSSDK.Core": {
+            "target": "Package",
+            "version": "[3.3.21, )"
+          },
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[2.5.0.121934, )"
@@ -809,5 +1571,20 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "PCLCrypto 1.0.2.15130 depends on Validation (>= 2.0.6 && < 3.0.0) but Validation 2.0.6 was not found. An approximate best match of Validation 2.0.6.15003 was resolved.",
+      "libraryId": "Validation",
+      "targetGraphs": [
+        "Xamarin.iOS,Version=v1.0",
+        "Xamarin.iOS,Version=v1.0/win",
+        "Xamarin.iOS,Version=v1.0/win-x64",
+        "Xamarin.iOS,Version=v1.0/win-x86"
+      ]
+    }
+  ]
 }
