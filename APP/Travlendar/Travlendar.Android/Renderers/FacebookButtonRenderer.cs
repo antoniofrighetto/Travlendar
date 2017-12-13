@@ -50,6 +50,9 @@ namespace Travlendar.Renderers.Droid
                         fbArgs.UserId = loginResult.AccessToken.UserId;
                         fbArgs.AccessToken = loginResult.AccessToken.Token;
                         var expires = loginResult.AccessToken.Expires;
+
+                        //Integrating NodaTime Lib
+
                         //TODO better way to retrive Java.Util.Date and cast it to System.DateTime type
                         fbArgs.TokenExpiration = new DateTime (expires.Year, expires.Month, expires.Day, expires.Hours, expires.Minutes, expires.Seconds);
                     }

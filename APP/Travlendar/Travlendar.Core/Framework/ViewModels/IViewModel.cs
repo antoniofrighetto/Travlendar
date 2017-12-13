@@ -1,4 +1,4 @@
-﻿using Travlendar.AppCore.Navigator;
+﻿using Xamarin.Forms;
 
 namespace Travlendar.Framework.ViewModels
 {
@@ -7,7 +7,7 @@ namespace Travlendar.Framework.ViewModels
     /// </summary>
     public interface IViewModel
     {
-        INavigator Navigator { get; set; }
+        INavigation Navigation { get; set; }
         /// <summary>
         /// Tag that represents this ViewModel ID for searching purpose in the application stack & fragment Manager
         /// </summary>

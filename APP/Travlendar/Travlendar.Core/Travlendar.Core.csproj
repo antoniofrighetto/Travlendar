@@ -43,6 +43,7 @@
     <Compile Include="App.cs" />
     <Compile Include="AppCore\Model\CognitoSyncModel.cs" />
     <Compile Include="AppCore\Navigator\INavigator.cs" />
+    <Compile Include="AppCore\Pages\CalendarPage.cs" />
     <Compile Include="AppCore\Pages\LoginPage.cs" />
     <Compile Include="AppCore\Renderers\FacebookButton.cs" />
     <Compile Include="AppCore\ViewModels\CognitoSyncViewModel.cs" />

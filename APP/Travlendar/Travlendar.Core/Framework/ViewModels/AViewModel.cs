@@ -1,12 +1,14 @@
 ﻿using System.Threading.Tasks;
-using Travlendar.AppCore.Navigator;
 using Travlendar.Framework.Events;
+using Xamarin.Forms;
 
 namespace Travlendar.Framework.ViewModels
 {
     public abstract class AViewModel<T> : IViewModel
     {
-        public INavigator Navigator { get; set; }
+        private INavigation _navigation;
+        public INavigation Navigation { get => _navigation; set => _navigation = value; }
+
         protected string _tag;
 
         public virtual string Tag

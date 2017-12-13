@@ -1,4 +1,6 @@
-﻿using Travlendar.Dependencies;
+﻿using Travlendar.AppCore.ViewModels;
+using Travlendar.Core.AppCore.Pages;
+using Travlendar.Dependencies;
 using Travlendar.Renderers;
 using Xamarin.Forms;
 
@@ -6,8 +8,11 @@ namespace Travlendar.Pages
 {
     public class LoginPage : ContentPage
     {
+        public CognitoSyncViewModel cognitoSyncViewModel;
+
         public LoginPage ()
         {
+            cognitoSyncViewModel = new CognitoSyncViewModel (this.Navigation);
             Title = "Login";
             BackgroundColor = Color.White;
             StackLayout layout = new StackLayout
@@ -55,6 +60,11 @@ namespace Travlendar.Pages
                 //Logging in AWS Cognito Federal Entities Pool
                 cognitoSyncViewModel.AWSLogin (Constants.FB_PROVIDER, e.AccessToken);
 
+                //TODO to be changed to CalendarPage when ready
+                await Navigation.PushAsync (new CalendarPage ());
+                //var message = string.Format ("You have succesfully access to your facebook account. Data returned:\n\nUserId: {0}\n\nAccess Token: {1}\n\nExpiration Date: {2}",
+                //    e.UserId, e.AccessToken, e.TokenExpiration);
+                //await DisplayAlert ("Success", message, "Ok");
             }
             else
             {
