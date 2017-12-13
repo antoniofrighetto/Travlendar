@@ -42,3 +42,5 @@ _ReSharper*/
 
 # Office Temp Files
 ~$*
+*.ide-wal
+*.ide-shm
