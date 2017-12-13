@@ -1505,34 +1505,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Hichame\\.nuget\\packages\\": {}
+    "/Users/antoniofrighetto/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hichame\\Documents\\FrighettoGivoliYessou\\APP\\Travlendar\\Travlendar.iOS\\Travlendar.iOS.csproj",
+      "projectUniqueName": "/Users/antoniofrighetto/Documents/Anno IV/Software Engineering II/SE2Project/APP/Travlendar/Travlendar.iOS/Travlendar.iOS.csproj",
       "projectName": "Travlendar.iOS",
-      "projectPath": "C:\\Users\\Hichame\\Documents\\FrighettoGivoliYessou\\APP\\Travlendar\\Travlendar.iOS\\Travlendar.iOS.csproj",
-      "packagesPath": "C:\\Users\\Hichame\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hichame\\Documents\\FrighettoGivoliYessou\\APP\\Travlendar\\Travlendar.iOS\\obj\\",
+      "projectPath": "/Users/antoniofrighetto/Documents/Anno IV/Software Engineering II/SE2Project/APP/Travlendar/Travlendar.iOS/Travlendar.iOS.csproj",
+      "packagesPath": "/Users/antoniofrighetto/.nuget/packages/",
+      "outputPath": "/Users/antoniofrighetto/Documents/Anno IV/Software Engineering II/SE2Project/APP/Travlendar/Travlendar.iOS/obj",
       "projectStyle": "PackageReference",
-      "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\Hichame\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/antoniofrighetto/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "xamarinios10"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://nuget.syncfusion.com/nuget_xamarin/nuget/getsyncfusionpackages/xamarin/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Hichame\\Documents\\FrighettoGivoliYessou\\APP\\Travlendar\\Travlendar.Core\\Travlendar.Core.csproj": {
-              "projectPath": "C:\\Users\\Hichame\\Documents\\FrighettoGivoliYessou\\APP\\Travlendar\\Travlendar.Core\\Travlendar.Core.csproj"
+            "/Users/antoniofrighetto/Documents/Anno IV/Software Engineering II/SE2Project/APP/Travlendar/Travlendar.Core/Travlendar.Core.csproj": {
+              "projectPath": "/Users/antoniofrighetto/Documents/Anno IV/Software Engineering II/SE2Project/APP/Travlendar/Travlendar.Core/Travlendar.Core.csproj"
             }
           }
         }
@@ -1543,19 +1541,19 @@
         "dependencies": {
           "AWSSDK.CognitoIdentity": {
             "target": "Package",
-            "version": "[3.3.2.17, )"
+            "version": "3.3.2.17"
           },
           "AWSSDK.CognitoSync": {
             "target": "Package",
-            "version": "[3.3.1.26, )"
+            "version": "3.3.1.26"
           },
           "AWSSDK.Core": {
             "target": "Package",
-            "version": "[3.3.21, )"
+            "version": "3.3.21"
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[2.5.0.121934, )"
+            "version": "2.5.0.121934"
           }
         }
       }
