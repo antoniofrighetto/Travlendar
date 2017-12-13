@@ -5,6 +5,7 @@ using Amazon.CognitoSync.SyncManager;
 using System.Collections.Generic;
 using Travlendar.AppCore.Model;
 using Travlendar.Framework.ViewModels;
+using Xamarin.Forms;
 
 namespace Travlendar.AppCore.ViewModels
 {
@@ -14,11 +15,18 @@ namespace Travlendar.AppCore.ViewModels
         CognitoSyncManager syncManager;
         Dictionary<string, Dataset> datasets;
 
-        public override void Start ()
+        public CognitoSyncViewModel (INavigation navigation)
         {
-            base.Start ();
+            this.Navigation = navigation;
+
             credentials = new CognitoAWSCredentials (Constants.AWS_IDENTITY_POOL_ID, RegionEndpoint.EUWest1);
             syncManager = new CognitoSyncManager (credentials, new AmazonCognitoSyncConfig { RegionEndpoint = RegionEndpoint.EUWest1 });
+            datasets = new Dictionary<string, Dataset> ();
+        }
+
+        internal void AWSLogin (string providerName, string accessToken)
+        {
+            credentials.AddLogin (providerName, accessToken);
         }
 
         public void CreateDataset (string name)
@@ -41,8 +49,12 @@ namespace Travlendar.AppCore.ViewModels
             Dataset local;
             if ( !datasets.TryGetValue (dataset, out local) )
                 throw new System.Exception (string.Format ("Dataset: {0} not found.", dataset));
+
             if ( !string.IsNullOrEmpty (key) && !string.IsNullOrEmpty (value) )
+            {
                 local.Put (key, value);
+                local.SynchronizeOnConnectivity ();
+            }
         }
 
         public string ReadDataset (string dataset, string key)
@@ -68,14 +80,21 @@ namespace Travlendar.AppCore.ViewModels
                 throw new System.Exception (string.Format ("Dataset: {0} not found.", dataset));
 
             if ( !string.IsNullOrEmpty (key) && !string.IsNullOrEmpty (value) )
+            {
                 local.Remove (key);
+                local.SynchronizeOnConnectivity ();
+            }
         }
 
         public void RemoveDataset (string dataset)
         {
             Dataset local;
+
             if ( !datasets.TryGetValue (dataset, out local) )
                 throw new System.Exception (string.Format ("Dataset: {0} not found.", dataset));
+
+            local.Delete ();
+            local.SynchronizeOnConnectivity ();
 
             datasets.Remove (dataset);
         }
