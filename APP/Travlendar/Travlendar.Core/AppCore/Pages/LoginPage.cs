@@ -52,13 +52,9 @@ namespace Travlendar.Pages
 
             if ( success )
             {
-                var message = string.Format ("You have succesfully access to your facebook account. Data returned:\n\nUserId: {0}\n\nAccess Token: {1}\n\nExpiration Date: {2}",
-                    e.UserId, e.AccessToken, e.TokenExpiration);
-                await DisplayAlert ("Success", message, "Ok");
+                //Logging in AWS Cognito Federal Entities Pool
+                cognitoSyncViewModel.AWSLogin (Constants.FB_PROVIDER, e.AccessToken);
 
-                /*
-                    HANDLE HERE THE AWS SDK COGNITO LOGIN    
-             */
             }
             else
             {
