@@ -7,7 +7,7 @@ namespace Travlendar
         public App ()
         {
             // The root page of your application
-            MainPage = new Pages.LoginPage ();
+            MainPage = new NavigationPage (new Pages.LoginPage ());
         }
 
         protected override void OnStart ()
