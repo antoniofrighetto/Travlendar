@@ -456,6 +456,13 @@
           "build/MonoAndroid80/Xamarin.Android.Support.Vector.Drawable.targets": {}
         }
       },
+      "Xamarin.Build.Download/0.4.2": {
+        "type": "package",
+        "build": {
+          "build/Xamarin.Build.Download.props": {},
+          "build/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.Facebook/4.4.0.2": {
         "type": "package",
         "dependencies": {
@@ -500,6 +507,86 @@
         "build": {
           "build/netstandard1.0/Xamarin.Forms.props": {},
           "build/netstandard1.0/Xamarin.Forms.targets": {}
+        }
+      },
+      "Xamarin.Forms.Maps/2.5.0.121934": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.v7.AppCompat": "25.4.0.2",
+          "Xamarin.Android.Support.v7.MediaRouter": "25.4.0.2",
+          "Xamarin.Forms": "2.5.0.121934",
+          "Xamarin.GooglePlayServices.Maps": "42.1021.1"
+        },
+        "compile": {
+          "lib/MonoAndroid10/Xamarin.Forms.Maps.Android.dll": {},
+          "lib/MonoAndroid10/Xamarin.Forms.Maps.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Xamarin.Forms.Maps.Android.dll": {},
+          "lib/MonoAndroid10/Xamarin.Forms.Maps.dll": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Base/42.1021.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Basement": "[42.1021.1]",
+          "Xamarin.GooglePlayServices.Tasks": "[42.1021.1]"
+        },
+        "compile": {
+          "lib/MonoAndroid70/Xamarin.GooglePlayServices.Base.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid70/Xamarin.GooglePlayServices.Base.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid70/Xamarin.GooglePlayServices.Base.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Basement/42.1021.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.v4": "25.1.0",
+          "Xamarin.Build.Download": "0.4.2"
+        },
+        "compile": {
+          "lib/MonoAndroid70/Xamarin.GooglePlayServices.Basement.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid70/Xamarin.GooglePlayServices.Basement.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid70/Xamarin.GooglePlayServices.Basement.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Maps/42.1021.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Base": "[42.1021.1]",
+          "Xamarin.GooglePlayServices.Basement": "[42.1021.1]"
+        },
+        "compile": {
+          "lib/MonoAndroid70/Xamarin.GooglePlayServices.Maps.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid70/Xamarin.GooglePlayServices.Maps.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid70/Xamarin.GooglePlayServices.Maps.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Tasks/42.1021.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Basement": "[42.1021.1]"
+        },
+        "compile": {
+          "lib/MonoAndroid70/Xamarin.GooglePlayServices.Tasks.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid70/Xamarin.GooglePlayServices.Tasks.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid70/Xamarin.GooglePlayServices.Tasks.targets": {}
         }
       },
       "Travlendar.Core/1.0.0": {
@@ -1063,6 +1150,22 @@
         "xamarin.android.support.vector.drawable.nuspec"
       ]
     },
+    "Xamarin.Build.Download/0.4.2": {
+      "sha512": "ubHPHMJ7RrfrsG4kHEy925XDMb+P41WOI8Bxkm3RmecGjj1Ew/u6rpWAZSgLv7FxZbmfvl5xAKUJ4onCycvw5g==",
+      "type": "package",
+      "path": "xamarin.build.download/0.4.2",
+      "files": [
+        "THIRD-PARTY-NOTICES.txt",
+        "build/Mono.Cecil.dll",
+        "build/Newtonsoft.Json.dll",
+        "build/System.Net.Http.Formatting.dll",
+        "build/Xamarin.Build.Download.dll",
+        "build/Xamarin.Build.Download.props",
+        "build/Xamarin.Build.Download.targets",
+        "xamarin.build.download.0.4.2.nupkg.sha512",
+        "xamarin.build.download.nuspec"
+      ]
+    },
     "Xamarin.Facebook/4.4.0.2": {
       "sha512": "Vm25QoLizIh5/bmYN5U4e2o6fsjLUKfXHDb6lIwW7+v49OT3/mvvja9MjcUJFBMRbauT4rHxW+ZvqQVjyDyPqQ==",
       "type": "package",
@@ -1268,6 +1371,118 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "Xamarin.Forms.Maps/2.5.0.121934": {
+      "sha512": "AtrJeMU/Zaua70826Lx7t5s4885uiW+B+6QXe2IoNwMKc9nGOrG6yJv+C+/mGRx063jVgCsVhuG3/BDrmQc2nQ==",
+      "type": "package",
+      "path": "xamarin.forms.maps/2.5.0.121934",
+      "files": [
+        "build/win81/ARM/Xamarin.Forms.Maps.WinRT.Tablet.dll",
+        "build/win81/ARM/Xamarin.Forms.Maps.WinRT.Tablet.pri",
+        "build/win81/ARM/Xamarin.Forms.Platform.WinRT.Tablet.dll",
+        "build/win81/ARM/Xamarin.Forms.Platform.WinRT.Tablet.pri",
+        "build/win81/ARM/Xamarin.Forms.Platform.WinRT.Tablet/FormsTextBoxStyle.xbf",
+        "build/win81/ARM/Xamarin.Forms.Platform.WinRT.Tablet/Resources.xbf",
+        "build/win81/ARM/Xamarin.Forms.Platform.WinRT.Tablet/TabletResources.xbf",
+        "build/win81/ARM/Xamarin.Forms.Platform.WinRT.Tablet/Xamarin.Forms.Platform.WinRT.Tablet.xr.xml",
+        "build/win81/Xamarin.Forms.Maps.props",
+        "build/win81/Xamarin.Forms.Maps.targets",
+        "build/win81/x64/Xamarin.Forms.Maps.WinRT.Tablet.dll",
+        "build/win81/x64/Xamarin.Forms.Maps.WinRT.Tablet.pri",
+        "build/win81/x64/Xamarin.Forms.Platform.WinRT.Tablet.dll",
+        "build/win81/x64/Xamarin.Forms.Platform.WinRT.Tablet.pri",
+        "build/win81/x64/Xamarin.Forms.Platform.WinRT.Tablet/FormsTextBoxStyle.xbf",
+        "build/win81/x64/Xamarin.Forms.Platform.WinRT.Tablet/Resources.xbf",
+        "build/win81/x64/Xamarin.Forms.Platform.WinRT.Tablet/TabletResources.xbf",
+        "build/win81/x64/Xamarin.Forms.Platform.WinRT.Tablet/Xamarin.Forms.Platform.WinRT.Tablet.xr.xml",
+        "build/win81/x86/Xamarin.Forms.Maps.WinRT.Tablet.dll",
+        "build/win81/x86/Xamarin.Forms.Maps.WinRT.Tablet.pri",
+        "build/win81/x86/Xamarin.Forms.Platform.WinRT.Tablet.dll",
+        "build/win81/x86/Xamarin.Forms.Platform.WinRT.Tablet.pri",
+        "build/win81/x86/Xamarin.Forms.Platform.WinRT.Tablet/FormsTextBoxStyle.xbf",
+        "build/win81/x86/Xamarin.Forms.Platform.WinRT.Tablet/Resources.xbf",
+        "build/win81/x86/Xamarin.Forms.Platform.WinRT.Tablet/TabletResources.xbf",
+        "build/win81/x86/Xamarin.Forms.Platform.WinRT.Tablet/Xamarin.Forms.Platform.WinRT.Tablet.xr.xml",
+        "lib/MonoAndroid10/Design/Xamarin.Forms.Maps.Design.dll",
+        "lib/MonoAndroid10/Xamarin.Forms.Maps.Android.dll",
+        "lib/MonoAndroid10/Xamarin.Forms.Maps.dll",
+        "lib/MonoAndroid10/Xamarin.Forms.Maps.xml",
+        "lib/WP80/Design/Xamarin.Forms.Maps.Design.dll",
+        "lib/WP80/Xamarin.Forms.Maps.WP8.dll",
+        "lib/WP80/Xamarin.Forms.Maps.dll",
+        "lib/WP80/Xamarin.Forms.Maps.xml",
+        "lib/Xamarin.Mac/Xamarin.Forms.Maps.dll",
+        "lib/Xamarin.Mac/Xamarin.Forms.Maps.macOS.dll",
+        "lib/Xamarin.Mac/Xamarin.Forms.Maps.xml",
+        "lib/Xamarin.iOS10/Design/Xamarin.Forms.Maps.Design.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Maps.xml",
+        "lib/netstandard1.0/Xamarin.Forms.Maps.Design.dll",
+        "lib/netstandard1.0/Xamarin.Forms.Maps.dll",
+        "lib/netstandard1.0/Xamarin.Forms.Maps.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Design/Xamarin.Forms.Maps.Design.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Maps.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Xamarin.Forms.Maps.xml",
+        "lib/uap10.0/Design/Xamarin.Forms.Maps.Design.dll",
+        "lib/uap10.0/Xamarin.Forms.Maps.UWP.dll",
+        "lib/uap10.0/Xamarin.Forms.Maps.UWP.pri",
+        "lib/uap10.0/Xamarin.Forms.Maps.dll",
+        "lib/win81/Design/Xamarin.Forms.Maps.Design.dll",
+        "lib/win81/Xamarin.Forms.Maps.dll",
+        "lib/win81/Xamarin.Forms.Maps.xml",
+        "lib/wpa81/Design/Xamarin.Forms.Maps.Design.dll",
+        "lib/wpa81/Xamarin.Forms.Maps.WinRT.Phone.dll",
+        "lib/wpa81/Xamarin.Forms.Maps.WinRT.Phone.pri",
+        "lib/wpa81/Xamarin.Forms.Maps.dll",
+        "xamarin.forms.maps.2.5.0.121934.nupkg.sha512",
+        "xamarin.forms.maps.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Base/42.1021.1": {
+      "sha512": "BtzfOXEkHdaQ8NGc8TpAYmjGAf27zWyxMS9dz+YGU2S2oR09KPm/dQ7PzHNlOT90CQLI4JjzKTxfQ7IB5DBsJA==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.base/42.1021.1",
+      "files": [
+        "build/MonoAndroid70/Xamarin.GooglePlayServices.Base.targets",
+        "lib/MonoAndroid70/Xamarin.GooglePlayServices.Base.dll",
+        "xamarin.googleplayservices.base.42.1021.1.nupkg.sha512",
+        "xamarin.googleplayservices.base.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Basement/42.1021.1": {
+      "sha512": "jtKUaz3wGQevuewY9i7FYRvfSIZhBHymTZwTx1agr6G2hg6Xx06LkRYICULHTRjUHa+Ee/J44ejf3+hMd2WBeg==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.basement/42.1021.1",
+      "files": [
+        "build/MonoAndroid70/Xamarin.GooglePlayServices.Basement.targets",
+        "build/MonoAndroid70/Xamarin.GooglePlayServices.Tasks.dll",
+        "lib/MonoAndroid70/Xamarin.GooglePlayServices.Basement.dll",
+        "xamarin.googleplayservices.basement.42.1021.1.nupkg.sha512",
+        "xamarin.googleplayservices.basement.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Maps/42.1021.1": {
+      "sha512": "h/t3VRjDzSUqFw1IfZzeut18+tuzAsHBXtPhrnxB2Bt1izxC7JUQOAxeDR8Y49mVH4qQZwOMh/aushGeaSdmXQ==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.maps/42.1021.1",
+      "files": [
+        "build/MonoAndroid70/Xamarin.GooglePlayServices.Maps.targets",
+        "lib/MonoAndroid70/Xamarin.GooglePlayServices.Maps.dll",
+        "xamarin.googleplayservices.maps.42.1021.1.nupkg.sha512",
+        "xamarin.googleplayservices.maps.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Tasks/42.1021.1": {
+      "sha512": "en5d21P3pIGGWtmqcygJsX74mNX8VZqOkj/ajwrwyIK8EOsbWLI9Cw0+wdE3OYGEwk+74ckX1icLT/zTspf8kg==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.tasks/42.1021.1",
+      "files": [
+        "build/MonoAndroid70/Xamarin.GooglePlayServices.Tasks.targets",
+        "lib/MonoAndroid70/Xamarin.GooglePlayServices.Tasks.dll",
+        "xamarin.googleplayservices.tasks.42.1021.1.nupkg.sha512",
+        "xamarin.googleplayservices.tasks.nuspec"
+      ]
+    },
     "Travlendar.Core/1.0.0": {
       "type": "project",
       "path": "../Travlendar.Core/Travlendar.Core.csproj",
@@ -1301,7 +1516,8 @@
       "Xamarin.Android.Support.v7.Palette >= 26.1.0.1",
       "Xamarin.Android.Support.v7.RecyclerView >= 26.1.0.1",
       "Xamarin.Facebook >= 4.4.0.2",
-      "Xamarin.Forms >= 2.5.0.121934"
+      "Xamarin.Forms >= 2.5.0.121934",
+      "Xamarin.Forms.Maps >= 2.5.0.121934"
     ]
   },
   "packageFolders": {
@@ -1326,7 +1542,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.telerik.com/nuget": {}
       },
       "frameworks": {
         "monoandroid80": {
@@ -1438,6 +1655,10 @@
             "version": "[4.4.0.2, )"
           },
           "Xamarin.Forms": {
+            "target": "Package",
+            "version": "[2.5.0.121934, )"
+          },
+          "Xamarin.Forms.Maps": {
             "target": "Package",
             "version": "[2.5.0.121934, )"
           }
