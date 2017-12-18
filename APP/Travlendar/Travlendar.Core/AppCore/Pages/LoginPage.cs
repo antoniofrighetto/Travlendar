@@ -9,34 +9,51 @@ namespace Travlendar.Pages
     public class LoginPage : ContentPage
     {
         public CognitoSyncViewModel cognitoSyncViewModel;
+        public Image backgroundImage;
+        public RelativeLayout relativeLayout;
+        public StackLayout layout;
+        public Label title;
+        public FacebookButton fbButton;
 
         public LoginPage ()
         {
             cognitoSyncViewModel = new CognitoSyncViewModel (this.Navigation);
-            Title = "Login";
-            BackgroundColor = Color.White;
-            StackLayout layout = new StackLayout
+
+            relativeLayout = new RelativeLayout
             {
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                Padding = new Thickness (0, Device.OnPlatform (20, 0, 0), 0, 0)
+                VerticalOptions = LayoutOptions.Fill
             };
-            Label lblTitle = new Label
+
+            backgroundImage = new Image
             {
-                Text = "Facebook Login",
-                FontAttributes = FontAttributes.Bold,
-                FontSize = Device.GetNamedSize (NamedSize.Medium, typeof (Label)),
-                VerticalOptions = LayoutOptions.StartAndExpand,
-                HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.Black
+                Source = "login_background.jpg"
             };
-            FacebookButton fbButton = new FacebookButton ();
-            fbButton.HeightRequest = 60;
-            fbButton.VerticalOptions = LayoutOptions.Start;
+
+            title = new Label ()
+            {
+                Text = "Travlendar+",
+                FontSize = 32,
+                TextColor = Color.White
+            };
+
+            layout = new StackLayout
+            {
+                VerticalOptions = LayoutOptions.Fill,
+                BackgroundColor = Color.White
+            };
+
+            fbButton = new FacebookButton ();
+            fbButton.HorizontalOptions = LayoutOptions.Center;
+            fbButton.HeightRequest = 50;
+            fbButton.VerticalOptions = LayoutOptions.Center;
             //Add your event handler for the OnLogin to operate with the Facebook credentials comming from SDK
+            fbButton.OnLogin -= LoginWithFacebook;
             fbButton.OnLogin += LoginWithFacebook;
 
-            //Adding views to layout
-            layout.Children.Add (lblTitle);
+            relativeLayout.Children.Add (backgroundImage, Constraint.Constant (0), Constraint.Constant (0));
+            relativeLayout.Children.Add (title, Constraint.RelativeToParent (parent => (parent.Width / 2) - 75), Constraint.RelativeToParent (parent => parent.Height / 2));
+
+            layout.Children.Add (relativeLayout);
             layout.Children.Add (fbButton);
             this.Content = layout;
         }
@@ -60,8 +77,9 @@ namespace Travlendar.Pages
                 //Logging in AWS Cognito Federal Entities Pool
                 cognitoSyncViewModel.AWSLogin (Constants.FB_PROVIDER, e.AccessToken);
 
-                //TODO to be changed to CalendarPage when ready
-                await Navigation.PushAsync (new CalendarPage ());
+                var page = new CalendarPage ();
+                NavigationPage.SetHasNavigationBar (page, false);
+                await Navigation.PushAsync (page);
                 //var message = string.Format ("You have succesfully access to your facebook account. Data returned:\n\nUserId: {0}\n\nAccess Token: {1}\n\nExpiration Date: {2}",
                 //    e.UserId, e.AccessToken, e.TokenExpiration);
                 //await DisplayAlert ("Success", message, "Ok");

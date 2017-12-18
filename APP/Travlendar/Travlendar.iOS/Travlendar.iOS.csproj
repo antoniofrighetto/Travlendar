@@ -129,6 +129,9 @@
       <Version>3.3.21</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
+    <PackageReference Include="Xamarin.Forms.Maps">
+      <Version>2.5.0.121934</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Travlendar.Core\Travlendar.Core.csproj">

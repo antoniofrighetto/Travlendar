@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Travlendar.Pages;
+using Xamarin.Forms;
 
 namespace Travlendar
 {
@@ -7,7 +8,9 @@ namespace Travlendar
         public App ()
         {
             // The root page of your application
-            MainPage = new NavigationPage (new Pages.LoginPage ());
+            var page = new LoginPage ();
+            NavigationPage.SetHasNavigationBar (page, false);
+            MainPage = new NavigationPage (page);
         }
 
         protected override void OnStart ()

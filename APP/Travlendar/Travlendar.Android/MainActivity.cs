@@ -14,6 +14,7 @@ using Xamarin.Facebook;
 namespace Travlendar.Droid
 {
     [Activity (Label = "Travlendar", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
     {
         public static ICallbackManager CallbackManager;
@@ -23,20 +24,22 @@ namespace Travlendar.Droid
 
             global::Xamarin.Forms.Forms.Init (this, bundle);
 
-            //Init FacebookSDK with the application context, then init an instance of CallbackManager
+            //FacebookSDK Config
             FacebookSdk.SdkInitialize (this.ApplicationContext);
             CallbackManager = CallbackManagerFactory.Create ();
 
+            //AWS SDK Config
             var loggingConfig = AWSConfigs.LoggingConfig;
             loggingConfig.LogMetrics = true;
             loggingConfig.LogResponses = ResponseLoggingOption.Always;
             loggingConfig.LogMetricsFormat = LogMetricsFormatOption.JSON;
             loggingConfig.LogTo = LoggingOptions.SystemDiagnostics;
-
             AWSConfigs.AWSRegion = "eu-west-1";
-            //If you are planning to use Parse to authenticate your user via FacebookLogin, configurate here
-            //Parse.ParseClient.Initialize("<YOUR .NET ID>", "<YOUR PROJECT ID>");
-            //Parse.ParseFacebookUtils.Initialize("<YOUR FACEBOOK APP ID>");
+
+            //Google Maps Config
+            Xamarin.FormsMaps.Init (this, bundle);
+
+            //Start
 
             LoadApplication (new App ());
         }
