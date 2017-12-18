@@ -1305,32 +1305,34 @@
     ]
   },
   "packageFolders": {
-    "/Users/antoniofrighetto/.nuget/packages/": {}
+    "C:\\Users\\Hichame\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/antoniofrighetto/Documents/Anno IV/Software Engineering II/SE2Project/APP/Travlendar/Travlendar.Android/Travlendar.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Hichame\\Documents\\FrighettoGivoliYessou\\APP\\Travlendar\\Travlendar.Android\\Travlendar.Android.csproj",
       "projectName": "Travlendar.Android",
-      "projectPath": "/Users/antoniofrighetto/Documents/Anno IV/Software Engineering II/SE2Project/APP/Travlendar/Travlendar.Android/Travlendar.Android.csproj",
-      "packagesPath": "/Users/antoniofrighetto/.nuget/packages/",
-      "outputPath": "/Users/antoniofrighetto/Documents/Anno IV/Software Engineering II/SE2Project/APP/Travlendar/Travlendar.Android/obj",
+      "projectPath": "C:\\Users\\Hichame\\Documents\\FrighettoGivoliYessou\\APP\\Travlendar\\Travlendar.Android\\Travlendar.Android.csproj",
+      "packagesPath": "C:\\Users\\Hichame\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hichame\\Documents\\FrighettoGivoliYessou\\APP\\Travlendar\\Travlendar.Android\\obj\\",
       "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
       "configFilePaths": [
-        "/Users/antoniofrighetto/.config/NuGet/NuGet.Config"
+        "C:\\Users\\Hichame\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "monoandroid80"
       ],
       "sources": {
-        "http://nuget.syncfusion.com/nuget_xamarin/nuget/getsyncfusionpackages/xamarin/": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "monoandroid80": {
           "projectReferences": {
-            "/Users/antoniofrighetto/Documents/Anno IV/Software Engineering II/SE2Project/APP/Travlendar/Travlendar.Core/Travlendar.Core.csproj": {
-              "projectPath": "/Users/antoniofrighetto/Documents/Anno IV/Software Engineering II/SE2Project/APP/Travlendar/Travlendar.Core/Travlendar.Core.csproj"
+            "C:\\Users\\Hichame\\Documents\\FrighettoGivoliYessou\\APP\\Travlendar\\Travlendar.Core\\Travlendar.Core.csproj": {
+              "projectPath": "C:\\Users\\Hichame\\Documents\\FrighettoGivoliYessou\\APP\\Travlendar\\Travlendar.Core\\Travlendar.Core.csproj"
             }
           }
         }
@@ -1341,103 +1343,103 @@
         "dependencies": {
           "AWSSDK.CognitoIdentity": {
             "target": "Package",
-            "version": "3.3.2.17"
+            "version": "[3.3.2.17, )"
           },
           "AWSSDK.CognitoSync": {
             "target": "Package",
-            "version": "3.3.1.26"
+            "version": "[3.3.1.26, )"
           },
           "AWSSDK.Core": {
             "target": "Package",
-            "version": "3.3.21"
+            "version": "[3.3.21, )"
           },
           "Xamarin.Android.Arch.Core.Common": {
             "target": "Package",
-            "version": "1.0.0"
+            "version": "[1.0.0, )"
           },
           "Xamarin.Android.Arch.Lifecycle.Common": {
             "target": "Package",
-            "version": "1.0.1"
+            "version": "[1.0.1, )"
           },
           "Xamarin.Android.Arch.Lifecycle.Runtime": {
             "target": "Package",
-            "version": "1.0.0"
+            "version": "[1.0.0, )"
           },
           "Xamarin.Android.Support.Animated.Vector.Drawable": {
             "target": "Package",
-            "version": "26.1.0.1"
+            "version": "[26.1.0.1, )"
           },
           "Xamarin.Android.Support.Annotations": {
             "target": "Package",
-            "version": "26.1.0.1"
+            "version": "[26.1.0.1, )"
           },
           "Xamarin.Android.Support.Compat": {
             "target": "Package",
-            "version": "26.1.0.1"
+            "version": "[26.1.0.1, )"
           },
           "Xamarin.Android.Support.Core.UI": {
             "target": "Package",
-            "version": "26.1.0.1"
+            "version": "[26.1.0.1, )"
           },
           "Xamarin.Android.Support.Core.Utils": {
             "target": "Package",
-            "version": "26.1.0.1"
+            "version": "[26.1.0.1, )"
           },
           "Xamarin.Android.Support.CustomTabs": {
             "target": "Package",
-            "version": "26.1.0.1"
-          },
-          "Xamarin.Android.Support.Fragment": {
-            "target": "Package",
-            "version": "26.1.0.1"
-          },
-          "Xamarin.Android.Support.Media.Compat": {
-            "target": "Package",
-            "version": "26.1.0.1"
-          },
-          "Xamarin.Android.Support.Transition": {
-            "target": "Package",
-            "version": "26.1.0.1"
-          },
-          "Xamarin.Android.Support.v4": {
-            "target": "Package",
-            "version": "26.1.0.1"
-          },
-          "Xamarin.Android.Support.v7.AppCompat": {
-            "target": "Package",
-            "version": "26.1.0.1"
-          },
-          "Xamarin.Android.Support.v7.Palette": {
-            "target": "Package",
-            "version": "26.1.0.1"
-          },
-          "Xamarin.Android.Support.v7.RecyclerView": {
-            "target": "Package",
-            "version": "26.1.0.1"
-          },
-          "Xamarin.Android.Support.Vector.Drawable": {
-            "target": "Package",
-            "version": "26.1.0.1"
-          },
-          "Xamarin.Facebook": {
-            "target": "Package",
-            "version": "4.4.0.2"
-          },
-          "Xamarin.Forms": {
-            "target": "Package",
-            "version": "2.5.0.121934"
+            "version": "[26.1.0.1, )"
           },
           "Xamarin.Android.Support.Design": {
             "target": "Package",
-            "version": "26.1.0.1"
+            "version": "[26.1.0.1, )"
+          },
+          "Xamarin.Android.Support.Fragment": {
+            "target": "Package",
+            "version": "[26.1.0.1, )"
+          },
+          "Xamarin.Android.Support.Media.Compat": {
+            "target": "Package",
+            "version": "[26.1.0.1, )"
+          },
+          "Xamarin.Android.Support.Transition": {
+            "target": "Package",
+            "version": "[26.1.0.1, )"
+          },
+          "Xamarin.Android.Support.Vector.Drawable": {
+            "target": "Package",
+            "version": "[26.1.0.1, )"
+          },
+          "Xamarin.Android.Support.v4": {
+            "target": "Package",
+            "version": "[26.1.0.1, )"
+          },
+          "Xamarin.Android.Support.v7.AppCompat": {
+            "target": "Package",
+            "version": "[26.1.0.1, )"
           },
           "Xamarin.Android.Support.v7.CardView": {
             "target": "Package",
-            "version": "26.1.0.1"
+            "version": "[26.1.0.1, )"
           },
           "Xamarin.Android.Support.v7.MediaRouter": {
             "target": "Package",
-            "version": "26.1.0.1"
+            "version": "[26.1.0.1, )"
+          },
+          "Xamarin.Android.Support.v7.Palette": {
+            "target": "Package",
+            "version": "[26.1.0.1, )"
+          },
+          "Xamarin.Android.Support.v7.RecyclerView": {
+            "target": "Package",
+            "version": "[26.1.0.1, )"
+          },
+          "Xamarin.Facebook": {
+            "target": "Package",
+            "version": "[4.4.0.2, )"
+          },
+          "Xamarin.Forms": {
+            "target": "Package",
+            "version": "[2.5.0.121934, )"
           }
         }
       }
