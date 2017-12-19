@@ -41,13 +41,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="AppCore\Model\CalendarModel.cs" />
     <Compile Include="AppCore\Model\CognitoSyncModel.cs" />
+    <Compile Include="AppCore\Model\LoginModel.cs" />
     <Compile Include="AppCore\Navigator\INavigator.cs" />
+    <Compile Include="AppCore\Pages\CalendarMasterDetailPage.cs" />
     <Compile Include="AppCore\Pages\CalendarPage.cs" />
+    <Compile Include="AppCore\Pages\LandingPage.cs" />
     <Compile Include="AppCore\Pages\LoginPage.cs" />
     <Compile Include="AppCore\Pages\MapPage.cs" />
+    <Compile Include="AppCore\Pages\MenuPage.cs" />
     <Compile Include="AppCore\Renderers\FacebookButton.cs" />
+    <Compile Include="AppCore\ViewModels\CalendarViewModel.cs" />
     <Compile Include="AppCore\ViewModels\CognitoSyncViewModel.cs" />
+    <Compile Include="AppCore\ViewModels\LoginViewModel.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Framework\Dependencies\IParse.cs" />
     <Compile Include="Framework\Dependencies\ISyncManager.cs" />

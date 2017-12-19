@@ -3,26 +3,35 @@ using Amazon.CognitoIdentity;
 using Amazon.CognitoSync;
 using Amazon.CognitoSync.SyncManager;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Travlendar.AppCore.Model;
 using Travlendar.Framework.ViewModels;
-using Xamarin.Forms;
 
 namespace Travlendar.AppCore.ViewModels
 {
-    public class CognitoSyncViewModel : AViewModel<CognitoSyncModel>
+    sealed public class CognitoSyncViewModel : AViewModel<CognitoSyncModel>
     {
+        private static CognitoSyncViewModel _instance = new CognitoSyncViewModel ();
+
         CognitoAWSCredentials credentials;
         CognitoSyncManager syncManager;
         Dictionary<string, Dataset> datasets;
 
-        public CognitoSyncViewModel (INavigation navigation)
-        {
-            this.Navigation = navigation;
+        public override event PropertyChangedEventHandler PropertyChanged;
 
+        private CognitoSyncViewModel ()
+        {
             credentials = new CognitoAWSCredentials (Constants.AWS_IDENTITY_POOL_ID, RegionEndpoint.EUWest1);
             syncManager = new CognitoSyncManager (credentials, new AmazonCognitoSyncConfig { RegionEndpoint = RegionEndpoint.EUWest1 });
             datasets = new Dictionary<string, Dataset> ();
         }
+
+
+        static internal CognitoSyncViewModel GetInstance ()
+        {
+            return _instance;
+        }
+
 
         internal void AWSLogin (string providerName, string accessToken)
         {

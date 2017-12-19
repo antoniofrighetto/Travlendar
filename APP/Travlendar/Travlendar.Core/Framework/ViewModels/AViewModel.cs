@@ -1,13 +1,15 @@
-﻿using System.Threading.Tasks;
-using Travlendar.Framework.Events;
+﻿using System.ComponentModel;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Travlendar.Framework.ViewModels
 {
-    public abstract class AViewModel<T> : IViewModel
+    public abstract class AViewModel<T> : IViewModel, INotifyPropertyChanged
     {
         private INavigation _navigation;
         public INavigation Navigation { get => _navigation; set => _navigation = value; }
+
+        public abstract event PropertyChangedEventHandler PropertyChanged;
 
         protected string _tag;
 
@@ -26,6 +28,7 @@ namespace Travlendar.Framework.ViewModels
 
         protected T _model;
 
+
         public T Model
         {
             get
@@ -35,21 +38,10 @@ namespace Travlendar.Framework.ViewModels
             set
             {
                 _model = value;
-                RaiseOnModelChangedEvent ();
             }
         }
 
-        public delegate void ModelDelegate (object obj, ModelEventArgs<T> args);
 
-        public event ModelDelegate ModelChanged;
-
-        protected void RaiseOnModelChangedEvent ()
-        {
-            if ( ModelChanged != null )
-            {
-                ModelChanged (this, new ModelEventArgs<T> (_model));
-            }
-        }
 
         /// <summary>
         /// Extends this for inits logics.
