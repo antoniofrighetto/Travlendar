@@ -1,12 +1,17 @@
 ﻿
+using Travlendar.Core.AppCore.ViewModels;
 using Xamarin.Forms;
 
 namespace Travlendar.Core.AppCore.Pages
 {
     public class CalendarPage : ContentPage
     {
-        public CalendarPage ()
+        CalendarViewModel _viewModel;
+
+        public CalendarPage (CalendarViewModel vm)
         {
+            _viewModel = vm;
+
             Button map = new Button
             {
                 Text = "Map",

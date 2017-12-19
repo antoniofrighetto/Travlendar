@@ -1,4 +1,6 @@
-﻿namespace Travlendar
+﻿using Xamarin.Forms;
+
+namespace Travlendar
 {
     public class Constants
     {
@@ -10,5 +12,8 @@
 
         //Facebook provide name
         public const string FB_PROVIDER = "graph.facebook.com";
+
+        //App Color
+        public static Color TravlendarBlue = Color.FromRgb (118, 166, 239);
     }
 }
