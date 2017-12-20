@@ -27,7 +27,8 @@ namespace Travlendar
                     {
                         if ( vm.Success )
                         {
-                            MainPage = new CalendarMasterDetailPage ();
+                            var calendarVm = new CalendarViewModel ();
+                            MainPage = new NavigationPage (new CalendarPage (calendarVm));
                         }
                         else
                         {

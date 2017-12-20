@@ -8,7 +8,7 @@ namespace Travlendar.Pages
     public class LoginPage : ContentPage
     {
         LoginViewModel _viewModel;
-
+        private StackLayout layoutContainer;
         public StackLayout layout;
         public FacebookButton fbButton;
 
@@ -25,10 +25,16 @@ namespace Travlendar.Pages
         {
             _viewModel = vm;
 
+            layoutContainer = new StackLayout
+            {
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                BackgroundColor = Color.White
+            };
+
             layout = new StackLayout
             {
-                VerticalOptions = LayoutOptions.Fill,
-                HorizontalOptions = LayoutOptions.Fill,
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+                HorizontalOptions = LayoutOptions.Center,
                 BackgroundColor = Color.White
             };
 
@@ -77,7 +83,9 @@ namespace Travlendar.Pages
             layout.Children.Add (password);
             layout.Children.Add (fbButton);
 
-            this.Content = layout;
+            layoutContainer.Children.Add (layout);
+
+            this.Content = layoutContainer;
         }
 
         private void Username_Completed (object sender, System.EventArgs e)

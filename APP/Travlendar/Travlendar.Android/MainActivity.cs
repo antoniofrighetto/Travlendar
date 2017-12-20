@@ -41,6 +41,7 @@ namespace Travlendar.Droid
 
             //Start
 
+            ActionBar.SetIcon (Android.Resource.Color.Transparent);
             LoadApplication (new App ());
         }
 

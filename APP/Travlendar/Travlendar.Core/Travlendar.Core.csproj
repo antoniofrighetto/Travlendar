@@ -45,7 +45,6 @@
     <Compile Include="AppCore\Model\CognitoSyncModel.cs" />
     <Compile Include="AppCore\Model\LoginModel.cs" />
     <Compile Include="AppCore\Navigator\INavigator.cs" />
-    <Compile Include="AppCore\Pages\CalendarMasterDetailPage.cs" />
     <Compile Include="AppCore\Pages\CalendarPage.cs" />
     <Compile Include="AppCore\Pages\LandingPage.cs" />
     <Compile Include="AppCore\Pages\LoginPage.cs" />
