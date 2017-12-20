@@ -33,7 +33,7 @@ namespace Travlendar.Core.AppCore.Pages
 
         private async void Map_ClickedAsync (object sender, System.EventArgs e)
         {
-            var page = new MapPage ();
+            var page = new MapPage (new MapViewModel (this.Navigation));
             //NavigationPage.SetHasNavigationBar (page, false);
             await Navigation.PushAsync (page);
         }

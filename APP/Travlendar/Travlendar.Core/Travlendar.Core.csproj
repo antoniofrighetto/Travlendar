@@ -44,6 +44,7 @@
     <Compile Include="AppCore\Model\CalendarModel.cs" />
     <Compile Include="AppCore\Model\CognitoSyncModel.cs" />
     <Compile Include="AppCore\Model\LoginModel.cs" />
+    <Compile Include="AppCore\Model\MapModel.cs" />
     <Compile Include="AppCore\Navigator\INavigator.cs" />
     <Compile Include="AppCore\Pages\CalendarPage.cs" />
     <Compile Include="AppCore\Pages\LandingPage.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="AppCore\ViewModels\CalendarViewModel.cs" />
     <Compile Include="AppCore\ViewModels\CognitoSyncViewModel.cs" />
     <Compile Include="AppCore\ViewModels\LoginViewModel.cs" />
+    <Compile Include="AppCore\ViewModels\MapViewModel.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Framework\Dependencies\IParse.cs" />
     <Compile Include="Framework\Dependencies\ISyncManager.cs" />
