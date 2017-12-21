@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using Travlendar.Core.AppCore.Model;
 using Travlendar.Framework.ViewModels;
 using Xamarin.Forms;
@@ -39,11 +39,17 @@ namespace Travlendar.Core.AppCore.ViewModels
             geoCoder = new Geocoder ();
         }
 
-        public async Task<Position> GetPositionFromString (string textPosition)
+        public async void GetPositionFromString (string textPosition)
         {
-            var pos = await GetPositionsForAddressSyncAsync (textPosition);
-            Position = pos [0];
-            return Position;
+            try
+            {
+                var pos = await GetPositionsForAddressSyncAsync (textPosition);
+                Position = pos [0];
+            }
+            catch ( Exception e )
+            {
+                // TODO ADD POPUP LOCATION NOT FOUND OR HANDLE ERROR
+            }
         }
 
         public async System.Threading.Tasks.Task<List<Position>> GetPositionsForAddressSyncAsync (string textPosition)

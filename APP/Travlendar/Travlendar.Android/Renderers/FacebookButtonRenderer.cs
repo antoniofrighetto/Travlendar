@@ -49,12 +49,10 @@ namespace Travlendar.Renderers.Droid
                     {
                         fbArgs.UserId = loginResult.AccessToken.UserId;
                         fbArgs.AccessToken = loginResult.AccessToken.Token;
-                        var expires = loginResult.AccessToken.Expires;
 
-                        //Integrating NodaTime Lib
-
-                        //TODO better way to retrive Java.Util.Date and cast it to System.DateTime type
-                        fbArgs.TokenExpiration = new DateTime (expires.Year, expires.Month, expires.Day, expires.Hours, expires.Minutes, expires.Seconds);
+                        //Hack from Java.Util.Date to DateTime
+                        //TODO checkout in iOS
+                        fbArgs.TokenExpiration = FromUnixTime (loginResult.AccessToken.Expires.Time);
                     }
                     /*
                         Pass the parameters into Login method in the FacebookButton 
@@ -79,6 +77,11 @@ namespace Travlendar.Renderers.Droid
 
         }
 
+        public DateTime FromUnixTime (long unixTimeMillis)
+        {
+            var epoch = new DateTime (1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            return epoch.AddMilliseconds (unixTimeMillis);
+        }
 
         protected override void OnElementPropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
