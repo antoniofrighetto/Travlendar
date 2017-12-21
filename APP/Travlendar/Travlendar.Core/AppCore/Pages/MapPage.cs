@@ -27,26 +27,30 @@ namespace Travlendar.Core.AppCore.Pages
                 HorizontalOptions = LayoutOptions.Center
             };
             position.Completed += Position_Completed;
-            stack.Children.Add (position);
-            Content = stack;
-        }
 
-        private void Position_Completed (object sender, System.EventArgs e)
-        {
-            _viewModel.Position = _viewModel.GetPositionFromString (((Entry) sender).Text).Result;
-        }
-
-        private void _viewModel_PropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
             map = new Map (
-                            MapSpan.FromCenterAndRadius (_viewModel.Position, Distance.FromMiles (0.3)))
+                            MapSpan.FromCenterAndRadius (new Position (0, 0), Distance.FromMiles (0.3)))
             {
                 IsShowingUser = true,
                 HeightRequest = 100,
                 WidthRequest = 960,
                 VerticalOptions = LayoutOptions.FillAndExpand
             };
+
+            stack.Children.Add (position);
             stack.Children.Add (map);
+            Content = stack;
+        }
+
+        private void Position_Completed (object sender, System.EventArgs e)
+        {
+            var entry = ((Entry) sender).Text;
+            _viewModel.GetPositionFromString (entry);
+        }
+
+        private void _viewModel_PropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            map.MoveToRegion (MapSpan.FromCenterAndRadius (_viewModel.Position, Distance.FromKilometers (0.5)));
         }
     }
 }

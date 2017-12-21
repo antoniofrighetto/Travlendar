@@ -3,6 +3,8 @@ using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
+using System.IO;
+using System.Threading.Tasks;
 using Xamarin.Facebook;
 
 //Permissions needed for Facebook SDK on Android
@@ -18,6 +20,10 @@ namespace Travlendar.Droid
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
     {
         public static ICallbackManager CallbackManager;
+        // Field, property, and method for Picture Picker
+        public static readonly int PickImageId = 1000;
+        public TaskCompletionSource<Stream> PickImageTaskCompletionSource { set; get; }
+
         protected override void OnCreate (Bundle bundle)
         {
             base.OnCreate (bundle);
@@ -52,10 +58,28 @@ namespace Travlendar.Droid
 
             If you use other intents that pass through this method, you should identify them by yourself
         */
-        protected override void OnActivityResult (int requestCode, Result resultCode, Intent data)
+        protected override void OnActivityResult (int requestCode, Result resultCode, Intent intent)
         {
-            base.OnActivityResult (requestCode, resultCode, data);
-            CallbackManager.OnActivityResult (requestCode, (int) resultCode, data);
+            base.OnActivityResult (requestCode, resultCode, intent);
+
+            //For Facebook Login
+            CallbackManager.OnActivityResult (requestCode, (int) resultCode, intent);
+
+            if ( requestCode == PickImageId )
+            {
+                if ( (resultCode == Result.Ok) && (intent != null) )
+                {
+                    Android.Net.Uri uri = intent.Data;
+                    Stream stream = ContentResolver.OpenInputStream (uri);
+
+                    // Set the Stream as the completion of the Task
+                    PickImageTaskCompletionSource.SetResult (stream);
+                }
+                else
+                {
+                    PickImageTaskCompletionSource.SetResult (null);
+                }
+            }
         }
     }
 }

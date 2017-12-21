@@ -54,6 +54,12 @@
           "lib/MonoAndroid10/AWSSDK.SecurityToken.dll": {}
         }
       },
+      "Microsoft.Bcl.Build/1.0.21": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.Bcl.Build.targets": {}
+        }
+      },
       "PCLCrypto/1.0.2.15130": {
         "type": "package",
         "dependencies": {
@@ -744,6 +750,18 @@
         "lib/uap/AWSSDK.SecurityToken.pdb",
         "tools/install.ps1",
         "tools/uninstall.ps1"
+      ]
+    },
+    "Microsoft.Bcl.Build/1.0.21": {
+      "sha512": "sgHu4mIt0+NVGyI12Bj4hLPypNK55UOH+ologj2LqDCjxq3EbIxe/uAtHjY+fEwbE1dtsAHG8SXHf+V/EYbKTg==",
+      "type": "package",
+      "path": "microsoft.bcl.build/1.0.21",
+      "files": [
+        "License-Stable.rtf",
+        "build/Microsoft.Bcl.Build.Tasks.dll",
+        "build/Microsoft.Bcl.Build.targets",
+        "microsoft.bcl.build.1.0.21.nupkg.sha512",
+        "microsoft.bcl.build.nuspec"
       ]
     },
     "PCLCrypto/1.0.2.15130": {
@@ -1494,6 +1512,7 @@
       "AWSSDK.CognitoIdentity >= 3.3.2.17",
       "AWSSDK.CognitoSync >= 3.3.1.26",
       "AWSSDK.Core >= 3.3.21",
+      "Microsoft.Bcl.Build >= 1.0.21",
       "Travlendar.Core >= 1.0.0",
       "Xamarin.Android.Arch.Core.Common >= 1.0.0",
       "Xamarin.Android.Arch.Lifecycle.Common >= 1.0.1",
@@ -1569,6 +1588,10 @@
           "AWSSDK.Core": {
             "target": "Package",
             "version": "[3.3.21, )"
+          },
+          "Microsoft.Bcl.Build": {
+            "target": "Package",
+            "version": "[1.0.21, )"
           },
           "Xamarin.Android.Arch.Core.Common": {
             "target": "Package",

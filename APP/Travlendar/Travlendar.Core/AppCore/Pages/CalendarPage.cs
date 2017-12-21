@@ -6,6 +6,10 @@ namespace Travlendar.Core.AppCore.Pages
     public class CalendarPage : ContentPage
     {
         CalendarViewModel _viewModel;
+        private ToolbarItem addAppointment;
+        private ToolbarItem tickets;
+        private ToolbarItem settings;
+        private ToolbarItem logout;
 
         public CalendarPage (CalendarViewModel vm)
         {
@@ -15,7 +19,7 @@ namespace Travlendar.Core.AppCore.Pages
 
             Button map = new Button
             {
-                Text = "Map",
+                Text = "Map -> WIP Toolbar",
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.CenterAndExpand
             };
@@ -40,30 +44,68 @@ namespace Travlendar.Core.AppCore.Pages
 
         private void FillMenu ()
         {
-            var addAppointment = new ToolbarItem
+            addAppointment = new ToolbarItem
             {
                 Text = "Add",
                 Order = ToolbarItemOrder.Primary,
                 Priority = 0
             };
 
-            var settings = new ToolbarItem
+            tickets = new ToolbarItem
+            {
+                Text = "Tickets",
+                Order = ToolbarItemOrder.Secondary,
+                Priority = 0
+            };
+
+            settings = new ToolbarItem
             {
                 Text = "Settings",
                 Order = ToolbarItemOrder.Secondary,
                 Priority = 0
             };
 
-            var logout = new ToolbarItem
+            logout = new ToolbarItem
             {
                 Text = "Logout",
                 Order = ToolbarItemOrder.Secondary,
                 Priority = 0
             };
 
+            RegisterEvents ();
+
             ToolbarItems.Add (addAppointment);
+            ToolbarItems.Add (tickets);
             ToolbarItems.Add (settings);
             ToolbarItems.Add (logout);
+        }
+
+        private void RegisterEvents ()
+        {
+            tickets.Clicked -= Tickets_ClickedAsync;
+            tickets.Clicked += Tickets_ClickedAsync;
+
+            settings.Clicked -= Settings_Clicked;
+            settings.Clicked += Settings_Clicked;
+
+            logout.Clicked -= Logout_Clicked;
+            logout.Clicked += Logout_Clicked;
+        }
+
+        private void Logout_Clicked (object sender, System.EventArgs e)
+        {
+            throw new System.NotImplementedException ();
+        }
+
+        private void Settings_Clicked (object sender, System.EventArgs e)
+        {
+            throw new System.NotImplementedException ();
+        }
+
+        private async void Tickets_ClickedAsync (object sender, System.EventArgs e)
+        {
+            var page = new TicketsPage (new TicketsViewModel (this.Navigation));
+            await Navigation.PushAsync (page);
         }
     }
 }
