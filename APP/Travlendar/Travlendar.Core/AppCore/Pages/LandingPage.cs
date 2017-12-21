@@ -48,7 +48,9 @@ namespace Travlendar.Core.AppCore.Pages
                 BackgroundColor = Color.White,
                 BorderColor = Constants.TravlendarBlue,
                 BorderRadius = 20,
-                BorderWidth = 2
+                BorderWidth = 2,
+                HorizontalOptions = LayoutOptions.Center,
+                WidthRequest = 200
             };
 
             loginButton = new Button
@@ -58,7 +60,9 @@ namespace Travlendar.Core.AppCore.Pages
                 BackgroundColor = Color.White,
                 BorderColor = Constants.TravlendarBlue,
                 BorderRadius = 20,
-                BorderWidth = 2
+                BorderWidth = 2,
+                HorizontalOptions = LayoutOptions.Center,
+                WidthRequest = 200
             };
 
             RegisterEvents ();

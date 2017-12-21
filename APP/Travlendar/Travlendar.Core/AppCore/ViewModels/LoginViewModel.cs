@@ -45,6 +45,9 @@ namespace Travlendar.Core.AppCore.ViewModels
 
         public void LoginWithFacebook (object sender, FacebookEventArgs e)
         {
+            //
+            // IMPLEMENT AS WELL https://gist.github.com/guitarrapc/719a13ba709558da1a84e38786c937b4
+            //
             Success = (!string.IsNullOrEmpty (e.UserId) &&
                             !string.IsNullOrEmpty (e.AccessToken) &&
                             e.TokenExpiration != null);
