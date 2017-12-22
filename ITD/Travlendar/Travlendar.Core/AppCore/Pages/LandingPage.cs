@@ -8,6 +8,7 @@ namespace Travlendar.Core.AppCore.Pages
     public class LandingPage : ContentPage
     {
         private RelativeLayout relativeLayout;
+        private StackLayout buttons;
         private StackLayout layout;
         private Image backgroundImage;
         private Label title;
@@ -21,6 +22,11 @@ namespace Travlendar.Core.AppCore.Pages
             relativeLayout = new RelativeLayout
             {
                 VerticalOptions = LayoutOptions.Fill
+            };
+
+            buttons = new StackLayout
+            {
+                Padding = new Thickness (0, 20, 0, 20),
             };
 
             layout = new StackLayout
@@ -71,8 +77,9 @@ namespace Travlendar.Core.AppCore.Pages
             relativeLayout.Children.Add (title, Constraint.RelativeToParent (parent => (parent.Width / 2) - 75), Constraint.RelativeToParent (parent => parent.Height / 2));
 
             layout.Children.Add (relativeLayout);
-            layout.Children.Add (registerButton);
-            layout.Children.Add (loginButton);
+            buttons.Children.Add (registerButton);
+            buttons.Children.Add (loginButton);
+            layout.Children.Add (buttons);
 
             this.Content = layout;
         }
