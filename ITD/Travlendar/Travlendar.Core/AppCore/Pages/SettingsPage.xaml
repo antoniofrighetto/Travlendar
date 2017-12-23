@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Travlendar.Core.AppCore.Pages.SettingsPage"
+			 Title="Settings">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Text="Done" Command="{Binding Save}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <TableView Intent="Settings">
+                <TableRoot>
+                    <TableSection Title="Personal information">
+                        <!-- ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Age" Margin="15,15,0,0"/>
+                                <Entry Text="{Binding Age}" Placeholder="Your age"/>
+                            </StackLayout>
+                        </ViewCell>-->
+                        <EntryCell Label="Age" Text="{Binding Age}"/>
+                    </TableSection>
+                    <TableSection Title="Means of Transport">
+                        <SwitchCell Text="Car" On="{Binding Car}"/>
+                        <SwitchCell Text="Bike" On="{Binding Bike}"/>
+                        <SwitchCell Text="Public Transport" On="{Binding PublicTransport}"/>
+                    </TableSection>
+                    <TableSection Title="Shared Transport">
+                        <SwitchCell Text="Shared Car" On="{Binding SharedCar}"/>
+                        <SwitchCell Text="Shared Bike" On="{Binding SharedBike}"/>
+                    </TableSection>
+                    <TableSection Title="Habits">
+                        <SwitchCell Text="Minimize Carboon Foot Print" On="{Binding MinimizeCarboonFootPrint}"/>
+                    </TableSection>
+                    <TableSection Title="Breaks">
+                        <SwitchCell Text="Lunch Break" On="{Binding LunchBreak}" OnChanged="Handle_OnChanged"/>
+                        <ViewCell>
+                            <TimePicker Margin="15"   x:Name="timer" IsInNativeLayout="true" IsVisible="false" Time="{Binding TimeBreak}"/>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
