@@ -12,7 +12,7 @@ namespace Travlendar
             var vm = LoginViewModel.GetInstance ();
             vm.PropertyChanged += Vm_PropertyChanged;
 
-            var page = new LandingPage ();
+            var page = new LandingPage (LoginViewModel.GetInstance ());
             NavigationPage.SetHasNavigationBar (page, false);
             // The root page of your application
             MainPage = new NavigationPage (page);
