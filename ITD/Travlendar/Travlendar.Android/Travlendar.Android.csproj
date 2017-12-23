@@ -130,6 +130,9 @@
     <Compile Include="Dependencies\PicturePickerImpl.cs" />
     <Compile Include="Dependencies\ToolsService.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Renderers\CustomDatePicker.cs" />
+    <Compile Include="Renderers\CustomEntryCell.cs" />
+    <Compile Include="Renderers\CustomTimePicker.cs" />
     <Compile Include="Renderers\FacebookButtonRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
