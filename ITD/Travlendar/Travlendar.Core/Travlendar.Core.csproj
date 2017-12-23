@@ -45,6 +45,7 @@
     <Compile Include="AppCore\Model\CognitoSyncModel.cs" />
     <Compile Include="AppCore\Model\LoginModel.cs" />
     <Compile Include="AppCore\Model\MapModel.cs" />
+    <Compile Include="AppCore\Model\SettingsModel.cs" />
     <Compile Include="AppCore\Model\TicketModel.cs" />
     <Compile Include="AppCore\Navigator\INavigator.cs" />
     <Compile Include="AppCore\Pages\CalendarPage.cs" />
@@ -52,6 +53,9 @@
     <Compile Include="AppCore\Pages\LoginPage.cs" />
     <Compile Include="AppCore\Pages\MapPage.cs" />
     <Compile Include="AppCore\Pages\MenuPage.cs" />
+    <Compile Include="AppCore\Pages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AppCore\Pages\TicketsPage.cs" />
     <Compile Include="AppCore\Renderers\FacebookButton.cs" />
     <Compile Include="AppCore\Tools\IPicturePicker.cs" />
@@ -59,8 +63,10 @@
     <Compile Include="AppCore\ViewModels\CognitoSyncViewModel.cs" />
     <Compile Include="AppCore\ViewModels\LoginViewModel.cs" />
     <Compile Include="AppCore\ViewModels\MapViewModel.cs" />
+    <Compile Include="AppCore\ViewModels\SettingsViewModel.cs" />
     <Compile Include="AppCore\ViewModels\TicketsViewModel.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Framework\ViewModels\BindableBaseNotify.cs" />
     <Compile Include="Framework\Dependencies\IParse.cs" />
     <Compile Include="Framework\Dependencies\ISyncManager.cs" />
     <Compile Include="Framework\Dependencies\ITools.cs" />
@@ -81,6 +87,9 @@
     </Reference>
     <Reference Include="AWSSDK.SecurityToken, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
       <HintPath>..\..\packages\AWSSDK.SecurityToken.3.3.3.3\lib\portable-net45+win8+wpa81+wp8\AWSSDK.SecurityToken.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PCLCrypto, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c, processorArchitecture=MSIL">
       <HintPath>..\..\packages\PCLCrypto.2.0.147\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLCrypto.dll</HintPath>
@@ -138,6 +147,12 @@
     <Analyzer Include="..\..\packages\AWSSDK.CognitoIdentity.3.3.2.17\analyzers\dotnet\cs\AWSSDK.CognitoIdentity.CodeAnalysis.dll" />
     <Analyzer Include="..\..\packages\AWSSDK.CognitoSync.3.3.1.26\analyzers\dotnet\cs\AWSSDK.CognitoSync.CodeAnalysis.dll" />
     <Analyzer Include="..\..\packages\AWSSDK.SecurityToken.3.3.3.3\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AppCore\Pages\SettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
