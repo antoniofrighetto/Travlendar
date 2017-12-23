@@ -1,21 +1,26 @@
-﻿using System;
+﻿using Android.Content;
+using Travlendar.Renderers;
 using Xamarin.Forms;
-using Travlendar.Droid;
-using Android.Content;
-using Android.Graphics;
 
-[assembly: ExportRenderer(typeof(Entry), typeof(CustomEntryCell))]
+[assembly: ExportRenderer (typeof (Entry), typeof (CustomEntryCell))]
 
 namespace Travlendar.Renderers
 {
     public class CustomEntryCell : Xamarin.Forms.Platform.Android.EntryRenderer
 
     {
-        protected override void OnElementChanged(Xamarin.Forms.Platform.Android.ElementChangedEventArgs<Entry> e)
+        public CustomEntryCell (Context context) : base (context)
         {
-            base.OnElementChanged(e);
-            Control.SetBackgroundColor(Android.Graphics.Color.Transparent);
-            Control.SetPadding(0, 0, 0, 0);
+        }
+
+        protected override void OnElementChanged (Xamarin.Forms.Platform.Android.ElementChangedEventArgs<Entry> e)
+        {
+            base.OnElementChanged (e);
+            if ( Control != null )
+            {
+                Control.SetBackgroundColor (Android.Graphics.Color.Transparent);
+                Control.SetPadding (0, 0, 0, 0);
+            }
         }
 
 

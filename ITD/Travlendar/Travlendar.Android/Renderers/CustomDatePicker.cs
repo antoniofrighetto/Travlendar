@@ -1,18 +1,24 @@
-﻿using System;
-using Android;
-using Xamarin.Forms;
+﻿using Android.Content;
 using Travlendar.Renderers;
+using Xamarin.Forms;
 
-[assembly: ExportRenderer(typeof(DatePicker), typeof(CustomDatePicker))]
+[assembly: ExportRenderer (typeof (DatePicker), typeof (CustomDatePicker))]
 namespace Travlendar.Renderers
 {
     public class CustomDatePicker : Xamarin.Forms.Platform.Android.DatePickerRenderer
     {
-        protected override void OnElementChanged(Xamarin.Forms.Platform.Android.ElementChangedEventArgs<DatePicker> e)
+        public CustomDatePicker (Context context) : base (context)
         {
-            base.OnElementChanged(e);
-            Control.SetBackgroundColor(Android.Graphics.Color.Transparent);
-            Control.SetPadding(0, 0, 0, 0);
+        }
+
+        protected override void OnElementChanged (Xamarin.Forms.Platform.Android.ElementChangedEventArgs<DatePicker> e)
+        {
+            base.OnElementChanged (e);
+            if ( Control != null )
+            {
+                Control.SetBackgroundColor (Android.Graphics.Color.Transparent);
+                Control.SetPadding (0, 0, 0, 0);
+            }
 
         }
     }
