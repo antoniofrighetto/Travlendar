@@ -32,6 +32,7 @@ namespace Travlendar.Core.AppCore.Pages
                     map
                 }
             };
+            BackgroundColor = Color.White;
         }
 
 

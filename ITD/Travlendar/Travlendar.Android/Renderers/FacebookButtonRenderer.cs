@@ -68,7 +68,8 @@ namespace Travlendar.Renderers.Droid
                 HandleError = loginError =>
                 {
                     //Handle any error happends here
-                    Console.WriteLine ("Operation throws an error: " + loginError.Cause.Message);
+                    //TODO: we have to decide what to do here
+                    //Console.WriteLine ("Operation throws an error: " + loginError.Cause.Message);
                 }
             };
             LoginManager.Instance.RegisterCallback (MainActivity.CallbackManager, loginCallback);
