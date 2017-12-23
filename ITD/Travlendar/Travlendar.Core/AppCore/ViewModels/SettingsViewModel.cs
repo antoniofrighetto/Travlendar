@@ -108,6 +108,7 @@ namespace Travlendar.Core.AppCore.ViewModels
         {
             try
             {
+
                 CognitoSyncViewModel.GetInstance().CreateDataset("Settings");
                 string settingsStringFormat = CognitoSyncViewModel.GetInstance().ReadDataset("Settings", "UserSettings");
                 if (settingsStringFormat == null)
