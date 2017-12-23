@@ -49,8 +49,8 @@ namespace Travlendar.AppCore.ViewModels
 
             if ( !datasets.ContainsKey (name) )
                 datasets.Add (name, dataset);
-            else
-                throw new System.Exception ("Do not create duplicated datasets");
+            //else
+                //throw new System.Exception ("Do not create duplicated datasets");
         }
 
         public void WriteDataset (string dataset, string key, string value)
