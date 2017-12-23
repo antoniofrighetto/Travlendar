@@ -1,6 +1,6 @@
 ﻿using System;
+using Travlendar.Core.AppCore.Tools;
 using Travlendar.Core.AppCore.ViewModels;
-using Travlendar.Renderers;
 using Xamarin.Forms;
 
 namespace Travlendar.Pages
@@ -10,7 +10,6 @@ namespace Travlendar.Pages
         LoginViewModel _viewModel;
         private StackLayout layoutContainer;
         public StackLayout layout;
-        public FacebookButton fbButton;
 
         public Label title;
         public Label userLabel;
@@ -23,6 +22,7 @@ namespace Travlendar.Pages
 
         public LoginPage (LoginViewModel vm)
         {
+            DependencyService.Get<IStatusBar> ().HideStatusBar ();
             _viewModel = vm;
 
             layoutContainer = new StackLayout
@@ -70,18 +70,11 @@ namespace Travlendar.Pages
             };
             password.Completed += Password_Completed;
 
-            fbButton = new FacebookButton ();
-            fbButton.HorizontalOptions = LayoutOptions.Center;
-            fbButton.HeightRequest = 50;
-            fbButton.VerticalOptions = LayoutOptions.Center;
-            //Add your event handler for the OnLogin to operate with the Facebook credentials comming from SDK
-
             RegisterEvents ();
             layout.Children.Add (userLabel);
             layout.Children.Add (username);
             layout.Children.Add (passwordLabel);
             layout.Children.Add (password);
-            layout.Children.Add (fbButton);
 
             layoutContainer.Children.Add (layout);
 
@@ -101,9 +94,6 @@ namespace Travlendar.Pages
 
         private void RegisterEvents ()
         {
-            fbButton.OnLogin -= _viewModel.LoginWithFacebook;
-            fbButton.OnLogin += _viewModel.LoginWithFacebook;
-
             _viewModel.displayAlert -= _viewModel_displayAlertAsync;
             _viewModel.displayAlert += _viewModel_displayAlertAsync;
         }

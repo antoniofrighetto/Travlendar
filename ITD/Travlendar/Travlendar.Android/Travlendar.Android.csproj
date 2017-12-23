@@ -128,6 +128,7 @@
   <ItemGroup>
     <Compile Include="Dependencies\ParseService.cs" />
     <Compile Include="Dependencies\PicturePickerImpl.cs" />
+    <Compile Include="Dependencies\StatusBarImpl.cs" />
     <Compile Include="Dependencies\ToolsService.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Renderers\CustomDatePicker.cs" />

@@ -59,6 +59,7 @@
     <Compile Include="AppCore\Pages\TicketsPage.cs" />
     <Compile Include="AppCore\Renderers\FacebookButton.cs" />
     <Compile Include="AppCore\Tools\IPicturePicker.cs" />
+    <Compile Include="AppCore\Tools\IStatusBar.cs" />
     <Compile Include="AppCore\ViewModels\CalendarViewModel.cs" />
     <Compile Include="AppCore\ViewModels\CognitoSyncViewModel.cs" />
     <Compile Include="AppCore\ViewModels\LoginViewModel.cs" />

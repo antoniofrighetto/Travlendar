@@ -11,7 +11,6 @@ namespace Travlendar.Droid
         {
             base.OnCreate (savedInstanceState);
 
-            // Create your application here
             StartActivity (typeof (MainActivity));
         }
     }

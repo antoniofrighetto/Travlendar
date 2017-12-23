@@ -1,4 +1,6 @@
-﻿using Travlendar.Core.AppCore.ViewModels;
+﻿using Travlendar.Core.AppCore.Tools;
+using Travlendar.Core.AppCore.ViewModels;
+using Travlendar.Dependencies;
 using Xamarin.Forms;
 
 namespace Travlendar.Core.AppCore.Pages
@@ -14,7 +16,7 @@ namespace Travlendar.Core.AppCore.Pages
         public CalendarPage (CalendarViewModel vm)
         {
             _viewModel = vm;
-
+            DependencyService.Get<IStatusBar> ().ShowStatusBar ();
             FillMenu ();
 
             Button map = new Button
@@ -95,13 +97,14 @@ namespace Travlendar.Core.AppCore.Pages
 
         private void Logout_Clicked (object sender, System.EventArgs e)
         {
-            throw new System.NotImplementedException ();
+            var logout = DependencyService.Get<ITools> ();
+            logout.LogoutFromFacebook ();
         }
 
         private async void Settings_Clicked (object sender, System.EventArgs e)
         {
-            var page = new SettingsPage(this.Navigation);
-            await Navigation.PushAsync(page);
+            var page = new SettingsPage (this.Navigation);
+            await Navigation.PushAsync (page);
         }
 
         private async void Tickets_ClickedAsync (object sender, System.EventArgs e)
