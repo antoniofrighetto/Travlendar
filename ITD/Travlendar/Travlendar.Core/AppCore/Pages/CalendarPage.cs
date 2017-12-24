@@ -88,8 +88,8 @@ namespace Travlendar.Core.AppCore.Pages
             tickets.Clicked -= Tickets_ClickedAsync;
             tickets.Clicked += Tickets_ClickedAsync;
 
-            settings.Clicked -= Settings_Clicked;
-            settings.Clicked += Settings_Clicked;
+            /*settings.Clicked -= Settings_Clicked;
+            settings.Clicked += Settings_Clicked;*/
 
             logout.Clicked -= Logout_Clicked;
             logout.Clicked += Logout_Clicked;

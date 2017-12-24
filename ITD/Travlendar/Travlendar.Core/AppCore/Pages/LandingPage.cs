@@ -44,7 +44,7 @@ namespace Travlendar.Core.AppCore.Pages
 
             backgroundImage = new Image
             {
-                Source = "login_background.jpg"
+                Source = "login_background.jpg",
             };
 
             title = new Label ()

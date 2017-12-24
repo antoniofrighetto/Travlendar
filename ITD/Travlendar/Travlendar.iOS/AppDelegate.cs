@@ -1,6 +1,9 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Foundation;
 using UIKit;
+using Facebook.CoreKit;
 
 namespace Travlendar.iOS
 {
@@ -22,6 +25,8 @@ namespace Travlendar.iOS
             global::Xamarin.Forms.Forms.Init ();
             //Facebook Config
 
+            Settings.AppID = Constants.FB_APP_ID;
+
             //AWS Config
 
             //Google Maps Config
@@ -30,6 +35,11 @@ namespace Travlendar.iOS
             LoadApplication (new App ());
 
             return base.FinishedLaunching (app, options);
+        }
+
+        public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
+        {
+            return ApplicationDelegate.SharedInstance.OpenUrl(application, url, sourceApplication, annotation);
         }
     }
 }
