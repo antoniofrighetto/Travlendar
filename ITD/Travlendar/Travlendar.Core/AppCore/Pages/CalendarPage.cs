@@ -101,11 +101,11 @@ namespace Travlendar.Core.AppCore.Pages
             logout.LogoutFromFacebook ();
         }
 
-        private async void Settings_Clicked (object sender, System.EventArgs e)
+        /*private async void Settings_Clicked (object sender, System.EventArgs e)
         {
             //var page = new SettingsPage (this.Navigation);
             //await Navigation.PushAsync (page);
-        }
+        }*/
 
         private async void Tickets_ClickedAsync (object sender, System.EventArgs e)
         {
