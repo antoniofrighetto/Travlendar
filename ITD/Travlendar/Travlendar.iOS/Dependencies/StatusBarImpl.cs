@@ -10,6 +10,7 @@ namespace Travlendar.iOS.Dependencies
     {
         public StatusBarImplementation ()
         {
+            
         }
 
         #region IStatusBar implementation

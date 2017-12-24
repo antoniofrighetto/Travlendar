@@ -28,9 +28,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
-    <AotAssemblies>false</AotAssemblies>
-    <EnableLLVM>false</EnableLLVM>
-    <BundleAssemblies>false</BundleAssemblies>
     <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -56,9 +53,6 @@
     </PackageReference>
     <PackageReference Include="AWSSDK.CognitoSync">
       <Version>3.3.1.26</Version>
-    </PackageReference>
-    <PackageReference Include="AWSSDK.Core">
-      <Version>3.3.21</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Bcl.Build">
       <Version>1.0.21</Version>
@@ -123,6 +117,9 @@
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="26.1.0.1" />
     <PackageReference Include="Xamarin.Forms.Maps">
       <Version>2.5.0.121934</Version>
+    </PackageReference>
+    <PackageReference Include="AWSSDK.Core">
+      <Version>3.3.21.6</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
