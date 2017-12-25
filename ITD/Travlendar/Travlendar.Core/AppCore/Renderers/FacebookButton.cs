@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace Travlendar.Renderers
+namespace Travlendar.Core.AppCore.Renderers
 {
     public class FacebookEventArgs : EventArgs
     {

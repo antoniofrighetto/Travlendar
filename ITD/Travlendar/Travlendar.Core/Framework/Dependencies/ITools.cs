@@ -1,4 +1,4 @@
-﻿namespace Travlendar.Dependencies
+﻿namespace Travlendar.Framework.Dependencies
 {
     public interface ITools
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Travlendar.Dependencies
+namespace Travlendar.Framework.Dependencies
 {
     interface IParse
     {

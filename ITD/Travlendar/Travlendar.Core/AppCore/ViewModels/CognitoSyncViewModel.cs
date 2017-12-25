@@ -4,10 +4,10 @@ using Amazon.CognitoSync;
 using Amazon.CognitoSync.SyncManager;
 using System.Collections.Generic;
 using System.ComponentModel;
-using Travlendar.AppCore.Model;
+using Travlendar.Core.AppCore.Model;
 using Travlendar.Framework.ViewModels;
 
-namespace Travlendar.AppCore.ViewModels
+namespace Travlendar.Core.AppCore.ViewModels
 {
     sealed public class CognitoSyncViewModel : AViewModel<CognitoSyncModel>
     {

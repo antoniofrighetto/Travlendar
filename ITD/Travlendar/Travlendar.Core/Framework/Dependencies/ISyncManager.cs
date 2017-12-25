@@ -1,4 +1,4 @@
-﻿namespace Travlendar.Interfaces
+﻿namespace Travlendar.Framework.Dependencies
 {
     public interface ISyncManager
     {

@@ -1,9 +1,9 @@
 ﻿using System;
-using Travlendar.Core.AppCore.Tools;
+using Travlendar.Core.AppCore.Helpers;
 using Travlendar.Core.AppCore.ViewModels;
 using Xamarin.Forms;
 
-namespace Travlendar.Pages
+namespace Travlendar.Core.AppCore.Pages
 {
     public class LoginPage : ContentPage
     {
@@ -17,8 +17,6 @@ namespace Travlendar.Pages
 
         public Entry username;
         public Entry password;
-
-
 
         public LoginPage (LoginViewModel vm)
         {
@@ -41,14 +39,14 @@ namespace Travlendar.Pages
             userLabel = new Label
             {
                 Text = "Username/Email address",
-                TextColor = Constants.TravlendarBlue,
+                TextColor = Constants.TravlendarAquaGreen,
                 HorizontalOptions = LayoutOptions.Center
             };
 
             passwordLabel = new Label
             {
                 Text = "Password",
-                TextColor = Constants.TravlendarBlue,
+                TextColor = Constants.TravlendarAquaGreen,
                 HorizontalOptions = LayoutOptions.Center
             };
 

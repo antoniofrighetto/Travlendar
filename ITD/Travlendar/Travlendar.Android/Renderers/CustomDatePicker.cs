@@ -1,9 +1,9 @@
 ﻿using Android.Content;
-using Travlendar.Renderers;
+using Travlendar.Droid.Renderers;
 using Xamarin.Forms;
 
 [assembly: ExportRenderer (typeof (DatePicker), typeof (CustomDatePicker))]
-namespace Travlendar.Renderers
+namespace Travlendar.Droid.Renderers
 {
     public class CustomDatePicker : Xamarin.Forms.Platform.Android.DatePickerRenderer
     {

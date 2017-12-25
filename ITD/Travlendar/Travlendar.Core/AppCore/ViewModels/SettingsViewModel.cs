@@ -8,8 +8,6 @@ using Xamarin.Forms;
 using Travlendar.Framework.ViewModels;
 using Travlendar.Core.AppCore.Model;
 using Travlendar.Core.AppCore.Pages;
-using Travlendar.Dependencies;
-using Travlendar.AppCore.ViewModels;
 using Newtonsoft.Json;
 
 namespace Travlendar.Core.AppCore.ViewModels

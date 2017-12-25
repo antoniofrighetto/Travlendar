@@ -1,6 +1,6 @@
 ﻿using Android.App;
 using Android.Views;
-using Travlendar.Core.AppCore.Tools;
+using Travlendar.Core.AppCore.Helpers;
 using Travlendar.Droid.Dependencies;
 using Xamarin.Forms;
 
@@ -9,10 +9,6 @@ namespace Travlendar.Droid.Dependencies
 {
     public class StatusBarImplementation : IStatusBar
     {
-        public StatusBarImplementation ()
-        {
-        }
-
         WindowManagerFlags _originalFlags;
 
         #region IStatusBar implementation

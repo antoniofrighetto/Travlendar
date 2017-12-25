@@ -1,9 +1,9 @@
 ﻿using Android.Content;
-using Travlendar.Renderers;
+using Travlendar.Droid.Renderers;
 using Xamarin.Forms;
 
 [assembly: ExportRenderer (typeof (TimePicker), typeof (CustomTimePicker))]
-namespace Travlendar.Renderers
+namespace Travlendar.Droid.Renderers
 {
     public class CustomTimePicker : Xamarin.Forms.Platform.Android.TimePickerRenderer
     {

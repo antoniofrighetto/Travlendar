@@ -17,7 +17,7 @@ namespace Travlendar.Droid
 {
     [Activity (Label = "Travlendar", Icon = "@drawable/icon", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         public static ICallbackManager CallbackManager;
         // Field, property, and method for Picture Picker
@@ -26,9 +26,16 @@ namespace Travlendar.Droid
 
         protected override void OnCreate (Bundle bundle)
         {
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
+
             base.OnCreate (bundle);
 
             global::Xamarin.Forms.Forms.Init (this, bundle);
+
+            //Icons
+            FormsPlugin.Iconize.Droid.IconControls.Init(Resource.Id.toolbar);
+            Plugin.Iconize.Iconize.With(new Plugin.Iconize.Fonts.IoniconsModule());
 
             //FacebookSDK Config
             FacebookSdk.SdkInitialize (this.ApplicationContext);

@@ -1,7 +1,7 @@
 ﻿using Travlendar.Core.AppCore.Pages;
 using Travlendar.Core.AppCore.ViewModels;
-using Travlendar.Pages;
 using Xamarin.Forms;
+using FormsPlugin.Iconize;
 
 namespace Travlendar
 {
@@ -9,52 +9,56 @@ namespace Travlendar
     {
         public App ()
         {
-            var vm = LoginViewModel.GetInstance ();
+            var vm = LoginViewModel.GetInstance();
             vm.PropertyChanged += Vm_PropertyChanged;
 
-            var page = new LandingPage (LoginViewModel.GetInstance ());
-            NavigationPage.SetHasNavigationBar (page, false);
+            var page = new LandingPage(LoginViewModel.GetInstance());
+            NavigationPage.SetHasNavigationBar(page, false);
             // The root page of your application
-            MainPage = new NavigationPage (page);
+            MainPage = new NavigationPage(page);
         }
 
-        private void Vm_PropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        private void Vm_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             var vm = sender as LoginViewModel;
-            switch ( e.PropertyName )
+            switch (e.PropertyName)
             {
                 case "Success":
                     {
-                        if ( vm.Success )
+                        if (vm.Success)
                         {
-                            var calendarVm = new CalendarViewModel ();
-                            MainPage = new NavigationPage (new CalendarPage (calendarVm));
+                            NavigationPage navigationPage;
+
+                            /* Toolbar icons by Iconize can be used only on Android */
+                            if (Device.RuntimePlatform == Device.Android)
+                            {
+                                navigationPage = new IconNavigationPage(new CalendarPage())
+                                {
+                                    BarBackgroundColor = Constants.TravlendarAquaGreen,
+                                    BarTextColor = Color.White
+                                };
+                            }
+                            else
+                            {
+                                navigationPage = new NavigationPage(new CalendarPage())
+                                {
+                                    BarBackgroundColor = Constants.TravlendarAquaGreen,
+                                    BarTextColor = Color.White
+                                };
+                            }
+
+                            MainPage = navigationPage;
                         }
                         else
                         {
-                            if ( !(MainPage is LoginPage) )
+                            if (!(MainPage is LoginPage))
                             {
-                                MainPage = new LoginPage (vm);
+                                MainPage = new LoginPage(vm);
                             }
                         }
                         break;
                     }
             }
-        }
-
-        protected override void OnStart ()
-        {
-            // Handle when your app starts
-        }
-
-        protected override void OnSleep ()
-        {
-            // Handle when your app sleeps
-        }
-
-        protected override void OnResume ()
-        {
-            // Handle when your app resumes
         }
     }
 }

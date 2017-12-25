@@ -1,9 +1,8 @@
-﻿using Travlendar.Core.AppCore.ViewModels;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
+using Travlendar.Core.AppCore.ViewModels;
 
 namespace Travlendar.Core.AppCore.Pages
 {
-
     public partial class SettingsPage : ContentPage
     {
 

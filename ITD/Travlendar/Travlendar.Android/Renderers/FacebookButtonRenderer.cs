@@ -1,9 +1,10 @@
 ﻿using Android.Content;
 using Android.Runtime;
 using System;
-using Travlendar.Droid;
-using Travlendar.Renderers;
-using Travlendar.Renderers.Droid;
+
+using Travlendar.Core.AppCore.Renderers;
+using Travlendar.Droid.Renderers;
+
 using Xamarin.Facebook;
 using Xamarin.Facebook.Login;
 using Xamarin.Facebook.Login.Widget;
@@ -11,7 +12,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 [assembly: ExportRenderer (typeof (FacebookButton), typeof (FacebookButtonRenderer))]
-namespace Travlendar.Renderers.Droid
+namespace Travlendar.Droid.Renderers
 {
     /// <summary>
     /// FacebookLogin button renderer implementation for Xamarin.Forms in the Android side.

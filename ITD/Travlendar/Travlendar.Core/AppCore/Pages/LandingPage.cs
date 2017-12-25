@@ -1,8 +1,6 @@
-﻿
-using Travlendar.Core.AppCore.Tools;
+﻿using Travlendar.Core.AppCore.Helpers;
 using Travlendar.Core.AppCore.ViewModels;
-using Travlendar.Pages;
-using Travlendar.Renderers;
+using Travlendar.Core.AppCore.Renderers;
 using Xamarin.Forms;
 
 namespace Travlendar.Core.AppCore.Pages
@@ -63,9 +61,9 @@ namespace Travlendar.Core.AppCore.Pages
             registerButton = new Button
             {
                 Text = "Create Account",
-                TextColor = Constants.TravlendarBlue,
+                TextColor = Constants.TravlendarAquaGreen,
                 BackgroundColor = Color.White,
-                BorderColor = Constants.TravlendarBlue,
+                BorderColor = Constants.TravlendarAquaGreen,
                 BorderRadius = 20,
                 BorderWidth = 2,
                 HorizontalOptions = LayoutOptions.Center,
@@ -75,9 +73,9 @@ namespace Travlendar.Core.AppCore.Pages
             loginButton = new Button
             {
                 Text = "Login",
-                TextColor = Constants.TravlendarBlue,
+                TextColor = Constants.TravlendarAquaGreen,
                 BackgroundColor = Color.White,
-                BorderColor = Constants.TravlendarBlue,
+                BorderColor = Constants.TravlendarAquaGreen,
                 BorderRadius = 20,
                 BorderWidth = 2,
                 HorizontalOptions = LayoutOptions.Center,

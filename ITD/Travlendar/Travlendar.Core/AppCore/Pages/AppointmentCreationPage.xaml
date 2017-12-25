@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Travlendar.Core.AppCore.Pages.AppointmentCreationPage">
+	<ContentPage.Content>
+        <TableView Intent="Form">
+            <TableRoot x:Name="Table">
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Padding="15,7,0,0" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <Entry x:Name="TitleApp" Placeholder="Title" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" FontSize="17" Text="{Binding TitleAppointment}"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell x:Name="LocationViewCell">
+                        <StackLayout Padding="15,15,0,15" Orientation="Horizontal">
+                            <Label Text="Location" TextColor="#C7C7CD"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection>
+                    <SwitchCell Text="All day" On="{Binding IsAllDayOn, Mode=TwoWay}" OnChanged="IsAllDayOnChanged"/>
+                    <ViewCell>
+                        <Grid ColumnSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Row="0" Grid.Column="0" Padding="15,12,0,15" Orientation="Horizontal">
+                                <Label Text="Starts" WidthRequest="90" Grid.Row="0" Grid.Column="0"/>
+                            </StackLayout>
+                            <StackLayout Grid.Row="0" Grid.Column="1" Padding="10,12,0,15" Orientation="Horizontal">
+                                <DatePicker x:Name="StartDatePicker" Date="{Binding StartDate}" HorizontalOptions="Fill" VerticalOptions="Fill" Format="d MMM yyyy"/>
+                            </StackLayout>
+                            <StackLayout Grid.Row="0" Grid.Column="2" Padding="10,12,0,15" Orientation="Horizontal">
+                                <TimePicker x:Name="StartTimePicker" Time="{Binding StartTime}" VerticalOptions="Fill"/>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                    <ViewCell>
+                        <Grid ColumnSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Row="0" Grid.Column="0" Padding="15,12,0,15" Orientation="Horizontal">
+                                <Label Text="Ends" WidthRequest="90" Grid.Row="0" Grid.Column="0"/>
+                            </StackLayout>
+                            <StackLayout Grid.Row="0" Grid.Column="1" Padding="10,12,0,15" Orientation="Horizontal">
+                                <DatePicker x:Name="EndDatePicker" Date="{Binding EndDate}" HorizontalOptions="Fill" VerticalOptions="Fill" Format="d MMM yyyy"/>
+                            </StackLayout>
+                            <StackLayout Grid.Row="0" Grid.Column="2" Padding="10,12,0,15" Orientation="Horizontal">
+                                <TimePicker x:Name="EndTimePicker" Time="{Binding EndTime}" VerticalOptions="Fill"/>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </TableSection>
+                <TableSection>
+                    <SwitchCell Text="Alert" On="{Binding IsAlertOn, Mode=TwoWay}" OnChanged="IsAlertOnChanged"/>
+                    <ViewCell StyleId="disclosure" x:Name="CalendarTypeViewCell">
+                        <StackLayout Padding="15,15,0,15" Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                            <Label Text="Calendar" HorizontalOptions="Fill" VerticalOptions="FillAndExpand" WidthRequest="90" HeightRequest="17"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Padding="15,15,0,15" Orientation="Horizontal">
+                            <Entry Placeholder="Notes" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" FontSize="17" Text="{Binding Detail}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection x:Name="RemoveButtonSection">
+                    <TextCell Text="Remove event" StyleId="None" TextColor="Red" Command="{Binding RemoveAppointmentCommand}"/>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+	</ContentPage.Content>
+</ContentPage>
