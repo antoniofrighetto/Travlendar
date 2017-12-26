@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.XamarinForms.DataControls</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.XamarinForms.DataControls.ListView.Commands.CommandService">
+            <summary>
+            Encapsulates the command-related routine within a <see cref="T:Telerik.XamarinForms.DataControls.RadListView"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataControls.ListView.Commands.CommandService.ExecuteCommand(Telerik.XamarinForms.DataControls.ListView.Commands.CommandId,System.Object)">
+            <summary>
+            Attempts to find the command, associated with the specified Id and to perform its Execute routine, using the provided parameter.
+            </summary>
+            <param name="id">The <see cref="T:Telerik.XamarinForms.DataControls.ListView.Commands.CommandId"/> value to look for.</param>
+            <param name="parameter">The parameter that is passed to the CanExecute and Execute methods of the command.</param>
+            <returns>True if the command is successfully executed, false otherwise.</returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataControls.ListView.Commands.CommandService.CanExecuteCommand(Telerik.XamarinForms.DataControls.ListView.Commands.CommandId,System.Object)">
+            <summary>
+            Determines whether the command, associated with the specified Id can be executed given the parameter provided.
+            </summary>
+            <param name="id">The <see cref="T:Telerik.XamarinForms.DataControls.ListView.Commands.CommandId"/> value to look for.</param>
+            <param name="parameter">The parameter that is passed to the CanExecute and Execute methods of the command.</param>
+            <returns>True if the command can be executed, false otherwise.</returns>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataControls.ListView.Commands.ItemTapCommandContext">
+            <summary>
+            Represents the context that is passed as a parameter of a <see cref="!:ItemTapCommand"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataControls.ListView.Commands.ItemTapCommandContext.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.DataControls.ListView.Commands.ItemTapCommandContext"/> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataControls.ListView.Commands.ItemTapCommandContext.Item">
+            <summary>
+            Gets the tapped item.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataControls.ListView.Commands.ListViewCommand">
+            <summary>
+            Represents a command abstraction that is associated with a particular <see cref="T:Telerik.XamarinForms.DataControls.RadListView"/> instance.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataControls.ListView.Commands.ListViewCommand.Id">
+            <summary>
+            Gets or sets the <see cref="P:Telerik.XamarinForms.DataControls.ListView.Commands.ListViewCommand.CommandId"/> value for this instance.
+            This value is used to associate a command with a known event within a <see cref="T:Telerik.XamarinForms.DataControls.RadListView"/> instance.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataControls.ListView.Commands.ListViewUserCommand">
+            <summary>
+            Represents a predefined command that aggregates a custom ICommand implementation, which may be used to perform additional action over the default implementation.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataControls.ListView.Commands.ListViewUserCommand.CommandProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataControls.ListView.Commands.ListViewUserCommand.Command"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataControls.ListView.Commands.ListViewUserCommand.Command">
+            <summary>
+            Gets or sets the <see cref="T:System.Windows.Input.ICommand"/> implementation that is used to perform the custom logic associated with this command.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataControls.ListView.Commands.ListViewUserCommand.CanExecute(System.Object)">
+            <summary>
+            Determines whether the command can be executed against the provided parameter.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataControls.ListView.Commands.ListViewUserCommand.Execute(System.Object)">
+            <summary>
+            Performs the core action given the provided parameter.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataControls.ListView.ListViewItemStyle">
+            <summary>
+            A class exposing properties that could be used to customize the appearance of ListView item.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataControls.ListView.ListViewItemStyle.BackgroundColorProperty">
+            <summary>
+            Identifies the BackgroundColor property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataControls.ListView.ListViewItemStyle.BorderColorProperty">
+            <summary>
+            Identifies the BorderColor property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataControls.ListView.ListViewItemStyle.BorderLocationProperty">
+            <summary>
+            Identifies the BorderLocation property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataControls.ListView.ListViewItemStyle.BorderWidthProperty">
+            <summary>
+            Identifies the BorderWidth property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataControls.ListView.ListViewItemStyle.TextCellTextColorProperty">
+            <summary>
+            Identifies the BackgroundColor property.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataControls.ListView.ListViewItemStyle.BackgroundColor">
+            <summary>
+            Gets or sets the color of the token background.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataControls.ListView.ListViewItemStyle.BorderColor">
+            <summary>
+            Gets or sets the color of the border.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataControls.ListView.ListViewItemStyle.BorderLocation">
+            <summary>
+            Gets or sets the location of the border.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataControls.ListView.ListViewItemStyle.BorderWidth">
+            <summary>
+            Gets or sets the width of the border.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataControls.ListView.ListViewItemStyle.TextCellTextColor">
+            <summary>
+            Gets or sets the color of the color of the text in a text cell.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataControls.ListView.ListViewItemStyle.Clone">
+            <summary>
+            Creates a deep copy of the class.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataControls.ListView.ListViewStyleSelector">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataControls.ListView.ListViewStyleSelector.OnSelectStyle(System.Object,Telerik.XamarinForms.DataControls.ListView.ListViewStyleContext)">
+            <summary>
+            Called when [select style].
+            </summary>
+            <param name="item">The item.</param>
+            <param name="styleContext">The style context.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataControls.ListView.ListViewStyleSelector.SelectStyle(System.Object,Telerik.XamarinForms.DataControls.ListView.ListViewStyleContext)">
+            <summary>
+            Selects the style.
+            </summary>
+            <param name="item">The item.</param>
+            <param name="styleContext">The style context.</param>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataControls.RadListView.CommandService">
+            <summary>
+            Gets the <see cref="P:Telerik.XamarinForms.DataControls.RadListView.CommandService"/> instance that manages the commanding behavior of this instance.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataControls.RadListView.Commands">
+            <summary>
+            Gets the collection with all the custom commands registered with the <see cref="P:Telerik.XamarinForms.DataControls.RadListView.CommandService"/>. Custom commands have higher priority than the built-in (default) ones.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataControls.RadListView.UpdateItemIsSelected(System.Object,System.Boolean)">
+            <summary>
+            A mechanism to change the item selected state that is not triggered
+            by direct changes in the <see cref="P:Telerik.XamarinForms.DataControls.RadListView.SelectedItems"/> collection.
+            This can be considered as an external update.
+            </summary>
+            <param name="item">The item.</param>
+            <param name="isSelected">The is selected.</param>
+        </member>
+    </members>
+</doc>

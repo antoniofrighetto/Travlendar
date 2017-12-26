@@ -1,9 +1,11 @@
-﻿using Travlendar.Dependencies.Droid;
-using Xamarin.Facebook.Login;
+﻿using Xamarin.Facebook.Login;
 using Xamarin.Forms;
 
+using Travlendar.Droid.Dependencies;
+using Travlendar.Framework.Dependencies;
+
 [assembly: Dependency (typeof (ToolsService))]
-namespace Travlendar.Dependencies.Droid
+namespace Travlendar.Droid.Dependencies
 {
     public class ToolsService : ITools
     {

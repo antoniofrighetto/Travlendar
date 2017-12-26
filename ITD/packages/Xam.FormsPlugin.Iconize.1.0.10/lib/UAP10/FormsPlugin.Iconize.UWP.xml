@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FormsPlugin.Iconize.UWP</name>
+    </assembly>
+    <members>
+        <member name="T:FormsPlugin.Iconize.UWP.ColorExtensions">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.UWP.ColorExtensions" /> extensions.
+            </summary>
+        </member>
+        <member name="M:FormsPlugin.Iconize.UWP.ColorExtensions.ToWindowsColor(Xamarin.Forms.Color)">
+            <summary>
+            To the color of the windows.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FormsPlugin.Iconize.UWP.ColorExtensions.ToBrush(Xamarin.Forms.Color)">
+            <summary>
+            To the brush.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="T:FormsPlugin.Iconize.UWP.IconButtonRenderer">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.UWP.IconButtonRenderer" /> renderer.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.Platform.UWP.ButtonRenderer" />
+        </member>
+        <member name="M:FormsPlugin.Iconize.UWP.IconButtonRenderer.OnElementChanged(Xamarin.Forms.Platform.UWP.ElementChangedEventArgs{Xamarin.Forms.Button})">
+            <summary>
+            Raises the <see cref="E:ElementChanged" /> event.
+            </summary>
+            <param name="e">The <see cref="T:Xamarin.Forms.Platform.UWP.ElementChangedEventArgs`1" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.UWP.IconButtonRenderer.OnElementPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Called when [element property changed].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.UWP.IconButtonRenderer.UpdateText">
+            <summary>
+            Updates the text.
+            </summary>
+        </member>
+        <member name="T:FormsPlugin.Iconize.UWP.IconControls">
+            <summary>
+            Enables renderers for various aspects of the library.
+            </summary>
+        </member>
+        <member name="M:FormsPlugin.Iconize.UWP.IconControls.Init">
+            <summary>
+            Initializes the control library.
+            </summary>
+        </member>
+        <member name="T:FormsPlugin.Iconize.UWP.IconImageRenderer">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.UWP.IconImageRenderer" /> renderer.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.Platform.UWP.ImageRenderer" />
+        </member>
+        <member name="M:FormsPlugin.Iconize.UWP.IconImageRenderer.OnElementChanged(Xamarin.Forms.Platform.UWP.ElementChangedEventArgs{Xamarin.Forms.Image})">
+            <summary>
+            Raises the <see cref="E:ElementChanged" /> event.
+            </summary>
+            <param name="e">The <see cref="T:Xamarin.Forms.Platform.UWP.ElementChangedEventArgs`1" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.UWP.IconImageRenderer.OnElementPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Called when [element property changed].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.UWP.IconImageRenderer.UpdateImageAsync">
+            <summary>
+            Updates the image.
+            </summary>
+        </member>
+        <member name="T:FormsPlugin.Iconize.UWP.IconLabelRenderer">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.UWP.IconLabelRenderer" /> renderer.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.Platform.UWP.LabelRenderer" />
+        </member>
+        <member name="M:FormsPlugin.Iconize.UWP.IconLabelRenderer.OnElementChanged(Xamarin.Forms.Platform.UWP.ElementChangedEventArgs{Xamarin.Forms.Label})">
+            <summary>
+            Raises the <see cref="E:ElementChanged" /> event.
+            </summary>
+            <param name="e">The <see cref="T:Xamarin.Forms.Platform.UWP.ElementChangedEventArgs`1" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.UWP.IconLabelRenderer.OnElementPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Called when [element property changed].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.UWP.IconLabelRenderer.UpdateText">
+            <summary>
+            Updates the text.
+            </summary>
+        </member>
+        <member name="T:FormsPlugin.Iconize.UWP.IconNavigationRenderer">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.UWP.IconNavigationRenderer" /> renderer.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.Platform.UWP.NavigationPageRenderer" />
+        </member>
+    </members>
+</doc>

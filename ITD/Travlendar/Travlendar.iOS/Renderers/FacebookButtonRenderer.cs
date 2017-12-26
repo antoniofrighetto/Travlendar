@@ -1,6 +1,6 @@
-﻿/* Plugin from https://github.com/codercampos/FBLoginButtonXF */
+/* Plugin from https://github.com/codercampos/FBLoginButtonXF */
 using CoreGraphics;
-using Travlendar.Renderers;
+using Travlendar.Core.AppCore.Renderers;
 using Travlendar.iOS.Renderers;
 using System;
 using System.ComponentModel;

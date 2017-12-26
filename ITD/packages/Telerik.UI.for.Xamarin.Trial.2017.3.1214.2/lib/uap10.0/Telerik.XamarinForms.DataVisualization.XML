@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.XamarinForms.DataVisualization</name>
+    </assembly>
+    <members>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeTextIndicator.HorizontalTextPlacement">
+            <summary>
+            Gets or sets a value that indicates the horizontal placement of the text. This property is taken into 
+            consideration only when the indicator is in a radial or a horizontal gauge.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeTextIndicator.VerticalTextPlacement">
+            <summary>
+            Gets or sets a value that indicates the vertical placement of the text. This property is taken into 
+            consideration only when the indicator is in a radial or a vertical gauge.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeBarIndicator.GradientStops">
+            <summary>
+            Gets the collection of gradient stops in accordance to which the bar is painted. The Offset property of the 
+            gradient stop is treated in respect to the IsOffsetRelative property value of the indicator.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeBarIndicator.IsOffsetRelative">
+            <summary>
+            Gets or sets a value indicating whether the Offset property of the gradient stops should be treated as
+            a relative value between 0 and 1 or an absolute value in respect to the axis range.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeRangeBarIndicator.GradientStops">
+            <summary>
+            Gets the collection of gradient stops in accordance to which the bar is painted. The Offset property of the 
+            gradient stop is treated in respect to the IsOffsetRelative property value of the indicator.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeRangeBarIndicator.IsOffsetRelative">
+            <summary>
+            Gets or sets a value indicating whether the Offset property of the gradient stops should be treated as
+            a relative value between 0 and 1 or an absolute value in respect to the axis range.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeShapeIndicator.Size">
+            <summary>
+            Gets or sets the absolute size of the indicator.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeShapeIndicator.Shape">
+            <summary>
+            Gets or sets the path geometry that represents the shape of the indicator. At run-time this geometry is 
+            positioned in accordance to the Position and Offset properties and is scaled in accordance to the Size property.
+            In order for the shape to be positioned and scaled properly the positions of the provided geometry must be 
+            normalized between 0 and 1. 
+            The pivotal point of the shape is considered to be its center, i.e. (0.5, 0.5). 
+            The orientation of the indicator is considered to be from (1.0, 0.5) to its center.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeAxisBase.TickOffset">
+            <summary>
+            Gets or sets the distance between the tick and axis line.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeAxisBase.TickThickness">
+            <summary>
+            Gets or sets the thickness of the tick. When this value is invalid/negative the ticks get the same 
+            thickness as the axis line.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeAxisBase.TickPosition">
+            <summary>
+            Gets or sets the position of the tick with respect to the axis line.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeAxisBase.LabelOffset">
+            <summary>
+            Gets or sets the distance between the label and axis line.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeAxisBase.LabelFormat">
+            <summary>
+            Gets or sets the numeric string format that is applied to the labels.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeAxisBase.LabelInterval">
+            <summary>
+            Gets or sets the label interval that specifies that one in n labels is visible.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeAxisBase.Stroke">
+            <summary>
+            Gets or sets the color of the axis line and ticks. This value is applied to the axis ticks only when the
+            TickStroke value is the default Color.Default value.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeAxisBase.StrokeThickness">
+            <summary>
+            Gets or sets the thickness of the axis line and ticks. This value is applied to the axis ticks only when the
+            TickThickness value is invalid/negative.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeAxisBase.TickStroke">
+            <summary>
+            Gets or sets the stroke of the ticks. When this value is Color.Default the ticks get the same color as the axis line.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeAxisBase.LabelPosition">
+            <summary>
+            Gets or sets the position of the label with respect to the axis line.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeNeedleIndicator.Shape">
+            <summary>
+            Gets or sets the path geometry that represents the shape of the needle. At run-time this geometry is scaled so that
+            its width fits the diameter of the radial gauge (Position and Offset are also taken into account). In order for
+            the needle to be positioned properly the positions of the provided geometry must be normalized between 0 and 1. 
+            The center of the needle is considered to be in the center of the normalized rectangle, i.e. (0.5, 0.5). 
+            The orientation of the needle is considered to be at 0 degrees from its center, i.e. the tip of the needle 
+            is at (1.0, 0.5).
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.RadRadialGauge.StartAngle">
+            <summary>
+            Gets or sets the angle from which the arc starts. Regardless of the SweepDirection, the start angle is treated 
+            as in trigonometry - a positive rotation is a counter-clockwise rotation.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.RadRadialGauge.SweepAngle">
+            <summary>
+            Gets or sets the angle that defines the length of the arc.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.RadRadialGauge.SweepDirection">
+            <summary>
+            Gets or sets the sweep direction of the arc. The value of this property does not affect the direction
+            of the start angle.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.RadRadialGauge.AxisRadiusFactor">
+            <summary>
+            Gets or sets a value between 0 and 1 that indicates the size of the radius of the arc in respect to the size of 
+            the gauge. All gauge elements use the arc as a pivotal element and position and offset themselves 
+            in accordance to the arc.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.RadGaugeBase.Axis">
+            <summary>
+            Gets or sets the axis. The axis handles axis line, ticks and labels logic. It dictates the mapping between
+            the absolute and relative values so that gauge elements can be properly positioned.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.RadGaugeBase.Ranges">
+            <summary>
+            Gets or sets the definition entity which encapsulates ranges specific information such as Position, Offset, 
+            StartThickness and other properties that apply to all ranges in a gauge.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataVisualization.Gauges.RadGaugeBase.OnBindingContextChanged">
+            <summary>
+            Invoked whenever the binding context of the element changes. 
+            Propagates the binding context to its child elements.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataVisualization.Gauges.GaugeRangesDefinition">
+            <summary>
+            A class that encapsulates ranges specific information such as Position, Offset, 
+            StartThickness and other properties that apply to all ranges in a gauge.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeRangesDefinition.Position">
+            <summary>
+            Gets or sets the position of the ranges with respect to the axis line.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeRangesDefinition.Offset">
+            <summary>
+            Gets or sets the distance between the range and axis line.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeRangesDefinition.StartThickness">
+            <summary>
+            Gets or sets the start thickness of the ranges segment. 
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeRangesDefinition.EndThickness">
+            <summary>
+            Gets or sets the end thickness of the ranges segment. 
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataVisualization.Gauges.GaugeRangesDefinition.OnBindingContextChanged">
+            <summary>
+            Invoked whenever the binding context of the element changes. 
+            Propagates the binding context to its child elements.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataVisualization.Gauges.GaugeGradientRange">
+            <summary>
+            A gauge range that works with gradient stops. The range is drawn by gradually transitioning from one color to another.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeGradientRange.GradientStops">
+            <summary>
+            Gets the collection of gradient stops in accordance to which the range is painted. The Offset property of the 
+            gradient stop is treated in respect to the IsOffsetRelative property value of the range.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeGradientRange.IsOffsetRelative">
+            <summary>
+            Gets or sets a value indicating whether the Offset property of the gradient stops should be treated as
+            a relative value between 0 and 1 or an absolute value in respect to the axis range.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeIndicatorBase.Position">
+            <summary>
+            Gets or sets the position of the indicator with respect to the axis line.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataVisualization.Gauges.GaugeIndicatorBase.Offset">
+            <summary>
+            Gets or sets the distance between the indicator and axis line.
+            </summary>
+        </member>
+    </members>
+</doc>

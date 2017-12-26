@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.Iconize</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.Iconize.Extensions">
+            <summary>
+            Global extension methods for Iconize
+            </summary>
+        </member>
+        <member name="M:Plugin.Iconize.Extensions.Add(System.Collections.Generic.IList{Plugin.Iconize.IIcon},System.String,System.Char)">
+            <summary>
+            Adds the icon to the list.
+            </summary>
+            <param name="list">The list.</param>
+            <param name="key">The key.</param>
+            <param name="character">The character.</param>
+        </member>
+        <member name="T:Plugin.Iconize.Icon">
+            <summary>
+            Defines the <see cref="T:Plugin.Iconize.Icon" /> type.
+            </summary>
+            <seealso cref="T:Plugin.Iconize.IIcon" />
+        </member>
+        <member name="P:Plugin.Iconize.Icon.Character">
+            <summary>
+            The character matching the key in the font, for example '\u4354'
+            </summary>
+        </member>
+        <member name="P:Plugin.Iconize.Icon.Key">
+            <summary>
+            The key of icon, for example 'fa-ok'
+            </summary>
+        </member>
+        <member name="M:Plugin.Iconize.Icon.#ctor(System.String,System.Char)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Plugin.Iconize.Icon" /> class.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="character">The character.</param>
+        </member>
+        <member name="T:Plugin.Iconize.Iconize">
+            <summary>
+            Defines the <see cref="T:Plugin.Iconize.Iconize" /> type.
+            </summary>
+        </member>
+        <member name="P:Plugin.Iconize.Iconize.Modules">
+            <summary>
+            List of icon font descriptors
+            </summary>
+        </member>
+        <member name="M:Plugin.Iconize.Iconize.With(Plugin.Iconize.IIconModule)">
+            <summary>
+            Add support for a new icon font.
+            </summary>
+            <param name="module">The Icon Module holding the ttf file reference and its mappings.</param>
+            <returns>An initializer instance for chain calls.</returns>
+        </member>
+        <member name="M:Plugin.Iconize.Iconize.AddModule(Plugin.Iconize.IIconModule)">
+            <summary>
+            Adds the icon module.
+            </summary>
+            <param name="module">The module.</param>
+        </member>
+        <member name="T:Plugin.Iconize.Iconize.IconizeInitializer">
+            <summary>
+            Allows chain calls on <see cref="M:Plugin.Iconize.Iconize.With(Plugin.Iconize.IIconModule)" />.
+            </summary>
+        </member>
+        <member name="M:Plugin.Iconize.Iconize.IconizeInitializer.#ctor(Plugin.Iconize.IIconModule)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Plugin.Iconize.Iconize.IconizeInitializer" /> class.
+            </summary>
+            <param name="iconFontDescriptor">The icon font descriptor.</param>
+        </member>
+        <member name="M:Plugin.Iconize.Iconize.IconizeInitializer.With(Plugin.Iconize.IIconModule)">
+            <summary>
+            Add support for a new icon font.
+            </summary>
+            <param name="iconFontDescriptor">The IconDescriptor holding the ttf file reference and its mappings.</param>
+            <returns>An initializer instance for chain calls.</returns>
+        </member>
+        <member name="M:Plugin.Iconize.Iconize.FindModuleOf(Plugin.Iconize.IIcon)">
+            <summary>
+            Finds the Typeface to apply for a given icon.
+            </summary>
+            <param name="icon">The icon for which you need the typeface.</param>
+            <returns>
+                The font descriptor which contains info about the typeface to apply, or null
+                if the icon cannot be found. In that case, check that you properly added the modules
+                using <see cref="M:Plugin.Iconize.Iconize.With(Plugin.Iconize.IIconModule)" /> prior to calling this method.
+            </returns>
+        </member>
+        <member name="M:Plugin.Iconize.Iconize.FindIconForKey(System.String)">
+            <summary>
+            Retrieve an icon from a key.
+            </summary>
+            <param name="iconKey">The icon key.</param>
+            <returns>The icon, or null if no icon matches the key</returns>
+        </member>
+        <member name="T:Plugin.Iconize.IconModule">
+            <summary>
+            Defines the <see cref="T:Plugin.Iconize.IconModule" /> type.
+            </summary>
+            <seealso cref="T:Plugin.Iconize.IIconModule" />
+        </member>
+        <member name="P:Plugin.Iconize.IconModule.Characters">
+            <summary>
+            The characters in the font.
+            </summary>
+        </member>
+        <member name="P:Plugin.Iconize.IconModule.FontFamily">
+            <summary>
+            Gets the font family.
+            </summary>
+            <value>
+            The font family.
+            </value>
+        </member>
+        <member name="P:Plugin.Iconize.IconModule.FontName">
+            <summary>
+            Gets the name of the font.
+            </summary>
+            <value>
+            The name of the font.
+            </value>
+        </member>
+        <member name="P:Plugin.Iconize.IconModule.FontPath">
+            <summary>
+            Gets the font path.
+            </summary>
+            <value>
+            The font path.
+            </value>
+        </member>
+        <member name="P:Plugin.Iconize.IconModule.Keys">
+            <summary>
+            Gets or sets the keys.
+            </summary>
+            <value>
+            The keys.
+            </value>
+        </member>
+        <member name="M:Plugin.Iconize.IconModule.#ctor(System.String,System.String,System.String,System.Collections.Generic.IEnumerable{Plugin.Iconize.IIcon})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Plugin.Iconize.IconModule" /> class.
+            </summary>
+            <param name="fontFamily">The font family.</param>
+            <param name="fontName">Name of the font.</param>
+            <param name="fontPath">The font path.</param>
+            <param name="icons">The icons.</param>
+        </member>
+        <member name="M:Plugin.Iconize.IconModule.GetIcon(System.String)">
+            <summary>
+            Gets the icon.
+            </summary>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Iconize.IconModule.HasIcon(Plugin.Iconize.IIcon)">
+            <summary>
+            Determines whether the specified icon is in the set.
+            </summary>
+            <param name="icon">The icon.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Plugin.Iconize.IIcon">
+            <summary>
+            Icon represents one icon in an icon font.
+            </summary>
+        </member>
+        <member name="P:Plugin.Iconize.IIcon.Key">
+            <summary>
+            The key of icon, for example 'fa-ok'
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Plugin.Iconize.IIcon.Character">
+            <summary>
+            The character matching the key in the font, for example '\u4354'
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Plugin.Iconize.IIconModule">
+            <summary>
+            Defines the <see cref="T:Plugin.Iconize.IIconModule" /> interface.
+            </summary>
+        </member>
+        <member name="P:Plugin.Iconize.IIconModule.Characters">
+            <summary>
+            The characters in the font.
+            </summary>
+        </member>
+        <member name="P:Plugin.Iconize.IIconModule.FontFamily">
+            <summary>
+            Gets the font family.
+            </summary>
+            <value>
+            The font family.
+            </value>
+        </member>
+        <member name="P:Plugin.Iconize.IIconModule.FontName">
+            <summary>
+            Gets the name of the font.
+            </summary>
+            <value>
+            The name of the font.
+            </value>
+        </member>
+        <member name="P:Plugin.Iconize.IIconModule.FontPath">
+            <summary>
+            Gets the font path.
+            </summary>
+            <value>
+            The font path.
+            </value>
+        </member>
+        <member name="P:Plugin.Iconize.IIconModule.Keys">
+            <summary>
+            Gets or sets the keys.
+            </summary>
+            <value>
+            The keys.
+            </value>
+        </member>
+        <member name="M:Plugin.Iconize.IIconModule.GetIcon(System.String)">
+            <summary>
+            Gets the icon.
+            </summary>
+            <param name="iconKey">The icon key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Iconize.IIconModule.HasIcon(Plugin.Iconize.IIcon)">
+            <summary>
+            Determines whether the specified icon is in the set.
+            </summary>
+            <param name="icon">The icon.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,110 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
+using Xamarin.Forms;
+using Travlendar.Core.AppCore.Model;
+using Travlendar.Core.AppCore.ViewModels;
+
+using Plugin.LocalNotifications;
+
+namespace Travlendar.Core.AppCore.Pages
+{
+    public partial class AppointmentCreationPage : ContentPage
+    {
+        private static int flag = 0;
+        private static int counter = 0;
+        private Appointment appointment;
+
+        public AppointmentCreationPage(ObservableCollection<Appointment> appointments, string message, Appointment appointment)
+        {
+            InitializeComponent();
+            Title = message == "Creation" ? "New Event" : "Modify Event";
+            if (message == "Creation")
+            {
+                Table.RemoveAt(3);
+            }
+
+            if (Device.RuntimePlatform == Device.iOS)
+                NavigationPage.SetHasBackButton(this, false);
+
+            this.appointment = appointment;
+            BindingContext = new AppointmentCreationViewModel(this, this.Navigation, appointments, message, appointment);
+
+            var saveAppointmentButton = new ToolbarItem
+            {
+                Text = "Save",
+                Order = ToolbarItemOrder.Primary,
+                Priority = 0
+            };
+            saveAppointmentButton.SetBinding(MenuItem.CommandProperty, new Binding("SaveAppointmentCommand"));
+            ToolbarItems.Add(saveAppointmentButton);
+
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                var cancelButton = new ToolbarItem
+                {
+                    Text = "Cancel",
+                    Order = ToolbarItemOrder.Primary,
+                    Command = new Command(async () => await Navigation.PopAsync()),
+                    Priority = 1
+                };
+                ToolbarItems.Add(cancelButton);
+            }
+
+            LocationViewCell.Tapped += (sender, e) => { };
+            CalendarTypeViewCell.Tapped += async (sender, e) => {
+                await Navigation.PushAsync(new CalendarTypePage());
+            };
+
+            StartDatePicker.DateSelected += (sender, e) => {
+                EndDatePicker.Date = StartDatePicker.Date;
+            };
+        }
+
+        private void IsAllDayOnChanged(object sender, ToggledEventArgs e)
+        {
+            switch (((SwitchCell)sender).On)
+            {
+                case true:
+                    StartTimePicker.IsVisible = false; EndTimePicker.IsVisible = false; EndDatePicker.Date = StartDatePicker.Date; break;
+                case false:
+                    StartTimePicker.IsVisible = true; EndTimePicker.IsVisible = true; break;
+            }
+        }
+
+
+        private async void IsAlertOnChanged(object sender, ToggledEventArgs e)
+        {
+            var switcher = (SwitchCell)sender;
+            if (switcher.On == true && TitleApp.Text == null)
+            {
+                await DisplayAlert("Set title before activating an alert.", "", "Ok");
+                switcher.On = false;
+                return;
+            }
+
+            switch (switcher.On)
+            {
+                case true:
+                    {
+                        if (flag == 0)
+                        {
+                            await DisplayAlert("Alert enabled", "You will be notified 10 minutes ahead of schedule.", "Ok");
+                            flag = 1;
+                        }
+                        {
+                            CrossLocalNotifications.Current.Show("Hey!",
+                                                                 "Event " + TitleApp.Text + " is going to start within 10 minutes.",
+                                                                 counter++,
+                                                                 StartDatePicker.Date.AddMinutes(StartTimePicker.Time.Minutes - 10).AddSeconds(StartTimePicker.Time.Seconds));
+                        }
+                        break;
+                    }
+                case false:
+                    CrossLocalNotifications.Current.Cancel(counter);
+                    break;
+            }
+        }
+    }
+}

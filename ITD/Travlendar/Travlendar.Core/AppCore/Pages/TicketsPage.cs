@@ -1,6 +1,5 @@
-﻿
-using System.IO;
-using Travlendar.Core.AppCore.Tools;
+﻿using System.IO;
+using Travlendar.Core.AppCore.Helpers;
 using Travlendar.Core.AppCore.ViewModels;
 using Xamarin.Forms;
 

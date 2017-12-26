@@ -1,0 +1,783 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:telerikImageEditor="using:Telerik.UI.Xaml.Controls.Input.ImageEditor"
+    xmlns:converters="using:Telerik.UI.Xaml.Controls.Input.ImageEditor.Converters"
+    xmlns:core="using:Telerik.Core"
+    xmlns:theming="using:Telerik.UI.Xaml.Controls">
+
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Default">
+            <theming:UserThemeResources x:Key="ResourceLoaderInitializer"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Telerik.UI.Xaml.Input/Themes/ThemeResourcesDark.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Telerik.UI.Xaml.Primitives/Themes/ThemeResourcesDark.xaml"/>
+                <ResourceDictionary Source="{CustomResource DarkResourcesPath}"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Light">
+            <theming:UserThemeResources x:Key="ResourceLoaderInitializer"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Telerik.UI.Xaml.Input/Themes/ThemeResourcesLight.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Telerik.UI.Xaml.Primitives/Themes/ThemeResourcesLight.xaml"/>
+                <ResourceDictionary Source="{CustomResource LightResourcesPath}"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+    
+    <converters:ToolsPositionToGridLayout x:Key="GridLayoutConverter" />
+    <telerikImageEditor:CurrentToolToVisibilityConverter x:Key="toolStripImageEditor"/>
+    <telerikImageEditor:EnumToTextConverter x:Key="EnumToTextConverter" />
+    <core:BoolToVisibilityConverter x:Key="VisibilityConverter" />
+
+    <Style x:Key="ToolsToggleButtonStyle" TargetType="ToggleButton">
+        <Setter Property="Background" Value="{ThemeResource ToggleButtonBackgroundThemeBrush}"/>
+        <Setter Property="Foreground" Value="{ThemeResource ToggleButtonForegroundThemeBrush}"/>
+        <Setter Property="BorderBrush" Value="{ThemeResource ToggleButtonBorderThemeBrush}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="PointerOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#2D2D2D"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#4D4D4D"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                        <DiscreteObjectKeyFrame KeyTime="0" Value="#4D4D4D"/>
+                                        </ObjectAnimationUsingKeyFrames>-->
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonDisabledBorderThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonDisabledForegroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Checked">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#4D4D4D"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="Border">
+                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonCheckedBorderThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonCheckedForegroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>-->
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="CheckedPointerOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonCheckedPointerOverBackgroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonCheckedPointerOverBorderThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonCheckedForegroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="CheckedPressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonCheckedPressedBackgroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonCheckedPressedBorderThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonCheckedPressedForegroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>-->
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="CheckedDisabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonCheckedDisabledBackgroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonDisabledBorderThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonCheckedDisabledForegroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Indeterminate"/>
+                                <VisualState x:Name="IndeterminatePointerOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonPointerOverBackgroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="IndeterminatePressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonPressedBackgroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonPressedForegroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="IndeterminateDisabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonDisabledBorderThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonDisabledForegroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualWhite"/>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualBlack"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused"/>
+                                <VisualState x:Name="PointerFocused"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <Rectangle x:Name="FocusVisualWhite" IsHitTestVisible="False" Opacity="0" StrokeDashOffset="1.5" StrokeEndLineCap="Square" Stroke="{ThemeResource FocusVisualWhiteStrokeThemeBrush}" StrokeDashArray="1,1"/>
+                        <Rectangle x:Name="FocusVisualBlack" IsHitTestVisible="False" Opacity="0" StrokeDashOffset="0.5" StrokeEndLineCap="Square" Stroke="{ThemeResource FocusVisualBlackStrokeThemeBrush}" StrokeDashArray="1,1"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="NonSelectableToggleButtonStyle" TargetType="ToggleButton" BasedOn="{StaticResource ToolsToggleButtonStyle}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="PointerOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#2D2D2D"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#4D4D4D"/>
+                                        </ObjectAnimationUsingKeyFrames>
+
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonDisabledBorderThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonDisabledForegroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Checked">
+
+                                </VisualState>
+                                <VisualState x:Name="CheckedPointerOver">
+
+                                </VisualState>
+                                <VisualState x:Name="CheckedPressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#4D4D4D"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ToggleButtonPressedForegroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="CheckedDisabled">
+
+                                </VisualState>
+                                <VisualState x:Name="Indeterminate"/>
+                                <VisualState x:Name="IndeterminatePointerOver">
+
+                                </VisualState>
+                                <VisualState x:Name="IndeterminatePressed">
+
+                                </VisualState>
+                                <VisualState x:Name="IndeterminateDisabled">
+
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
+
+                                </VisualState>
+                                <VisualState x:Name="Unfocused"/>
+                                <VisualState x:Name="PointerFocused"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <Rectangle x:Name="FocusVisualWhite" IsHitTestVisible="False" Opacity="0" StrokeDashOffset="1.5" StrokeEndLineCap="Square" Stroke="{ThemeResource FocusVisualWhiteStrokeThemeBrush}" StrokeDashArray="1,1"/>
+                        <Rectangle x:Name="FocusVisualBlack" IsHitTestVisible="False" Opacity="0" StrokeDashOffset="0.5" StrokeEndLineCap="Square" Stroke="{ThemeResource FocusVisualBlackStrokeThemeBrush}" StrokeDashArray="1,1"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <telerikImageEditor:ToolButtonTemplateSelector x:Key="ToolButtonTemplateSelector">
+        <telerikImageEditor:ToolButtonTemplateSelector.DefaultTemplate>
+            <DataTemplate>
+                <telerikImageEditor:ImageEditorToggleButton Indeterminate="False" Pressed="{Binding Pressed, Mode=TwoWay}"
+                                                                                                    Height="50"
+                                                                                                    Background="#333333" IsChecked="{Binding IsSelected,Mode=TwoWay}"
+                                                                                                    Style="{StaticResource ToolsToggleButtonStyle}">
+                    <telerikImageEditor:ImageEditorToggleButton.ContentTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Icon}" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </telerikImageEditor:ImageEditorToggleButton.ContentTemplate>
+                </telerikImageEditor:ImageEditorToggleButton>
+            </DataTemplate>
+        </telerikImageEditor:ToolButtonTemplateSelector.DefaultTemplate>
+        <telerikImageEditor:ToolButtonTemplateSelector.EffectTemplate>
+            <DataTemplate>
+                <telerikImageEditor:ImageEditorToggleButton Indeterminate="False" Padding="2" AllowDeselect="False"
+                                                                                                    MinWidth="0" Width="66" Height="66"
+                                                                                                    Background="#333333" IsChecked="{Binding IsSelected,Mode=TwoWay}"
+                                                                                                    Style="{StaticResource ToolsToggleButtonStyle}">
+                    <telerikImageEditor:ImageEditorToggleButton.ContentTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Icon}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Height="64"/>
+                        </DataTemplate>
+                    </telerikImageEditor:ImageEditorToggleButton.ContentTemplate>
+                </telerikImageEditor:ImageEditorToggleButton>
+            </DataTemplate>
+        </telerikImageEditor:ToolButtonTemplateSelector.EffectTemplate>
+        <telerikImageEditor:ToolButtonTemplateSelector.NonSelectableTemplate>
+            <DataTemplate>
+                <telerikImageEditor:ImageEditorToggleButton Indeterminate="True" Pressed="{Binding Pressed, Mode=TwoWay}" IsThreeState="False" AllowDeselect="False"
+                                                                                                    Height="50"
+                                                                                                    Background="#333333" IsChecked="{Binding IsSelected,Mode=TwoWay}"
+                                                                                                    Style="{StaticResource NonSelectableToggleButtonStyle}">
+                    <telerikImageEditor:ImageEditorToggleButton.ContentTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Icon}" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </telerikImageEditor:ImageEditorToggleButton.ContentTemplate>
+                </telerikImageEditor:ImageEditorToggleButton>
+            </DataTemplate>
+        </telerikImageEditor:ToolButtonTemplateSelector.NonSelectableTemplate>
+    </telerikImageEditor:ToolButtonTemplateSelector>
+
+    <Style TargetType="telerikImageEditor:ImageEditorToolTip">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="telerikImageEditor:ImageEditorToolTip">
+                    <Border>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition From="Normal" GeneratedDuration="0:0:0.4" To="Hidden">
+                                        <VisualTransition.GeneratedEasingFunction>
+                                            <ExponentialEase EasingMode="EaseOut"/>
+                                        </VisualTransition.GeneratedEasingFunction>
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Label">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualTransition>
+                                    <VisualTransition From="Hidden" GeneratedDuration="0:0:0.3" To="Normal">
+                                        <VisualTransition.GeneratedEasingFunction>
+                                            <ExponentialEase EasingMode="EaseOut"/>
+                                        </VisualTransition.GeneratedEasingFunction>
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Label">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualTransition>
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="Hidden">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Label">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="0"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <TextBlock x:Name="Label" FontSize="{TemplateBinding FontSize}" Text="{TemplateBinding Message}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <telerikImageEditor:ImageEditorToolFactory x:Key="ImageEditorToolFactory">
+        <telerikImageEditor:ImageEditorToolFactory.RangeToolDefaultTemplate>
+            <DataTemplate>
+                <telerikImageEditor:ImageEditorRangeControl Height="46" Padding="20 0 20 0" IsThumbToolTipEnabled="False" Value="{Binding Value,Mode=TwoWay}" Minimum="{Binding Min,Mode=TwoWay}" Maximum="{Binding Max,Mode=TwoWay}" IsHitTestVisible="True" Visibility="{Binding Converter={StaticResource toolStripImageEditor}, ConverterParameter=RangeTool}"/>
+            </DataTemplate>
+        </telerikImageEditor:ImageEditorToolFactory.RangeToolDefaultTemplate>
+    </telerikImageEditor:ImageEditorToolFactory>
+
+    <Style TargetType="telerikImageEditor:TextUIControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="telerikImageEditor:TextUIControl">
+                    <Border>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Selected">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="IconContainer">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="PART_Value">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+
+                                </VisualState>
+                                <VisualState x:Name="Deselected">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="IconContainer">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="PART_Value">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                            <ScrollViewer HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Hidden" x:Name="IconContainer">
+                                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                    <ToggleButton Background="#4D4D4D" IsThreeState="False"  Height="50" Style="{StaticResource ToolsToggleButtonStyle}" Indeterminate="False" x:Name="PART_FontSize"  >
+                                        <ToggleButton.ContentTemplate>
+                                            <DataTemplate>
+                                                <Image Source="ms-appx:///Telerik.UI.Xaml.Input/ImageEditor/Icons/crop.png" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center" Tag="fontsize"/>
+                                            </DataTemplate>
+                                        </ToggleButton.ContentTemplate>
+                                    </ToggleButton>
+
+                                    <ToggleButton Background="#4D4D4D" IsThreeState="False"  Height="50" Style="{StaticResource ToolsToggleButtonStyle}" Indeterminate="False" x:Name="PART_FontStyle">
+                                        <ToggleButton.ContentTemplate>
+                                            <DataTemplate>
+                                                <Image Source="ms-appx:///Telerik.UI.Xaml.Input/ImageEditor/Icons/crop.png" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </ToggleButton.ContentTemplate>
+                                    </ToggleButton>
+
+                                    <ToggleButton  Background="#4D4D4D" IsThreeState="False"   Height="50" Style="{StaticResource ToolsToggleButtonStyle}" Indeterminate="False" x:Name="PART_CharacterSpacing"  >
+                                        <ToggleButton.ContentTemplate>
+                                            <DataTemplate>
+                                                <Image Source="ms-appx:///Telerik.UI.Xaml.Input/ImageEditor/Icons/text-char-space.png" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                                            </DataTemplate>
+                                        </ToggleButton.ContentTemplate>
+                                    </ToggleButton>
+
+                                    <ToggleButton Background="#4D4D4D" IsThreeState="False"  Height="50" Style="{StaticResource ToolsToggleButtonStyle}" Indeterminate="False" x:Name="PART_Opacity"  >
+                                        <ToggleButton.ContentTemplate>
+                                            <DataTemplate>
+                                                <Image Source="ms-appx:///Telerik.UI.Xaml.Input/ImageEditor/Icons/text-opacity.png" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center" Tag="fontsize" />
+                                            </DataTemplate>
+                                        </ToggleButton.ContentTemplate>
+                                    </ToggleButton>
+
+                                    <ToggleButton Background="#4D4D4D" IsThreeState="False"  Height="50" Style="{StaticResource ToolsToggleButtonStyle}" Indeterminate="False" x:Name="PART_FontFamily">
+                                        <ToggleButton.ContentTemplate>
+                                            <DataTemplate>
+                                                <Image Source="ms-appx:///Telerik.UI.Xaml.Input/ImageEditor/Icons/crop.png" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            </DataTemplate>
+                                        </ToggleButton.ContentTemplate>
+                                    </ToggleButton>
+
+                                    <ToggleButton Background="#4D4D4D" IsThreeState="False"  Height="50" Style="{StaticResource ToolsToggleButtonStyle}" Indeterminate="False" x:Name="PART_Hue">
+                                        <ToggleButton.ContentTemplate>
+                                            <DataTemplate>
+                                                <Image Source="ms-appx:///Telerik.UI.Xaml.Input/ImageEditor/Icons/crop.png" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            </DataTemplate>
+                                        </ToggleButton.ContentTemplate>
+                                    </ToggleButton>
+                                </StackPanel>
+                            </ScrollViewer>
+
+                            <Grid Margin="20,0,20,0" x:Name="PART_Value"  Visibility="Collapsed" HorizontalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <SymbolIcon Symbol="Back" Margin="0,0,50,0" x:Name="PART_Back" />
+                                <ContentControl x:Name="PART_ValueContainer" DataContext="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}}" Grid.Column="1" HorizontalContentAlignment="Stretch">
+                                    <ContentControl.ContentTemplateSelector>
+                                        <telerikImageEditor:TextUISelector>
+                                            <telerikImageEditor:TextUISelector.HueTemplate>
+                                                <DataTemplate>
+                                                    <Slider Minimum="0" Maximum="359"  HorizontalAlignment="Stretch" Value="{Binding DataContext.Hue, Mode=TwoWay, RelativeSource={RelativeSource Mode=TemplatedParent}}"  />
+                                                </DataTemplate>
+                                            </telerikImageEditor:TextUISelector.HueTemplate>
+                                            <telerikImageEditor:TextUISelector.OpacityTemplate>
+                                                <DataTemplate>
+                                                    <Slider Minimum="0" Maximum="1" StepFrequency="0.01" HorizontalAlignment="Stretch" Value="{Binding DataContext.OpacityValue, Mode=TwoWay, RelativeSource={RelativeSource Mode=TemplatedParent}}"  />
+                                                </DataTemplate>
+                                            </telerikImageEditor:TextUISelector.OpacityTemplate>
+
+                                            <telerikImageEditor:TextUISelector.FontSizeTemplate>
+                                                <DataTemplate>
+                                                    <Slider Minimum="8" Maximum="40" HorizontalAlignment="Stretch" Value="{Binding DataContext.FontSizeValue, Mode=TwoWay, RelativeSource={RelativeSource Mode=TemplatedParent}}"  />
+                                                </DataTemplate>
+                                            </telerikImageEditor:TextUISelector.FontSizeTemplate>
+                                            <telerikImageEditor:TextUISelector.CharacterSpaceTemplate>
+                                                <DataTemplate>
+                                                    <Slider Minimum="0" Maximum="35" HorizontalAlignment="Stretch" Value="{Binding DataContext.CharacterSpaceValue, Mode=TwoWay, RelativeSource={RelativeSource Mode=TemplatedParent}}"  />
+                                                </DataTemplate>
+                                            </telerikImageEditor:TextUISelector.CharacterSpaceTemplate>
+                                            <telerikImageEditor:TextUISelector.FontStyleTemplate>
+                                                <DataTemplate>
+                                                    <ComboBox   
+                                                        ItemsSource="{Binding DataContext.FontStyles, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                                        SelectedItem="{Binding DataContext.FontStyleValue, Mode=TwoWay, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                                        HorizontalAlignment="Center">
+                                                        <ComboBox.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{Binding Converter={StaticResource EnumToTextConverter}}" />
+                                                            </DataTemplate>
+                                                        </ComboBox.ItemTemplate>
+                                                    </ComboBox>
+                                                </DataTemplate>
+                                            </telerikImageEditor:TextUISelector.FontStyleTemplate>
+
+                                            <telerikImageEditor:TextUISelector.FontFamilyTemplate>
+                                                <DataTemplate>
+                                                    <ComboBox   
+                                                        ItemsSource="{Binding DataContext.FontFamilies, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                                        SelectedItem="{Binding DataContext.FontFamilyValue, Mode=TwoWay, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                                        HorizontalAlignment="Center">
+                                                    </ComboBox>
+                                                </DataTemplate>
+                                            </telerikImageEditor:TextUISelector.FontFamilyTemplate>
+                                        </telerikImageEditor:TextUISelector>
+                                    </ContentControl.ContentTemplateSelector>
+                                </ContentControl>
+
+                                <SymbolIcon Symbol="Accept" x:Name="PART_Accept" Margin="50,0,0,0" Grid.Column="2" />
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="telerikImageEditor:ImageEditorToolbar">
+        <Setter Property="MinHeight" Value="48" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="AnimatedIndicatorContent" Value="..." />
+        <Setter Property="AnimatedIndicatorContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock FontFamily="Segoe UI"
+                               Foreground="{StaticResource TelerikAnimatedIndicatorForegroundBrush}" FontSize="30" Margin="10,0,10,0"
+                               Text="{Binding}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="telerikImageEditor:ImageEditorToolbar">
+                    <Border
+                        HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                        x:Name="PART_LayoutRoot"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        Background="{TemplateBinding Background}"
+                        Margin="{TemplateBinding Padding}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="ExpandedStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition From="Collapsed" To="Expanded">
+                                        <Storyboard>
+                                            <DoubleAnimation 
+                                                EnableDependentAnimation="True"
+                                                x:Name="PART_ExpandAnimation"
+                                                Duration="0:0:0.250"
+                                                Storyboard.TargetName="PART_ExpandableContentHolder"
+                                                Storyboard.TargetProperty="Height">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <CubicEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                            <DoubleAnimation 
+                                                EnableDependentAnimation="True"
+                                                Duration="0:0:0.250"
+                                                Storyboard.TargetName="PART_ExpandableContentHolder"
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="1">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <CubicEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                            <DoubleAnimation 
+                                                EnableDependentAnimation="True"
+                                                Duration="0:0:0.250"
+                                                Storyboard.TargetName="PART_ExpandableContentTranslate"
+                                                Storyboard.TargetProperty="Y"
+                                                To="0">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <CubicEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </VisualTransition>
+                                    <VisualTransition From="Expanded" To="Collapsed">
+                                        <Storyboard>
+                                            <DoubleAnimation 
+                                                EnableDependentAnimation="True"
+                                                Duration="0:0:0.250"
+                                                Storyboard.TargetName="PART_ExpandableContentHolder"
+                                                Storyboard.TargetProperty="Height"
+                                                To="0">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <CubicEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                            <DoubleAnimation 
+                                                EnableDependentAnimation="True"
+                                                Duration="0:0:0.250"
+                                                Storyboard.TargetName="PART_ExpandableContentHolder"
+                                                Storyboard.TargetProperty="Opacity"
+                                                To="0">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <CubicEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                            <DoubleAnimation 
+                                                EnableDependentAnimation="True"
+                                                Duration="0:0:0.250"
+                                                Storyboard.TargetName="PART_ExpandableContentTranslate"
+                                                Storyboard.TargetProperty="Y"
+                                                To="100">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <CubicEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </VisualTransition>
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Collapsed">
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            EnableDependentAnimation="True"
+                                            Duration="0"
+                                            Storyboard.TargetName="PART_ExpandableContentHolder"
+                                            Storyboard.TargetProperty="Height"
+                                            To="0"/>
+                                        <DoubleAnimation      
+                                            EnableDependentAnimation="True"
+                                            Duration="0"
+                                            Storyboard.TargetName="PART_ExpandableContentHolder"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0"/>
+                                        <DoubleAnimation 
+                                            EnableDependentAnimation="True"
+                                            Duration="0"
+                                            Storyboard.TargetName="PART_ExpandableContentTranslate"
+                                            Storyboard.TargetProperty="Y"
+                                            To="100"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Expanded">
+                                    <Storyboard>
+
+                                        <DoubleAnimation
+                                            EnableDependentAnimation="True"
+                                            Duration="0"
+                                            Storyboard.TargetName="PART_ExpandableContentHolder"
+                                            Storyboard.TargetProperty="Height"
+                                            To="{Binding To, ElementName=PART_ExpandAnimation}"/>
+                                        <DoubleAnimation 
+                                            EnableDependentAnimation="True"
+                                            Duration="0"
+                                            Storyboard.TargetName="PART_ExpandableContentHolder"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="1"/>
+                                        <DoubleAnimation 
+                                            EnableDependentAnimation="True"
+                                            Duration="0"
+                                            Storyboard.TargetName="PART_ExpandableContentTranslate"
+                                            Storyboard.TargetProperty="Y"
+                                            To="0"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" x:Name="PART_ExpanderHeaderLayoutRoot">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <ContentPresenter
+                                    Grid.Column="0"
+                                    x:Name="PART_MainContentPresenter"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <ContentPresenter
+                                    Visibility="{Binding IsExpandable, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource VisibilityConverter}}"
+                                    Content="{TemplateBinding AnimatedIndicatorContent}"
+                                    ContentTemplate="{TemplateBinding AnimatedIndicatorContentTemplate}"
+                                    Style="{TemplateBinding AnimatedIndicatorStyle}"
+                                    Grid.Column="1"
+                                    x:Name="PART_AnimatedIndicator"
+                                    RenderTransformOrigin="0.5, 0.5">
+                                    <ContentPresenter.RenderTransform>
+                                        <RotateTransform x:Name="AnimatedIndicatorRotate"/>
+                                    </ContentPresenter.RenderTransform>
+                                </ContentPresenter>
+                            </Grid>
+                            <Canvas
+                                Grid.ColumnSpan="2"
+                                Grid.Row="1"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                x:Name="PART_ExpandableContentHolder"
+                                Height="0"
+                                Width="0">
+                                <ContentPresenter
+                                    Visibility="Collapsed"
+                                    x:Name="PART_ExpandableContentPresenter"
+                                    Content="{TemplateBinding ExpandableContent}"
+                                    ContentTemplate="{TemplateBinding ExpandableContentTemplate}">
+                                    <ContentPresenter.RenderTransform>
+                                        <TranslateTransform x:Name="PART_ExpandableContentTranslate"/>
+                                    </ContentPresenter.RenderTransform>
+                                </ContentPresenter>
+                            </Canvas>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="telerikImageEditor:ImageEditorButton"  x:Key="ImageEditorButtonStyle">
+        <Setter Property="Background" Value="{ThemeResource ButtonBackgroundThemeBrush}"/>
+        <Setter Property="Foreground" Value="{ThemeResource ButtonForegroundThemeBrush}"/>
+        <Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderThemeBrush}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="telerikImageEditor:ImageEditorButton">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="PointerOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#2D2D2D"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#4D4D4D"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonDisabledBorderThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonDisabledForegroundThemeBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualWhite"/>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualBlack"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused"/>
+                                <VisualState x:Name="PointerFocused"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" ContentTemplate="{TemplateBinding ContentTemplate}"
+                                              ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <Rectangle x:Name="FocusVisualWhite" IsHitTestVisible="False" Opacity="0" StrokeDashOffset="1.5" StrokeEndLineCap="Square" Stroke="{ThemeResource FocusVisualWhiteStrokeThemeBrush}" StrokeDashArray="1,1"/>
+                        <Rectangle x:Name="FocusVisualBlack" IsHitTestVisible="False" Opacity="0" StrokeDashOffset="0.5" StrokeEndLineCap="Square" Stroke="{ThemeResource FocusVisualBlackStrokeThemeBrush}" StrokeDashArray="1,1"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
+

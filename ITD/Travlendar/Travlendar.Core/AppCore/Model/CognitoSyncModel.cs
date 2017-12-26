@@ -1,4 +1,4 @@
-﻿namespace Travlendar.AppCore.Model
+﻿namespace Travlendar.Core.AppCore.Model
 {
     public class CognitoSyncModel
     {

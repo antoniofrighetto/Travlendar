@@ -1,0 +1,1830 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.XamarinForms.DataGrid</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridStyleSelector">
+            <summary>
+            Selection of a style based on custom selection logic.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridStyleSelector.SelectStyle(System.Object,Xamarin.Forms.BindableObject)">
+            <summary>
+            Override this method to return an app specific <seealso cref="T:Xamarin.Forms.Style"/>.
+            </summary>
+            <param name="item">The data content.</param>
+            <param name="container">The element to which the style will be applied.</param>
+            <returns>An app-specific style to apply, or null.</returns>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.GridLinesVisibility">
+            <summary>
+            Defines the visibility of the horizontal and vertical lines that enclose a cell within a tabular component (e.g. RadDataGrid, RadCalendar, etc.).
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.GridLinesVisibility.None">
+            <summary>
+            No grid lines are visible.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.GridLinesVisibility.Horizontal">
+            <summary>
+            The horizontal grid lines are visible.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.GridLinesVisibility.Vertical">
+            <summary>
+            The vertical grid lines are visible.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.GridLinesVisibility.Both">
+            <summary>
+            Both horizontal and vertical grid lines are visible.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.GridCellModel.Value">
+            <summary>
+            Gets or sets the content associated with the node.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.GridModel.GroupFactory">
+            <summary>
+            Gets the factory used to create groups when a group descriptor is applied.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.IndexStorage.RemoveAt(System.Int32)">
+            <summary>
+            Removes the element at the given index. Worst complexity is
+            (N-InsertIndex) + Log(N)*NonDefaultsInRange(N-InsertIndex).
+            </summary>
+            <param name="index">The index at which to remove the item.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.IRenderInfo.ValueForIndex(System.Int32,System.Boolean)">
+            <summary>
+            Returns the value for the index specified.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="approximate">Determines whether approximate returns zero if no value is set or approximate according the default length used.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.CellsController`1.UpdateRowActualHeight(System.Int32,System.Double,System.Boolean)">
+            <summary>
+            Updates the Height for given Slot.
+            </summary>
+            <param name="cellSlot">The slot which Height will be updated.</param>
+            <param name="cellHeight">The new Height.</param>
+            <returns>Returns true only if Slot Height was Updated (e.g. Smaller then the new Height).</returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.INodePool`1.GetPreviousDisplayedLayoutSlot(System.Int32)">
+            <summary>
+            Gets the layout slot associated with the displayed elements. This method reliably returns the last valid displayed state even if node pool is currently recycled.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.LayoutDoubleUtil.AreClose(System.Double,System.Double)">
+            <summary>
+            AreClose - Returns whether or not two doubles are "close".  That is, whether or 
+            not they are within epsilon of each other.  Note that this epsilon is proportional
+            to the numbers themselves to that AreClose survives scalar multiplication.
+            There are plenty of ways for this to return false even for numbers which
+            are theoretically identical, so no code calling this should fail to work if this 
+            returns false.  This is important enough to repeat:
+            NB: NO CODE CALLING THIS FUNCTION SHOULD DEPEND ON ACCURATE RESULTS - this should be
+            used for optimizations *only*.
+            </summary>
+            <returns>
+            Boolean - the result of the AreClose comparison.
+            </returns>
+            <param name="value1">The first double to compare. </param>
+            <param name="value2">The second double to compare. </param>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.LayoutDoubleUtil.GreaterThan(System.Double,System.Double)">
+            <summary>
+            GreaterThan - Returns whether or not the first double is greater than the second double.
+            That is, whether or not the first is strictly greater than *and* not within epsilon of
+            the other number.  Note that this epsilon is proportional to the numbers themselves
+            to that AreClose survives scalar multiplication.  Note,
+            There are plenty of ways for this to return false even for numbers which
+            are theoretically identical, so no code calling this should fail to work if this 
+            returns false.  This is important enough to repeat:
+            NB: NO CODE CALLING THIS FUNCTION SHOULD DEPEND ON ACCURATE RESULTS - this should be
+            used for optimizations *only*.
+            </summary>
+            <returns>
+            Boolean - the result of the GreaterThan comparison.
+            </returns>
+            <param name="value1"> The first double to compare. </param>
+            <param name="value2"> The second double to compare. </param>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.LayoutDoubleUtil.GreaterThanOrClose(System.Double,System.Double)">
+            <summary>
+            GreaterThanOrClose - Returns whether or not the first double is greater than or close to
+            the second double.  That is, whether or not the first is strictly greater than or within
+            epsilon of the other number.  Note that this epsilon is proportional to the numbers 
+            themselves to that AreClose survives scalar multiplication.  Note,
+            There are plenty of ways for this to return false even for numbers which
+            are theoretically identical, so no code calling this should fail to work if this 
+            returns false.  This is important enough to repeat:
+            NB: NO CODE CALLING THIS FUNCTION SHOULD DEPEND ON ACCURATE RESULTS - this should be
+            used for optimizations *only*.
+            </summary>
+            <returns>
+            Boolean - the result of the GreaterThanOrClose comparison.
+            </returns>
+            <param name="value1"> The first double to compare. </param>
+            <param name="value2"> The second double to compare. </param>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.LayoutDoubleUtil.IsZero(System.Double)">
+            <summary>
+            IsZero - Returns whether or not the double is "close" to 0.  Same as AreClose(double, 0),
+            but this is faster.
+            </summary>
+            <returns>
+            Boolean - the result of the IsZero comparison.
+            </returns>
+            <param name="value"> The double to compare to 0. </param>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.LayoutDoubleUtil.LessThan(System.Double,System.Double)">
+            <summary>
+            LessThan - Returns whether or not the first double is less than the second double.
+            That is, whether or not the first is strictly less than *and* not within epsilon of
+            the other number.  Note that this epsilon is proportional to the numbers themselves
+            to that AreClose survives scalar multiplication.  Note,
+            There are plenty of ways for this to return false even for numbers which
+            are theoretically identical, so no code calling this should fail to work if this 
+            returns false.  This is important enough to repeat:
+            NB: NO CODE CALLING THIS FUNCTION SHOULD DEPEND ON ACCURATE RESULTS - this should be
+            used for optimizations *only*.
+            </summary>
+            <returns>
+            Boolean - the result of the LessThan comparison.
+            </returns>
+            <param name="value1"> The first double to compare. </param>
+            <param name="value2"> The second double to compare. </param>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.LayoutDoubleUtil.LessThanOrClose(System.Double,System.Double)">
+            <summary>
+            LessThanOrClose - Returns whether or not the first double is less than or close to
+            the second double.  That is, whether or not the first is strictly less than or within
+            epsilon of the other number.  Note that this epsilon is proportional to the numbers 
+            themselves to that AreClose survives scalar multiplication.  Note,
+            There are plenty of ways for this to return false even for numbers which
+            are theoretically identical, so no code calling this should fail to work if this 
+            returns false.  This is important enough to repeat:
+            NB: NO CODE CALLING THIS FUNCTION SHOULD DEPEND ON ACCURATE RESULTS - this should be
+            used for optimizations *only*.
+            </summary>
+            <returns>
+            Boolean - the result of the LessThanOrClose comparison.
+            </returns>
+            <param name="value1"> The first double to compare. </param>
+            <param name="value2"> The second double to compare. </param>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.TelerikThemeStyles">
+            <summary>
+            A class related to the theming infrastructure.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.TelerikThemeStyles.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.DataGrid.TelerikThemeStyles"/> class.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridNumericalColumn">
+            <summary>
+            Represents an extended <see cref="T:Telerik.XamarinForms.DataGrid.DataGridTextColumn"/> that presents numerical data.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderPanel">
+            <summary>
+            Represents a panel that lays out header cells in a <see cref="T:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderPanel"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderPanel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderPanel" /> class.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridColumn">
+            <summary>
+            Defines an abstraction of a table column that is used to visualize data within a <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> component.
+            A column generally represents a Property within the underlying ViewModel.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridColumn.CellDecorationStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridColumn.CellDecorationStyle"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridColumn.CellDecorationStyleSelectorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridColumn.CellDecorationStyleSelector"/> property.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumn.CellDecorationStyle">
+            <summary>
+            Gets or sets the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridBorderStyle"/> object that defines the background of each cell associated with this column.
+            The TargetType property of the Style object is <see cref="T:Xamarin.Forms.Rectangle"/>.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumn.CellDecorationStyleSelector">
+            <summary>
+            Gets or sets the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridStyleSelector"/> instance that allows for dynamic decoration on a per cell basis.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridColumn.WidthProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridColumn.Width"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridColumn.SizeModeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridColumn.SizeMode"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridColumn.HeaderTextProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridColumn.HeaderText"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridColumn.NameProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridColumn.Name"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridColumn.IsVisibleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridColumn.IsVisible"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridColumn.HeaderStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridColumn.HeaderStyle"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridColumn.CanUserEditProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridColumn.CanUserEdit"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridColumn.HeaderContentTemplateProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridColumn.HeaderContentTemplate"/> property.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridColumn.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridColumn" /> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumn.Width">
+            <summary>
+            Gets or sets the fixed width for the column. Applicable when the SizeMode property is set to DataGridColumnSizeMode.Fixed.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumn.SizeMode">
+            <summary>
+            Gets or sets the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridColumnSizeMode"/> value that controls how the column and its associated cells are sized horizontally.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumn.Name">
+            <summary>
+            Gets or sets the unique name of the column. Typically this is used as an identifier for this particular instance.
+            <remarks>
+            This value is used by the string indexer in the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.Columns"/> collection.
+            </remarks>
+            </summary>
+            <example>
+            <code language="xaml">
+            &lt;telerikGrid:RadDataGrid x:Name="grid"&gt;
+              &lt;telerikGrid:RadDataGrid.Columns&gt;
+                &lt;telerikGrid:DataGridTextColumn Name="FirstColumn"/&gt;
+              &lt;/telerikGrid:RadDataGrid.Columns&gt;
+            &lt;/telerikGrid:RadDataGrid&gt;
+            </code>
+            <code language="c#">
+             this.grid.Columns[0].Name = "FirstColumn";
+            </code>
+            </example>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumn.HeaderText">
+            <summary>
+            Gets or sets the content to be displayed in the Header UI that represents the column.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumn.IsVisible">
+            <summary>
+            Gets or sets a value indicating whether if the current column is visible or not.
+            </summary>   
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumn.HeaderStyle">
+            <summary>
+            Gets or sets the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle"/> instance that defines the appearance of the <see cref="!:DataGridColumnHeader"/> control.
+            </summary>   
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumn.CanUserEdit">
+            <summary>
+            Gets or sets a value indicating whether the user can edit this column.
+            </summary>
+            <remarks>
+            To enable/disable editing in RadDataGrid see the <see cref="P:Telerik.XamarinForms.DataGrid.UserEditMode"/>
+            </remarks>
+            <value>
+            The default value is "true".
+            </value>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumn.HeaderContentTemplate">
+            <summary>
+            Gets or sets the <see cref="T:Xamarin.Forms.DataTemplate"/> instance that defines the appearance of the header.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumn.ActualWidth">
+            <summary>
+            Gets the actual width of the column.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumn.IsAutoGenerated">
+            <summary>
+            Gets a value indicating whether the column is auto-generated internally.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumn.AutoWidth">
+            <summary>
+            Gets or sets the automatic width of the column - that is the largest cell (or header) width.
+            This property is used to properly stretch (or shrink) columns with SizeMode.Stretch.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumn.ItemInfo">
+            <summary>
+            Gets or sets a reference to the associated ItemInfo coming from the layouts.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridColumn.GetValueForInstance(System.Object)">
+            <summary>
+            Retrieves the column value for the provided object instance. 
+            This actually represents the content of a grid cell where a cell is defined by a row (data item) and a column.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridColumn.OnPropertyChanged(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridColumnCollection">
+            <summary>
+            Represents a strongly typed collection of <see cref="T:Telerik.XamarinForms.DataGrid.DataGridColumn"/> objects.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumnCollection.Item(System.String)">
+            <summary>
+            Gets the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridColumn"/> instance which <see cref="P:Telerik.XamarinForms.DataGrid.DataGridColumn.Name"/> value matches the provided one.
+            </summary>
+            <param name="name">The name of the column to search for.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridColumnCollection.SetItem(System.Int32,Telerik.XamarinForms.DataGrid.DataGridColumn)">
+            <summary>
+            Sets the item.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridColumnCollection.InsertItem(System.Int32,Telerik.XamarinForms.DataGrid.DataGridColumn)">
+            <summary>
+            Inserts the item.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridColumnCollection.RemoveItem(System.Int32)">
+            <summary>
+            Removes the item.
+            </summary>
+            <param name="index">The index.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridColumnCollection.MoveItem(System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridColumnCollection.ClearItems">
+            <summary>
+            Clears the items.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridColumnCollection.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>Raises the <see cref="E:System.Collections.ObjectModel.ObservableCollection`1.CollectionChanged"/>
+            event with the provided arguments.</summary>
+            <param name="e">Arguments of the event being raised.</param>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridColumnSizeMode">
+            <summary>
+            Defines the possible ways a <see cref="T:Telerik.XamarinForms.DataGrid.DataGridColumn"/> may be sized within a <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> instance.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridColumnSizeMode.Stretch">
+            <summary>
+            The column is stretched to the available width proportionally to its desired width.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridColumnSizeMode.Auto">
+            <summary>
+            The columns is sized to its desired width. That is the maximum desired width of all associated cells.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridColumnSizeMode.Fixed">
+            <summary>
+            The column has a fixed width as defined by its Width property.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridTemplateColumn">
+            <summary>
+            Represents a <see cref="T:Telerik.XamarinForms.DataGrid.DataGridColumn"/> that uses a <see cref="T:Xamarin.Forms.DataTemplate"/> to describe the content of each associated grid cell.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridTemplateColumn.CellContentTemplateProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridTemplateColumn.CellContentTemplate"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridTemplateColumn.CellContentTemplateSelectorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridTemplateColumn.CellContentTemplateSelector"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridTemplateColumn.SortDescriptorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridTemplateColumn.SortDescriptor"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridTemplateColumn.GroupDescriptorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridTemplateColumn.GroupDescriptor"/> property.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridTemplateColumn.CellContentTemplate">
+            <summary>
+            Gets or sets the <see cref="T:Xamarin.Forms.DataTemplate"/> instance that defines the appearance of each cell associated with tis column.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridTemplateColumn.CellContentTemplateSelector">
+            <summary>
+            Gets or sets the <see cref="T:Xamarin.Forms.DataTemplateSelector"/> instance that may be used to retrieve dynamic data templates on a per cell basis.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridTemplateColumn.SortDescriptor">
+            <summary>
+            Gets or sets the <see cref="T:Telerik.XamarinForms.Common.Data.SortDescriptorBase"/> that defines how the column will be sorted by the user upon a Tap gesture over the column header.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridTemplateColumn.GroupDescriptor">
+            <summary>
+            Gets or sets the <see cref="T:Telerik.XamarinForms.Common.Data.GroupDescriptorBase"/> that defines whether the column may be grouped by the user using drag-and-drop operation.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridTemplateColumn.GetValueForInstance(System.Object)">
+            <summary>
+            Retrieves the column value for the provided object instance. 
+            This actually represents the content of a grid cell where a cell is defined by a row (data item) and a column.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.SortDirection">
+            <summary>
+            Defines the current sort direction of a <see cref="T:Telerik.XamarinForms.DataGrid.DataGridColumn"/> instance. 
+            This enumeration is used solely for visualization purposes and differs from the SortOrder type that is used for data operations.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.SortDirection.None">
+            <summary>
+            No sorting is applied.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.SortDirection.Ascending">
+            <summary>
+            The column is sorted in ascending order.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.SortDirection.Descending">
+            <summary>
+            The column is sorted in descending order.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridBooleanColumn">
+            <summary>
+            A special <see cref="T:Telerik.XamarinForms.DataGrid.DataGridTypedColumn"/> implementation that presents boolean data.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridPickerColumn">
+            <summary>
+            A special <see cref="T:Telerik.XamarinForms.DataGrid.DataGridTextColumn"/> implementation which cell value editor is a <see cref="T:Xamarin.Forms.Picker"/> control.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridPickerColumn.ItemsSourceProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridPickerColumn.ItemsSource"/> dependency property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridPickerColumn.ItemsSourcePathProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridPickerColumn.ItemsSourcePath"/> dependency property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridPickerColumn.ItemDisplayBindingPathProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridPickerColumn.ItemDisplayBindingPath"/> dependency property. 
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridPickerColumn.ItemsSource">
+            <summary>
+            Gets or sets the items source for the <see cref="T:Xamarin.Forms.Picker"/> editor.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridPickerColumn.ItemsSourcePath">
+            <summary>
+            Gets or sets the path of the property that will be used as an
+            items source for the <see cref="T:Xamarin.Forms.Picker"/> editor.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridPickerColumn.ItemDisplayBindingPath">
+            <summary>
+            Gets or sets the display member path for the combobox editor.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridPickerColumn.GetDisplayValueForInstance(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridPickerColumn.CreateGroupDescriptor">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridPickerColumn.CreateSortDescriptor">
+            <inheritdoc/>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridDateColumn">
+            <summary>
+            An extended <see cref="T:Telerik.XamarinForms.DataGrid.DataGridTextColumn"/> that presents data of type <see cref="T:System.DateTime"/>. 
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridImageColumn">
+            <summary>
+            Represents a concrete <see cref="T:Telerik.XamarinForms.DataGrid.DataGridTypedColumn"/> that may present the associated data through <see cref="T:Xamarin.Forms.Image"/> controls.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridTextColumn">
+            <summary>
+            Represents a <see cref="T:Telerik.XamarinForms.DataGrid.DataGridTypedColumn"/> that converts the content of each associated cell to a <see cref="T:System.String"/> object.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridTextColumn.CellContentFormatProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridTextColumn.CellContentFormat"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridTextColumn.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridTextColumn" /> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridTextColumn.CellContentFormat">
+            <summary>
+            Gets or sets the custom format for each cell value. The String.Format routine is used and the format passed should be in the form required by this method.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridTimeColumn">
+            <summary>
+            Represents an extended <see cref="T:Telerik.XamarinForms.DataGrid.DataGridTextColumn"/> that presents data of type <see cref="T:System.DateTime"/>. 
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridTypedColumn">
+            <summary>
+            Defines a <see cref="T:Telerik.XamarinForms.DataGrid.DataGridColumn"/> which content is known (strongly typed) and represented by internally built UI. Typed columns are highly optimized for better performance.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridTypedColumn.PropertyNameProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridTypedColumn.PropertyName"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridTypedColumn.CellContentStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridTypedColumn.CellContentStyle"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridTypedColumn.CellContentStyleSelectorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridTypedColumn.CellContentStyleSelector"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridTypedColumn.CellEditorStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.DataGridTypedColumn.CellEditorStyle"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridTypedColumn.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridTypedColumn" /> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridTypedColumn.PropertyName">
+            <summary>
+            Gets or sets the name of the property of the object type that represents each row within the grid.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridTypedColumn.CellContentStyle">
+            <summary>
+            Gets or sets the <see cref="T:Xamarin.Forms.Style"/> object that defines the appearance of each cell associated with this column.
+            The TargetType of the Style depends on the type of the column - e.g. for <see cref="T:Telerik.XamarinForms.DataGrid.DataGridTextColumn"/> it will be the <see cref="T:Xamarin.Forms.Label"/> type.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridTypedColumn.CellContentStyleSelector">
+            <summary>
+            Gets or sets the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridStyleSelector"/> instance that allows for dynamic appearance on a per cell basis.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridTypedColumn.CellEditorStyle">
+            <summary>
+            Gets or sets the <see cref="T:Xamarin.Forms.Style"/> that will be applied to the cell editor.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridTypedColumn.GetValueForInstance(System.Object)">
+            <summary>
+            Retrieves the column value for the provided object instance. 
+            This actually represents the content of a grid cell where a cell is defined by a row (data item) and a column.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridTypedColumn.CreateGroupDescriptor">
+            <summary>
+            Creates the <see cref="T:Telerik.XamarinForms.Common.Data.GroupDescriptorBase"/> instance that is used to group by this column through the user interface.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridTypedColumn.CreateSortDescriptor">
+            <summary>
+            Creates the <see cref="T:Telerik.XamarinForms.Common.Data.SortDescriptorBase"/> instance that is used to sort by this column through the user interface.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataBindingCompleteEventArgs">
+            <summary>
+            Encapsulates the information associated with the <see cref="E:Telerik.XamarinForms.DataGrid.RadDataGrid.DataBindingComplete"/> event.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataBindingCompleteEventArgs.DataView">
+            <summary>
+            Gets the <see cref="T:Telerik.XamarinForms.DataGrid.IDataViewCollection"/> implementation that allows for traversing and/or manipulating the already computed data view.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataBindingCompleteEventArgs.ChangeFlags">
+            <summary>
+            Gets or sets the flags that describe the change in the data.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.IDataViewCollection">
+            <summary>
+            Provides a view over the already computed data within a <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> instance.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.IDataViewCollection.IsDataReady">
+            <summary>
+            Gets a value indicating whether all the internal data operations are completed and the view may be properly accessed.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.IDataViewCollection.Items">
+            <summary>
+            Gets the top-level items within the view. These might be either <see cref="T:Telerik.XamarinForms.Common.Data.IDataGroup"/> instances or data items if no grouping is applied.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.IDataViewCollection.GetParentGroup(System.Object)">
+            <summary>
+            Gets the <see cref="T:Telerik.XamarinForms.Common.Data.IDataGroup"/> instance where the specified item resides. 
+            Will be null if no grouping is applied or the item does not belong to the ItemsSource of the grid.
+            </summary>
+            <param name="item">The data item to search for.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.IDataViewCollection.GetGroups(System.Predicate{Telerik.XamarinForms.Common.Data.IDataGroup})">
+            <summary>
+            Enumerates all the present IDataGroup instances using depth-first approach.
+            </summary>
+            <param name="condition">An optional condition that may be used to filter the results.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.IDataViewCollection.GetIsExpanded(Telerik.XamarinForms.Common.Data.IDataGroup)">
+            <summary>
+            Determines whether the provided group is considered "Expanded" - that is to have its ChildItems available - within the UI.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.IDataViewCollection.ExpandGroup(Telerik.XamarinForms.Common.Data.IDataGroup)">
+            <summary>
+            Attempts to expand the provided <see cref="T:Telerik.XamarinForms.Common.Data.IDataGroup"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.IDataViewCollection.CollapseGroup(Telerik.XamarinForms.Common.Data.IDataGroup)">
+            <summary>
+            Attempts to collapse the provided <see cref="T:Telerik.XamarinForms.Common.Data.IDataGroup"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.IDataViewCollection.ExpandAll">
+            <summary>
+            Expands all the groups.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.IDataViewCollection.CollapseAll">
+            <summary>
+            Collapses all the groups.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.IDataViewCollection.ExpandItem(System.Object)">
+            <summary>
+            Expands the chain of groups where the specified item resides.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.IDataViewCollection.CollapseItem(System.Object)">
+            <summary>
+            Collapses the immediate groups that contains the specified item.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.GroupHeaderContext">
+            <summary>
+            Represents the context that is passed to a <see cref="!:DataGridGroupHeader"/> control that represents a <see cref="T:Telerik.XamarinForms.Common.Data.IDataGroup"/> within a <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> instance.
+            </summary>
+        </member>
+        <member name="E:Telerik.XamarinForms.DataGrid.GroupHeaderContext.PropertyChanged">
+            <summary>
+            Occurs immediately after a property of this instance has changed.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.GroupHeaderContext.Grid">
+            <summary>
+            Gets the <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> instance that provides the grouping context.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.GroupHeaderContext.Level">
+            <summary>
+            Gets the zero-based level (or the depth) of the group.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.GroupHeaderContext.Descriptor">
+            <summary>
+            Gets the <see cref="T:Telerik.XamarinForms.Common.Data.GroupDescriptorBase"/> instance that provides the grouping information.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.GroupHeaderContext.Group">
+            <summary>
+            Gets the <see cref="T:Telerik.XamarinForms.Common.Data.IDataGroup"/> instance associated with the context.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.GroupHeaderContext.IsExpanded">
+            <summary>
+            Gets or sets a value indicating whether the <see cref="T:Telerik.XamarinForms.Common.Data.IDataGroup"/>, this context is associated with, is currently expanded (has its child items visible).
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.GroupHeaderContext.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.GroupHeaderContext.OnPropertyChanged(System.String)">
+            <summary>
+            Raises the <see cref="E:Telerik.XamarinForms.DataGrid.GroupHeaderContext.PropertyChanged"/> event.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.GroupHeaderContext.PropertyChangedOverride(System.String)">
+            <summary>
+            Provides an entry point for inheritors to provide additional logic over the PropertyChanged routine.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.RadDataGrid">
+            <summary>
+            Represents a custom <see cref="T:Xamarin.Forms.View"/> implementation that may be used to visualize data in tabular format - that is by rows and columns.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.RadDataGrid.AutoGenerateColumnsProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.AutoGenerateColumns"/> dependency property. 
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.Columns">
+            <summary>
+            Gets the collection of <see cref="T:Telerik.XamarinForms.DataGrid.DataGridColumn"/> objects currently displayed within the grid.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.AutoGenerateColumns">
+            <summary>
+            Gets or sets a value indicating whether grid's columns will be auto-generated from the provided ViewModel's properties.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.RadDataGrid.GroupHeaderStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.GroupHeaderStyle"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.RadDataGrid.GroupHeaderStyleSelectorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.GroupHeaderStyleSelector"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.RadDataGrid.GroupHeaderTemplateProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.GroupHeaderTemplate"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.RadDataGrid.GroupHeaderTemplateSelectorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.GroupHeaderTemplateSelector"/> property. 
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.RadDataGrid.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid" /> class.
+            </summary>
+        </member>
+        <member name="E:Telerik.XamarinForms.DataGrid.RadDataGrid.DataBindingComplete">
+            <summary>
+            Occurs when the associated data (<see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.ItemsSource"/>) has been successfully bound to the control or any data operation like Group, Sort or Filter is applied.
+            This event is useful if an additional action is required once the data is ready to be visualized.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.GroupHeaderStyle">
+            <summary>
+            Gets or sets the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle"/> instance that defines the appearance of all the group headers within the grid.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.GroupHeaderStyleSelector">
+            <summary>
+            Gets or sets the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridStyleSelector"/> instance that may be used to select different styles on a per group header basis.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.GroupHeaderTemplate">
+            <summary>
+            Gets or sets the <see cref="T:Xamarin.Forms.DataTemplate"/> instance that defines the appearance of each group header within the grid.
+            The data context of each group header will be a <see cref="T:Telerik.XamarinForms.DataGrid.GroupHeaderContext"/> instance.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.GroupHeaderTemplateSelector">
+            <summary>
+            Gets or sets the <see cref="T:Xamarin.Forms.DataTemplateSelector"/> instance that may be used to select group header template on a per header instance basis.
+            The "Item" parameter of the <see cref="M:DataTemplateSelector.SelectTemplate"/> method will be a <see cref="T:Telerik.XamarinForms.DataGrid.GroupHeaderContext"/> instance.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.Commands">
+            <summary>
+            Gets the collection with all the custom commands registered with the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.CommandService"/>. Custom commands have higher priority than the built-in (default) ones.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.CommandService">
+            <summary>
+            Gets the <see cref="T:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandService"/> instance that manages the commanding behavior of this instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.RadDataGrid.OnPropertyChanged(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.RadDataGrid.ItemsSourceProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.ItemsSource"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.ItemsSource">
+            <summary>
+            Gets or sets the data provider.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SortDescriptors">
+            <summary>
+            Gets the collection of <see cref="T:Telerik.XamarinForms.Common.Data.SortDescriptorBase"/> objects that defines the current sorting within this instance.
+            Multiple sort descriptors define a sorting operation by multiple keys.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.GroupDescriptors">
+            <summary>
+            Gets the collection of <see cref="T:Telerik.XamarinForms.Common.Data.GroupDescriptorBase"/> objects that defines the current grouping within this instance.
+            Multiple group descriptors define multiple group levels.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.FilterDescriptors">
+            <summary>
+            Gets the collection of <see cref="T:Telerik.XamarinForms.Common.Data.FilterDescriptorBase"/> objects that defines the current filtering within this instance.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.AggregateDescriptors">
+            <summary>
+            Gets the collection of <see cref="T:Telerik.XamarinForms.Common.Data.AggregateDescriptorBase"/> objects that defines the current aggregate functions to be applied when the data view is computed.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.RadDataGrid.GetDataView">
+            <summary>
+            Gets the <see cref="T:Telerik.XamarinForms.DataGrid.IDataViewCollection"/> instance that can be used to traverse and/or manipulate the data after all the Sort, Group and Filter operations are applied.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.RadDataGrid.GridLinesVisibilityProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.GridLinesVisibility"/> property. 
+            </summary> 
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.RadDataGrid.GridLinesThicknessProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.GridLinesThickness"/> property. 
+            </summary> 
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.RadDataGrid.GridLinesColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.GridLinesColor"/> property. 
+            </summary> 
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.RadDataGrid.RowBackgroundStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.RowBackgroundStyle"/> property. 
+            </summary> 
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.RadDataGrid.AlternateRowBackgroundStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.AlternateRowBackgroundStyle"/> property. 
+            </summary> 
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.GridLinesVisibility">
+            <summary>
+            Gets or sets the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.GridLinesVisibility"/> value that defines which grid lines are currently visible (displayed).
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.GridLinesThickness">
+            <summary>
+            Gets or sets the width of the vertical grid lines and the height of the horizontal grid lines.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.GridLinesColor">
+            <summary>
+            Gets or sets the <see cref="T:Xamarin.Forms.Color"/> value that defines the appearance of grid's horizontal and vertical lines.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.RowBackgroundStyle">
+            <summary>
+            Gets or sets the style that defines the appearance of each row.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.AlternateRowBackgroundStyle">
+            <summary>
+            Gets or sets the style that defines the appearance of an alternate row.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.RadDataGrid.UserEditModeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.UserEditMode"/> property. 
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.UserEditMode">
+            <summary>
+            Gets or sets the user edit mode of the DataGrid.
+            </summary>
+            <value>The can user edit.</value>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.RadDataGrid.CancelEdit">
+            <summary>
+            Cancels the current edit operation.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.RadDataGrid.CommitEdit">
+            <summary>
+            Commits the current edit operation.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.HitTestService">
+            <summary>
+            Gets the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.HitTestService"/> instance that provides methods for retrieving rows and cells from a given physical location.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.RadDataGrid.OnBindingContextChanged">
+            <summary>
+            Invoked whenever the binding context of the element changes. Implement this method
+            to add class handling for this event.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectionUnitProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectionUnit"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectionModeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectionMode"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectedItemProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectedItem"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectionStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectionStyle"/> property.
+            </summary>
+        </member>
+        <member name="E:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectionChanged">
+            <summary>
+            Occurs when the currently selected items change.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectionUnit">
+            <summary>
+            Gets or sets the selection unit of the DataGrid. The default value is <c>DataGridSelectionUnit.Row</c>
+            </summary>
+            <example>
+            XAML
+            <code>
+            &lt;telerikGrid:RadDataGrid x:Name="dataGrid" SelectionUnit="Cell"/&gt;
+            </code>
+            C#
+            <code>
+            this.dataGrid.SelectionUnit = DataGridSelectionUnit.Cell;
+            </code>
+            </example>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectionMode">
+            <summary>
+            Gets or sets the selection mode of the DataGrid. The default value is <c>DataGridSelectionMode.Single</c>.
+            </summary>
+            <example>
+            XAML
+            <code>
+             &lt;telerikGrid:RadDataGrid x:Name="dataGrid" SelectionMode="Multiple"/&gt;
+            </code>
+            C#
+            <code>
+            this.dataGrid.SelectionMode = DataGridSelectionMode.Multiple;
+            </code>
+            </example>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectedItem">
+            <summary>
+            Gets or sets the selected item of the DataGrid.
+            </summary>
+            <remarks>
+            When the value of the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectionUnit"/> is <see cref="F:Telerik.XamarinForms.DataGrid.DataGridSelectionUnit.Cell"/>, the selected item is of type <see cref="T:Telerik.XamarinForms.DataGrid.DataGridCellInfo"/>.
+            When the value of the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectionUnit"/> is <see cref="F:Telerik.XamarinForms.DataGrid.DataGridSelectionUnit.Row"/>, the selected item is of the same type as the business object.
+            </remarks>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectionStyle">
+            <summary>
+             Gets or sets the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridBorderStyle"/> that defines the appearance settings applied to the <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> selection.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectedItems">
+            <summary>
+            Gets the currently selected items within this instance.
+            The type of items within the collection depends on the current <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectionUnit"/> value:
+                - The data item (row) when the selection unit is <see cref="F:Telerik.XamarinForms.DataGrid.DataGridSelectionUnit.Row"/>.
+                - A <see cref="T:Telerik.XamarinForms.DataGrid.DataGridCellInfo"/> object when the selection unit is <see cref="F:Telerik.XamarinForms.DataGrid.DataGridSelectionUnit.Cell"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectItem(System.Object)">
+            <summary>
+            Selects the specified data item and adds it in the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectedItems"/> collection.
+            </summary>
+            <remarks>
+            In order to select a Row, the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectionUnit"/> value should be <c>DataGridSelectionUnit.Row</c>.
+            </remarks>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.RadDataGrid.DeselectItem(System.Object)">
+            <summary>
+            Removes the selection for the specified data item and removes it from the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectedItems"/> collection.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectCell(Telerik.XamarinForms.DataGrid.DataGridCellInfo)">
+            <summary>
+            Selects the grid cell as defined by the specified cell info.
+            </summary>
+            <remarks>
+            In order to select a cell, the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectionUnit"/> value should be <c>DataGridSelectionUnit.Cell</c>.
+            </remarks>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.RadDataGrid.DeselectCell(Telerik.XamarinForms.DataGrid.DataGridCellInfo)">
+            <summary>
+            Removes the selection for the grid cell defined by the specified cell info.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectAll">
+            <summary>
+            Selects all the items as defined by the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectionMode"/> and <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectionUnit"/>
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.RadDataGrid.DeselectAll">
+            <summary>
+            Clears the current selection state.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.Commands.CellDoubleTapCommand.CanExecute(System.Object)">
+            <summary>
+            Determines whether the command can be executed against the provided parameter.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.Commands.CellDoubleTapCommand.Execute(System.Object)">
+            <summary>
+            Performs the core action given the provided parameter.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.Commands.CellTapCommand.CanExecute(System.Object)">
+            <summary>
+            Determines whether the command can be executed against the provided parameter.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.Commands.CellTapCommand.Execute(System.Object)">
+            <summary>
+            Performs the core action given the provided parameter.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId">
+            <summary>
+            Defines the known commands that are available within a <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> control.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId.Unknown">
+            <summary>
+            The command is not familiar to the grid. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId.ColumnHeaderTap">
+            <summary>
+            A command associated with the Tap event that occurs over a column header.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId.GroupHeaderTap">
+            <summary>
+            A command associated with the Tap event that occurs over a group header.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId.GroupHeaderButtonTap">
+            <summary>
+            A command associated with the Tap event that occurs over the button of the group header.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId.CellTap">
+            <summary>
+            A command associated with the Tap event that occurs over a cell.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId.CellDoubleTap">
+            <summary>
+            A command associated with the DoubleTap event that occurs over a cell.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId.GenerateColumn">
+            <summary>
+            A command associated with the Auto-generate columns process.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId.DataBindingComplete">
+            <summary>
+            A command associated with the DataBindingComplete event that occurs within a <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> instance.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId.BeginEdit">
+            <summary>
+            A command associated with the begin edit action that occurs within a <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> instance.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId.CancelEdit">
+            <summary>
+            A command associated with the cancel edit action that occurs within a <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> instance.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId.CommitEdit">
+            <summary>
+            A command associated with the commit edit action that occurs within a <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> instance.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId.ValidateCell">
+            <summary>
+            A command associated with the validating cell action that occurs within a <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> instance.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId.LoadMoreData">
+            <summary>
+            A command associated with requesting and loading more data when available that occurs within a <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> instance.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandService">
+            <summary>
+            Encapsulates the command-related routine within a <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandService.ExecuteCommand(Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId,System.Object)">
+            <summary>
+            Attempts to find the command, associated with the specified Id and to perform its Execute routine, using the provided parameter.
+            </summary>
+            <param name="id">The <see cref="T:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId"/> value to look for.</param>
+            <param name="parameter">The parameter that is passed to the CanExecute and Execute methods of the command.</param>
+            <returns>True if the command is successfully executed, false otherwise.</returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandService.ExecuteDefaultCommand(Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId,System.Object)">
+            <summary>
+            Executes the default (built-in) command (without looking for user-defined commands), associated with the specified Id.
+            </summary>
+            <param name="id">The <see cref="T:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId"/> value to look for.</param>
+            <param name="parameter">The parameter that is passed to the CanExecute and Execute methods of the command.</param>
+            <returns>True if the command is successfully executed, false otherwise.</returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandService.CanExecuteCommand(Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId,System.Object)">
+            <summary>
+            Determines whether the command, associated with the specified Id can be executed given the parameter provided.
+            </summary>
+            <param name="id">The <see cref="T:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId"/> value to look for.</param>
+            <param name="parameter">The parameter that is passed to the CanExecute and Execute methods of the command.</param>
+            <returns>True if the command can be executed, false otherwise.</returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandService.CanExecuteDefaultCommand(Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId,System.Object)">
+            <summary>
+            Determines whether the default command, associated with the specified Id can be executed given the parameter provided.
+            </summary>
+            <param name="id">The <see cref="T:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId"/> value to look for.</param>
+            <param name="parameter">The parameter that is passed to the CanExecute and Execute methods of the command.</param>
+            <returns>True if the command can be executed, false otherwise.</returns>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.Commands.DataGridCommand">
+            <summary>
+            Represents a command abstraction that is associated with a particular <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> instance.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.Commands.DataGridCommand.Id">
+            <summary>
+            Gets or sets the <see cref="P:Telerik.XamarinForms.DataGrid.Commands.DataGridCommand.CommandId"/> value for this instance.
+            This value is used to associate a command with a known event within a <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.Commands.DataGridCommand.CanExecute(System.Object)">
+            <summary>
+            Determines whether the command can be executed against the provided parameter.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.Commands.BeginEditCommand.CanExecute(System.Object)">
+            <summary>
+            Determines whether the command can be executed against the provided parameter.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.Commands.BeginEditCommand.Execute(System.Object)">
+            <summary>
+            Performs the core action given the provided parameter.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.Commands.CancelEditCommand.CanExecute(System.Object)">
+            <summary>
+            Determines whether the command can be executed against the provided parameter.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.Commands.CancelEditCommand.Execute(System.Object)">
+            <summary>
+            Performs the core action given the provided parameter.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.Commands.CommitEditCommand.CanExecute(System.Object)">
+            <summary>
+            Determines whether the command can be executed against the provided parameter.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.Commands.CommitEditCommand.Execute(System.Object)">
+            <summary>
+            Performs the core action given the provided parameter.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.Commands.ActionTrigger">
+            <summary>
+            Enumeration that indicated the initiator of an action.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.Commands.ActionTrigger.Programmatic">
+            <summary>
+            The action is triggered programmatically.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.Commands.ActionTrigger.DoubleTap">
+            <summary>
+            The action is triggered by a DoubleTap event.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.Commands.ActionTrigger.Tap">
+            <summary>
+            The action is triggered by a Tap event.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.Commands.EditContext">
+            <summary>
+            Holds information associated with a row edit operation within a <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.Commands.EditContext.#ctor(Telerik.XamarinForms.DataGrid.DataGridCellInfo,Telerik.XamarinForms.DataGrid.Commands.ActionTrigger,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.DataGrid.Commands.EditContext" /> class.
+            </summary>
+            <param name="cell">The cell.</param>
+            <param name="action">The action.</param>
+            <param name="parameter">The parameter.</param>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.Commands.EditContext.CellInfo">
+            <summary>
+            Gets the cell info associated with the operation.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.Commands.EditContext.TriggerAction">
+            <summary>
+            Gets the <see cref="T:Telerik.XamarinForms.DataGrid.Commands.ActionTrigger"/> value that triggered the operation.
+            </summary>
+            <value>The trigger action.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.Commands.EditContext.Parameter">
+            <summary>
+            Gets an optional parameter holding additional information associated with the operation.
+            </summary>
+            <value>The parameter.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.Commands.EditContext.IsSuccessful">
+            <summary>
+            Gets or sets a value indicating whether the core action associated with the context is successful.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.Commands.ValidateCellContext">
+            <summary>
+            Holds information used in ValidateCell command.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.Commands.ValidateCellContext.#ctor(System.Collections.Generic.IList{System.Object},Telerik.XamarinForms.DataGrid.DataGridCellInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.DataGrid.Commands.ValidateCellContext" /> class.
+            </summary>
+            <param name="errors">The errors.</param>
+            <param name="cellInfo">The cell info.</param>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.Commands.ValidateCellContext.Errors">
+            <summary>
+            Gets the errors (if any) that occurred during the validation.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.Commands.ValidateCellContext.CellInfo">
+            <summary>
+            Gets the <see cref="P:Telerik.XamarinForms.DataGrid.Commands.ValidateCellContext.CellInfo"/> object that represents the current grid cell.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.Commands.GenerateColumnCommand.CanExecute(System.Object)">
+            <summary>
+            Determines whether the command can be executed against the provided parameter.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.Commands.GenerateColumnCommand.Execute(System.Object)">
+            <summary>
+            Performs the core action given the provided parameter.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.Commands.GenerateColumnContext">
+            <summary>
+            Represents a context, passed to a <see cref="F:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId.GenerateColumn"/> command.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.Commands.GenerateColumnContext.Result">
+            <summary>
+            Gets or sets the generated column.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.Commands.GenerateColumnContext.PropertyName">
+            <summary>
+            Gets the name of the property associated with the column.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.Commands.ICommandService">
+            <summary>
+            An interface related to the commands infrastructure of the data grid.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.Commands.ICommandService.CommandService">
+            <summary>
+            Gets the current command service.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.Commands.LoadMoreDataContext">
+            <summary>
+            Represents a context, passed to a <see cref="F:Telerik.XamarinForms.DataGrid.Commands.DataGridCommandId.LoadMoreData"/> command.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.Commands.LoadMoreDataContext.BatchSize">
+            <summary>
+            Gets or sets the size of the batch.
+            </summary>
+            <value>The size of the batch.</value>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridUserEditMode">
+            <summary>
+            Defines the available modes that control the User Input and Experience related to the editing operations within
+            the <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> component.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridUserEditMode.None">
+            <summary>
+            DataGrid cannot be edited.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridUserEditMode.Cell">
+            <summary>
+            DataGrid cell could be edited.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.HitTestService">
+            <summary>
+            Represents a <see cref="T:Telerik.XamarinForms.Common.ServiceBase`1"/> instance that exposes methods used to hit-test for grid rows and cells from given a physical location.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.HitTestService.RowItemFromPoint(Xamarin.Forms.Point)">
+            <summary>
+            Retrieves the object instance from the items source that is represented by the grid row containing the provided physical location.
+            </summary>
+            <param name="point">The physical location.</param>
+            <remarks>
+            The coordinates are relative to the current <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> instance.
+            </remarks>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.HitTestService.CellInfoFromPoint(Xamarin.Forms.Point)">
+            <summary>
+            Retrieves the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridCellInfo"/> instance that is presented by the grid cell containing the provided physical location.
+            </summary>
+            <param name="point">The physical location.</param>
+            <remarks>
+            The coordinates are relative to the current <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> instance.
+            </remarks>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridCellInfo">
+            <summary>
+            Defines the abstraction of a cell within a <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> row.
+            A grid cell is generally the intersection of a grid row and grid column.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridCellInfo.#ctor(System.Object,Telerik.XamarinForms.DataGrid.DataGridColumn)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridCellInfo" /> class.
+            </summary>
+            <param name="item">The item.</param>
+            <param name="column">The column.</param>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridCellInfo.Column">
+            <summary>
+            Gets or sets the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridColumn"/> instance associated with the cell.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridCellInfo.Item">
+            <summary>
+            Gets or sets the data item that represents the grid row.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridCellInfo.Value">
+            <summary>
+            Gets the current value represented by the corresponding grid cell.
+            This is a shortcut to the <see cref="M:Telerik.XamarinForms.DataGrid.DataGridColumn.GetValueForInstance(System.Object)"/> method.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridCellInfo.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object" /> to compare with this instance.</param>
+            <returns>
+              <c>true</c> if the specified <see cref="T:System.Object" /> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridCellInfo.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridSelectionChangedEventArgs">
+            <summary>
+             Provides data for the RadDataGrid SelectionChanged event.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridSelectionChangedEventArgs.#ctor(System.Collections.Generic.IEnumerable{System.Object},System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridSelectionChangedEventArgs" /> class.
+            </summary>
+            <param name="removedItems">The removed items.</param>
+            <param name="addedItems">The added items.</param>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridSelectionChangedEventArgs.RemovedItems">
+            <summary>
+               Gets a IEnumerable that contains the items that were deselected.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridSelectionChangedEventArgs.AddedItems">
+            <summary>
+               Gets a IEnumerable that contains the items that were selected.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridSelectionMode">
+            <summary>
+            Defines the available selection modes within a <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> component.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridSelectionMode.None">
+            <summary>
+            No selection is allowed.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridSelectionMode.Single">
+            <summary>
+            Single unit only may be selected. The selection unit is described by the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectionUnit"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridSelectionMode.Multiple">
+            <summary>
+            Multiple units may be selected. The selection unit is described by the <see cref="P:Telerik.XamarinForms.DataGrid.RadDataGrid.SelectionUnit"/> property.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridSelectionUnit">
+            <summary>
+            Defines the available for selection units within a <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> component.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridSelectionUnit.Row">
+            <summary>
+            The unit to select is a grid row.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.DataGridSelectionUnit.Cell">
+            <summary>
+            The unit to select is a cell within a grid row.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.UpdateFlags.AffectsContentAppearance">
+            <summary>
+            Affect only content appearance but not layout.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.DataGrid.UpdateFlags.AffectsContent">
+            <summary>
+            General change related to the content, can affect visual representation and layout.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.UpdateService">
+            <summary>
+            Serves as a sync service for all the internal updates that originate within the grid.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.UpdateServiceBase`1">
+            <summary>
+            Serves as a sync service for all the internal updates that originate within the grid.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridBorderStyle">
+            <summary>
+            Defines the appearance settings applied to a <see cref="T:Telerik.XamarinForms.Common.Paintables.BorderPaintable"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridBorderStyle.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridBorderStyle" /> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridBorderStyle.BackgroundColor">
+            <summary>
+            Gets or sets the color that fills the area within the border.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridBorderStyle.BorderColor">
+            <summary>
+            Gets or sets the border color.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridBorderStyle.BorderThickness">
+            <summary>
+            Gets or sets the thickness of the border.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle">
+            <summary>
+            Defines the appearance of the column header.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle" /> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle.BackgroundColor">
+            <summary>
+            Gets or sets the background color.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle.BorderColor">
+            <summary>
+            Gets or sets the border color.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle.BorderThickness">
+            <summary>
+            Gets or sets the border thickness.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle.TextColor">
+            <summary>
+            Gets or sets the color for the text part of the ColumnHeader.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle.TextFontFamily">
+            <summary>
+            Gets or sets the FontFamily of the Headers text part.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle.TextFontSize">
+            <summary>
+            Gets or sets the size of the Headers text part.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle.TextFontAttributes">
+            <summary>
+            Gets or sets the <see cref="T:Xamarin.Forms.FontAttributes"/> for the text part of the ColumnHeader.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle.TextMargin">
+            <summary>
+            Gets or sets the margin for the text part of the ColumnHeader.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle.IndicatorColor">
+            <summary>
+            Gets or sets the color for the indicator part of the ColumnHeader.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle.IndicatorText">
+            <summary>
+            Gets or sets the text of the indicator part of the ColumnHeader.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle.IndicatorFontSize">
+            <summary>
+            Gets or sets the font size of the indicator that is part of the ColumnHeader.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle.IndicatorFontFamily">
+            <summary>
+            Gets or sets the font family of the indicator that is part of the ColumnHeader.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle.IndicatorFontAttributes">
+            <summary>
+            Gets or sets the <see cref="T:Xamarin.Forms.FontAttributes"/> for the ColumnHeaders indicator.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle.IndicatorMargin">
+            <summary>
+            Gets or sets the margin of the indicator part of the ColumnHeader.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle.HorizontalTextAlignment">
+            <summary>
+            Gets or sets a value indicating the horizontal text alignment.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridColumnHeaderStyle.VerticalTextAlignment">
+            <summary>
+            Gets or sets a value indicating the vertical text alignment.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle">
+            <summary>
+            Defines the appearance of the group header.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle" /> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle.BackgroundColor">
+            <summary>
+            Gets or sets the color that fills the area within the header of the <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/>s GroupHeader.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle.BorderColor">
+            <summary>
+            Gets or sets the color that fills the border region.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle.BorderThickness">
+            <summary>
+            Gets or sets the thickness of the border.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle.TextColor">
+            <summary>
+            Gets or sets the color for the text part of the GroupHeader.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle.TextMargin">
+            <summary>
+            Gets or sets the margin for the text part of the group header.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle.HorizontalTextAlignment">
+            <summary>
+            Gets or sets a value indicating the horizontal text alignment.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle.VerticalTextAlignment">
+            <summary>
+            Gets or sets a value indicating the vertical text alignment.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle.TextFontSize">
+            <summary>
+            Gets or sets the size of the GroupHeaders text part.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle.TextFontFamily">
+            <summary>
+            Gets or sets the FontFamily of the GroupHeaders text part.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle.TextFontAttributes">
+            <summary>
+            Gets or sets the <see cref="T:Xamarin.Forms.FontAttributes"/> for the text part of the GroupHeader.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle.ExpandButtonText">
+            <summary>
+            Gets or sets the text for the expand state of the GroupHeader.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle.CollapseButtonText">
+            <summary>
+            Gets or sets the text for the collapse state of the GroupHeader.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle.ButtonTextColor">
+            <summary>
+            Gets or sets the color for the expand/collapse symbol of the GroupHeader.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle.ButtonMargin">
+            <summary>
+            Gets or sets the margin for the expand/collapse symbol of the group header.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle.ButtonFontSize">
+            <summary>
+            Gets or sets the font size for the expand/collapse symbol of the GroupHeader.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle.ButtonFontFamily">
+            <summary>
+            Gets or sets the font family for the expand/collapse symbol of the GroupHeader.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridGroupHeaderStyle.ButtonFontAttributes">
+            <summary>
+            Gets or sets the <see cref="T:Xamarin.Forms.FontAttributes"/> for the GroupHeaders expand/collapse symbol.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridStyle">
+            <summary>
+            Defines the appearance settings applied to <see cref="T:Telerik.XamarinForms.DataGrid.RadDataGrid"/> visual elements.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.DataGrid.DataGridTextCellStyle">
+            <summary>
+            Defines the appearance of text cell elements.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.DataGrid.DataGridTextCellStyle.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.DataGrid.DataGridTextCellStyle" /> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridTextCellStyle.TextColor">
+            <summary>
+            Gets or sets the color of the cells text.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridTextCellStyle.SelectedTextColor">
+            <summary>
+            Gets or sets the color of the selected cells text.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridTextCellStyle.TextMargin">
+            <summary>
+            Gets or sets the margin that is applied to the text of the text cell.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridTextCellStyle.FontSize">
+            <summary>
+            Gets or sets the font size of the cells text.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridTextCellStyle.FontFamily">
+            <summary>
+            Gets or sets the font family of the cells text.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridTextCellStyle.FontAttributes">
+            <summary>
+            Gets or sets <see cref="P:Telerik.XamarinForms.DataGrid.DataGridTextCellStyle.FontAttributes"/> of the cells text.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridTextCellStyle.HorizontalTextAlignment">
+            <summary>
+            Gets or sets a value indicating the horizontal text alignment.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.DataGrid.DataGridTextCellStyle.VerticalTextAlignment">
+            <summary>
+            Gets or sets a value indicating the vertical text alignment.
+            </summary>
+        </member>
+    </members>
+</doc>

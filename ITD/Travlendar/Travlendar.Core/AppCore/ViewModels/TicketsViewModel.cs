@@ -1,6 +1,4 @@
-﻿
-
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using Travlendar.Core.AppCore.Model;
 using Travlendar.Framework.ViewModels;
 using Xamarin.Forms;

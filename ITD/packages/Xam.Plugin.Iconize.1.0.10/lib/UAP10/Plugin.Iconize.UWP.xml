@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.Iconize.UWP</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.Iconize.UWP.IconizeExtensions">
+            <summary>
+            Defines the <see cref="T:Plugin.Iconize.UWP.IconizeExtensions" /> extensions.
+            </summary>
+        </member>
+        <member name="M:Plugin.Iconize.UWP.IconizeExtensions.ToFontFamily(Plugin.Iconize.IIconModule)">
+            <summary>
+            To the font family.
+            </summary>
+            <param name="module">The module.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Iconize.UWP.IconizeExtensions.ToImageSource(Plugin.Iconize.IIcon,System.Int32,Windows.UI.Color)">
+            <summary>
+            To the image source.
+            </summary>
+            <param name="icon">The icon.</param>
+            <param name="size">The size.</param>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Plugin.Iconize.UWP.ParsingUtil">
+            <summary>
+            Defines the <see cref="T:Plugin.Iconize.UWP.ParsingUtil" /> type.
+            </summary>
+        </member>
+        <member name="M:Plugin.Iconize.UWP.ParsingUtil.Parse(System.Collections.Generic.IList{Plugin.Iconize.IIconModule},System.String,System.Double)">
+            <summary>
+            Parses the specified modules.
+            </summary>
+            <param name="modules">The modules.</param>
+            <param name="text">The text.</param>
+            <param name="size">The size.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Iconize.UWP.ParsingUtil.RecursivePrepareSpannableIndexes(System.Collections.Generic.IList{Plugin.Iconize.IIconModule},System.String,System.Double,Windows.UI.Xaml.Documents.Span,System.Int32)">
+            <summary>
+            Recursives the prepare spannable indexes.
+            </summary>
+            <param name="modules">The modules.</param>
+            <param name="text">The text.</param>
+            <param name="size">The size.</param>
+            <param name="builder">The builder.</param>
+            <param name="start">The start.</param>
+            <exception cref="T:System.ArgumentException">Unknown expression  + stroke +  in \ + text + \</exception>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,2733 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.XamarinForms.Input</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.XamarinForms.Input.AutoComplete.AutoCompleteTokenStyle">
+            <summary>
+            A class exposing properties that could be used to customize the appearance of the tokens.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.AutoComplete.AutoCompleteTokenStyle.BackgroundColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.AutoComplete.AutoCompleteTokenStyle.BackgroundColor"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.AutoComplete.AutoCompleteTokenStyle.TextColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.AutoComplete.AutoCompleteTokenStyle.TextColor"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.AutoComplete.AutoCompleteTokenStyle.CornerRadiusProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.AutoComplete.AutoCompleteTokenStyle.CornerRadius"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.AutoComplete.AutoCompleteTokenStyle.StrokeWidthProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.AutoComplete.AutoCompleteTokenStyle.StrokeWidth"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.AutoComplete.AutoCompleteTokenStyle.StrokeColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.AutoComplete.AutoCompleteTokenStyle.StrokeColor"/> property. 
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.AutoComplete.AutoCompleteTokenStyle.BackgroundColor">
+            <summary>
+            Gets or sets the color of the token background.
+            </summary>
+            <value>The color.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.AutoComplete.AutoCompleteTokenStyle.TextColor">
+            <summary>
+            Gets or sets the color of the string inside a token.
+            </summary>
+            <value>The color.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.AutoComplete.AutoCompleteTokenStyle.CornerRadius">
+            <summary>
+            Gets or sets the corner radius of a token.
+            </summary>
+            <value>The raduis.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.AutoComplete.AutoCompleteTokenStyle.StrokeWidth">
+            <summary>
+            Gets or sets the width of the stroke around the token. NOTE: Both StrokeWidth and StrokeColor properties should be set.
+            </summary>
+            <value>The with.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.AutoComplete.AutoCompleteTokenStyle.StrokeColor">
+            <summary>
+            Gets or sets the color of the stroke around the token.
+            </summary>
+            <value>The color.</value>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.AutoComplete.AutoCompleteTokenStyle.OnPropertyChanged(System.String)">
+            <inheritdoc/>       
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.BorderColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.BorderColor"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.CompletionModeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.CompletionMode"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.DisplayModeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.DisplayMode"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.FilteredItemsProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.FilteredItems"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.FilteredItemsPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.FilteredItems"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.FontFamilyProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.FontFamily"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.FontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.FontSize"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.FontWeightProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.FontWeight"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.ImagePathProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.ImagePath"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.IsClearButtonVisibleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.IsClearButtonVisible"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.ItemsSourceProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.ItemsSource"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.NoResultsMessageProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.IsClearButtonVisible"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.SearchThresholdProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.SearchThreshold"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.SelectedTokenStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.SelectedTokenStyle"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.ShowSuggestionViewProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.ShowSuggestionView"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.SuggestionItemTemplateProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.SuggestionItemTemplate"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.SuggestionItemTextColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.SuggestionItemTextColor"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.SuggestionViewBackgroundColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.SuggestionViewBackgroundColor"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.SuggestionViewHeightProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.SuggestionViewHeight"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.SuggestModeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.SuggestMode"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.TextColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.TextColor"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.TextProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.Text"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.TextSearchPathProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.TextSearchPath"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.TokensProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.Tokens"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.TokensPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.Tokens"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.TokenStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.TokenStyle"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoComplete.WatermarkProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoComplete.Watermark"/> property.
+            </summary>
+        </member>
+        <member name="E:Telerik.XamarinForms.Input.RadAutoComplete.FilteredItemsChanged">
+            <summary>
+            Occurs when the FilteredItems are changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.XamarinForms.Input.RadAutoComplete.SuggestionItemSelected">
+            <summary>
+            Occurs when a suggestion is selected.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.BorderColor">
+            <summary>
+            Gets or sets the BorderColor of the component.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.CompletionMode">
+            <summary>
+            Gets or sets the CompletionMode of the component.
+            </summary>
+            <value>The CompletionMode.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.DisplayMode">
+            <summary>
+            Gets or sets the DisplayMode of the component.
+            </summary>
+            <value>The DisplayMode.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.FilteredItems">
+            <summary>
+            Gets or sets the FilteredItems of the component.
+            </summary>
+            <value>The FilteredItems.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.FontFamily">
+            <summary>
+            Gets or sets the FontFamily of the component.
+            </summary>
+            <value>The FontFamily.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.FontSize">
+            <summary>
+            Gets or sets the FontSize of the component.
+            </summary>
+            <value>The FontSize.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.FontWeight">
+            <summary>
+            Gets or sets the FontWeight of the component.
+            </summary>
+            <value>The FontWeight.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.ImagePath">
+            <summary>
+            Gets or sets the ImagePath of the component.
+            </summary>
+            <value>The ImagePath.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.IsClearButtonVisible">
+            <summary>
+            Gets or sets a value indicating if the clear button is visible.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.ItemsSource">
+            <summary>
+            Gets or sets the ItemsSource of the component.
+            </summary>
+            <value>The ItemsSource.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.NoResultsMessage">
+            <summary>
+            Gets or sets the message visualised when there are no suggestions found.
+            </summary>
+            <value>The message.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.SearchThreshold">
+            <summary>
+            Gets or sets the SearchThreshold of the component.
+            </summary>
+            <value>The SearchThreshold.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.SelectedTokenStyle">
+            <summary>
+            Gets or sets the style applied to the selected tokens.
+            </summary>
+            <value>The AutoCompleteTokenStyle.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.ShowSuggestionView">
+            <summary>
+            Gets or sets a value indicating if the suggestions should be visualized.
+            </summary>
+            <value>The ShowSuggestionView.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.SuggestionItemTemplate">
+            <summary>
+            Gets or sets the SuggestionItemTemplate of the component.
+            </summary>
+            <value>The SuggestionItemTemplate.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.SuggestionItemTextColor">
+            <summary>
+            Gets or sets the SuggestionItemTextColor of the component.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.SuggestionViewBackgroundColor">
+            <summary>
+            Gets or sets the SuggestionViewBackgroundColor of the component.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.SuggestionViewHeight">
+            <summary>
+            Gets or sets the SuggestionViewHeight of the component.
+            </summary>
+            <value>The required SuggestionViewHeight.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.SuggestMode">
+            <summary>
+            Gets or sets the SuggestMode of the component.
+            </summary>
+            <value>The SuggestMode.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.Text">
+            <summary>
+            Gets the visualized Text.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.TextColor">
+            <summary>
+            Gets or sets the TextColor of the component.
+            </summary>
+            <value>The Color.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.TextSearchPath">
+            <summary>
+            Gets or sets the TextSearchPath of the component.
+            </summary>
+            <value>The TextSearchPath.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.Tokens">
+            <summary>
+            Gets the available Tokens.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.TokenStyle">
+            <summary>
+            Gets or sets the style applied to the tokens.
+            </summary>
+            <value>The AutoCompleteTokenStyle.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadAutoComplete.Watermark">
+            <summary>
+            Gets or sets the Watermark of the component.
+            </summary>
+            <value>The Watermark text.</value>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoCompleteLabel.RestrictLabelHighlightingProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoCompleteLabel.RestrictLabelHighlighting"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadAutoCompleteLabel.HighlightColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadAutoCompleteLabel.HighlightColor"/> property.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.Calendar.Commands.CalendarCommand">
+            <summary>
+            Represents a command abstraction that is associated with a particular <see cref="!:RadListView"/> instance.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.Calendar.Commands.CalendarCommand.Id">
+            <summary>
+            Gets or sets the <see cref="P:Telerik.XamarinForms.Input.Calendar.Commands.CalendarCommand.CommandId"/> value for this instance.
+            This value is used to associate a command with a known event within a <see cref="!:RadListView"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.Calendar.Commands.CalendarCommandService.ExecuteCommand(Telerik.XamarinForms.Input.Calendar.Commands.CommandId,System.Object)">
+            <summary>
+            Attempts to find the command, associated with the specified Id and to perform its Execute routine, using the provided parameter.
+            </summary>
+            <param name="id">The <see cref="T:Telerik.XamarinForms.Input.Calendar.Commands.CommandId"/> value to look for.</param>
+            <param name="parameter">The parameter that is passed to the CanExecute and Execute methods of the command.</param>
+            <returns>True if the command is successfully executed, false otherwise.</returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.Calendar.Commands.CalendarCommandService.ExecuteDefaultCommand(Telerik.XamarinForms.Input.Calendar.Commands.CommandId,System.Object)">
+            <summary>
+            Executes the default (built-in) command (without looking for user-defined commands), associated with the specified Id.
+            </summary>
+            <param name="id">The <see cref="T:Telerik.XamarinForms.Input.Calendar.Commands.CommandId"/> value to look for.</param>
+            <param name="parameter">The parameter that is passed to the CanExecute and Execute methods of the command.</param>
+            <returns>True if the command is successfully executed, false otherwise.</returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.Calendar.Commands.CalendarCommandService.CanExecuteCommand(Telerik.XamarinForms.Input.Calendar.Commands.CommandId,System.Object)">
+            <summary>
+            Determines whether the command, associated with the specified Id can be executed given the parameter provided.
+            </summary>
+            <param name="id">The <see cref="T:Telerik.XamarinForms.Input.Calendar.Commands.CommandId"/> value to look for.</param>
+            <param name="parameter">The parameter that is passed to the CanExecute and Execute methods of the command.</param>
+            <returns>True if the command can be executed, false otherwise.</returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.Calendar.Commands.CalendarCommandService.CanExecuteDefaultCommand(Telerik.XamarinForms.Input.Calendar.Commands.CommandId,System.Object)">
+            <summary>
+            Determines whether the default command, associated with the specified Id can be executed given the parameter provided.
+            </summary>
+            <param name="id">The <see cref="T:Telerik.XamarinForms.Input.Calendar.Commands.CommandId"/> value to look for.</param>
+            <param name="parameter">The parameter that is passed to the CanExecute and Execute methods of the command.</param>
+            <returns>True if the command can be executed, false otherwise.</returns>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.CommandService">
+            <summary>
+            Gets the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.CommandService"/> instance that manages the commanding behavior of this instance.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.Commands">
+            <summary>
+            Gets the collection with all the custom commands registered with the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.CommandService"/>. Custom commands have higher priority than the built-in (default) ones.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.TitleHeightProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.TitleHeight"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.DisplayDateProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.DisplayDate"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.AppointmentsSourceProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.AppointmentsSource"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.MinDateProperty">
+            <summary>
+            Identifies the <see cref="F:Telerik.XamarinForms.Input.RadCalendar.MinDateProperty"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.MaxDateProperty">
+            <summary>
+            Identifies the <see cref="F:Telerik.XamarinForms.Input.RadCalendar.MaxDateProperty"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.SelectedDateProperty">
+            <summary>
+            Identifies the <see cref="F:Telerik.XamarinForms.Input.RadCalendar.SelectedDateProperty"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.GridLinesWidthProperty">
+            <summary>
+            Identifies the <see cref="F:Telerik.XamarinForms.Input.RadCalendar.GridLinesWidthProperty"/> property.
+            </summary>      
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.GridLinesColorProperty">
+            <summary>
+            Identifies the <see cref="F:Telerik.XamarinForms.Input.RadCalendar.GridLinesColorProperty"/> property.
+            </summary>     
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.GridLinesDisplayModeProperty">
+            <summary>
+            Identifies the <see cref="F:Telerik.XamarinForms.Input.RadCalendar.GridLinesDisplayModeProperty"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.DayNamesDisplayModeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.DayNamesDisplayMode"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.WeekNumbersDisplayModeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.WeekNumbersDisplayMode"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.SetStyleForCellProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.SetStyleForCell"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.AppointmentsStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.AppointmentsStyle"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.DayViewStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.DayViewStyle"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.TodayCellStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.TodayCellStyle"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.TitleCellStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.TitleCellStyle"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.DayNameCellStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.DayNameCellStyle"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.WeekNumberCellStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.WeekNumberCellStyle"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.SelectedCellStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.SelectedCellStyle"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.DisabledCellStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.DisabledCellStyle"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.OtherMonthCellStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.OtherMonthCellStyle"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.WeekendCellStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.WeekendCellStyle"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadCalendar.DayCellStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.DayCellStyle"/> property.
+            </summary>
+        </member>
+        <member name="E:Telerik.XamarinForms.Input.RadCalendar.ViewChanged">
+            <summary>
+            Occurs when view mode has changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.XamarinForms.Input.RadCalendar.SelectionChanged">
+            <summary>
+            Occurs when selection has changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.XamarinForms.Input.RadCalendar.CellTapped">
+            <summary>
+            Occurs when the use has tapped on a date.
+            </summary>
+        </member>
+        <member name="E:Telerik.XamarinForms.Input.RadCalendar.DisplayDateChanged">
+            <summary>
+            Occurs when display date has changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.XamarinForms.Input.RadCalendar.AppointmentTapped">
+            <summary>
+            Occurs when an appointment has been tapped.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.TitleHeight">
+            <summary>
+            Gets or sets the height of the calendar title.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.DayCellStyle">
+            <summary>
+            Gets or sets the day cell style.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.WeekendCellStyle">
+            <summary>
+            Gets or sets the weekend cell style.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.OtherMonthCellStyle">
+            <summary>
+            Gets or sets the style mof cells that do not bel;ong to the current month.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.DisabledCellStyle">
+            <summary>
+            Gets or sets the disabled cell style.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.SelectedCellStyle">
+            <summary>
+            Gets or sets the selected cell style.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.DayNameCellStyle">
+            <summary>
+            Gets or sets the style of the cells that show day names.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.WeekNumberCellStyle">
+            <summary>
+            Gets or sets the style of the cells that show week numbers.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.TitleCellStyle">
+            <summary>
+            Gets or sets the title cell style.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.TodayCellStyle">
+            <summary>
+            Gets or sets the today cell style.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.AppointmentsStyle">
+            <summary>
+            Gets or sets the appointments style.
+            </summary>
+            <value>The appointments style.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.DayViewStyle">
+            <summary>
+            Gets or sets the dayview style.
+            </summary>
+            <value>The appointments style.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.SetStyleForCell">
+            <summary>
+            Gets or sets a method that iterates over all calendar cells and provides a custom style.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.WeekNumbersDisplayMode">
+            <summary>
+            Gets or sets the week numbers display mode.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.DayNamesDisplayMode">
+            <summary>
+            Gets or sets the day names display mode.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.GridLinesColor">
+            <summary>
+            Gets or sets the color of the grid lines.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.GridLinesWidth">
+            <summary>
+            Gets or sets the width of the grid lines.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.GridLinesDisplayMode">
+            <summary>
+            Gets or sets the grid lines display mode.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.ViewMode">
+            <summary>
+            Gets the calendar view mode.
+            </summary>
+            <value>The view mode.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.SelectedDate">
+            <summary>
+            Gets or sets the selected date.
+            </summary>
+            <value>The selected date.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.MinDate">
+            <summary>
+             Gets or sets the min date that can be displayed or selected.
+            </summary>
+            <value>The min date.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.MaxDate">
+            <summary>
+            Gets or sets the max date that can be displayed or selected.
+            </summary>
+            <value>The max date.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.DisplayDate">
+            <summary>
+            Gets or sets the DisplayDate. 
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadCalendar.AppointmentsSource">
+            <summary>
+            Gets or sets the AppointmentsSource. This must be a collection of <see cref="T:Telerik.XamarinForms.Input.IAppointment"/> objects, holding the details about the Appointments.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.CalendarCellType">
+            <summary>
+            Type of the calendar cells.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.CalendarViewMode">
+            <summary>
+            Calendar view mode.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.CalendarCell">
+            <summary>
+            Abstraction of calendar cell.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.CalendarCell.Type">
+            <summary>
+            Gets or sets the calendar cell type.
+            </summary>
+            <value>The type.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.CalendarCell.Text">
+            <summary>
+            Gets the text of the calendar cell.
+            </summary>
+            <value>The text.</value>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.CalendarDateCell">
+            <summary>
+            Calendar cell of type <see cref="!:CalendarCellTyle.Date"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.CalendarDateCell.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.Input.CalendarDateCell" /> class. The <see cref="P:Telerik.XamarinForms.Input.CalendarCell.Type"/> property is set to <see cref="F:Telerik.XamarinForms.Input.CalendarCellType.Date"/>.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.CalendarDateCell.IsSelected">
+            <summary>
+            Gets a value that specifies whether the cell is selected.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.CalendarDateCell.IsEnabled">
+            <summary>
+            Gets a value that specifies whether the cell is enabled for selection and could be navigated to.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.CalendarDateCell.Date">
+            <summary>
+            Gets or sets the date associated with the cell.
+            </summary>
+            <value>The date.</value>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.CalendarDayCell">
+            <summary>
+            Calendar cell that represents a day in <see cref="F:Telerik.XamarinForms.Input.CalendarViewMode.Month"/> view.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.CalendarDayCell.IsFromCurrentMonth">
+            <summary>
+            Gets a value that specifies whether the cell date belongs to the current month.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.CalendarDayCell.IsToday">
+            <summary>
+            Gets a value that specifies whether the cell date is today.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.CalendarTextCell">
+            <summary>
+            Calendar cell that represents a text field and is not associated with a date - day name, week number or calendar title.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.CalendarTextCell.#ctor(Telerik.XamarinForms.Input.CalendarCellType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.Input.CalendarTextCell" /> class.
+            </summary>
+            <param name="cellType">
+            Type of the cell. The possible values are <see cref="F:Telerik.XamarinForms.Input.CalendarCellType.Title"/>, <see cref="F:Telerik.XamarinForms.Input.CalendarCellType.WeekNumber"/> or <see cref="F:Telerik.XamarinForms.Input.CalendarCellType.DayName"/>.
+            </param>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.ICalendarRenderer">
+            <summary>
+            Defines the minimum set of members that a calendar renderer should implement.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.ICalendarRenderer.TryNavigateToUpperView(System.Boolean)">
+            <summary>
+            Tries to navigate to upper view.
+            </summary>
+            <param name="isAnimated">The is animated.</param>
+            <returns>A value that specifies whether the calendar has navigated to upper view successfully.</returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.ICalendarRenderer.TryNavigateToLowerView(System.Boolean)">
+            <summary>
+            Tries the navigate to lower view.
+            </summary>
+            <param name="isAnimated">The is animated.</param>
+            <returns>A value that specifies whether the calendar has navigated to lower view successfully.</returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.ICalendarRenderer.GetViewMode">
+            <summary>
+            Gets the current calendar view mode.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.ICalendarRenderer.TrySetViewMode(Telerik.XamarinForms.Input.CalendarViewMode,System.Boolean)">
+            <summary>
+            Tries to change the calendar view mode to the specified value.
+            </summary>
+            <param name="view">The view.</param>
+            <param name="isAnimated">The is animated.</param>
+            <returns>If the specified view mode is not defined for the calendar, a <c>false</c> value is returned.</returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.ICalendarRenderer.GetStyleForCell(Telerik.XamarinForms.Input.CalendarCell)">
+            <summary>
+            Gets a style for the specified cell. This usually calls the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.SetStyleForCell"/> method.
+            </summary>
+            <param name="xfCell">The Xamarin.Forms abstraction for calendar cell.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.ICalendarRenderer.UpdateCellsStyle">
+            <summary>
+            Updates the cells style.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.ICalendarRenderer.OnAppointmentTapped(Telerik.XamarinForms.Input.IAppointment)">
+            <summary>
+            Called when day view appointment is tapped.
+            </summary>
+            <param name="appointment">Appointment.</param>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.DayViewStyle.AllDayAreaBackgroundColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.DayViewStyle.AllDayAreaBackgroundColor"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.DayViewStyle.AllDayAppointmentBackgroundColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.DayViewStyle.AllDayAppointmentBackgroundColor"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.DayViewStyle.AllDayLabelTextColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.DayViewStyle.AllDayLabelTextColor"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.DayViewStyle.AllDayAppointmentTextColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.DayViewStyle.AllDayAppointmentTextColor"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.DayViewStyle.AllDayLabelFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.DayViewStyle.AllDayLabelFontSize"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.DayViewStyle.AllDayAppointmentFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.DayViewStyle.AllDayAppointmentFontSize"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.DayViewStyle.TimelineBackgroundColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.DayViewStyle.TimelineBackgroundColor"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.DayViewStyle.AppointmentTextColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.DayViewStyle.AppointmentTextColor"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.DayViewStyle.AppointmentDetailsTextColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.DayViewStyle.AppointmentDetailsTextColor"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.DayViewStyle.TimelineLabelsTextColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.DayViewStyle.TimelineLabelsTextColor"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.DayViewStyle.AppointmentFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.DayViewStyle.AppointmentFontSize"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.DayViewStyle.AppointmentDetailsFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.DayViewStyle.AppointmentDetailsFontSize"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.DayViewStyle.TimelineLabelsFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.DayViewStyle.TimelineLabelsFontSize"/> property.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.DataForm.EditorStyleSelector">
+            <summary>
+            Selection of a style based on custom selection logic.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.DataForm.EditorStyleSelector.SelectStyle(System.Object,Telerik.XamarinForms.Input.EditorType)">
+            <summary>
+            Override this method to return an app specific <seealso cref="!:Style"/>.
+            </summary>
+            <param name="item">The data content.</param>
+            <param name="container">The element to which the style will be applied.</param>
+            <returns>An app-specific style to apply, or null.</returns>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.DataForm.FormValidationCompletedEventArgs">
+            <summary>
+            Contains information about the <see cref="E:Telerik.XamarinForms.Input.RadDataForm.FormValidationCompleted"/> event.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.DataForm.FormValidationCompletedEventArgs.#ctor(System.Collections.Generic.List{Telerik.XamarinForms.Input.DataForm.ValidationInfo})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.Input.DataForm.FormValidationCompletedEventArgs" /> class.
+            </summary>
+            <param name="errors">The errors.</param>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.DataForm.FormValidationCompletedEventArgs.Errors">
+            <summary>
+            Gets a collection of failed property validation infos.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.DataForm.FormValidationCompletedEventArgs.IsValid">
+            <summary>
+            Gets a value indicating whether all properties have passed validation.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.DataForm.IDataFormRenderer">
+            <summary>
+            Renderers for the <see cref="T:Telerik.XamarinForms.Input.RadDataForm"/> control should implement this interface.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.DataForm.IDataFormRenderer.CommitProperty(System.String)">
+            <summary>
+            Commits a property with specific name.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.DataForm.IDataFormRenderer.CommitAll">
+            <summary>
+            Commits all properties.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.DataForm.IDataFormRenderer.ValidateProperty(System.String)">
+            <summary>
+            Validates a property with specific name.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.DataForm.IDataFormRenderer.ValidateAll">
+            <summary>
+            Validates all properties.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.DataForm.IDataFormRenderer.Reload">
+            <summary>
+            Reloads the <see cref="T:Telerik.XamarinForms.Input.RadDataForm"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.DataForm.IDataFormRenderer.GetGroupHeaderStyle(System.String)">
+            <summary>
+            Gets the group header style.
+            </summary>
+            <returns>The group header style.</returns>
+            <param name="groupName">Group name.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.DataForm.IDataFormRenderer.GetGroupLayoutDefinition(System.String)">
+            <summary>
+            Gets the group layout definition.
+            </summary>
+            <returns>The group layout definition.</returns>
+            <param name="groupName">Group name.</param>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.DataForm.IPropertyDataSourceProvider">
+            <summary>
+            Provides source for data form multiple choice editors.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.DataForm.IPropertyDataSourceProvider.GetSourceForKey(System.Object)">
+            <summary>
+            Gets the source for a specific key defined with the <see cref="T:Telerik.XamarinForms.Common.DataAnnotations.DataSourceKeyAttribute"/>.
+            </summary>
+            <param name="key">The key.</param>
+            <returns>The source.</returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.DataForm.IPropertyDataSourceProvider.GetSourceForType(System.Type)">
+            <summary>
+            Gets the source for a specific property type.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The source.</returns>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.DataForm.EntityPropertyMetadata">
+            <summary>
+            Entity property metadata.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.DataForm.EntityPropertyMetadata.Required">
+            <summary>
+            Gets or sets a value indicating whether the property is required.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.DataForm.EntityPropertyMetadata.IsReadOnly">
+            <summary>
+            Gets or sets a value indicating whether the property is read only.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.DataForm.EntityPropertyMetadata.Ignored">
+            <summary>
+            Gets or sets a value indicating whether the property is ignored.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.DataForm.EntityPropertyMetadata.Group">
+            <summary>
+            Gets or sets the group that the property belongs to.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.DataForm.EntityPropertyMetadata.Position">
+            <summary>
+            Gets or sets the position (row) of the property representation in the layout.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.DataForm.EntityPropertyMetadata.ColumnPosition">
+            <summary>
+            Gets or sets the column of the property representation in the layout.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.DataForm.EntityPropertyMetadata.ColumnSpan">
+            <summary>
+            Gets or sets the column span of the property representation in the layout.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.DataForm.EntityPropertyMetadata.PlaceholderText">
+            <summary>
+            Gets or sets the placeholder text used by the editor.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.DataForm.EntityPropertyMetadata.Header">
+            <summary>
+            Gets or sets the header used by the editor.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.DataForm.EntityPropertyMetadata.Validators">
+            <summary>
+            Gets a collection of all validators defined for this property.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.DataForm.EntityPropertyMetadata.DataSourceKey">
+            <summary>
+            Gets or sets the key that will be used by the <see cref="T:Telerik.XamarinForms.Input.DataForm.IPropertyDataSourceProvider"/>.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.DataForm.PropertyValidationCompletedEventArgs">
+            <summary>
+            Contains information about the <see cref="!:RadDataForm.PropertyValidationComplete"/> event.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.DataForm.PropertyValidationCompletedEventArgs.#ctor(System.Boolean,System.String,System.Object,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.Input.DataForm.PropertyValidationCompletedEventArgs" /> class.
+            </summary>
+            <param name="isValid">The is valid.</param>
+            <param name="propertyName">Name of the property.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.DataForm.PropertyValidationCompletedEventArgs.IsValid">
+            <summary>
+            Gets a value indicating whether the value candidate is valid.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.DataForm.PropertyValidationCompletedEventArgs.PropertyName">
+            <summary>
+            Gets the name of the property.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.DataForm.PropertyValidationCompletedEventArgs.ValueCandidate">
+            <summary>
+            Gets the value candidate.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.DataForm.PropertyValidationCompletedEventArgs.Message">
+            <summary>
+            Gets the error message generated by the property validator.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.DataForm.ValidationInfo">
+            <summary>
+            Provides information about failed property validation.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.DataForm.ValidationInfo.PropertyName">
+            <summary>
+            The name of the property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.DataForm.ValidationInfo.ErrorMessage">
+            <summary>
+            The error message generated by the validator.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.DataForm.ValidationInfo.PropertyDisplayName">
+            <summary>
+            The display name of the property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.DataForm.ValidationInfo.ValueCandidate">
+            <summary>
+            The value candidate.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.DataForm.ValidationInfo.#ctor(System.String,System.String,System.Object,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.Input.DataForm.ValidationInfo" /> struct.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+            <param name="errorMessage">The error message.</param>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.DataForm.DataFormEditorStyle.HeaderForegroundProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.DataForm.DataFormEditorStyle.HeaderForeground"/> property.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.DataForm.DataFormEditorStyle.HeaderForeground">
+            <summary>
+            Gets or sets the HeaderForeground.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.DataForm.DataFormEditorStyle.OnPropertyChanged(System.String)">
+            <inheritdoc/>       
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.DataForm.DataFormGroupGridLayoutDefinition">
+            <summary>
+            Data form group layout that arranges the elements in grid.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.DataForm.DataFormGroupLayoutDefinition">
+            <summary>
+            A base class for data form group layouts.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.DataForm.DataFormGroupStackLayoutDefinition">
+            <summary>
+            Data form group layout that arranges the elements in stack.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.DataForm.DataFormGroupStackLayoutDefinition.Orientation">
+            <summary>
+            Gets or sets the orientation of the layout.
+            </summary>
+            <value>The orientation.</value>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.CommitMode">
+            <summary>
+            Provides values for <see cref="P:Telerik.XamarinForms.Input.RadDataForm.CommitMode"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.CommitMode.Immediate">
+            <summary>
+            The property value is committed immediately.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.CommitMode.OnLostFocus">
+            <summary>
+            The property value is committed when the editor focus is lost.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.CommitMode.Manual">
+            <summary>
+            The property value is committed when the user explicitly calls the <see cref="M:Telerik.XamarinForms.Input.RadDataForm.CommitAll"/>
+            or <see cref="M:Telerik.XamarinForms.Input.RadDataForm.CommitProperty(System.String)"/> method.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.ValidationMode">
+            <summary>
+            Provides values for <see cref="P:Telerik.XamarinForms.Input.RadDataForm.ValidationMode"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.ValidationMode.Immediate">
+            <summary>
+            The property value is validated immediately.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.ValidationMode.OnLostFocus">
+            <summary>
+            The property value is validated when the editor focus is lost.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.ValidationMode.Manual">
+            <summary>
+            The property value is validated on commit or when the user explicitly calls the <see cref="M:Telerik.XamarinForms.Input.RadDataForm.ValidateAll"/>
+            or <see cref="M:Telerik.XamarinForms.Input.RadDataForm.ValidateProperty(System.String)"/> method.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadDataForm.SourceProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadDataForm.Source"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadDataForm.ValidationModeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadDataForm.ValidationMode"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadDataForm.CommitModeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadDataForm.CommitMode"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadDataForm.PropertyDataSourceProviderProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadDataForm.PropertyDataSourceProvider"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadDataForm.IsReadOnlyProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadDataForm.IsReadOnly"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadDataForm.EditorStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadDataForm.EditorStyle"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadDataForm.GroupLayoutDefinitionProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadDataForm.GroupLayoutDefinition"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadDataForm.GroupLayoutDefinitionSelectorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadDataForm.GroupLayoutDefinitionSelector"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadDataForm.GroupHeaderStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadDataForm.GroupHeaderStyle"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadDataForm.GroupHeaderStyleSelectorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadDataForm.GroupHeaderStyleSelector"/> property.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.RadDataForm.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.Input.RadDataForm" /> class.
+            </summary>
+        </member>
+        <member name="E:Telerik.XamarinForms.Input.RadDataForm.FormValidationCompleted">
+            <summary>
+            Occurs when the form validation is completed.
+            </summary>
+        </member>
+        <member name="E:Telerik.XamarinForms.Input.RadDataForm.PropertyValidationCompleted">
+            <summary>
+            Occurs when a property validation is completed.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadDataForm.GroupLayoutDefinition">
+            <summary>
+            Gets or sets common layout defintion for all groups.
+            </summary>
+            <value>The group layout.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadDataForm.GroupLayoutDefinitionSelector">
+            <summary>
+            Gets or sets a group layout definition selector.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadDataForm.PropertyDataSourceProvider">
+            <summary>
+            Gets or sets the property data source provider.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadDataForm.Source">
+            <summary>
+            Gets or sets the source object.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadDataForm.IsReadOnly">
+            <summary>
+            Gets or sets a value indicating whether the <see cref="T:Telerik.XamarinForms.Input.RadDataForm"/> is read-only.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadDataForm.CommitMode">
+            <summary>
+            Gets or sets the commit mode.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadDataForm.ValidationMode">
+            <summary>
+            Gets or sets the validation mode.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.RadDataForm.RegisterEditor(System.Type,Telerik.XamarinForms.Input.EditorType)">
+            <summary>
+            Registers the editor for specific property type.
+            </summary>
+            <param name="propertyType">Type of the property.</param>
+            <param name="editorType">Type of the editor.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.RadDataForm.RegisterEditor(System.String,Telerik.XamarinForms.Input.EditorType)">
+            <summary>
+            Registers the editor for a property with specific name.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+            <param name="editorType">Type of the editor.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.RadDataForm.Reload">
+            <summary>
+            Reloads the form.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.RadDataForm.CommitAll">
+            <summary>
+            Commits all changes.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.RadDataForm.ValidateAll">
+            <summary>
+            Validates all properties.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.RadDataForm.CommitProperty(System.String)">
+            <summary>
+            Commits a specific property.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.RadDataForm.ValidateProperty(System.String)">
+            <summary>
+            Validates a specific property.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.EditorType">
+            <summary>
+            Provides values that represent various <see cref="T:Telerik.XamarinForms.Input.RadDataForm"/> editor types.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.MaskedInput.BorderStyle">
+            <summary>
+            Defines how the border will look like.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInput.BorderStyle.BorderColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.MaskedInput.BorderStyle.BorderColor"/> property.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.BorderStyle.BorderColor">
+            <summary>
+            Gets or sets the color of the border.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.BorderStyle.BorderThickness">
+            <summary>
+            Gets or sets the thickness of each border separately.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.BorderStyle.CornerRadius">
+            <summary>
+            Gets or sets the corner radius of the borer.
+            This property is respected oly when the thickness of all borders is equal.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.MaskedInput.BorderStyle.OnPropertyChanged(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskFinishedCommandContext">
+            <summary>
+            Provides context for custom user commands.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskFinishedCommandContext.#ctor(System.String,System.String,System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+            Initializes <see cref="T:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskFinishedCommandContext"/>
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskFinishedCommandContext.CaretPosition">
+            <summary>
+            Gets or sets the position of the caret.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskFinishedCommandContext.IsAccepted">
+            <summary>
+            Gets or sets a value indicating if the candidate text was accepted.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskFinishedCommandContext.NewDisplayedText">
+            <summary>
+            Gets or sets the string that will be visualized.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskFinishedCommandContext.NewInputValue">
+            <summary>
+            Gets or sets the input value that will be set.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskFinishedCommandContext.OldDisplayedText">
+            <summary>
+            Gets the vsualized text before masking.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskFinishedCommandContext.OldInputValue">
+            <summary>
+            Gets the input value before masking.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskStartedCommandContext">
+            <summary>
+            Provides context for custom commands.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskStartedCommandContext.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes the <see cref="T:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskStartedCommandContext"/>
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskStartedCommandContext.NewDisplayedText">
+            <summary>
+            Gets or sets the string that will be masked.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskStartedCommandContext.NewInputValue">
+            <summary>
+            Gets or sets the value that will be masked.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskStartedCommandContext.OldDisplayedText">
+            <summary>
+            Gets the visible text before input.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskStartedCommandContext.OldInputValue">
+            <summary>
+            Gets the input value before input.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.MaskedInput.MaskedInputCommandId">
+            <summary>
+            Provides values for custom commands.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInput.MaskedInputCommandId.ApplyMaskStarted">
+            <summary>
+            A command that will be triggered before masking.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInput.MaskedInputCommandId.ApplyMaskFinished">
+            <summary>
+            A command that will be triggered after masking.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInput.MaskedInputCommandId.Unknown">
+            <summary>
+            Default value of each custom command.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.MaskedInput.CommandService">
+            <summary>
+            Encapsulates the command-related routine within a <see cref="N:Telerik.XamarinForms.Input.MaskedInput"/> instance.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.MaskedInput.CommandService.CanExecuteCommand(Telerik.XamarinForms.Input.MaskedInput.MaskedInputCommandId,System.Object)">
+            <summary>
+            Determines whether the command, associated with the specified Id can be executed given the parameter provided.
+            </summary>
+            <param name="id">The <see cref="T:Telerik.XamarinForms.Input.MaskedInput.MaskedInputCommandId"/> value to look for.</param>
+            <param name="parameter">The parameter that is passed to the CanExecute and Execute methods of the command.</param>
+            <returns>True if the command can be executed, false otherwise.</returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.MaskedInput.CommandService.ExecuteCommand(Telerik.XamarinForms.Input.MaskedInput.MaskedInputCommandId,System.Object)">
+            <summary>
+            Attempts to find the command, associated with the specified Id and to perform its Execute routine, using the provided parameter.
+            </summary>
+            <param name="id">The <see cref="T:Telerik.XamarinForms.Input.MaskedInput.MaskedInputCommandId"/> value to look for.</param>
+            <param name="parameter">The parameter that is passed to the CanExecute and Execute methods of the command.</param>
+            <returns>True if the command is successfully executed, false otherwise.</returns>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.MaskedInput.MaskedInputCommandBase">
+            <summary>
+            Provides base implementation for custom commands.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.MaskedInputCommandBase.Id">
+            <summary>
+            Gets or sets id oc the custom command.
+            This defines when the command will be triggered as well as its context.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.MaskedInput.MaskedInputCommandBase.CanExecute(System.Object)">
+            <summary>
+            Provides default implementation for the method.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskStartedEventArgs">
+            <summary>
+            Provides context for <see cref="E:Telerik.XamarinForms.Input.RadMaskedInput.ApplyMaskStarted"/> event.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskStartedEventArgs.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes the <see cref="T:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskStartedEventArgs"/>.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskStartedEventArgs.NewDisplayedText">
+            <summary>
+            Gets or sets the string that will be masked.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskStartedEventArgs.NewInputValue">
+            <summary>
+            Gets or sets the value that will be masked.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskStartedEventArgs.OldDisplayedText">
+            <summary>
+            Gets the visible text before input.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskStartedEventArgs.OldInputValue">
+            <summary>
+            Gets the input value before input.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.MaskedInput.MaskExtensions">
+            <summary>
+            Provides predefined Regex strings.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInput.MaskExtensions.IP">
+            <summary>
+            Gets the Regex matching an IP input.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInput.MaskExtensions.Email">
+            <summary>
+            Gets the Regex matching an Email input.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.MaskedInput.MaskType">
+            <summary>
+            Provides values for <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.MaskType"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInput.MaskType.Text">
+            <summary>
+            The text tokens are respected
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInput.MaskType.Regex">
+            <summary>
+            Regex string is respected
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskFinishedEventArgs">
+            <summary>
+            Provides context for <see cref="E:Telerik.XamarinForms.Input.RadMaskedInput.ApplyMaskFinished"/> event.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskFinishedEventArgs.#ctor(System.String,System.String,System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+            Initializes the <see cref="T:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskFinishedEventArgs"/>.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskFinishedEventArgs.CaretPosition">
+            <summary>
+            Gets or sets the position of the caret.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskFinishedEventArgs.IsAccepted">
+            <summary>
+            Gets or sets a value indicating if the candidate text was accepted.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskFinishedEventArgs.NewDisplayedText">
+            <summary>
+            Gets or sets the string that will be visualized.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskFinishedEventArgs.NewInputValue">
+            <summary>
+            Gets or sets the input value that will be set.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskFinishedEventArgs.OldDisplayedText">
+            <summary>
+            Gets the vsualized text before masking.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInput.ApplyMaskFinishedEventArgs.OldInputValue">
+            <summary>
+            Gets the input value before masking.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.RadMaskedInput">
+            <summary>
+            Represents a custom <see cref="T:Xamarin.Forms.View"/> implementation that may be used to input element and error text.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.BorderStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.BorderStyle"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.DisplayedTextColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.DisplayedTextColor"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.DisplayedTextFontProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.DisplayedTextFont"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.DisplayedTextFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.DisplayedTextFontSize"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.DisplayedTextProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.DisplayedText"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.DisplayedTextPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.DisplayedText"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.ErrorColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.ErrorColor"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.ErrorFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.ErrorFontSize"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.InputValueProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.InputValue"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.InvalidInputErrorTextProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.InvalidInputErrorText"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.IsErrorTextVisibleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.IsErrorTextVisible"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.IsErrorTextVisiblePropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.IsErrorTextVisible"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.IsInputAcceptedProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.IsInputAccepted"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.IsInputAcceptedPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.IsInputAccepted"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.IsMaskFullProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.IsMaskFull"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.IsMaskFullPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.IsMaskFull"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.MaskProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.Mask"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.MaskTypeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.MaskType"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.PlaceholderProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.Placeholder"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.RejectedSymbolErrorTextProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.RejectedSymbolErrorText"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.WatermarkTextColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.WatermarkTextColor"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadMaskedInput.WatermarkTextProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.WatermarkText"/> property. 
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.RadMaskedInput.#ctor">
+            <summary>
+            Initializes the <see cref="T:Telerik.XamarinForms.Input.RadMaskedInput"/>.
+            </summary>
+        </member>
+        <member name="E:Telerik.XamarinForms.Input.RadMaskedInput.ApplyMaskFinished">
+            <summary>
+            Occures after the masking engine is triggered.
+            </summary>
+        </member>
+        <member name="E:Telerik.XamarinForms.Input.RadMaskedInput.ApplyMaskStarted">
+            <summary>
+            Occures before the masking engine is triggered.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadMaskedInput.BorderStyle">
+            <summary>
+            Gets or sets a <see cref="P:Telerik.XamarinForms.Input.RadMaskedInput.BorderStyle"/> defining the look of the border around the entry.
+            The default value is defined by the OS.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadMaskedInput.Commands">
+            <summary>
+            Gets a collection of user commands.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadMaskedInput.DisplayedText">
+            <summary>
+            Gets the visible text of the entry.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadMaskedInput.DisplayedTextColor">
+            <summary>
+            Gets or sets the color of the visible text of the entry.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadMaskedInput.DisplayedTextFont">
+            <summary>
+            Gets or sets the font of the visible text of the entry.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadMaskedInput.DisplayedTextFontSize">
+            <summary>
+            Gets or sets the font size of the visible text of the entry.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadMaskedInput.ErrorColor">
+            <summary>
+            Gets or sets color of the error state.
+            This color is applyed to the error text and border.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadMaskedInput.ErrorFontSize">
+            <summary>
+            Gets or sets the font size of the error.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadMaskedInput.InputValue">
+            <summary>
+            Gets or sets the input value.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadMaskedInput.InvalidInputErrorText">
+            <summary>
+            Gets or sets the text that will be visualized after lost focus validation is triggered.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadMaskedInput.IsErrorTextVisible">
+            <summary>
+            Gets a value indicating if the error text is visible.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadMaskedInput.IsInputAccepted">
+            <summary>
+            Gets a value indicating if the input matches the mask.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadMaskedInput.IsMaskFull">
+            <summary>
+            Gets a value indicating if all required symbols are filled.
+            The default value is true. Can be false only when required symbols tokens are present in the mask.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadMaskedInput.Mask">
+            <summary>
+            Gets or sets a string defining the mask.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadMaskedInput.MaskType">
+            <summary>
+            Gets or sets the expected type of the mask.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadMaskedInput.Placeholder">
+            <summary>
+            Gets or sets the char that will be used to mark an empty position.
+            The default value is '_'.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadMaskedInput.RejectedSymbolErrorText">
+            <summary>
+            Gets or sets the string that will be visualized after each input validation.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadMaskedInput.WatermarkText">
+            <summary>
+            Gets or sets the watermark of the control.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadMaskedInput.WatermarkTextColor">
+            <summary>
+            Gets or sets the color of the watermark.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.RadMaskedInput.OnChildAdded(Xamarin.Forms.Element)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.RadMaskedInput.OnChildRemoved(Xamarin.Forms.Element)">
+            <inheritdoc/>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInputElement.BorderStyleProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.MaskedInputElement.BorderStyle"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInputElement.DisplayedTextColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.MaskedInputElement.DisplayedTextColor"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInputElement.DisplayedTextFontProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.MaskedInputElement.DisplayedTextFont"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInputElement.DisplayedTextFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.MaskedInputElement.DisplayedTextFontSize"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInputElement.DisplayedTextProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.MaskedInputElement.DisplayedText"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInputElement.DisplayedTextPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.MaskedInputElement.DisplayedText"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInputElement.InputValueProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.MaskedInputElement.InputValue"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInputElement.MaskProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.MaskedInputElement.Mask"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInputElement.MaskTypeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.MaskedInputElement.MaskType"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInputElement.PlaceholderProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.MaskedInputElement.Placeholder"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInputElement.WatermarkTextColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.MaskedInputElement.WatermarkTextColor"/> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.MaskedInputElement.WatermarkTextProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.MaskedInputElement.WatermarkText"/> property. 
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.MaskedInputElement.#ctor">
+            <summary>
+            Identifies the <see cref="T:Telerik.XamarinForms.Input.MaskedInputElement"/>. 
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInputElement.BorderStyle">
+            <summary>
+            Gets or sets a <see cref="P:Telerik.XamarinForms.Input.MaskedInputElement.BorderStyle"/> defining the look of the border around the entry.
+            The default value is defined by the OS.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInputElement.DisplayedText">
+            <summary>
+            Gets the visible text of the entry.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInputElement.DisplayedTextColor">
+            <summary>
+            Gets or sets the color of the visible text of the entry.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInputElement.DisplayedTextFont">
+            <summary>
+            Gets or sets the font of the visible text of the entry.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInputElement.DisplayedTextFontSize">
+            <summary>
+            Gets or sets the font size of the visible text of the entry.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInputElement.InputValue">
+            <summary>
+            Gets or sets the input value.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInputElement.Mask">
+            <summary>
+            Gets or sets a string defining the mask.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInputElement.MaskType">
+            <summary>
+            Gets or sets the expected type of the mask.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInputElement.Placeholder">
+            <summary>
+            Gets or sets the char that will be used to mark an empty position.
+            The default value is '_'.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInputElement.WatermarkText">
+            <summary>
+            Gets or sets the watermark of the control.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.MaskedInputElement.WatermarkTextColor">
+            <summary>
+            Gets or sets the color of the watermark.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.MaskedInputElement.OnPropertyChanged(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.RadRatingBase">
+            <summary>
+            Encapsulates common RadRating logic.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadRatingBase.IsReadOnlyProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadRatingBase.IsReadOnly"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadRatingBase.ItemsCountProperty">
+            <summary>
+            Identifies the<see cref= "P:Telerik.XamarinForms.Input.RadRatingBase.ItemsCount" /> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadRatingBase.ItemsSpacingProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadRatingBase.ItemsSpacing"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadRatingBase.ValueProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadRatingBase.Value"/> property.
+            </summary>
+        </member>
+        <member name="E:Telerik.XamarinForms.Input.RadRatingBase.ValueChanged">
+            <summary>
+            Occurs when the Value property of the control has changed.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadRatingBase.IsReadOnly">
+            <summary>
+            Gets or sets a boolean value indicating if the control supports user interaction.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadRatingBase.ItemsCount">
+            <summary>
+            Gets or sets the number of the visualized items.
+            </summary>
+            <value>The count.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadRatingBase.ItemsSpacing">
+            <summary>
+            Gets or sets the space between the separate RadRating items.
+            </summary>
+            <value>The space.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadRatingBase.Value">
+            <summary>
+            Gets or sets the RadRating.
+            </summary>
+            <value>The RadRating.</value>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.RadShapeRating">
+            <summary>
+            Extends the RadRatingBase and provides addtional API for working with shapes.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadShapeRating.ItemFillProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadShapeRating.ItemFill"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadShapeRating.ItemShapeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadShapeRating.ItemShape"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadShapeRating.ItemStrokeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadShapeRating.ItemStroke"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadShapeRating.ItemStrokeThicknessProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadShapeRating.ItemStrokeThickness"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadShapeRating.SelectedItemFillProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadShapeRating.SelectedItemFill"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadShapeRating.SelectedItemStrokeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadShapeRating.SelectedItemStroke"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadShapeRating.SelectedItemStrokeThicknessProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadShapeRating.SelectedItemStrokeThickness"/> property.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadShapeRating.ItemFill">
+            <summary>
+            Gets or sets the color used to fill the deselected rating item(s).
+            </summary>
+            <value>The color.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadShapeRating.ItemShape">
+            <summary>
+            Gets or sets path geometry of a single rating item(s).
+            </summary>
+            <value>The shape.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadShapeRating.ItemStroke">
+            <summary>
+            Gets or sets the color used for stroke of the deselected rating item(s).
+            </summary>
+            <value>The color.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadShapeRating.ItemStrokeThickness">
+            <summary>
+            Gets or sets the thickness of the stroke of the selected rating item(s).
+            </summary>
+            <value>The color.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadShapeRating.SelectedItemFill">
+            <summary>
+            Gets or sets the color used to fill the selected rating item(s).
+            </summary>
+            <value>The color.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadShapeRating.SelectedItemStroke">
+            <summary>
+            Gets or sets the color used for stroke of the selected rating item(s).
+            </summary>
+            <value>The color.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadShapeRating.SelectedItemStrokeThickness">
+            <summary>
+            Gets or sets the thickness of the stroke of the selected rating item(s).
+            </summary>
+            <value>The color.</value>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.RadTemplatedRating">
+            <summary>
+            Extends the RadRatingBase and provides API for working with ItemTemplates.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadTemplatedRating.ItemTemplateProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadTemplatedRating.ItemTemplate"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadTemplatedRating.SelectedItemTemplateProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadTemplatedRating.SelectedItemTemplate"/> property.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadTemplatedRating.ItemTemplate">
+            <summary>
+            Gets or sets DataTemplate that will be used to create the rating items in their deselected state.
+            </summary>
+            <value>The DataTemplate.</value>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadTemplatedRating.SelectedItemTemplate">
+            <summary>
+            Gets or sets DataTemplate that will be used to create the rating items in their selected state.
+            </summary>
+            <value>The DataTemplate.</value>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadSegmentedControl.ItemsSourceProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadSegmentedControl.ItemsSource" /> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadSegmentedControl.SelectedIndexProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadSegmentedControl.SelectedIndex" /> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadSegmentedControl.SegmentBackgroundColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadSegmentedControl.SegmentBackgroundColor" /> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadSegmentedControl.SelectedSegmentBackgroundColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadSegmentedControl.SelectedSegmentBackgroundColor" /> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadSegmentedControl.SegmentTextColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadSegmentedControl.SegmentTextColor" /> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadSegmentedControl.SelectedSegmentTextColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadSegmentedControl.SelectedSegmentTextColor" /> property. 
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.RadSegmentedControl.DisabledSegmentTextColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.RadSegmentedControl.DisabledSegmentTextColor" /> property. 
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadSegmentedControl.ItemsSource">
+            <summary>
+            Gets or sets the ItemsSource of the control. 
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadSegmentedControl.SelectedIndex">
+            <summary>
+            Gets or sets the index of the item to be selected. 
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadSegmentedControl.SegmentBackgroundColor">
+            <summary>
+            Gets or sets the background of the segment. 
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadSegmentedControl.SelectedSegmentBackgroundColor">
+            <summary>
+            Gets or sets the background of the selected segment. 
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadSegmentedControl.SegmentTextColor">
+            <summary>
+            Gets or sets the Text Color of the segment. 
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadSegmentedControl.SelectedSegmentTextColor">
+            <summary>
+            Gets or sets the Text Color of the selected segment. 
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.RadSegmentedControl.DisabledSegmentTextColor">
+            <summary>
+            Gets or sets the Text Color of the disabled segment. 
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.AppointmentTappedEventArgs">
+            <summary>
+            Provides information for the <see cref="E:Telerik.XamarinForms.Input.RadCalendar.AppointmentTapped"/> event.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.AppointmentTappedEventArgs.#ctor(Telerik.XamarinForms.Input.IAppointment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.Input.AppointmentTappedEventArgs"/> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.AppointmentTappedEventArgs.Appointment">
+            <summary>
+            Gets the tapped appointment.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.IAppointment">
+            <summary>
+            An interface that defines the minimum properties that an appointment can have.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.IAppointment.StartDate">
+            <summary>
+            Gets or sets the start date of the appointment.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.IAppointment.EndDate">
+            <summary>
+            Gets or sets the end date of the appointment.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.IAppointment.Title">
+            <summary>
+            Gets or sets the title of the appointment.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.IAppointment.Color">
+            <summary>
+            Gets or sets the color of the rectangle of the appointment.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.IAppointment.IsAllDay">
+            <summary>
+            Gets or sets a value indicating if the event takes all day.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.Input.IAppointment.Detail">
+            <summary>
+            Gets or sets additional information about the appointment.
+            </summary>
+            <value>The detail.</value>
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.CalendarCellStyle">
+            <summary>
+            A class that exposes the possible properties that could be used to changed the appearance of a calendar cell.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.CalendarCellStyle.BackgroundColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.CalendarCellStyle.BackgroundColor"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.CalendarCellStyle.TextColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.CalendarCellStyle.TextColor"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.CalendarCellStyle.BorderColorProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.CalendarCellStyle.BorderColor"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.CalendarCellStyle.BorderThicknessProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.CalendarCellStyle.BorderThickness"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.CalendarCellStyle.FontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.CalendarCellStyle.FontSize"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.CalendarCellStyle.FontAttributesProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.CalendarCellStyle.FontAttributes"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.CalendarCellStyle.PaddingProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.CalendarCellStyle.Padding"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.CalendarCellStyle.HorizontalTextAlignmentProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.CalendarCellStyle.HorizontalTextAlignment"/> property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.Input.CalendarCellStyle.VerticalTextAlignmentProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.Input.CalendarCellStyle.VerticalTextAlignment"/> property.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.CalendarChildElementBase.OnPropertyChanged(System.String)">
+            <inheritdoc/>       
+        </member>
+        <member name="T:Telerik.XamarinForms.Input.TelerikThemeStyles">
+            <summary>
+            A class related to the theming infrastructure.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.Input.TelerikThemeStyles.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.Input.TelerikThemeStyles"/> class.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.InputRenderer.UWP.AutoCompleteLabelRenderer">
+            <summary>
+            Represents a platform specific renderer.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.AutoCompleteLabelRenderer.OnElementPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Invoked when a property value of the element changes.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.AutoCompleteRenderer.CreateNativeElement(Telerik.XamarinForms.Input.RadAutoComplete)">
+            <summary>
+            Creates a new native element.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.InputRenderer.UWP.ExtendedRadAutoCompleteBox">
+            <summary>
+            A class that extends the RadAutoCompleteBox.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.ExtendedRadAutoCompleteBox.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.InputRenderer.UWP.ExtendedRadAutoCompleteBox"/> class.
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="P:Telerik.XamarinForms.InputRenderer.UWP.ExtendedRadAutoCompleteBox.AutoComplete">
+            <summary>
+            Gets the associated RadAutoComplete element.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.ExtendedRadAutoCompleteBox.GetContainerForSuggestionItem">
+            <summary>
+            Creates a new suggestion item when needed.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.ExtendedRadAutoCompleteBox.PrepareContainerForSuggestionItem(Windows.UI.Xaml.DependencyObject,System.Object)">
+            <summary>
+            Prepares the suggestion item for further usage.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.ExtendedRadAutoCompleteBox.ClearContainerForSuggestionItem(Windows.UI.Xaml.DependencyObject,System.Object)">
+            <summary>
+            Undoes the effects of the PrepareContainerForSuggestionItem method.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSuggestionItem">
+            <summary>
+            A class that extends the SuggestionItem.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSuggestionItem.HighlightFontSizeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSuggestionItem.HighlightFontSize"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSuggestionItem.HighlightForegroundProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSuggestionItem.HighlightForeground"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSuggestionItem.ImageSourceProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSuggestionItem.ImageSource"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSuggestionItem.IsTextMatchHighlightEnabledProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSuggestionItem.IsTextMatchHighlightEnabled"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSuggestionItem.TextProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSuggestionItem.Text"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSuggestionItem.#ctor(Telerik.XamarinForms.Input.RadAutoComplete)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSuggestionItem"/> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSuggestionItem.HighlightFontSize">
+            <summary>
+            Gets or sets the text's size that is applied when there is a match.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSuggestionItem.HighlightForeground">
+            <summary>
+            Gets or sets the text's foreground that is applied when there is a match.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSuggestionItem.ImageSource">
+            <summary>
+            Gets or sets the image source.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSuggestionItem.IsTextMatchHighlightEnabled">
+            <summary>
+            Gets or sets a value indicating whether matched text should be highlighted.
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSuggestionItem.Text">
+            <summary>
+            Gets or sets the text.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.CalendarRenderer.OnElementPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Called when [element property changed].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.CalendarRenderer.TryNavigateToUpperView(System.Boolean)">
+            <summary>
+            Tries to navigate to upper view.
+            </summary>
+            <param name="isAnimated">The is animated.</param>
+            <returns>
+            A value that specifies whether the calendar has navigated to upper view successfully.
+            </returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.CalendarRenderer.TryNavigateToLowerView(System.Boolean)">
+            <summary>
+            Tries the navigate to lower view.
+            </summary>
+            <param name="isAnimated">The is animated.</param>
+            <returns>
+            A value that specifies whether the calendar has navigated to lower view successfully.
+            </returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.CalendarRenderer.GetViewMode">
+            <summary>
+            Gets the current calendar view mode.
+            </summary>
+            <returns>Returns the CalendarViewMode view mode that is currently active.</returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.CalendarRenderer.TrySetViewMode(Telerik.XamarinForms.Input.CalendarViewMode,System.Boolean)">
+            <summary>
+            Tries to change the calendar view mode to the specified value.
+            </summary>
+            <param name="view">The view.</param>
+            <param name="isAnimated">The is animated.</param>
+            <returns>
+            If the specified view mode is not defined for the calendar, a <c>false</c> value is returned.
+            </returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.CalendarRenderer.GetStyleForCell(Telerik.XamarinForms.Input.CalendarCell)">
+            <summary>
+            Gets a style for the specified cell. This usually calls the <see cref="P:Telerik.XamarinForms.Input.RadCalendar.SetStyleForCell" /> method.
+            </summary>
+            <param name="xfCell">The Xamarin Forms abstraction for calendar cell.</param>
+            <returns>Current CalendarCellStyle.</returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.CalendarRenderer.UpdateCellsStyle">
+            <summary>
+            Updates the cells style.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.CalendarRenderer.OnAppointmentTapped(Telerik.XamarinForms.Input.IAppointment)">
+            <summary>
+            Notifies the calendar that an appointment has been tapped.
+            </summary>
+            <param name="appointment">The appointment</param>
+        </member>
+        <member name="T:Telerik.XamarinForms.InputRenderer.UWP.WindowsDataFormLayoutDefinition">
+            <summary>
+            This class holds the necessary information to allow the developers to arrange the layout of the 
+            DataForm as per their needs on Windows.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsDataFormLayoutDefinition.#ctor(Telerik.XamarinForms.Input.DataForm.IDataFormRenderer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.InputRenderer.UWP.WindowsDataFormLayoutDefinition"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsDataFormLayoutDefinition.#ctor(Telerik.XamarinForms.Input.DataForm.IDataFormRenderer,Telerik.XamarinForms.Input.DataForm.DataFormEditorStyle)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.InputRenderer.UWP.WindowsDataFormLayoutDefinition"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsDataFormLayoutDefinition.CreateGroupLayoutPanel(System.String)">
+            <summary>
+            Creates a panel for the given group.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.DataFormRenderer.CommitAll">
+            <summary>
+            Commits all pending data of the DataForm control.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.DataFormRenderer.CommitProperty(System.String)">
+            <summary>
+            Commits the pending property value.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.DataFormRenderer.Reload">
+            <summary>
+            Reloads data form layout.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.DataFormRenderer.ValidateAll">
+            <summary>
+            Validates all data form editors.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.DataFormRenderer.ValidateProperty(System.String)">
+            <summary>
+            Validates the data form property.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.DataFormRenderer.GetNativeEditorStyle(System.Object,Telerik.XamarinForms.Input.EditorType)">
+            <summary>
+            Gets the editor style.
+            </summary>
+            <param name="property">The property.</param>
+            <param name="editorType">Type of the editor.</param>
+            <returns></returns>
+            <inheritdoc />
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.DataFormRenderer.GetGroupHeaderStyle(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.DataFormRenderer.GetGroupLayoutDefinition(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.DataFormRenderer.GetCustomEditorType(System.String,System.Type)">
+            <summary>
+            Gets the type of the custom editor.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+            <param name="propertyType">Type of the property.</param>
+            <returns>The editor type.</returns>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.DataFormRenderer.UpdateEditor(Telerik.UI.Xaml.Controls.Data.EntityPropertyControl,Telerik.XamarinForms.Input.DataForm.IEntityProperty)">
+            <summary>
+            Updates the editor.
+            </summary>
+            <param name="editor">The editor.</param>
+            <param name="metadata">The metadata.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.DataFormRenderer.OnElementPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Invoked when a property value of the element changes.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProvider">
+            <summary>
+            Represents provider capable to create Xamarin specific Entity model object based on the Context passed.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProvider.#ctor(Telerik.XamarinForms.Input.DataForm.PropertyMetadataProviderBase,Telerik.XamarinForms.Input.DataForm.IPropertyDataSourceProvider,Telerik.UI.Xaml.Controls.Data.RadDataForm)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProvider"/> class.
+            </summary>
+            <param name="metadataProvider">The metadata provider.</param>
+            <param name="dataSourceProvider">The data source provider.</param>
+            <param name="nativeOwner">The native control.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProvider.ShouldGenerateEntityProperty(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProvider.GenerateEntityProperty(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProvider.GetItemValidator(Telerik.Data.Core.Entity)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProvider.GetProperties">
+            <summary>
+            Gets the properties.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProvider.GetEntityPropertyType(System.Object)">
+            <summary>
+            Gets the type of the entity property.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProperty">
+            <summary>
+             Represents a model based on XF EntityProperty of Entity with ability to extract its metadata from Xamarin forms provider, commit and revert data.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProperty.#ctor(Telerik.XamarinForms.Input.DataForm.IEntityProperty,System.Object,Telerik.XamarinForms.Input.DataForm.IPropertyDataSourceProvider)">
+             <summary>
+            
+             </summary>
+             <param name="property">The xamarin forms entity property.</param>
+             <param name="item">The source item.</param>
+             <param name="optionsProvider">The property data source provider.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProperty.GetValueRange(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProperty.GetIsReadOnly(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProperty.GetIsRequired(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProperty.GetLabel(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProperty.GetPropertyGroupKey(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProperty.GetPropertyIndex(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProperty.GetValueOptions(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProperty.GetWatermark(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProperty.Commit">
+            <summary>
+            Commits the value to the source item.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProperty.GetOriginalValue">
+            <summary>
+            Gets the original value of source object.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProperty.GetPropertyName(System.Object)">
+            <summary>
+            Gets the name of the property based on the property context.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityProperty.GetPropertyType(System.Object)">
+            <summary>
+            Gets the type of the property based on the property context.
+            </summary>
+        </member>
+        <member name="T:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityValidator">
+            <summary>
+            Represents Xamarin specific entity validator implementation.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityValidator.#ctor(System.Collections.Generic.Dictionary{System.String,System.Collections.ObjectModel.Collection{Telerik.XamarinForms.Common.DataAnnotations.IPropertyValidator}},Telerik.UI.Xaml.Controls.Data.RadDataForm)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityValidator"/> class.
+            </summary>
+            <param name="validators">The property validators.</param>
+            <param name="nativeOwner">The native owner.</param>
+        </member>
+        <member name="E:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityValidator.ErrorsChanged">
+            <inheritdoc/>
+        </member>
+        <member name="P:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityValidator.HasErrors">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityValidator.GetErrors(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsEntityValidator.ValidatePropertyAsync(Telerik.Data.Core.Entity,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Telerik.XamarinForms.InputRenderer.UWP.WindowsPropertyConverter">
+            <summary>
+            Represents Xamarin implementation of PropertyConverter that adapts Common.DataAnnotations.IPropertyConverter.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsPropertyConverter.#ctor(Telerik.XamarinForms.Common.DataAnnotations.IPropertyConverter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.XamarinForms.InputRenderer.UWP.WindowsPropertyConverter"/> class.
+            </summary>
+            <param name="xamarinConverter">The Xamarin converter.</param>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsPropertyConverter.Convert(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.WindowsPropertyConverter.ConvertBack(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Telerik.XamarinForms.InputRenderer.UWP.ExtendedTextBox">
+            <summary>
+            Represents a custom <see cref="T:Windows.UI.Xaml.Controls.TextBox"/> implementation that may be used to input text.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.InputRenderer.UWP.ExtendedTextBox.CornerRadiusProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.InputRenderer.UWP.ExtendedTextBox.CornerRadius"/> property. 
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.ExtendedTextBox.#ctor(System.Object)">
+            <summary>
+            Initializes the <see cref="T:Telerik.XamarinForms.InputRenderer.UWP.ExtendedTextBox"/>
+            </summary>
+        </member>
+        <member name="P:Telerik.XamarinForms.InputRenderer.UWP.ExtendedTextBox.CornerRadius">
+            <summary>
+            Gets or sets the <see cref="P:Telerik.XamarinForms.InputRenderer.UWP.ExtendedTextBox.CornerRadius"/> of the <see cref="T:Windows.UI.Xaml.Controls.TextBox"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.ExtendedTextBox.OnKeyDown(Windows.UI.Xaml.Input.KeyRoutedEventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Telerik.XamarinForms.InputRenderer.UWP.MaskedInputRenderer">
+            <summary>
+            Renderer for the <see cref="T:Telerik.XamarinForms.Input.MaskedInputElement"/> component.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.MaskedInputRenderer.OnElementPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="F:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSegment.SelectedForegroundProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSegment.SelectedForeground"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSegment.SelectedBackgroundProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSegment.SelectedBackground"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSegment.DisabledForegroundProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.XamarinForms.InputRenderer.UWP.ExtendedSegment.DisabledForeground"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.Input_UWP_XamlTypeInfo.XamlMetaDataProvider.GetXamlType(System.Type)">
+            <summary>
+            GetXamlType(Type)
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.Input_UWP_XamlTypeInfo.XamlMetaDataProvider.GetXamlType(System.String)">
+            <summary>
+            GetXamlType(String)
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.InputRenderer.UWP.Input_UWP_XamlTypeInfo.XamlMetaDataProvider.GetXmlnsDefinitions">
+            <summary>
+            GetXmlnsDefinitions()
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,8 +1,7 @@
-﻿
-using Android.Content;
+﻿using Android.Content;
 using System.IO;
 using System.Threading.Tasks;
-using Travlendar.Core.AppCore.Tools;
+using Travlendar.Core.AppCore.Helpers;
 using Travlendar.Droid.Dependencies;
 using Xamarin.Forms;
 

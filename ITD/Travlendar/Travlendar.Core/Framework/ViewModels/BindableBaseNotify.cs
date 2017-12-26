@@ -1,7 +1,7 @@
-﻿using System;
+﻿/* originally implemented by antoniofrighetto */
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
 
 namespace Travlendar.Framework.ViewModels
 {

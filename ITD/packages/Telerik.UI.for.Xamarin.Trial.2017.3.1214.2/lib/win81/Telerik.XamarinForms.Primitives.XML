@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.XamarinForms.Primitives</name>
+    </assembly>
+    <members>
+        <member name="M:Telerik.XamarinForms.PrimitivesRenderer.WinRT.DrawerStateUserCommand.Execute(System.Object)">
+            <summary>
+            Performs the core action given the provided parameter.
+            </summary>
+        </member>
+        <member name="M:Telerik.XamarinForms.PrimitivesRenderer.WinRT.SideDrawerRenderer.OnElementPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Called when an element property is changed.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs" /> instance containing the event data.</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.Iconize.iOS</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.Iconize.iOS.Controls.IconButton">
+            <summary>
+            Defines the <see cref="T:Plugin.Iconize.iOS.Controls.IconButton" /> control.
+            </summary>
+            <seealso cref="T:UIKit.UIButton" />
+        </member>
+        <member name="M:Plugin.Iconize.iOS.Controls.IconButton.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Plugin.Iconize.iOS.Controls.IconButton" /> class.
+            </summary>
+        </member>
+        <member name="M:Plugin.Iconize.iOS.Controls.IconButton.#ctor(Foundation.NSCoder)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Plugin.Iconize.iOS.Controls.IconButton" /> class.
+            </summary>
+            <param name="coder">The coder.</param>
+        </member>
+        <member name="M:Plugin.Iconize.iOS.Controls.IconButton.#ctor(CoreGraphics.CGRect)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Plugin.Iconize.iOS.Controls.IconButton" /> class.
+            </summary>
+            <param name="frame">The frame.</param>
+        </member>
+        <member name="M:Plugin.Iconize.iOS.Controls.IconButton.SetTitle(System.String,UIKit.UIControlState)">
+            <summary>
+            Sets the title.
+            </summary>
+            <param name="title">The title.</param>
+            <param name="forState">For state.</param>
+        </member>
+        <member name="M:Plugin.Iconize.iOS.Controls.IconButton.Title(UIKit.UIControlState)">
+            <summary>
+            Titles the specified state.
+            </summary>
+            <param name="state">The state.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Plugin.Iconize.iOS.Controls.IconLabel">
+            <summary>
+            Defines the <see cref="T:Plugin.Iconize.iOS.Controls.IconLabel" /> control.
+            </summary>
+            <seealso cref="T:UIKit.UILabel" />
+        </member>
+        <member name="P:Plugin.Iconize.iOS.Controls.IconLabel.Text">
+            <summary>
+            The text displayed by this UILabel.
+            </summary>
+            <value>
+            <para>(More documentation for this node is coming)</para>
+            <para tool="nullallowed">This value can be <see langword="null" />.</para>
+            </value>
+            <remarks>
+            <para>This string is nil by default.</para>
+            <para>      In iOS 6 and later, assigning a new value to this property also replaces the value of the attributedText property with the same text, albeit without any inherent style attributes. Instead the label styles the new string using the shadowColor, textAlignment, and other style-related properties of the class.</para>
+            </remarks>
+        </member>
+        <member name="M:Plugin.Iconize.iOS.Controls.IconLabel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Plugin.Iconize.iOS.Controls.IconLabel" /> class.
+            </summary>
+        </member>
+        <member name="M:Plugin.Iconize.iOS.Controls.IconLabel.#ctor(Foundation.NSCoder)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Plugin.Iconize.iOS.Controls.IconLabel" /> class.
+            </summary>
+            <param name="coder">The coder.</param>
+        </member>
+        <member name="M:Plugin.Iconize.iOS.Controls.IconLabel.#ctor(CoreGraphics.CGRect)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Plugin.Iconize.iOS.Controls.IconLabel" /> class.
+            </summary>
+            <param name="frame">The frame.</param>
+        </member>
+        <member name="T:Plugin.Iconize.iOS.CustomAttributedString">
+            <summary>
+            Defines the <see cref="T:Plugin.Iconize.iOS.CustomAttributedString" /> type.
+            </summary>
+            <seealso cref="T:Foundation.NSAttributedString" />
+        </member>
+        <member name="M:Plugin.Iconize.iOS.CustomAttributedString.#ctor(Plugin.Iconize.IIcon,UIKit.UIFont,System.Single,System.Single,UIKit.UIColor,System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Plugin.Iconize.iOS.CustomAttributedString" /> class.
+            </summary>
+            <param name="icon">The icon.</param>
+            <param name="font">The font.</param>
+            <param name="iconSizePx">The icon size px.</param>
+            <param name="iconSizeRatio">The icon size ratio.</param>
+            <param name="iconColor">Color of the icon.</param>
+            <param name="rotate">if set to <c>true</c> [rotate].</param>
+            <param name="baselineAligned">if set to <c>true</c> [baseline aligned].</param>
+        </member>
+        <member name="T:Plugin.Iconize.iOS.IconizeExtensions">
+            <summary>
+            Defines the <see cref="T:Plugin.Iconize.iOS.IconizeExtensions" /> extensions.
+            </summary>
+        </member>
+        <member name="M:Plugin.Iconize.iOS.IconizeExtensions.Compute(UIKit.UIView,Foundation.NSAttributedString,System.nfloat,UIKit.UIColor)">
+            <summary>
+            Computes the specified text.
+            </summary>
+            <param name="target">The target.</param>
+            <param name="text">The text.</param>
+            <param name="size">The font size.</param>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Iconize.iOS.IconizeExtensions.Compute(UIKit.UIView,System.String,System.nfloat,UIKit.UIColor)">
+            <summary>
+            Computes the specified text.
+            </summary>
+            <param name="target">The target.</param>
+            <param name="text">The text.</param>
+            <param name="size">The font size.</param>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Iconize.iOS.IconizeExtensions.ToUIFont(Plugin.Iconize.IIconModule,System.nfloat)">
+            <summary>
+            To the UI font.
+            </summary>
+            <param name="module">The module.</param>
+            <param name="size">The size.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Iconize.iOS.IconizeExtensions.ToUIImage(Plugin.Iconize.IIcon,System.nfloat)">
+            <summary>
+            To the UI image.
+            </summary>
+            <param name="icon">The icon.</param>
+            <param name="size">The size.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Plugin.Iconize.iOS.ParsingUtil">
+            <summary>
+            Defines the <see cref="T:Plugin.Iconize.iOS.ParsingUtil" /> type.
+            </summary>
+        </member>
+        <member name="M:Plugin.Iconize.iOS.ParsingUtil.Parse(System.Collections.Generic.IList{Plugin.Iconize.IIconModule},Foundation.NSAttributedString,System.nfloat,UIKit.UIColor)">
+            <summary>
+            Parses the specified modules.
+            </summary>
+            <param name="modules">The modules.</param>
+            <param name="text">The text.</param>
+            <param name="size">The size.</param>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Iconize.iOS.ParsingUtil.RecursivePrepareSpannableIndexes(System.Collections.Generic.IList{Plugin.Iconize.IIconModule},System.String,System.nfloat,UIKit.UIColor,Foundation.NSMutableAttributedString,System.Int32)">
+            <summary>
+            Recursives the prepare spannable indexes.
+            </summary>
+            <param name="modules">The modules.</param>
+            <param name="text">The text.</param>
+            <param name="size">The size.</param>
+            <param name="color">The color.</param>
+            <param name="builder">The builder.</param>
+            <param name="start">The start.</param>
+            <exception cref="T:System.ArgumentException">Unknown expression  + stroke +  in \ + text + \</exception>
+        </member>
+    </members>
+</doc>

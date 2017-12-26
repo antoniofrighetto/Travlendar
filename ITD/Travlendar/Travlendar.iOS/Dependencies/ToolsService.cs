@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 using Travlendar.iOS.Dependencies;
-using Travlendar.Dependencies;
+using Travlendar.Framework.Dependencies;
 using Xamarin.Forms;
 using Facebook.LoginKit;
 

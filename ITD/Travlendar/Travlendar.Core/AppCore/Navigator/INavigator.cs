@@ -1,4 +1,4 @@
-﻿namespace Travlendar.AppCore.Navigator
+﻿namespace Travlendar.Core.AppCore.Navigator
 {
     public interface INavigator
     {

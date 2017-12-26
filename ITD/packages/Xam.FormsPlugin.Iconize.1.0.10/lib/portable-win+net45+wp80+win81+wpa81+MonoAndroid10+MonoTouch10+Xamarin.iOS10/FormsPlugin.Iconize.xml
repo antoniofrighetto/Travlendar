@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FormsPlugin.Iconize</name>
+    </assembly>
+    <members>
+        <member name="T:FormsPlugin.Iconize.IconButton">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.IconButton" /> control.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.Button" />
+        </member>
+        <member name="T:FormsPlugin.Iconize.IconCarouselPage">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.IconCarouselPage" /> page.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.CarouselPage" />
+        </member>
+        <member name="M:FormsPlugin.Iconize.IconCarouselPage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:FormsPlugin.Iconize.IconCarouselPage" /> class.
+            </summary>
+        </member>
+        <member name="M:FormsPlugin.Iconize.IconCarouselPage.OnCurrentPageChanged(System.Object,System.EventArgs)">
+            <summary>
+            Called when [current page changed].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="T:FormsPlugin.Iconize.IconImage">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.IconImage" /> control.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.Image" />
+        </member>
+        <member name="F:FormsPlugin.Iconize.IconImage.AutoSize">
+            <summary>
+            When the property <see cref="P:FormsPlugin.Iconize.IconImage.IconSize" /> is set to this value, the icon size will match the Image Size.
+            </summary>
+        </member>
+        <member name="F:FormsPlugin.Iconize.IconImage.IconProperty">
+            <summary>
+            Property definition for the <see cref="P:FormsPlugin.Iconize.IconImage.Icon" /> Property
+            </summary>
+        </member>
+        <member name="F:FormsPlugin.Iconize.IconImage.IconColorProperty">
+            <summary>
+            Property definition for the <see cref="P:FormsPlugin.Iconize.IconImage.IconColor" /> Property
+            </summary>
+        </member>
+        <member name="F:FormsPlugin.Iconize.IconImage.IconSizeProperty">
+            <summary>
+            Property definition for the <see cref="P:FormsPlugin.Iconize.IconImage.IconSize" /> Property
+            </summary>
+        </member>
+        <member name="P:FormsPlugin.Iconize.IconImage.Icon">
+            <summary>
+            Gets or sets the icon.
+            </summary>
+            <value>
+            The icon.
+            </value>
+        </member>
+        <member name="P:FormsPlugin.Iconize.IconImage.IconColor">
+            <summary>
+            Gets or sets the color of the icon.
+            </summary>
+            <value>
+            The color of the icon.
+            </value>
+        </member>
+        <member name="P:FormsPlugin.Iconize.IconImage.IconSize">
+            <summary>
+            Gets or sets the size of the icon.
+            </summary>
+            <value>
+            The size of the icon.
+            </value>
+        </member>
+        <member name="T:FormsPlugin.Iconize.IconLabel">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.IconLabel" /> control.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.Label" />
+        </member>
+        <member name="T:FormsPlugin.Iconize.IconNavigationPage">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.IconNavigationPage" /> page.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.NavigationPage" />
+        </member>
+        <member name="M:FormsPlugin.Iconize.IconNavigationPage.#ctor(Xamarin.Forms.Page)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FormsPlugin.Iconize.IconNavigationPage" /> class.
+            </summary>
+            <param name="root">The root page.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.IconNavigationPage.OnNavigation(System.Object,Xamarin.Forms.NavigationEventArgs)">
+            <summary>
+            Called when [navigation].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:Xamarin.Forms.NavigationEventArgs"/> instance containing the event data.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:FormsPlugin.Iconize.IconTabbedPage">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.IconTabbedPage" /> page.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.TabbedPage" />
+        </member>
+        <member name="M:FormsPlugin.Iconize.IconTabbedPage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:FormsPlugin.Iconize.IconTabbedPage" /> class.
+            </summary>
+        </member>
+        <member name="M:FormsPlugin.Iconize.IconTabbedPage.OnCurrentPageChanged(System.Object,System.EventArgs)">
+            <summary>
+            Called when [current page changed].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="T:FormsPlugin.Iconize.IconToolbarItem">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.IconToolbarItem" /> control.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.ToolbarItem" />
+        </member>
+        <member name="F:FormsPlugin.Iconize.IconToolbarItem.UpdateToolbarItemsMessage">
+            <summary>
+            The update toolbar items message
+            </summary>
+        </member>
+        <member name="F:FormsPlugin.Iconize.IconToolbarItem.IconColorProperty">
+            <summary>
+            Backing store for the <see cref="P:FormsPlugin.Iconize.IconToolbarItem.IconColor" /> property.
+            </summary>
+        </member>
+        <member name="F:FormsPlugin.Iconize.IconToolbarItem.IsVisibleProperty">
+            <summary>
+            Backing store for the <see cref="P:FormsPlugin.Iconize.IconToolbarItem.IsVisible" /> property.
+            </summary>
+        </member>
+        <member name="P:FormsPlugin.Iconize.IconToolbarItem.IconColor">
+            <summary>
+            Gets or sets the color of the icon.
+            </summary>
+            <value>
+            The color of the icon.
+            </value>
+        </member>
+        <member name="P:FormsPlugin.Iconize.IconToolbarItem.IsVisible">
+            <summary>
+            Gets or sets a value indicating whether this toolbar item is visible.
+            </summary>
+            <value>
+            <c>true</c> if this toolbar item is visible; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:FormsPlugin.Iconize.IconToolbarItem.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:FormsPlugin.Iconize.IconToolbarItem" /> class.
+            </summary>
+        </member>
+        <member name="M:FormsPlugin.Iconize.IconToolbarItem.OnPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Called when [property changed].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:FormsPlugin.Iconize.ToolbarItemExtensions">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.ToolbarItemExtensions" /> extensions.
+            </summary>
+        </member>
+        <member name="M:FormsPlugin.Iconize.ToolbarItemExtensions.GetToolbarItems(Xamarin.Forms.Page)">
+            <summary>
+            Gets the toolbar items.
+            </summary>
+            <param name="page">The page.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FormsPlugin.Iconize.ToolbarItemExtensions.Activate(Xamarin.Forms.MenuItem)">
+            <summary>
+            Activates the specified menu item.
+            </summary>
+            <param name="menuItem">The menu item.</param>
+        </member>
+    </members>
+</doc>

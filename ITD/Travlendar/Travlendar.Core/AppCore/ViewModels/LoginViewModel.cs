@@ -1,11 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using Travlendar.AppCore.ViewModels;
 using Travlendar.Core.AppCore.Model;
-using Travlendar.Dependencies;
+using Travlendar.Framework.Dependencies;
 using Travlendar.Framework.ViewModels;
-using Travlendar.Renderers;
+using Travlendar.Core.AppCore.Renderers;
 using Xamarin.Forms;
 
 namespace Travlendar.Core.AppCore.ViewModels

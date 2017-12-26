@@ -54,6 +54,9 @@
     <PackageReference Include="AWSSDK.CognitoSync">
       <Version>3.3.1.26</Version>
     </PackageReference>
+    <PackageReference Include="AWSSDK.Core">
+      <Version>3.3.21</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.Bcl.Build">
       <Version>1.0.21</Version>
     </PackageReference>
@@ -118,12 +121,23 @@
     <PackageReference Include="Xamarin.Forms.Maps">
       <Version>2.5.0.121934</Version>
     </PackageReference>
-    <PackageReference Include="AWSSDK.Core">
-      <Version>3.3.21.6</Version>
+    <PackageReference Include="Telerik.UI.for.Xamarin.Trial">
+      <Version>2017.3.1214.2</Version>
+    </PackageReference>
+    <PackageReference Include="Telerik.UI.for.Xamarin.Common.Trial">
+      <Version>2017.3.1214.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Iconize">
+      <Version>1.0.10</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.FormsPlugin.Iconize">
+      <Version>1.0.10</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Iconize.Ionicons">
+      <Version>1.0.10</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dependencies\ParseService.cs" />
     <Compile Include="Dependencies\PicturePickerImpl.cs" />
     <Compile Include="Dependencies\StatusBarImpl.cs" />
     <Compile Include="Dependencies\ToolsService.cs" />
@@ -132,8 +146,8 @@
     <Compile Include="Renderers\CustomEntryCell.cs" />
     <Compile Include="Renderers\CustomTimePicker.cs" />
     <Compile Include="Renderers\FacebookButtonRenderer.cs" />
-    <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="SplashActivity.cs" />
   </ItemGroup>
   <ItemGroup>

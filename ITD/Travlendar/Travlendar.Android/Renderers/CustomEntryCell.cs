@@ -1,13 +1,11 @@
 ﻿using Android.Content;
-using Travlendar.Renderers;
+using Travlendar.Droid.Renderers;
 using Xamarin.Forms;
 
 [assembly: ExportRenderer (typeof (Entry), typeof (CustomEntryCell))]
-
-namespace Travlendar.Renderers
+namespace Travlendar.Droid.Renderers
 {
     public class CustomEntryCell : Xamarin.Forms.Platform.Android.EntryRenderer
-
     {
         public CustomEntryCell (Context context) : base (context)
         {
@@ -22,8 +20,5 @@ namespace Travlendar.Renderers
                 Control.SetPadding (0, 0, 0, 0);
             }
         }
-
-
-
     }
 }

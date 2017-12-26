@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FormsPlugin.Iconize.Droid</name>
+    </assembly>
+    <members>
+        <member name="T:FormsPlugin.Iconize.Droid.IconButtonRenderer">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.Droid.IconButtonRenderer" /> renderer.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.Platform.Android.AppCompat.ButtonRenderer" />
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconButtonRenderer.Dispose(System.Boolean)">
+            <summary>
+            Disposes the specified disposing.
+            </summary>
+            <param name="disposing">if set to <c>true</c> [disposing].</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconButtonRenderer.OnElementChanged(Xamarin.Forms.Platform.Android.ElementChangedEventArgs{Xamarin.Forms.Button})">
+            <summary>
+            Raises the <see cref="E:ElementChanged" /> event.
+            </summary>
+            <param name="e">The <see cref="T:Xamarin.Forms.Platform.Android.ElementChangedEventArgs`1" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconButtonRenderer.OnElementPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Called when [element property changed].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconButtonRenderer.OnTextChanged(System.Object,Android.Text.TextChangedEventArgs)">
+            <summary>
+            Called when [text changed].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:Android.Text.TextChangedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconButtonRenderer.UpdateText">
+            <summary>
+            Updates the text.
+            </summary>
+        </member>
+        <member name="T:FormsPlugin.Iconize.Droid.IconControls">
+            <summary>
+            Enables renderers for various aspects of the library.
+            </summary>
+        </member>
+        <member name="P:FormsPlugin.Iconize.Droid.IconControls.TabLayoutId">
+            <summary>
+            Gets the tab layout identifier.
+            </summary>
+            <value>
+            The tab layout identifier.
+            </value>
+        </member>
+        <member name="P:FormsPlugin.Iconize.Droid.IconControls.ToolbarId">
+            <summary>
+            Gets the toolbar identifier.
+            </summary>
+            <value>
+            The toolbar identifier.
+            </value>
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconControls.Init(System.Int32,System.Int32)">
+            <summary>
+            Initializes the control library.
+            </summary>
+        </member>
+        <member name="T:FormsPlugin.Iconize.Droid.IconImageRenderer">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.Droid.IconImageRenderer" /> renderer.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.Platform.Android.ImageRenderer" />
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconImageRenderer.OnElementChanged(Xamarin.Forms.Platform.Android.ElementChangedEventArgs{Xamarin.Forms.Image})">
+            <summary>
+            Raises the <see cref="E:ElementChanged" /> event.
+            </summary>
+            <param name="e">The <see cref="T:Xamarin.Forms.Platform.Android.ElementChangedEventArgs`1" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconImageRenderer.OnElementPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Called when [element property changed].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconImageRenderer.UpdateImage">
+            <summary>
+            Updates the image.
+            </summary>
+        </member>
+        <member name="T:FormsPlugin.Iconize.Droid.IconLabelRenderer">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.Droid.IconLabelRenderer" /> renderer.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.Platform.Android.LabelRenderer" />
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconLabelRenderer.Dispose(System.Boolean)">
+            <summary>
+            Disposes the specified disposing.
+            </summary>
+            <param name="disposing">if set to <c>true</c> [disposing].</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconLabelRenderer.OnElementChanged(Xamarin.Forms.Platform.Android.ElementChangedEventArgs{Xamarin.Forms.Label})">
+            <summary>
+            Raises the <see cref="E:ElementChanged" /> event.
+            </summary>
+            <param name="e">The <see cref="T:Xamarin.Forms.Platform.Android.ElementChangedEventArgs`1" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconLabelRenderer.OnElementPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Called when [element property changed].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconLabelRenderer.OnTextChanged(System.Object,Android.Text.TextChangedEventArgs)">
+            <summary>
+            Called when [text changed].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:Android.Text.TextChangedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconLabelRenderer.UpdateText">
+            <summary>
+            Updates the text.
+            </summary>
+        </member>
+        <member name="T:FormsPlugin.Iconize.Droid.IconNavigationRenderer">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.Droid.IconNavigationRenderer" /> renderer.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.Platform.Android.AppCompat.NavigationPageRenderer" />
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconNavigationRenderer.OnAttachedToWindow">
+            <summary>
+            Called when [attached to window].
+            </summary>
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconNavigationRenderer.OnConfigurationChanged(Android.Content.Res.Configuration)">
+            <summary>
+            Called when the current configuration of the resources being used
+            by the application have changed.
+            </summary>
+            <param name="newConfig">The new resource configuration.</param>
+            <remarks>
+            <para tool="javadoc-to-mdoc">Called when the current configuration of the resources being used
+            by the application have changed.  You can use this to decide when
+            to reload resources that can changed based on orientation and other
+            configuration characterstics.  You only need to use this if you are
+            not relying on the normal <c><see cref="T:Android.App.Activity" /></c> mechanism of
+            recreating the activity instance upon a configuration change.</para>
+            <para tool="javadoc-to-mdoc">
+              <format type="text/html">
+                <a href="http://developer.android.com/reference/android/view/View.html#onConfigurationChanged(android.content.res.Configuration)" target="_blank">[Android Documentation]</a>
+              </format>
+            </para>
+            </remarks>
+            <since version="Added in API level 8" />
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconNavigationRenderer.OnDetachedFromWindow">
+            <summary>
+            Called when [detached from window].
+            </summary>
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconNavigationRenderer.OnUpdateToolbarItems(System.Object)">
+            <summary>
+            Called when [update toolbar items].
+            </summary>
+            <param name="sender">The sender.</param>
+        </member>
+        <member name="T:FormsPlugin.Iconize.Droid.IconTabbedPageRenderer">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.Droid.IconTabbedPageRenderer" /> renderer.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.Platform.Android.AppCompat.TabbedPageRenderer" />
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconTabbedPageRenderer.OnAttachedToWindow">
+            <summary>
+            Called when [attached to window].
+            </summary>
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconTabbedPageRenderer.OnElementChanged(Xamarin.Forms.Platform.Android.ElementChangedEventArgs{Xamarin.Forms.TabbedPage})">
+            <summary>
+            Raises the <see cref="E:ElementChanged" /> event.
+            </summary>
+            <param name="e">The <see cref="T:Xamarin.Forms.Platform.Android.ElementChangedEventArgs`1" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.IconTabbedPageRenderer.UpdateTabbedIcons(Android.Content.Context)">
+            <summary>
+            Updates the tabbed icons.
+            </summary>
+        </member>
+        <member name="T:FormsPlugin.Iconize.Droid.ToolbarItemExtensions">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.Droid.ToolbarItemExtensions" /> extensions.
+            </summary>
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.ToolbarItemExtensions.GetToolbarItemDrawable(Xamarin.Forms.ToolbarItem,Android.Content.Context)">
+            <summary>
+            Gets the toolbar item drawable.
+            </summary>
+            <param name="toolbarItem">The toolbar item.</param>
+            <param name="context">The context.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FormsPlugin.Iconize.Droid.ToolbarItemExtensions.UpdateToolbarItems(Xamarin.Forms.Page,Android.Views.View)">
+            <summary>
+            Updates the toolbar items.
+            </summary>
+            <param name="page">The page.</param>
+            <param name="view">The view.</param>
+        </member>
+    </members>
+</doc>

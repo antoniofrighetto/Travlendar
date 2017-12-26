@@ -1,6 +1,5 @@
 ﻿using Travlendar.Core.AppCore.Pages;
 using Travlendar.Core.AppCore.ViewModels;
-using Travlendar.Pages;
 using Xamarin.Forms;
 
 namespace Travlendar
@@ -27,8 +26,14 @@ namespace Travlendar
                     {
                         if ( vm.Success )
                         {
-                            var calendarVm = new CalendarViewModel ();
-                            MainPage = new NavigationPage (new CalendarPage (calendarVm));
+                            NavigationPage navigationPage;
+                            navigationPage = new NavigationPage (new CalendarPage ())
+                            {
+                                BarBackgroundColor = Constants.TravlendarAquaGreen,
+                                BarTextColor = Color.White
+                            };
+
+                            MainPage = navigationPage;
                         }
                         else
                         {
@@ -40,21 +45,6 @@ namespace Travlendar
                         break;
                     }
             }
-        }
-
-        protected override void OnStart ()
-        {
-            // Handle when your app starts
-        }
-
-        protected override void OnSleep ()
-        {
-            // Handle when your app sleeps
-        }
-
-        protected override void OnResume ()
-        {
-            // Handle when your app resumes
         }
     }
 }

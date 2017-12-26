@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FormsPlugin.Iconize.iOS</name>
+    </assembly>
+    <members>
+        <member name="T:FormsPlugin.Iconize.iOS.IconTabbedPageRenderer">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.iOS.IconTabbedPageRenderer" /> renderer.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.Platform.iOS.TabbedRenderer" />
+        </member>
+        <member name="M:FormsPlugin.Iconize.iOS.IconTabbedPageRenderer.OnElementChanged(Xamarin.Forms.Platform.iOS.VisualElementChangedEventArgs)">
+            <summary>
+            Raises the <see cref="E:ElementChanged" /> event.
+            </summary>
+            <param name="e">The <see cref="T:Xamarin.Forms.Platform.iOS.VisualElementChangedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.iOS.IconTabbedPageRenderer.ViewWillAppear(System.Boolean)">
+            <summary>
+            Called prior to the <see cref="P:UIKit.UIViewController.View" /> being added to the view hierarchy.
+            </summary>
+            <param name="animated">If the appearance will be animated.</param>
+            <remarks>
+            <para>This method is called prior to the <see cref="T:UIKit.UIView" /> that is this <see cref="T:UIKit.UIViewController" />’s <see cref="P:UIKit.UIViewController.View" /> property being added to the display <see cref="T:UIKit.UIView" /> hierarchy. </para>
+            <para>Application developers who override this method must call <c>base.ViewWillAppear()</c> in their overridden method.</para>
+            </remarks>
+        </member>
+        <member name="T:FormsPlugin.Iconize.iOS.ToolbarItemExtensions">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.iOS.ToolbarItemExtensions" /> extensions.
+            </summary>
+        </member>
+        <member name="M:FormsPlugin.Iconize.iOS.ToolbarItemExtensions.UpdateToolbarItems(Xamarin.Forms.Page,UIKit.UINavigationController)">
+            <summary>
+            Updates the toolbar items.
+            </summary>
+            <param name="page">The page.</param>
+            <param name="controller">The controller.</param>
+        </member>
+        <member name="T:FormsPlugin.Iconize.iOS.IconButtonRenderer">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.iOS.IconButtonRenderer" /> renderer.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.Platform.iOS.ButtonRenderer" />
+        </member>
+        <member name="M:FormsPlugin.Iconize.iOS.IconButtonRenderer.OnElementChanged(Xamarin.Forms.Platform.iOS.ElementChangedEventArgs{Xamarin.Forms.Button})">
+            <summary>
+            Raises the <see cref="E:ElementChanged" /> event.
+            </summary>
+            <param name="e">The <see cref="T:Xamarin.Forms.Platform.iOS.ElementChangedEventArgs`1" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.iOS.IconButtonRenderer.OnElementPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Called when [element property changed].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.iOS.IconButtonRenderer.UpdateText">
+            <summary>
+            Updates the text.
+            </summary>
+        </member>
+        <member name="T:FormsPlugin.Iconize.iOS.IconControls">
+            <summary>
+            Enables renderers for various aspects of the library.
+            </summary>
+        </member>
+        <member name="M:FormsPlugin.Iconize.iOS.IconControls.Init">
+            <summary>
+            Initializes the control library.
+            </summary>
+        </member>
+        <member name="T:FormsPlugin.Iconize.iOS.IconImageRenderer">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.iOS.IconImageRenderer" /> renderer.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.Platform.iOS.ImageRenderer" />
+        </member>
+        <member name="M:FormsPlugin.Iconize.iOS.IconImageRenderer.OnElementChanged(Xamarin.Forms.Platform.iOS.ElementChangedEventArgs{Xamarin.Forms.Image})">
+            <summary>
+            Raises the <see cref="E:ElementChanged" /> event.
+            </summary>
+            <param name="e">The <see cref="T:Xamarin.Forms.Platform.iOS.ElementChangedEventArgs`1" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.iOS.IconImageRenderer.OnElementPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Called when [element property changed].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.iOS.IconImageRenderer.UpdateImage(System.Boolean)">
+            <summary>
+            Updates the image.
+            </summary>
+            <param name="shouldUpdateImage">if set to <c>true</c> [should update image].</param>
+        </member>
+        <member name="T:FormsPlugin.Iconize.iOS.IconLabelRenderer">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.iOS.IconLabelRenderer" /> renderer.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.Platform.iOS.LabelRenderer" />
+        </member>
+        <member name="M:FormsPlugin.Iconize.iOS.IconLabelRenderer.OnElementChanged(Xamarin.Forms.Platform.iOS.ElementChangedEventArgs{Xamarin.Forms.Label})">
+            <summary>
+            Raises the <see cref="E:ElementChanged" /> event.
+            </summary>
+            <param name="e">The <see cref="T:Xamarin.Forms.Platform.iOS.ElementChangedEventArgs`1" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.iOS.IconLabelRenderer.OnElementPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Called when [element property changed].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.iOS.IconLabelRenderer.UpdateText">
+            <summary>
+            Updates the text.
+            </summary>
+        </member>
+        <member name="T:FormsPlugin.Iconize.iOS.IconNavigationRenderer">
+            <summary>
+            Defines the <see cref="T:FormsPlugin.Iconize.iOS.IconNavigationRenderer" /> renderer.
+            </summary>
+            <seealso cref="T:Xamarin.Forms.Platform.iOS.NavigationRenderer" />
+        </member>
+        <member name="M:FormsPlugin.Iconize.iOS.IconNavigationRenderer.ViewWillAppear(System.Boolean)">
+            <summary>
+            Views the will appear.
+            </summary>
+            <param name="animated">if set to <c>true</c> [animated].</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.iOS.IconNavigationRenderer.ViewWillDisappear(System.Boolean)">
+            <summary>
+            Views the will disappear.
+            </summary>
+            <param name="animated">if set to <c>true</c> [animated].</param>
+        </member>
+        <member name="M:FormsPlugin.Iconize.iOS.IconNavigationRenderer.OnUpdateToolbarItems(System.Object)">
+            <summary>
+            Called when [update toolbar items].
+            </summary>
+            <param name="sender">The sender.</param>
+        </member>
+    </members>
+</doc>
