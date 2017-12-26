@@ -71,9 +71,10 @@ namespace Travlendar.Core.AppCore.ViewModels
         {
             get
             {
-                return logoutCommand ?? (logoutCommand = new Command(() => { 
-                    var logout = DependencyService.Get<ITools>();
-                    logout.LogoutFromFacebook();
+                return logoutCommand ?? (logoutCommand = new Command(() =>
+                {
+                    DependencyService.Get<ITools>().LogoutFromFacebook();
+                    Device.BeginInvokeOnMainThread(async () => await navigation.PopToRootAsync());
                 }));
             }
         }
