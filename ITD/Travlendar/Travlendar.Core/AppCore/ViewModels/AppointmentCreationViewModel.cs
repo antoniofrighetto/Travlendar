@@ -125,6 +125,7 @@ namespace Travlendar.Core.AppCore.ViewModels
                 }));
             }
         }
+
         public AppointmentCreationViewModel(AppointmentCreationPage page, INavigation navigation, ObservableCollection<Appointment> aps, string msg, Appointment a)
         {
             this.page = page;
@@ -151,32 +152,23 @@ namespace Travlendar.Core.AppCore.ViewModels
 
         private async Task CreateAppointment(Appointment newAppointment)
         {
+            var overlappedEvent = appointments.FirstOrDefault(item => item.StartDate == newAppointment.StartDate || (item.StartDate <= newAppointment.EndDate && item.EndDate >= newAppointment.StartDate));
+            if (overlappedEvent != null)
+            {
+                bool response = await page.DisplayAlert("Overlapped Event", String.Format("There's another event ({0}) scheduled for this time interval, are you sure to continue?", overlappedEvent.Title), "Continue", "Cancel");
+                if (!response)
+                {
+                    return;
+                }
+            }
+
             if (message == "Update")
             {
                 appointments.Remove(appointment);
             }
 
-            var overlappedEvent = appointments.FirstOrDefault(item => item.StartDate == newAppointment.StartDate || (item.StartDate <= newAppointment.EndDate && item.EndDate >= newAppointment.StartDate));
-            if (overlappedEvent != null)
-            {
-                await page.DisplayAlert("Overlapped Event", String.Format("There's another event ({0}) scheduled for this time interval, are you sure to continue?", overlappedEvent.Title), "Continue", "Cancel").ContinueWith(async (task) =>
-                {
-                    if (!task.Result)
-                    {
-                        await Task.FromResult(0);
-                    }
-                    else
-                    {
-                        MessagingCenter.Send<AppointmentCreationPage, Appointment>(this.page, "CreationAppointments", newAppointment);
-                        await navigation.PopAsync(true);
-                    }
-                });
-            }
-            else
-            {
-                MessagingCenter.Send<AppointmentCreationPage, Appointment>(this.page, "CreationAppointments", newAppointment);
-                await navigation.PopAsync(true);
-            }
+            MessagingCenter.Send<AppointmentCreationPage, Appointment>(this.page, "CreationAppointments", newAppointment);
+            await navigation.PopAsync(true);
         }
     }
 }

@@ -12,14 +12,11 @@ using Newtonsoft.Json;
 
 namespace Travlendar.Core.AppCore.ViewModels
 {
-    class SettingsViewModel: BindableBaseNotify
+    class SettingsViewModel : BindableBaseNotify
     {
-
-        //private SQLiteConnection database = DependencyService.Get<ISQLite>().InitConnection();
         private SettingsPage page;
         private Settings settings;
         private INavigation navigation;
-        
 
         private string age;
         public string Age
@@ -83,9 +80,7 @@ namespace Travlendar.Core.AppCore.ViewModels
             set { this.SetProperty(ref this.timeBreak, value); }
         }
 
-
-
-        public SettingsViewModel(SettingsPage page,INavigation navigation) {
+        public SettingsViewModel(SettingsPage page, INavigation navigation) {
             this.page = page;
             this.navigation = navigation;
 
@@ -102,11 +97,10 @@ namespace Travlendar.Core.AppCore.ViewModels
             this.timeBreak = settings.timeBreak;
         }
 
-        private async void LoadSettings()
+        private void LoadSettings()
         {
             try
             {
-
                 CognitoSyncViewModel.GetInstance().CreateDataset("Settings");
                 string settingsStringFormat = CognitoSyncViewModel.GetInstance().ReadDataset("Settings", "UserSettings");
                 if (settingsStringFormat == null)
@@ -116,21 +110,12 @@ namespace Travlendar.Core.AppCore.ViewModels
                 else
                 {                
                     settings = JsonConvert.DeserializeObject<Settings>(settingsStringFormat);
-                    int i = 0;
                 }
             }
             catch(Exception exception)
             {
                 System.Diagnostics.Debug.WriteLine(exception.Message);
             }
-
-            //database.CreateTable<Settings>();
-            //if (database.Table<Settings>().Any())
-            //{
-            //    settings = database.Get<Settings>(0);
-            //}
-            //else { settings = new Settings(); }
-
         }
       
         private Command save;
@@ -159,27 +144,19 @@ namespace Travlendar.Core.AppCore.ViewModels
                             lunchBreak = this.lunchBreak,
                             timeBreak = this.timeBreak
                         };
-                    
-                        //database.CreateTable<Settings>();
-                        //if (database.Table<Settings>().Any())
-                        //{
-                        //    database.Update(settings);
-                        //} 
-                        //else { database.Insert(settings); }
 
                         await page.DisplayAlert("Settings correctly inserted", "", "Ok");
-                        await (syncSettings(settings));
+                        await SyncSettings(settings);
                     }
                 }));
             }
         }
 
-
-        private async Task syncSettings(Settings settings)
+        private async Task SyncSettings(Settings settings)
         {
             string settingJSON = JsonConvert.SerializeObject(settings);
             CognitoSyncViewModel.GetInstance().WriteDataset("Settings", "UserSettings", settingJSON);
-            
+            await navigation.PopAsync();
         }
     }
 }

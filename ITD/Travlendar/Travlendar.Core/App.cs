@@ -6,6 +6,7 @@ namespace Travlendar
 {
     public class App : Application
     {
+        private NavigationPage navigationPage;
         public App ()
         {
             var vm = LoginViewModel.GetInstance ();
