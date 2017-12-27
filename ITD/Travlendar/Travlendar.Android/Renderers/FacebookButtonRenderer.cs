@@ -33,7 +33,9 @@ namespace Travlendar.Droid.Renderers
             base.OnElementChanged (e);
             if ( e.OldElement != null || this.Element == null )
                 return;
+
             loginButton = new LoginButton (_context);
+            loginButton.TextAlignment = Android.Views.TextAlignment.TextEnd;
             loginButton.LoginBehavior = LoginBehavior.NativeWithFallback;
             //Implement FacebookCallback with LoginResult type to handle Callback's result
             var loginCallback = new FacebookCallback<LoginResult>
@@ -76,7 +78,14 @@ namespace Travlendar.Droid.Renderers
             LoginManager.Instance.RegisterCallback (MainActivity.CallbackManager, loginCallback);
             //Set the LoginButton as NativeControl
             SetNativeControl (loginButton);
+        }
 
+        public bool IsLogged ()
+        {
+            var token = AccessToken.CurrentAccessToken;
+            return (!string.IsNullOrEmpty (token.UserId) &&
+                            !string.IsNullOrEmpty (token.Token) &&
+                            !token.IsExpired);
         }
 
         public DateTime FromUnixTime (long unixTimeMillis)
@@ -89,8 +98,6 @@ namespace Travlendar.Droid.Renderers
         {
             base.OnElementPropertyChanged (sender, e);
         }
-
-
     }
 
     /// <summary>

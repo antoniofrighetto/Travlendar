@@ -13,6 +13,7 @@ namespace Travlendar.Core.AppCore.Renderers
     public class FacebookButton : Button
     {
         public Action<object, FacebookEventArgs> OnLogin;
+
         public void Login (object sender, FacebookEventArgs args)
         {
             if ( OnLogin != null )

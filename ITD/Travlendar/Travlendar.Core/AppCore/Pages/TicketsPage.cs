@@ -1,5 +1,4 @@
-﻿using System.IO;
-using Travlendar.Core.AppCore.Helpers;
+﻿using System.Collections.Generic;
 using Travlendar.Core.AppCore.ViewModels;
 using Xamarin.Forms;
 
@@ -7,62 +6,51 @@ namespace Travlendar.Core.AppCore.Pages
 {
     public class TicketsPage : ContentPage
     {
-        StackLayout layout;
-        Button pickPictureButton;
+        ToolbarItem addTicket;
         TicketsViewModel _viewModel;
+        TableView tableView;
+        TableSection tableSection;
+
+        StackLayout testLayout;
 
         public TicketsPage (TicketsViewModel vm)
         {
             _viewModel = vm;
-            layout = new StackLayout
-            {
-                Children = {
-                    new Label { Text = "Welcome to Xamarin.Forms!" }
-                },
-                BackgroundColor = Color.White
-            };
 
-            pickPictureButton = new Button
-            {
-                Text = "Pick Photo",
-                VerticalOptions = LayoutOptions.CenterAndExpand,
-                HorizontalOptions = LayoutOptions.CenterAndExpand
-            };
-            pickPictureButton.Clicked += PickPictureButton_ClickedAsync;
-            layout.Children.Add (pickPictureButton);
-        }
+            testLayout = new StackLayout { };
 
-        private async void PickPictureButton_ClickedAsync (object sender, System.EventArgs e)
-        {
-            pickPictureButton.IsEnabled = false;
-            Stream stream = await DependencyService.Get<IPicturePicker> ().GetImageStreamAsync ();
-
-            if ( stream != null )
+            foreach ( KeyValuePair<string, ImageSource> element in _viewModel.Tickets )
             {
-                Image image = new Image
+                var y = new Label
                 {
-                    Source = ImageSource.FromStream (() => stream),
+                    Text = element.Key
+                };
+                var x = new Image
+                {
+                    IsVisible = true,
+                    Source = element.Value,
+                    HorizontalOptions = LayoutOptions.StartAndExpand,
+                    VerticalOptions = LayoutOptions.StartAndExpand,
                     BackgroundColor = Color.Gray
                 };
-
-                //
-                //https://developer.xamarin.com/guides/xamarin-forms/application-fundamentals/dependency-service/photo-picker/#Creating_the_Interface
-                //
-
-                TapGestureRecognizer recognizer = new TapGestureRecognizer ();
-                recognizer.Tapped += (sender2, args) =>
-                {
-                    (sender2 as ContentPage).Content = layout;
-                    pickPictureButton.IsEnabled = true;
-                };
-                image.GestureRecognizers.Add (recognizer);
-
-                //(as ContentPage).Content = image;
+                testLayout.Children.Add (x);
+                testLayout.Children.Add (y);
             }
-            else
+
+            addTicket = new ToolbarItem
             {
-                pickPictureButton.IsEnabled = true;
-            }
+                Text = "Add Ticket"
+            };
+            addTicket.Clicked += AddTicket_ClickedAsync;
+            ToolbarItems.Add (addTicket);
+
+            this.Content = testLayout;
+        }
+
+        private async void AddTicket_ClickedAsync (object sender, System.EventArgs e)
+        {
+            var page = new AddTicketPage (TicketsViewModel.GetInstance ());
+            await Navigation.PushAsync (page);
         }
     }
 }

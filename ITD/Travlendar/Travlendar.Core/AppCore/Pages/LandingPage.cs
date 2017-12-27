@@ -1,6 +1,6 @@
 ﻿using Travlendar.Core.AppCore.Helpers;
-using Travlendar.Core.AppCore.ViewModels;
 using Travlendar.Core.AppCore.Renderers;
+using Travlendar.Core.AppCore.ViewModels;
 using Xamarin.Forms;
 
 namespace Travlendar.Core.AppCore.Pages
@@ -9,7 +9,6 @@ namespace Travlendar.Core.AppCore.Pages
     {
         LoginViewModel _viewModel;
 
-        private RelativeLayout relativeLayout;
         private StackLayout buttons;
         private StackLayout layout;
         private Image backgroundImage;
@@ -18,16 +17,10 @@ namespace Travlendar.Core.AppCore.Pages
         private Button registerButton;
         public FacebookButton fbButton;
 
-        //No VM needed for the moment
-
         public LandingPage (LoginViewModel vm)
         {
             DependencyService.Get<IStatusBar> ().HideStatusBar ();
             _viewModel = vm;
-            relativeLayout = new RelativeLayout
-            {
-                VerticalOptions = LayoutOptions.Fill
-            };
 
             buttons = new StackLayout
             {
@@ -56,6 +49,7 @@ namespace Travlendar.Core.AppCore.Pages
             fbButton.HorizontalOptions = LayoutOptions.Center;
             fbButton.HeightRequest = 50;
             fbButton.VerticalOptions = LayoutOptions.Center;
+
             //Add your event handler for the OnLogin to operate with the Facebook credentials comming from SDK
 
             registerButton = new Button
@@ -64,10 +58,10 @@ namespace Travlendar.Core.AppCore.Pages
                 TextColor = Constants.TravlendarAquaGreen,
                 BackgroundColor = Color.White,
                 BorderColor = Constants.TravlendarAquaGreen,
-                BorderRadius = 20,
-                BorderWidth = 2,
+                BorderRadius = 4,
+                BorderWidth = 1,
                 HorizontalOptions = LayoutOptions.Center,
-                WidthRequest = 200
+                WidthRequest = 155
             };
 
             loginButton = new Button
@@ -76,18 +70,18 @@ namespace Travlendar.Core.AppCore.Pages
                 TextColor = Constants.TravlendarAquaGreen,
                 BackgroundColor = Color.White,
                 BorderColor = Constants.TravlendarAquaGreen,
-                BorderRadius = 20,
-                BorderWidth = 2,
+                BorderRadius = 4,
+                BorderWidth = 1,
                 HorizontalOptions = LayoutOptions.Center,
-                WidthRequest = 200
+                WidthRequest = 155
             };
 
             RegisterEvents ();
 
-            relativeLayout.Children.Add (backgroundImage, Constraint.Constant (0), Constraint.Constant (0));
-            relativeLayout.Children.Add (title, Constraint.RelativeToParent (parent => (parent.Width / 2) - 75), Constraint.RelativeToParent (parent => parent.Height / 2));
+            //relativeLayout.Children.Add (backgroundImage, Constraint.Constant (0), Constraint.Constant (0));
+            //relativeLayout.Children.Add (title, Constraint.RelativeToParent (parent => (parent.Width / 2) - 75), Constraint.RelativeToParent (parent => parent.Height / 2));
 
-            layout.Children.Add (relativeLayout);
+            layout.Children.Add (backgroundImage);
             buttons.Children.Add (registerButton);
             buttons.Children.Add (loginButton);
 

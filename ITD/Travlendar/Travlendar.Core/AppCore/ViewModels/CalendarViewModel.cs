@@ -1,17 +1,13 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Threading.Tasks;
-using System.Linq;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
-using Telerik.XamarinForms.Input;
 using Telerik.XamarinForms.Common;
-using Xamarin.Forms;
-
+using Telerik.XamarinForms.Input;
 using Travlendar.Core.AppCore.Model;
-using Travlendar.Framework.ViewModels;
-using Travlendar.Framework.Dependencies;
 using Travlendar.Core.AppCore.Pages;
+using Travlendar.Framework.Dependencies;
+using Travlendar.Framework.ViewModels;
+using Xamarin.Forms;
 
 namespace Travlendar.Core.AppCore.ViewModels
 {
@@ -21,7 +17,7 @@ namespace Travlendar.Core.AppCore.ViewModels
         private INavigation navigation;
         private RadCalendar calendar;
 
-        private static ObservableCollection<Appointment> appointmentsList = new ObservableCollection<Appointment>();
+        private static ObservableCollection<Appointment> appointmentsList = new ObservableCollection<Appointment> ();
         public ObservableCollection<Appointment> AppointmentList
         {
             get { return appointmentsList; }
@@ -32,8 +28,8 @@ namespace Travlendar.Core.AppCore.ViewModels
         {
             get
             {
-                return addAppointmentCommand ?? (addAppointmentCommand = new Command(
-                    async () => await navigation.PushAsync(new AppointmentCreationPage(appointmentsList, "Creation", null), true)
+                return addAppointmentCommand ?? (addAppointmentCommand = new Command (
+                    async () => await navigation.PushAsync (new AppointmentCreationPage (appointmentsList, "Creation", null), true)
                 ));
             }
         }
@@ -43,15 +39,15 @@ namespace Travlendar.Core.AppCore.ViewModels
         {
             get
             {
-                return todayCommand ?? (todayCommand = new Command(() =>
-                {
-                    if (calendar.ViewMode != CalendarViewMode.Month)
-                    {
-                        calendar.TrySetViewMode(CalendarViewMode.Month);
-                    }
-                    calendar.DisplayDate = DateTime.Now;
-                    calendar.SelectedDate = DateTime.Now;
-                }));
+                return todayCommand ?? (todayCommand = new Command (() =>
+                 {
+                     if ( calendar.ViewMode != CalendarViewMode.Month )
+                     {
+                         calendar.TrySetViewMode (CalendarViewMode.Month);
+                     }
+                     calendar.DisplayDate = DateTime.Now;
+                     calendar.SelectedDate = DateTime.Now;
+                 }));
             }
         }
 
@@ -60,8 +56,9 @@ namespace Travlendar.Core.AppCore.ViewModels
         {
             get
             {
-                return settingsCommand ?? (settingsCommand = new Command(async () => {
-                    await navigation.PushAsync(new SettingsPage(navigation));
+                return settingsCommand ?? (settingsCommand = new Command (async () =>
+                {
+                    await navigation.PushAsync (new SettingsPage (navigation));
                 }));
             }
         }
@@ -71,11 +68,11 @@ namespace Travlendar.Core.AppCore.ViewModels
         {
             get
             {
-                return logoutCommand ?? (logoutCommand = new Command(() =>
-                {
-                    DependencyService.Get<ITools>().LogoutFromFacebook();
-                    Device.BeginInvokeOnMainThread(async () => await navigation.PopToRootAsync());
-                }));
+                return logoutCommand ?? (logoutCommand = new Command (() =>
+                 {
+                     DependencyService.Get<ITools> ().LogoutFromFacebook ();
+                     Device.BeginInvokeOnMainThread (async () => await navigation.PopToRootAsync ());
+                 }));
             }
         }
 
@@ -84,8 +81,9 @@ namespace Travlendar.Core.AppCore.ViewModels
         {
             get
             {
-                return ticketsCommand ?? (ticketsCommand = new Command(async () => {
-                    await navigation.PushAsync(new TicketsPage(new TicketsViewModel(navigation)));
+                return ticketsCommand ?? (ticketsCommand = new Command (async () =>
+                {
+                    await navigation.PushAsync (new TicketsPage (TicketsViewModel.GetInstance ()));
                 }));
             }
         }
@@ -94,10 +92,10 @@ namespace Travlendar.Core.AppCore.ViewModels
         public ToolbarItem ChangeViewButton
         {
             get { return changeViewButton; }
-            set { this.SetProperty(ref changeViewButton, value, "ChangeViewButton"); }
+            set { this.SetProperty (ref changeViewButton, value, "ChangeViewButton"); }
         }
 
-        public CalendarViewModel(CalendarPage page, INavigation navigation, RadCalendar calendar)
+        public CalendarViewModel (CalendarPage page, INavigation navigation, RadCalendar calendar)
         {
             this.page = page;
             this.navigation = navigation;
@@ -105,20 +103,22 @@ namespace Travlendar.Core.AppCore.ViewModels
 
             calendar.AppointmentsSource = AppointmentList;
 
-            MessagingCenter.Subscribe<AppointmentCreationPage, Appointment>(this, "CreationAppointments", (sender, appointment) => {
-                appointmentsList.Add(appointment);
+            MessagingCenter.Subscribe<AppointmentCreationPage, Appointment> (this, "CreationAppointments", (sender, appointment) =>
+            {
+                appointmentsList.Add (appointment);
                 calendar.AppointmentsSource = AppointmentList;
             });
 
-            calendar.AppointmentTapped += async (sender, e) => {
-                await navigation.PushAsync(new AppointmentCreationPage(appointmentsList, "Update", (e.Appointment as Appointment)));
+            calendar.AppointmentTapped += async (sender, e) =>
+            {
+                await navigation.PushAsync (new AppointmentCreationPage (appointmentsList, "Update", (e.Appointment as Appointment)));
             };
         }
 
-        public void calendarViewChanged(object sender, ValueChangedEventArgs<CalendarViewMode> e)
+        public void calendarViewChanged (object sender, ValueChangedEventArgs<CalendarViewMode> e)
         {
-            var viewMode = ((RadCalendar)sender).ViewMode;
-            switch (viewMode)
+            var viewMode = ((RadCalendar) sender).ViewMode;
+            switch ( viewMode )
             {
                 case CalendarViewMode.Day:
                     ChangeViewButton.Text = string.Empty; break;
@@ -126,34 +126,34 @@ namespace Travlendar.Core.AppCore.ViewModels
                 case CalendarViewMode.Year:
                     ChangeViewButton.Text = string.Empty; break;
                 case CalendarViewMode.MonthNames:
-                    ChangeViewButton.Text = string.Concat("Go to ", ((RadCalendar)sender).DisplayDate.Year.ToString()); break;
+                    ChangeViewButton.Text = string.Concat ("Go to ", ((RadCalendar) sender).DisplayDate.Year.ToString ()); break;
                 case CalendarViewMode.Month:
                     {
-                        if (Device.RuntimePlatform != Device.iOS)
-                            ChangeViewButton.Text = string.Concat("Go to ", ((RadCalendar)sender).DisplayDate.Year.ToString());
+                        if ( Device.RuntimePlatform != Device.iOS )
+                            ChangeViewButton.Text = string.Concat ("Go to ", ((RadCalendar) sender).DisplayDate.Year.ToString ());
                         else
-                            ChangeViewButton.Text = string.Concat("Go to ", ((RadCalendar)sender).DisplayDate.Date.ToString("MMMM"));
+                            ChangeViewButton.Text = string.Concat ("Go to ", ((RadCalendar) sender).DisplayDate.Date.ToString ("MMMM"));
                         break;
                     }
             }
         }
 
-        public void dateChanged(object sender, ValueChangedEventArgs<object> e)
+        public void dateChanged (object sender, ValueChangedEventArgs<object> e)
         {
-            var viewMode = ((RadCalendar)sender).ViewMode;
-            var date = ((RadCalendar)sender).DisplayDate;
-            switch (viewMode)
+            var viewMode = ((RadCalendar) sender).ViewMode;
+            var date = ((RadCalendar) sender).DisplayDate;
+            switch ( viewMode )
             {
                 case CalendarViewMode.Month:
                     {
-                        if (Device.RuntimePlatform != Device.iOS)
-                            ChangeViewButton.Text = string.Concat("Go to ", ((RadCalendar)sender).DisplayDate.Year.ToString());
+                        if ( Device.RuntimePlatform != Device.iOS )
+                            ChangeViewButton.Text = string.Concat ("Go to ", ((RadCalendar) sender).DisplayDate.Year.ToString ());
                         else
-                            ChangeViewButton.Text = string.Concat("Go to ", date.Date.ToString("MMMM"));
+                            ChangeViewButton.Text = string.Concat ("Go to ", date.Date.ToString ("MMMM"));
                         break;
                     }
                 case CalendarViewMode.MonthNames:
-                    ChangeViewButton.Text = string.Concat("Go to ", date.Year.ToString()); break;
+                    ChangeViewButton.Text = string.Concat ("Go to ", date.Year.ToString ()); break;
             }
         }
     }

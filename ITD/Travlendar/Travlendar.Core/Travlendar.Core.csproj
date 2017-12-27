@@ -47,6 +47,7 @@
     <Compile Include="AppCore\Model\SettingsModel.cs" />
     <Compile Include="AppCore\Model\TicketModel.cs" />
     <Compile Include="AppCore\Navigator\INavigator.cs" />
+    <Compile Include="AppCore\Pages\AddTicketPage.cs" />
     <Compile Include="AppCore\Pages\CalendarPage.cs" />
     <Compile Include="AppCore\Pages\LandingPage.cs" />
     <Compile Include="AppCore\Pages\LoginPage.cs" />

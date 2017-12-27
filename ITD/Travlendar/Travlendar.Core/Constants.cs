@@ -14,6 +14,9 @@ namespace Travlendar
         public const string FB_PROVIDER = "graph.facebook.com";
 
         //App Color
-        public static Color TravlendarAquaGreen = Color.FromRgb(24, 149, 132);
+        public static Color TravlendarAquaGreen = Color.FromRgb (24, 149, 132);
+
+        //Font Color
+        public static Color TravlendarWhite = Color.White;
     }
 }

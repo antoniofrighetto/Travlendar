@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Travlendar.Core.AppCore.Model;
 using Travlendar.Framework.ViewModels;
@@ -50,6 +51,7 @@ namespace Travlendar.Core.AppCore.ViewModels
             }
             catch ( Exception e )
             {
+                Debug.WriteLine ("TRAVLENDAR || GetPositionFromString error: " + e);
                 // TODO ADD POPUP LOCATION NOT FOUND OR HANDLE ERROR
             }
         }

@@ -55,6 +55,7 @@ namespace Travlendar.Core.AppCore.ViewModels
             {
                 //Logging in AWS Cognito Federal Entities Pool
                 cognitoSyncViewModel.AWSLogin (Constants.FB_PROVIDER, e.AccessToken);
+
             }
             else
             {

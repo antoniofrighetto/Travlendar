@@ -23,12 +23,17 @@ namespace Travlendar.iOS
         public override bool FinishedLaunching (UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init ();
+
             //Facebook Config
             Settings.AppID = Constants.FB_APP_ID;
 
-            Settings.AppID = Constants.FB_APP_ID;
-
             //AWS Config
+            var loggingConfig = AWSConfigs.LoggingConfig;
+            loggingConfig.LogMetrics = true;
+            loggingConfig.LogResponses = ResponseLoggingOption.Always;
+            loggingConfig.LogMetricsFormat = LogMetricsFormatOption.JSON;
+            loggingConfig.LogTo = LoggingOptions.SystemDiagnostics;
+            AWSConfigs.AWSRegion = "eu-west-1";
 
             //Google Maps Config
             Xamarin.FormsMaps.Init ();
@@ -56,11 +61,10 @@ namespace Travlendar.iOS
             }
 
             LoadApplication (new App ());
-
             return base.FinishedLaunching (app, options);
         }
 
-        public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
+        public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
         {
             // We need to handle URLs by passing them to their own OpenUrl in order to make the SSO authentication works.
             return ApplicationDelegate.SharedInstance.OpenUrl(application, url, sourceApplication, annotation);
