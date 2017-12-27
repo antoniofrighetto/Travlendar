@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using Travlendar.Core.AppCore.Model;
 using Travlendar.Core.Framework.Dependencies;
@@ -47,8 +48,7 @@ namespace Travlendar.Core.AppCore.ViewModels
         {
             try
             {
-                var pos = await GetPositionsForAddressSyncAsync (textPosition);
-                Position = pos [0];
+                Position = await GetPositionsForAddressSyncAsync (textPosition);
             }
             catch ( Exception e )
             {
@@ -57,17 +57,13 @@ namespace Travlendar.Core.AppCore.ViewModels
             }
         }
 
-        public async System.Threading.Tasks.Task<List<Position>> GetPositionsForAddressSyncAsync (string textPosition)
+        public async System.Threading.Tasks.Task<Position> GetPositionsForAddressSyncAsync (string textPosition)
         {
             List<Position> positions = new List<Position> ();
 
             var approximateLocations = await geoCoder.GetPositionsForAddressAsync (textPosition);
-            foreach ( var position in approximateLocations )
-            {
-                positions.Add (position);
-            }
 
-            return positions;
+            return approximateLocations.FirstOrDefault ();
         }
 
         private void RaisePropertyChanged ([CallerMemberName] string property = null)
