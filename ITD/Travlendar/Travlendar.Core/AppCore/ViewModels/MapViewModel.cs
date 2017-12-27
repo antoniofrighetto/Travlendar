@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Travlendar.Core.AppCore.Model;
+using Travlendar.Core.Framework.Dependencies;
 using Travlendar.Framework.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
@@ -52,7 +53,7 @@ namespace Travlendar.Core.AppCore.ViewModels
             catch ( Exception e )
             {
                 Debug.WriteLine ("TRAVLENDAR || GetPositionFromString error: " + e);
-                // TODO ADD POPUP LOCATION NOT FOUND OR HANDLE ERROR
+                DependencyService.Get<IMessage> ().ShortAlert (textPosition + "not found");
             }
         }
 

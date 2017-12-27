@@ -52,10 +52,16 @@ namespace Travlendar.Core.AppCore.Pages
                 ToolbarItems.Add(cancelButton);
             }
 
-            LocationViewCell.Tapped += (sender, e) => { };
-            CalendarTypeViewCell.Tapped += async (sender, e) => {
-                await Navigation.PushAsync(new CalendarTypePage());
+            CalendarTypeViewCell.Tapped += async (sender, e) =>
+            {
+                await Navigation.PushAsync (new CalendarTypePage ());
             };
+
+            LocationViewCell.Tapped += async (sender, e) =>
+            {
+                await Navigation.PushAsync (new MapPage (new MapViewModel (this.Navigation)));
+            };
+
 
             StartDatePicker.DateSelected += (sender, e) => {
                 EndDatePicker.Date = StartDatePicker.Date;

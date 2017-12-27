@@ -9,6 +9,7 @@ namespace Travlendar.Core.AppCore.Pages
         MapViewModel _viewModel;
 
         StackLayout stack;
+        ToolbarItem save;
         Map map;
         Entry position;
 
@@ -37,9 +38,24 @@ namespace Travlendar.Core.AppCore.Pages
                 VerticalOptions = LayoutOptions.FillAndExpand
             };
 
+            save = new ToolbarItem
+            {
+                Text = "Save"
+            };
+            save.Clicked += Save_Clicked;
+
             stack.Children.Add (position);
             stack.Children.Add (map);
+
+            ToolbarItems.Add (save);
             Content = stack;
+        }
+
+        private async void Save_Clicked (object sender, System.EventArgs e)
+        {
+            //Salva sul viewmodel di appointment creation
+            //la position _viewModel.Position;
+            await Navigation.PopAsync ();
         }
 
         private void Position_Completed (object sender, System.EventArgs e)
@@ -51,6 +67,12 @@ namespace Travlendar.Core.AppCore.Pages
         private void _viewModel_PropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             map.MoveToRegion (MapSpan.FromCenterAndRadius (_viewModel.Position, Distance.FromKilometers (0.5)));
+            map.Pins.Add (new Pin
+            {
+                Type = PinType.SearchResult,
+                Position = _viewModel.Position,
+                Label = "Position"
+            });
         }
     }
 }

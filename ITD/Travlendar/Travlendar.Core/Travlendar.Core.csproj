@@ -65,6 +65,7 @@
     <Compile Include="AppCore\ViewModels\SettingsViewModel.cs" />
     <Compile Include="AppCore\ViewModels\TicketsViewModel.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Framework\Dependencies\IMessage.cs" />
     <Compile Include="Framework\ViewModels\BindableBaseNotify.cs" />
     <Compile Include="Framework\Dependencies\IParse.cs" />
     <Compile Include="Framework\Dependencies\ISyncManager.cs" />
