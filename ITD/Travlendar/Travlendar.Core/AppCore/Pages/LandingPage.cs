@@ -19,7 +19,7 @@ namespace Travlendar.Core.AppCore.Pages
 
         public LandingPage (LoginViewModel vm)
         {
-            DependencyService.Get<IStatusBar> ().HideStatusBar ();
+            this.Appearing += LandingPage_Appearing;
             _viewModel = vm;
 
             buttons = new StackLayout
@@ -89,6 +89,12 @@ namespace Travlendar.Core.AppCore.Pages
             layout.Children.Add (buttons);
 
             this.Content = layout;
+        }
+
+        private void LandingPage_Appearing (object sender, System.EventArgs e)
+        {
+            DependencyService.Get<IStatusBar> ().HideStatusBar ();
+            NavigationPage.SetHasNavigationBar (this, false);
         }
 
         private async void LoginButton_ClickedAsync (object sender, System.EventArgs e)

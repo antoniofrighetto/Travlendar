@@ -172,6 +172,12 @@ namespace Travlendar.Core.AppCore.Pages
             Content = layout;
         }
 
+        protected override bool OnBackButtonPressed ()
+        {
+            //CHIUDIAMO L'APP 
+            return true;
+        }
+
         /*public class CalendarPage : ContentPage
         {
             CalendarViewModel _viewModel;

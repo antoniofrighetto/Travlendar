@@ -6,44 +6,39 @@ namespace Travlendar
 {
     public class App : Application
     {
+        private NavigationPage navigationPage;
         public App ()
         {
             var vm = LoginViewModel.GetInstance ();
             vm.PropertyChanged += Vm_PropertyChanged;
 
-            var page = new LandingPage (LoginViewModel.GetInstance ());
-            NavigationPage.SetHasNavigationBar (page, false);
-            // The root page of your application
-            MainPage = new NavigationPage (page);
+            navigationPage = new NavigationPage (new LandingPage (LoginViewModel.GetInstance ()));
+            NavigationPage.SetHasNavigationBar (navigationPage, false);
+
+            // The root page of application
+            MainPage = navigationPage;
         }
 
-        private void Vm_PropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        private async void Vm_PropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             var vm = sender as LoginViewModel;
-            switch ( e.PropertyName )
+            if ( e.PropertyName == "Success" )
             {
-                case "Success":
+                if ( vm.Success )
+                {
+                    var page = new CalendarPage ();
+                    navigationPage.BarBackgroundColor = Constants.TravlendarAquaGreen;
+                    navigationPage.BarTextColor = Color.White;
+                    NavigationPage.SetHasBackButton (page, false);
+                    await navigationPage.PushAsync (page);
+                }
+                else
+                {
+                    if ( !(MainPage is LoginPage) )
                     {
-                        if ( vm.Success )
-                        {
-                            NavigationPage navigationPage;
-                            navigationPage = new NavigationPage (new CalendarPage ())
-                            {
-                                BarBackgroundColor = Constants.TravlendarAquaGreen,
-                                BarTextColor = Color.White
-                            };
-
-                            MainPage = navigationPage;
-                        }
-                        else
-                        {
-                            if ( !(MainPage is LoginPage) )
-                            {
-                                MainPage = new LoginPage (vm);
-                            }
-                        }
-                        break;
+                        MainPage = new LoginPage (vm);
                     }
+                }
             }
         }
     }
