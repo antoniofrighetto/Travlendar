@@ -26,6 +26,13 @@ namespace Travlendar.Core.AppCore.ViewModels
             set { this.SetProperty (ref location, value); }
         }
 
+        private string locationName;
+        public string LocationName
+        {
+            get { return LocationName; }
+            set { this.SetProperty (ref locationName, value); }
+        }
+
         private string titleAppointment;
         public string TitleAppointment
         {

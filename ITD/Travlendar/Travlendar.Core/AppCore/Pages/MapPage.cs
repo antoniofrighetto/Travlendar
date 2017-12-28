@@ -57,7 +57,10 @@ namespace Travlendar.Core.AppCore.Pages
         private async void Save_Clicked (object sender, System.EventArgs e)
         {
             //Salva sul viewmodel di appointment creation
-            //la position _viewModel.Position;
+
+            //_viewModel.Position;
+            //_viewModel.PositionName;
+
             await Navigation.PopAsync ();
         }
 

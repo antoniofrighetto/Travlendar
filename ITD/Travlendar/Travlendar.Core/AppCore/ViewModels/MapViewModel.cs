@@ -21,6 +21,9 @@ namespace Travlendar.Core.AppCore.ViewModels
         public override event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler CurrentPositionEvent;
 
+        private string _positionName;
+        public string PositionName { get => _positionName; set => _positionName = value; }
+
         private Position _currentPosition;
         public Position CurrentPosition
         {
@@ -93,6 +96,7 @@ namespace Travlendar.Core.AppCore.ViewModels
             try
             {
                 Position = await GetPositionsForAddressSyncAsync (textPosition);
+                PositionName = textPosition;
             }
             catch ( Exception e )
             {
