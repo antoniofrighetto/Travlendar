@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Plugin.Geolocator;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Travlendar.Core.AppCore.Model;
 using Travlendar.Core.Framework.Dependencies;
 using Travlendar.Framework.ViewModels;
@@ -16,11 +18,24 @@ namespace Travlendar.Core.AppCore.ViewModels
     {
 
         Geocoder geoCoder;
+        public override event PropertyChangedEventHandler PropertyChanged;
+        public event EventHandler CurrentPositionEvent;
+
+        private Position _currentPosition;
+        public Position CurrentPosition
+        {
+            get
+            {
+                return _currentPosition;
+            }
+            set
+            {
+                _currentPosition = value;
+                CurrentPositionEvent?.Invoke (this, null);
+            }
+        }
 
         private Position _position;
-
-        public override event PropertyChangedEventHandler PropertyChanged;
-
         public Position Position
         {
             get
@@ -40,8 +55,37 @@ namespace Travlendar.Core.AppCore.ViewModels
         public MapViewModel (INavigation navigation)
         {
             this.Navigation = navigation;
-            //TODO for now is a test
             geoCoder = new Geocoder ();
+        }
+
+        public async void GetCurrentLocation ()
+        {
+            try
+            {
+                var locator = CrossGeolocator.Current;
+                locator.DesiredAccuracy = 100;
+
+                var loc = await locator.GetLastKnownLocationAsync ();
+                CurrentPosition = new Position (loc.Latitude, loc.Longitude);
+
+                if ( CurrentPosition != null )
+                {
+                    return;
+                }
+
+                if ( !locator.IsGeolocationAvailable || !locator.IsGeolocationEnabled )
+                {
+                    DependencyService.Get<IMessage> ().ShortAlert ("Location not available");
+                    return;
+                }
+
+                var def = await locator.GetPositionAsync (TimeSpan.FromSeconds (10), null, true);
+                CurrentPosition = new Position (def.Latitude, def.Longitude);
+            }
+            catch ( Exception ex )
+            {
+                Debug.WriteLine ("TRAVLENDAR || GetCurrentLocation error: " + ex);
+            }
         }
 
         public async void GetPositionFromString (string textPosition)
@@ -57,10 +101,9 @@ namespace Travlendar.Core.AppCore.ViewModels
             }
         }
 
-        public async System.Threading.Tasks.Task<Position> GetPositionsForAddressSyncAsync (string textPosition)
+        public async Task<Position> GetPositionsForAddressSyncAsync (string textPosition)
         {
             List<Position> positions = new List<Position> ();
-
             var approximateLocations = await geoCoder.GetPositionsForAddressAsync (textPosition);
 
             return approximateLocations.FirstOrDefault ();

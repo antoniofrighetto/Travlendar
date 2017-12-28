@@ -16,21 +16,18 @@ namespace Travlendar.Core.AppCore.Pages
         public MapPage (MapViewModel vm)
         {
             _viewModel = vm;
-
-            _viewModel.PropertyChanged += _viewModel_PropertyChanged;
-
             stack = new StackLayout { Spacing = 0 };
 
             position = new Entry
             {
                 Placeholder = "Position",
                 PlaceholderColor = Color.LightGray,
-                HorizontalOptions = LayoutOptions.Center
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                MinimumWidthRequest = 200
             };
             position.Completed += Position_Completed;
 
-            map = new Map (
-                            MapSpan.FromCenterAndRadius (new Position (0, 0), Distance.FromMiles (0.3)))
+            map = new Map ()
             {
                 IsShowingUser = true,
                 HeightRequest = 100,
@@ -44,9 +41,15 @@ namespace Travlendar.Core.AppCore.Pages
             };
             save.Clicked += Save_Clicked;
 
+            _viewModel.PropertyChanged += _viewModel_PropertyChanged;
+            _viewModel.CurrentPositionEvent += (sender, e) =>
+            {
+                map.MoveToRegion (MapSpan.FromCenterAndRadius (_viewModel.CurrentPosition, Distance.FromMiles (0.5)));
+            };
+            _viewModel.GetCurrentLocation ();
+
             stack.Children.Add (position);
             stack.Children.Add (map);
-
             ToolbarItems.Add (save);
             Content = stack;
         }

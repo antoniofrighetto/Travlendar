@@ -3,6 +3,8 @@ using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using System.IO;
 using System.Threading.Tasks;
 using Xamarin.Facebook;
@@ -87,6 +89,11 @@ namespace Travlendar.Droid
                     PickImageTaskCompletionSource.SetResult (null);
                 }
             }
+        }
+
+        public override void OnRequestPermissionsResult (int requestCode, string [] permissions, Android.Content.PM.Permission [] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult (requestCode, permissions, grantResults);
         }
     }
 }
