@@ -148,6 +148,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Renderers\CustomDatePicker.cs" />
     <Compile Include="Renderers\CustomEntryCell.cs" />
+    <Compile Include="Renderers\CustomSearchBar.cs" />
     <Compile Include="Renderers\CustomTimePicker.cs" />
     <Compile Include="Renderers\FacebookButtonRenderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
