@@ -11,21 +11,20 @@ namespace Travlendar.Core.AppCore.Pages
         StackLayout stack;
         ToolbarItem save;
         Map map;
-        Entry position;
+        SearchBar searchBar;
 
-        public MapPage (MapViewModel vm)
+        public MapPage ()
         {
-            _viewModel = vm;
+            BindingContext = new MapViewModel(this.Navigation, this);
+            _viewModel = ((MapViewModel)BindingContext);
+
             stack = new StackLayout { Spacing = 0 };
 
-            position = new Entry
+            searchBar = new SearchBar
             {
-                Placeholder = "Position",
-                PlaceholderColor = Color.LightGray,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-                MinimumWidthRequest = 200
+                Placeholder = "Enter destination",
+                SearchCommand = new Command(async () => await _viewModel.GetPositionFromString(searchBar.Text))
             };
-            position.Completed += Position_Completed;
 
             map = new Map ()
             {
@@ -39,35 +38,21 @@ namespace Travlendar.Core.AppCore.Pages
             {
                 Text = "Save"
             };
-            save.Clicked += Save_Clicked;
+
+            save.SetBinding(MenuItem.CommandProperty, new Binding("SaveLocationCommand"));
 
             _viewModel.PropertyChanged += _viewModel_PropertyChanged;
             _viewModel.CurrentPositionEvent += (sender, e) =>
             {
                 map.MoveToRegion (MapSpan.FromCenterAndRadius (_viewModel.CurrentPosition, Distance.FromMiles (0.5)));
             };
-            _viewModel.GetCurrentLocation ();
 
-            stack.Children.Add (position);
+            Device.BeginInvokeOnMainThread(async () => await _viewModel.GetCurrentLocation());
+
+            stack.Children.Add (searchBar);
             stack.Children.Add (map);
             ToolbarItems.Add (save);
             Content = stack;
-        }
-
-        private async void Save_Clicked (object sender, System.EventArgs e)
-        {
-            //Salva sul viewmodel di appointment creation
-
-            //_viewModel.Position;
-            //_viewModel.PositionName;
-
-            await Navigation.PopAsync ();
-        }
-
-        private void Position_Completed (object sender, System.EventArgs e)
-        {
-            var entry = ((Entry) sender).Text;
-            _viewModel.GetPositionFromString (entry);
         }
 
         private void _viewModel_PropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)

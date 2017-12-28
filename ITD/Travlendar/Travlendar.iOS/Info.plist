@@ -17,6 +17,7 @@
 	<string>Travlendar+</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>fb-messenger-api</string>
 		<string>fbapi</string>
 		<string>fb-messenger-share-api</string>
 		<string>fbauth2</string>
@@ -49,9 +50,9 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We are using your location</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-<string>This app needs access location when open and in the background.</string>
+	<string>This app needs access location when open and in the background.</string>
 	<key>MinimumOSVersion</key>
-	<string>10.3</string>
+	<string>10.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>Travlendar</string>
 	<key>CFBundleIdentifier</key>

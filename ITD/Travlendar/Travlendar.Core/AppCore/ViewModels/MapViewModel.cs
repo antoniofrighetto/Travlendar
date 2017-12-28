@@ -6,19 +6,22 @@ using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using Travlendar.Core.AppCore.Model;
 using Travlendar.Core.Framework.Dependencies;
 using Travlendar.Framework.ViewModels;
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
+using Travlendar.Core.AppCore.Pages;
+
 namespace Travlendar.Core.AppCore.ViewModels
 {
-    public class MapViewModel : AViewModel<MapModel>
+    public class MapViewModel : BindableBaseNotify
     {
 
         Geocoder geoCoder;
-        public override event PropertyChangedEventHandler PropertyChanged;
+        private INavigation navigation;
+        private MapPage page;
         public event EventHandler CurrentPositionEvent;
 
         private string _positionName;
@@ -27,41 +30,46 @@ namespace Travlendar.Core.AppCore.ViewModels
         private Position _currentPosition;
         public Position CurrentPosition
         {
-            get
-            {
-                return _currentPosition;
-            }
-            set
-            {
-                _currentPosition = value;
-                CurrentPositionEvent?.Invoke (this, null);
+            get { return _currentPosition; }
+            set { 
+                this.SetProperty(ref _currentPosition, value); 
+                CurrentPositionEvent?.Invoke(this, null); 
             }
         }
 
         private Position _position;
         public Position Position
         {
+            get { return _position; }
+            set { this.SetProperty(ref _position, value); }
+        }
+
+        private Command saveLocationCommand;
+        public ICommand SaveLocationCommand 
+        {
             get
             {
-                return _position;
-            }
-            set
-            {
-                if ( _position != value )
+                return saveLocationCommand ?? (saveLocationCommand = new Command(async () =>
                 {
-                    _position = value;
-                    RaisePropertyChanged ();
-                }
+                    if (PositionName == null) {
+                        await page.DisplayAlert("Select a valid location before", "", "Ok");
+                        return;
+                    }
+
+                    MessagingCenter.Send<MapPage, string>(this.page, "LocationNameEvent", PositionName);
+                    await navigation.PopAsync();
+                }));
             }
         }
 
-        public MapViewModel (INavigation navigation)
+        public MapViewModel (INavigation navigation, MapPage page)
         {
-            this.Navigation = navigation;
+            this.navigation = navigation;
+            this.page = page;
             geoCoder = new Geocoder ();
         }
 
-        public async void GetCurrentLocation ()
+        public async Task GetCurrentLocation ()
         {
             try
             {
@@ -69,16 +77,16 @@ namespace Travlendar.Core.AppCore.ViewModels
                 locator.DesiredAccuracy = 100;
 
                 var loc = await locator.GetLastKnownLocationAsync ();
-                CurrentPosition = new Position (loc.Latitude, loc.Longitude);
 
-                if ( CurrentPosition != null )
+                if ( loc != null )
                 {
+                    CurrentPosition = new Position(loc.Latitude, loc.Longitude);
                     return;
                 }
 
                 if ( !locator.IsGeolocationAvailable || !locator.IsGeolocationEnabled )
                 {
-                    DependencyService.Get<IMessage> ().ShortAlert ("Location not available");
+                    DependencyService.Get<IMessage>().ShortAlert("Location not available");    
                     return;
                 }
 
@@ -91,34 +99,20 @@ namespace Travlendar.Core.AppCore.ViewModels
             }
         }
 
-        public async void GetPositionFromString (string textPosition)
+        public async Task GetPositionFromString (string textPosition)
         {
             try
             {
-                Position = await GetPositionsForAddressSyncAsync (textPosition);
-                PositionName = textPosition;
+                var positions = await geoCoder.GetPositionsForAddressAsync(textPosition);
+                if (positions.Any()) {
+                    Position = positions.ToList()[0];
+                    PositionName = (await geoCoder.GetAddressesForPositionAsync(Position)).ToList()[0];
+                }
             }
             catch ( Exception e )
             {
                 Debug.WriteLine ("TRAVLENDAR || GetPositionFromString error: " + e);
                 DependencyService.Get<IMessage> ().ShortAlert (textPosition + "not found");
-            }
-        }
-
-        public async Task<Position> GetPositionsForAddressSyncAsync (string textPosition)
-        {
-            List<Position> positions = new List<Position> ();
-            var approximateLocations = await geoCoder.GetPositionsForAddressAsync (textPosition);
-
-            return approximateLocations.FirstOrDefault ();
-        }
-
-        private void RaisePropertyChanged ([CallerMemberName] string property = null)
-        {
-            var propChanged = PropertyChanged;
-            if ( propChanged != null )
-            {
-                propChanged (this, new PropertyChangedEventArgs (property));
             }
         }
     }

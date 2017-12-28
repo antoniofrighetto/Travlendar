@@ -59,13 +59,19 @@ namespace Travlendar.Core.AppCore.Pages
 
             LocationViewCell.Tapped += async (sender, e) =>
             {
-                await Navigation.PushAsync (new MapPage (new MapViewModel (this.Navigation)));
+                await Navigation.PushAsync (new MapPage());
             };
-
 
             StartDatePicker.DateSelected += (sender, e) => {
                 EndDatePicker.Date = StartDatePicker.Date;
             };
+
+            MessagingCenter.Subscribe<MapPage, string>(this, "LocationNameEvent", (sender, location) => {
+                LocationLabel.TextColor = Color.Black;
+                LocationLabel.FontSize = 10;
+                location = location.Replace("\n", " ");
+                LocationLabel.Text = location;
+            });
         }
 
         private void IsAllDayOnChanged(object sender, ToggledEventArgs e)

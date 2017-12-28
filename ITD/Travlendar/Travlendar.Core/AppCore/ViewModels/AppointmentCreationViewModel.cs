@@ -19,20 +19,6 @@ namespace Travlendar.Core.AppCore.ViewModels
         private Appointment appointment;
         private string message;
 
-        private Position location;
-        public Position Location
-        {
-            get { return Location; }
-            set { this.SetProperty (ref location, value); }
-        }
-
-        private string locationName;
-        public string LocationName
-        {
-            get { return LocationName; }
-            set { this.SetProperty (ref locationName, value); }
-        }
-
         private string titleAppointment;
         public string TitleAppointment
         {

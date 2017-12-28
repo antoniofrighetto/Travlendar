@@ -11,7 +11,7 @@
                     </ViewCell>
                     <ViewCell x:Name="LocationViewCell">
                         <StackLayout Padding="15,15,0,15" Orientation="Horizontal">
-                            <Label Text="Location" TextColor="#C7C7CD"/>
+                            <Label x:Name="LocationLabel" Text="Location" TextColor="#C7C7CD" WidthRequest="250"/>
                         </StackLayout>
                     </ViewCell>
                 </TableSection>

@@ -3,6 +3,7 @@ using UIKit;
 using Facebook.CoreKit;
 using Xamarin.Forms;
 using UserNotifications;
+using Amazon;
 
 [assembly: ExportRenderer(typeof(Telerik.XamarinForms.Input.RadCalendar), typeof(Telerik.XamarinForms.InputRenderer.iOS.CalendarRenderer))]
 namespace Travlendar.iOS
