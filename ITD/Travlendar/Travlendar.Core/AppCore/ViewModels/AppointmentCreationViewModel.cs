@@ -7,7 +7,6 @@ using Travlendar.Core.AppCore.Model;
 using Travlendar.Core.AppCore.Pages;
 using Travlendar.Framework.ViewModels;
 using Xamarin.Forms;
-using Xamarin.Forms.Maps;
 
 namespace Travlendar.Core.AppCore.ViewModels
 {
@@ -154,7 +153,7 @@ namespace Travlendar.Core.AppCore.ViewModels
         private async Task CreateAppointment (Appointment newAppointment)
         {
             var overlappedEvent = appointments.FirstOrDefault (item => item.StartDate == newAppointment.StartDate || (item.StartDate <= newAppointment.EndDate && item.EndDate >= newAppointment.StartDate));
-            if ( overlappedEvent != null )
+            if ( overlappedEvent != null && message != "Update" )
             {
                 bool response = await page.DisplayAlert ("Overlapped Event", String.Format ("There's another event ({0}) scheduled for this time interval, are you sure to continue?", overlappedEvent.Title), "Continue", "Cancel");
                 if ( !response )
