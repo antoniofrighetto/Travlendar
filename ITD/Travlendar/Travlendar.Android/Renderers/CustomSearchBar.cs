@@ -1,4 +1,5 @@
-﻿using Android.OS;
+﻿using Android.Content;
+using Android.OS;
 using Travlendar.Droid.Renderers;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -8,7 +9,7 @@ namespace Travlendar.Droid.Renderers
 {
     public class CustomSearchBarRenderer : SearchBarRenderer
     {
-        public CustomSearchBarRenderer ()
+        public CustomSearchBarRenderer (Context context) : base (context)
         {
         }
 
