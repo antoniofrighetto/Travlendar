@@ -152,7 +152,6 @@
     <Compile Include="Renderers\CustomEntryCell.cs" />
     <Compile Include="Renderers\CustomSearchBar.cs" />
     <Compile Include="Renderers\CustomTimePicker.cs" />
-    <Compile Include="Renderers\CustomToolbarItemRenderer.cs" />
     <Compile Include="Renderers\FacebookButtonRenderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
