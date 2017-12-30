@@ -54,6 +54,7 @@
                                     <StackLayout.Padding>
                                     <OnPlatform x:TypeArguments="Thickness">
                                         <On Platform="iOS">15,12,0,15</On>
+                                        <On Platform="Android">15,0,0,0</On>
                                     </OnPlatform>
                                 </StackLayout.Padding>
                                     <TimePicker x:Name="timer" IsInNativeLayout="true" IsVisible="false" Time="{Binding TimeBreak, Mode=TwoWay}" PropertyChanged="timer_PropertyChanged"  />
@@ -75,7 +76,6 @@
                                 </StackLayout.Padding>
                                     <Label x:Name="minutes" Text="minutes" FontSize="18" IsVisible="False"/>
                                 </StackLayout>
-
                             </Grid>
                         </ViewCell>
                     </TableSection>
