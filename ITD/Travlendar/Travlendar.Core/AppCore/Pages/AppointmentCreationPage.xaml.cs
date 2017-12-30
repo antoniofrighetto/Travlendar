@@ -72,6 +72,7 @@ namespace Travlendar.Core.AppCore.Pages
                 location = location.Replace("\n", " ");
                 LocationLabel.Text = location;
             });
+
         }
 
         private void IsAllDayOnChanged(object sender, ToggledEventArgs e)
