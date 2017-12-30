@@ -48,7 +48,7 @@ namespace Travlendar.Core.AppCore.Pages
 
             var addAppointmentButton = new IconToolbarItem
             {
-                Icon = Device.RuntimePlatform == Device.Android ? "ion-plus-round" : "",
+                Icon = Device.RuntimePlatform == Device.Android ? "add_ic" : "",
                 IconColor = Color.White,
                 Text = "Add",
                 Order = ToolbarItemOrder.Primary,
@@ -59,7 +59,7 @@ namespace Travlendar.Core.AppCore.Pages
 
             var changeViewButton = new IconToolbarItem
             {
-                Icon = Device.RuntimePlatform == Device.Android ? "ion-navicon-round" : "",
+                Icon = Device.RuntimePlatform == Device.Android ? "day_ic" : "",
                 IconColor = Color.White,
                 Text = "BarButton",
                 Order = ToolbarItemOrder.Primary,
@@ -118,6 +118,7 @@ namespace Travlendar.Core.AppCore.Pages
                             break;
                     }
                 }),
+                Icon = Device.RuntimePlatform == Device.Android ? "goto_ic" : "",
                 Order = ToolbarItemOrder.Primary,
                 Priority = 1
             };

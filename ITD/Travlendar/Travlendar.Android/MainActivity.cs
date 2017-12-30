@@ -36,8 +36,8 @@ namespace Travlendar.Droid
             global::Xamarin.Forms.Forms.Init (this, bundle);
 
             //Icons
-            FormsPlugin.Iconize.Droid.IconControls.Init (Resource.Id.toolbar);
-            Plugin.Iconize.Iconize.With (new Plugin.Iconize.Fonts.IoniconsModule ());
+            //FormsPlugin.Iconize.Droid.IconControls.Init (Resource.Id.toolbar);
+            //Plugin.Iconize.Iconize.With (new Plugin.Iconize.Fonts.IoniconsModule ());
 
             //FacebookSDK Config
             FacebookSdk.SdkInitialize (this.ApplicationContext);
