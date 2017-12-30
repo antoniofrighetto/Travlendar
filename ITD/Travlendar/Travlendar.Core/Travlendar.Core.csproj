@@ -61,7 +61,6 @@
     <Compile Include="AppCore\Pages\TicketsPage.cs" />
     <Compile Include="AppCore\Renderers\CustomImageCell.cs" />
     <Compile Include="AppCore\Renderers\FacebookButton.cs" />
-    <Compile Include="AppCore\ViewModels\AddTicketViewModel.cs" />
     <Compile Include="AppCore\ViewModels\CalendarViewModel.cs" />
     <Compile Include="AppCore\ViewModels\CognitoSyncViewModel.cs" />
     <Compile Include="AppCore\ViewModels\LoginViewModel.cs" />
@@ -70,7 +69,6 @@
     <Compile Include="AppCore\ViewModels\TicketsViewModel.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Framework\Dependencies\IMessage.cs" />
-    <Compile Include="Framework\Dependencies\ITicket.cs" />
     <Compile Include="Framework\ViewModels\BindableBaseNotify.cs" />
     <Compile Include="Framework\Dependencies\IParse.cs" />
     <Compile Include="Framework\Dependencies\ISyncManager.cs" />
