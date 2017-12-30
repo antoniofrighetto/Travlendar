@@ -9,23 +9,15 @@ namespace Travlendar.Core.AppCore.Pages
     {
         LoginViewModel _viewModel;
 
-        private StackLayout buttons;
         private StackLayout layout;
         private Image backgroundImage;
         private Label title;
-        private Button loginButton;
-        private Button registerButton;
         public FacebookButton fbButton;
 
         public LandingPage (LoginViewModel vm)
         {
             this.Appearing += LandingPage_Appearing;
             _viewModel = vm;
-
-            buttons = new StackLayout
-            {
-                Padding = new Thickness (0, 20, 0, 20),
-            };
 
             layout = new StackLayout
             {
@@ -45,36 +37,38 @@ namespace Travlendar.Core.AppCore.Pages
                 TextColor = Color.White
             };
 
+            StackLayout buttons = new StackLayout { VerticalOptions = LayoutOptions.CenterAndExpand };
             fbButton = new FacebookButton ();
             fbButton.HorizontalOptions = LayoutOptions.Center;
             fbButton.HeightRequest = 50;
             fbButton.VerticalOptions = LayoutOptions.Center;
+            buttons.Children.Add (fbButton);
 
-            //Add your event handler for the OnLogin to operate with the Facebook credentials comming from SDK
+            //Future AWS Cognito Identity Authentication Implementation
 
-            registerButton = new Button
-            {
-                Text = "Create Account",
-                TextColor = Constants.TravlendarAquaGreen,
-                BackgroundColor = Color.White,
-                BorderColor = Constants.TravlendarAquaGreen,
-                BorderRadius = 4,
-                BorderWidth = 1,
-                HorizontalOptions = LayoutOptions.Center,
-                WidthRequest = 155
-            };
+            //registerButton = new Button
+            //{
+            //    Text = "Create Account",
+            //    TextColor = Constants.TravlendarAquaGreen,
+            //    BackgroundColor = Color.White,
+            //    BorderColor = Constants.TravlendarAquaGreen,
+            //    BorderRadius = 4,
+            //    BorderWidth = 1,
+            //    HorizontalOptions = LayoutOptions.Center,
+            //    WidthRequest = 155
+            //};
 
-            loginButton = new Button
-            {
-                Text = "Login",
-                TextColor = Constants.TravlendarAquaGreen,
-                BackgroundColor = Color.White,
-                BorderColor = Constants.TravlendarAquaGreen,
-                BorderRadius = 4,
-                BorderWidth = 1,
-                HorizontalOptions = LayoutOptions.Center,
-                WidthRequest = 155
-            };
+            //loginButton = new Button
+            //{
+            //    Text = "Login",
+            //    TextColor = Constants.TravlendarAquaGreen,
+            //    BackgroundColor = Color.White,
+            //    BorderColor = Constants.TravlendarAquaGreen,
+            //    BorderRadius = 4,
+            //    BorderWidth = 1,
+            //    HorizontalOptions = LayoutOptions.Center,
+            //    WidthRequest = 155
+            //};
 
             RegisterEvents ();
 
@@ -82,8 +76,8 @@ namespace Travlendar.Core.AppCore.Pages
             //relativeLayout.Children.Add (title, Constraint.RelativeToParent (parent => (parent.Width / 2) - 75), Constraint.RelativeToParent (parent => parent.Height / 2));
 
             layout.Children.Add (backgroundImage);
-            buttons.Children.Add (registerButton);
-            buttons.Children.Add (loginButton);
+            //buttons.Children.Add (registerButton);
+            //buttons.Children.Add (loginButton);
 
             buttons.Children.Add (fbButton);
             layout.Children.Add (buttons);
@@ -97,30 +91,32 @@ namespace Travlendar.Core.AppCore.Pages
             NavigationPage.SetHasNavigationBar (this, false);
         }
 
-        private async void LoginButton_ClickedAsync (object sender, System.EventArgs e)
-        {
-            var vm = LoginViewModel.GetInstance ();
-            var page = new LoginPage (vm);
-            NavigationPage.SetHasNavigationBar (page, false);
-            await Navigation.PushAsync (page);
-        }
+        //Future AWS Cognito Identity Authentication Implementation
 
-        private void RegisterButton_Clicked (object sender, System.EventArgs e)
-        {
-            throw new System.NotImplementedException ();
-            //Handle manual register
-        }
+        //private async void LoginButton_ClickedAsync (object sender, System.EventArgs e)
+        //{
+        //    var vm = LoginViewModel.GetInstance ();
+        //    var page = new LoginPage (vm);
+        //    NavigationPage.SetHasNavigationBar (page, false);
+        //    await Navigation.PushAsync (page);
+        //}
+
+        //private void RegisterButton_Clicked (object sender, System.EventArgs e)
+        //{
+        //    throw new System.NotImplementedException ();
+        //    //Handle manual register
+        //}
 
         private void RegisterEvents ()
         {
             fbButton.OnLogin -= _viewModel.LoginWithFacebook;
             fbButton.OnLogin += _viewModel.LoginWithFacebook;
 
-            registerButton.Clicked -= RegisterButton_Clicked;
-            registerButton.Clicked += RegisterButton_Clicked;
+            //registerButton.Clicked -= RegisterButton_Clicked;
+            //registerButton.Clicked += RegisterButton_Clicked;
 
-            loginButton.Clicked -= LoginButton_ClickedAsync;
-            loginButton.Clicked += LoginButton_ClickedAsync;
+            //loginButton.Clicked -= LoginButton_ClickedAsync;
+            //loginButton.Clicked += LoginButton_ClickedAsync;
         }
     }
 }
