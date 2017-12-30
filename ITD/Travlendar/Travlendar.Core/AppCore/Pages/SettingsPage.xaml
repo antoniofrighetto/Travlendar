@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Travlendar.Core.AppCore.Pages.SettingsPage"
-			 Title="Settings">
+             Title="Settings">
     <ContentPage.ToolbarItems>
         <ToolbarItem  Text="Done" Command="{Binding Save}" />
     </ContentPage.ToolbarItems>
@@ -10,15 +10,21 @@
         <StackLayout>
             <TableView Intent="Settings">
                 <TableRoot>
-                    <TableSection Title="Personal information">
-                        <!-- ViewCell>
+                    <!--<TableSection Title="Personal information">
+                        <ViewCell>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Age" Margin="15,15,0,0"/>
+                                <StackLayout.Padding >
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <On Platform="iOS">15,15,0,15</On>
+                                    <On Platform="Android">15,0,0,0</On>
+                                </OnPlatform>
+                            </StackLayout.Padding>
+                                <Label Text="Age" WidthRequest="250"/>
                                 <Entry Text="{Binding Age}" Placeholder="Your age"/>
                             </StackLayout>
-                        </ViewCell>-->
+                        </ViewCell>
                         <EntryCell Label="Age" Text="{Binding Age}"/>
-                    </TableSection>
+                    </TableSection>-->
                     <TableSection Title="Means of Transport">
                         <SwitchCell Text="Car" On="{Binding Car}"/>
                         <SwitchCell Text="Bike" On="{Binding Bike}"/>
@@ -29,12 +35,48 @@
                         <SwitchCell Text="Shared Bike" On="{Binding SharedBike}"/>
                     </TableSection>
                     <TableSection Title="Habits">
-                        <SwitchCell Text="Minimize Carboon Foot Print" On="{Binding MinimizeCarboonFootPrint}"/>
+                        <SwitchCell Text="Minimize Carboon Foot Print" On="{Binding MinimizeCarbonFootPrint}"/>
                     </TableSection>
                     <TableSection Title="Breaks">
                         <SwitchCell Text="Lunch Break" On="{Binding LunchBreak}" OnChanged="Handle_OnChanged"/>
                         <ViewCell>
-                            <TimePicker Margin="15"   x:Name="timer" IsInNativeLayout="true" IsVisible="false" Time="{Binding TimeBreak}"/>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="End">
+                                    <StackLayout.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness">
+                                        <On Platform="iOS">15,12,0,15</On>
+                                    </OnPlatform>
+                                </StackLayout.Padding>
+                                    <TimePicker x:Name="timer" IsInNativeLayout="true" IsVisible="false" Time="{Binding TimeBreak, Mode=TwoWay}" PropertyChanged="timer_PropertyChanged"  />
+                                </StackLayout>
+                                <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="End">
+                                    <StackLayout.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness">
+                                        <On Platform="iOS">15,12,0,15</On>
+                                    </OnPlatform>
+                                </StackLayout.Padding>
+                                    <Picker x:Name="picker" Title="-" IsVisible="False" />
+                                </StackLayout>
+                                <StackLayout Grid.Row="0" Grid.Column="2" HorizontalOptions="End">
+                                    <StackLayout.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness">
+                                        <On Platform="iOS">15,12,0,15</On>
+                                        <On Platform="Android">0,10,0,0</On>
+                                    </OnPlatform>
+                                </StackLayout.Padding>
+                                    <Label x:Name="minutes" Text="minutes" FontSize="18" IsVisible="False"/>
+                                </StackLayout>
+
+                            </Grid>
                         </ViewCell>
                     </TableSection>
                 </TableRoot>

@@ -14,9 +14,12 @@ namespace Travlendar.Core.AppCore.ViewModels
 {
     class SettingsViewModel : BindableBaseNotify
     {
+
+        //private SQLiteConnection database = DependencyService.Get<ISQLite>().InitConnection();
         private SettingsPage page;
         private Settings settings;
         private INavigation navigation;
+
 
         private string age;
         public string Age
@@ -33,7 +36,8 @@ namespace Travlendar.Core.AppCore.ViewModels
         }
 
         private bool bike;
-        public bool Bike {
+        public bool Bike
+        {
             get { return this.bike; }
             set { this.SetProperty(ref this.bike, value); }
         }
@@ -80,7 +84,17 @@ namespace Travlendar.Core.AppCore.ViewModels
             set { this.SetProperty(ref this.timeBreak, value); }
         }
 
-        public SettingsViewModel(SettingsPage page, INavigation navigation) {
+        public string timeInterval;
+        public string TimeInterval
+        {
+            get { return this.timeInterval; }
+            set { this.SetProperty(ref this.timeInterval, value); }
+        }
+
+
+
+        public SettingsViewModel(SettingsPage page, INavigation navigation)
+        {
             this.page = page;
             this.navigation = navigation;
 
@@ -95,9 +109,10 @@ namespace Travlendar.Core.AppCore.ViewModels
             this.minimizeCarbonFootPrint = settings.minimizeCarbonFootPrint;
             this.lunchBreak = settings.lunchBreak;
             this.timeBreak = settings.timeBreak;
+            this.timeInterval = settings.timeInterval.ToString();
         }
 
-        private void LoadSettings()
+        private async void LoadSettings()
         {
             try
             {
@@ -108,25 +123,40 @@ namespace Travlendar.Core.AppCore.ViewModels
                     settings = new Settings();
                 }
                 else
-                {                
+                {
                     settings = JsonConvert.DeserializeObject<Settings>(settingsStringFormat);
+                    int i = 0;
                 }
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 System.Diagnostics.Debug.WriteLine(exception.Message);
             }
+
+            //database.CreateTable<Settings>();
+            //if (database.Table<Settings>().Any())
+            //{
+            //    settings = database.Get<Settings>(0);
+            //}
+            //else { settings = new Settings(); }
+
         }
-      
+
         private Command save;
         public ICommand Save
         {
-           get
+            get
             {
                 return save ?? (save = new Command(async () =>
 
                 {
-                    if (int.TryParse(this.age, out var number) == false )
+                    if ((this.timeBreak.TotalMinutes < 690 || this.timeBreak.TotalMinutes > 840))
+                    {
+                        await page.DisplayAlert("Please insert a valid time from 11.30 to 14.00", "", "OK");
+                        return;
+                    }
+
+                    if (int.TryParse(this.age, out var number) == false)
                     {
                         await page.DisplayAlert("Please insert a valid value", "", "Ok");
                     }
@@ -142,21 +172,23 @@ namespace Travlendar.Core.AppCore.ViewModels
                             sharedBike = this.sharedBike,
                             minimizeCarbonFootPrint = this.minimizeCarbonFootPrint,
                             lunchBreak = this.lunchBreak,
-                            timeBreak = this.timeBreak
+                            timeBreak = this.timeBreak,
+                            timeInterval = int.Parse(this.timeInterval)
                         };
 
                         await page.DisplayAlert("Settings correctly inserted", "", "Ok");
-                        await SyncSettings(settings);
+                        await (syncSettings(settings));
                     }
                 }));
             }
         }
 
-        private async Task SyncSettings(Settings settings)
+
+        private async Task syncSettings(Settings settings)
         {
             string settingJSON = JsonConvert.SerializeObject(settings);
             CognitoSyncViewModel.GetInstance().WriteDataset("Settings", "UserSettings", settingJSON);
-            await navigation.PopAsync();
+
         }
     }
 }
