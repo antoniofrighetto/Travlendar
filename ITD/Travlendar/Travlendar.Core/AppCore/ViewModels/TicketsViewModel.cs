@@ -3,6 +3,7 @@ using Plugin.Media.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Travlendar.Core.AppCore.Model;
@@ -82,11 +83,12 @@ namespace Travlendar.Core.AppCore.ViewModels
             return file;
         }
 
-        public void SaveTicket (string path, string name)
+        public void SaveTicket (string name, string path)
         {
             try
             {
-                Tickets.Add (path, name);
+                name = Regex.Replace (name, @"\s+", "");
+                Tickets.Add (name, path);
                 if ( PropertyChanged != null )
                     PropertyChanged (this, null);
             }
@@ -94,13 +96,15 @@ namespace Travlendar.Core.AppCore.ViewModels
             {
                 DependencyService.Get<IMessage> ().ShortAlert ("Ticket already added");
             }
-            CognitoSyncViewModel.GetInstance ().WriteDataset (DATASET_NAME, path, name);
+            CognitoSyncViewModel.GetInstance ().WriteDataset (DATASET_NAME, name, path);
         }
 
-        public void RemoveTicket (string path)
+        public void RemoveTicket (string name)
         {
-            Tickets.Remove (path);
-            CognitoSyncViewModel.GetInstance ().RemoveFromDataset (DATASET_NAME, path);
+            name = Tickets.FirstOrDefault (x => x.Value == name).Key;
+            Tickets.Remove (name);
+
+            CognitoSyncViewModel.GetInstance ().RemoveFromDataset (DATASET_NAME, name);
             if ( PropertyChanged != null )
                 PropertyChanged (this, null);
         }

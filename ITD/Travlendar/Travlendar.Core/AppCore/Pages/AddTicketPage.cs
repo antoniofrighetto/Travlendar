@@ -41,8 +41,8 @@ namespace Travlendar.Core.AppCore.Pages
                 return;
             }
 
-            _viewModel.SaveTicket (filePath, entry);
-            await Navigation.PushAsync (new TicketsPage (TicketsViewModel.GetInstance ()));
+            _viewModel.SaveTicket (entry, filePath);
+            await Navigation.PopAsync ();
         }
 
         private void FillLayout (string entryName, Image tempTicket = null)

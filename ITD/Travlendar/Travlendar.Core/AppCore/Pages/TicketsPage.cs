@@ -66,7 +66,7 @@ namespace Travlendar.Core.AppCore.Pages
             tickets = new ObservableCollection<TicketModel> ();
             foreach ( KeyValuePair<string, string> element in _viewModel.Tickets )
             {
-                tickets.Add (new TicketModel () { Name = "Ticket", Detail = element.Value, Image = element.Key });
+                tickets.Add (new TicketModel () { Name = "Ticket", Detail = element.Key, Image = element.Value });
             }
             listView.ItemsSource = tickets;
         }
