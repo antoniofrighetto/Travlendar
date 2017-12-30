@@ -1,4 +1,5 @@
 ﻿using Android.Content;
+using Android.Views;
 using Travlendar.Droid.Renderers;
 using Xamarin.Forms;
 
@@ -17,7 +18,7 @@ namespace Travlendar.Droid.Renderers
             if ( Control != null )
             {
                 Control.SetBackgroundColor (Android.Graphics.Color.Transparent);
-                Control.SetPadding (0, 0, 0, 0);
+                Control.Gravity = GravityFlags.CenterVertical; 
             }
         }
     }
