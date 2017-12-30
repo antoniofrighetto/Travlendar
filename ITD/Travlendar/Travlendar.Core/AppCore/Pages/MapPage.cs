@@ -15,15 +15,15 @@ namespace Travlendar.Core.AppCore.Pages
 
         public MapPage ()
         {
-            BindingContext = new MapViewModel(this.Navigation, this);
-            _viewModel = ((MapViewModel)BindingContext);
+            BindingContext = new MapViewModel (this.Navigation, this);
+            _viewModel = ((MapViewModel) BindingContext);
 
             stack = new StackLayout { Spacing = 0 };
 
             searchBar = new SearchBar
             {
                 Placeholder = "Enter destination",
-                SearchCommand = new Command(async () => await _viewModel.GetPositionFromString(searchBar.Text))
+                SearchCommand = new Command (async () => await _viewModel.GetPositionFromString (searchBar.Text))
             };
 
             map = new Map ()
@@ -39,7 +39,7 @@ namespace Travlendar.Core.AppCore.Pages
                 Text = "Save"
             };
 
-            save.SetBinding(MenuItem.CommandProperty, new Binding("SaveLocationCommand"));
+            save.SetBinding (MenuItem.CommandProperty, new Binding ("SaveLocationCommand"));
 
             _viewModel.PropertyChanged += _viewModel_PropertyChanged;
             _viewModel.CurrentPositionEvent += (sender, e) =>
@@ -47,7 +47,7 @@ namespace Travlendar.Core.AppCore.Pages
                 map.MoveToRegion (MapSpan.FromCenterAndRadius (_viewModel.CurrentPosition, Distance.FromMiles (0.5)));
             };
 
-            Device.BeginInvokeOnMainThread(async () => await _viewModel.GetCurrentLocation());
+            Device.BeginInvokeOnMainThread (async () => await _viewModel.GetCurrentLocation ());
 
             stack.Children.Add (searchBar);
             stack.Children.Add (map);

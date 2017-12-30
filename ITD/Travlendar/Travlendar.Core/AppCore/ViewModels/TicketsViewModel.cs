@@ -1,6 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Plugin.Media;
+using Plugin.Media.Abstractions;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using Travlendar.Core.AppCore.Model;
+using Travlendar.Core.Framework.Dependencies;
 using Travlendar.Framework.ViewModels;
 using Xamarin.Forms;
 
@@ -8,6 +14,7 @@ namespace Travlendar.Core.AppCore.ViewModels
 {
     public class TicketsViewModel : AViewModel<TicketModel>
     {
+        private const string DATASET_NAME = "Tickets";
         public override event PropertyChangedEventHandler PropertyChanged;
         private static TicketsViewModel _instance = new TicketsViewModel ();
 
@@ -16,9 +23,9 @@ namespace Travlendar.Core.AppCore.ViewModels
             return _instance;
         }
 
-        Dictionary<string, ImageSource> tickets;
+        IDictionary<string, string> tickets;
 
-        public Dictionary<string, ImageSource> Tickets
+        public IDictionary<string, string> Tickets
         {
             get
             {
@@ -32,7 +39,76 @@ namespace Travlendar.Core.AppCore.ViewModels
 
         private TicketsViewModel ()
         {
-            Tickets = new Dictionary<string, ImageSource> ();
+            Tickets = LoadTickets ();
+
+        }
+
+        public async Task<MediaFile> PickPictureAsync (string name)
+        {
+            if ( !CrossMedia.Current.IsPickPhotoSupported )
+            {
+                DependencyService.Get<IMessage> ().ShortAlert ("Photos Not Supported");
+                return null;
+            }
+            var file = await CrossMedia.Current.PickPhotoAsync (new PickMediaOptions
+            {
+                PhotoSize = PhotoSize.Medium
+            });
+
+            if ( file == null )
+                return null;
+
+            return file;
+        }
+
+        public async Task<MediaFile> TakePictureAsync (string name)
+        {
+            if ( !CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported )
+            {
+                DependencyService.Get<IMessage> ().ShortAlert ("No camera avaialble");
+                return null;
+            }
+
+            var file = await CrossMedia.Current.TakePhotoAsync (new Plugin.Media.Abstractions.StoreCameraMediaOptions
+            {
+                PhotoSize = PhotoSize.Medium,
+                Directory = "Tickets",
+                Name = Regex.Replace (name, @"\s+", "") + ".jpg"
+            });
+
+            if ( file == null )
+                return null;
+
+            return file;
+        }
+
+        public void SaveTicket (string path, string name)
+        {
+            try
+            {
+                Tickets.Add (path, name);
+                if ( PropertyChanged != null )
+                    PropertyChanged (this, null);
+            }
+            catch ( Exception e )
+            {
+                DependencyService.Get<IMessage> ().ShortAlert ("Ticket already added");
+            }
+            CognitoSyncViewModel.GetInstance ().WriteDataset (DATASET_NAME, path, name);
+        }
+
+        public void RemoveTicket (string path)
+        {
+            Tickets.Remove (path);
+            CognitoSyncViewModel.GetInstance ().RemoveFromDataset (DATASET_NAME, path);
+            if ( PropertyChanged != null )
+                PropertyChanged (this, null);
+        }
+
+        private IDictionary<string, string> LoadTickets ()
+        {
+            CognitoSyncViewModel.GetInstance ().CreateDataset ("Tickets");
+            return CognitoSyncViewModel.GetInstance ().ReadWholeDataset (DATASET_NAME);
         }
     }
 }

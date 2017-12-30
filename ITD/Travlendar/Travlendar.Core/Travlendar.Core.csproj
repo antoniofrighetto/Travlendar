@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="AppCore\Helpers\TicketEventArgs.cs" />
     <Compile Include="AppCore\Model\CognitoSyncModel.cs" />
     <Compile Include="AppCore\Model\LoginModel.cs" />
     <Compile Include="AppCore\Model\MapModel.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="AppCore\Navigator\INavigator.cs" />
     <Compile Include="AppCore\Pages\AddTicketPage.cs" />
     <Compile Include="AppCore\Pages\CalendarPage.cs" />
+    <Compile Include="AppCore\Pages\FullscreenImagePage.cs" />
     <Compile Include="AppCore\Pages\LandingPage.cs" />
     <Compile Include="AppCore\Pages\LoginPage.cs" />
     <Compile Include="AppCore\Pages\MapPage.cs" />
@@ -57,7 +59,9 @@
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppCore\Pages\TicketsPage.cs" />
+    <Compile Include="AppCore\Renderers\CustomImageCell.cs" />
     <Compile Include="AppCore\Renderers\FacebookButton.cs" />
+    <Compile Include="AppCore\ViewModels\AddTicketViewModel.cs" />
     <Compile Include="AppCore\ViewModels\CalendarViewModel.cs" />
     <Compile Include="AppCore\ViewModels\CognitoSyncViewModel.cs" />
     <Compile Include="AppCore\ViewModels\LoginViewModel.cs" />
@@ -66,6 +70,7 @@
     <Compile Include="AppCore\ViewModels\TicketsViewModel.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Framework\Dependencies\IMessage.cs" />
+    <Compile Include="Framework\Dependencies\ITicket.cs" />
     <Compile Include="Framework\ViewModels\BindableBaseNotify.cs" />
     <Compile Include="Framework\Dependencies\IParse.cs" />
     <Compile Include="Framework\Dependencies\ISyncManager.cs" />
@@ -82,7 +87,6 @@
     <Compile Include="AppCore\Pages\CalendarTypePage.xaml.cs">
       <DependentUpon>CalendarTypePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AppCore\Helpers\IPicturePicker.cs" />
     <Compile Include="AppCore\Helpers\IStatusBar.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -127,6 +131,12 @@
     </Reference>
     <Reference Include="Plugin.Geolocator.Abstractions, Version=4.1.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugin.Geolocator.4.1.3\lib\netstandard1.0\Plugin.Geolocator.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Media.3.1.1\lib\netstandard1.0\Plugin.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media.Abstractions, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Media.3.1.1\lib\netstandard1.0\Plugin.Media.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="SQLitePCLRaw.batteries_green, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a84b7dcfb1391f7f, processorArchitecture=MSIL">
       <HintPath>..\..\packages\SQLitePCLRaw.bundle_green.1.1.9\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
@@ -225,9 +235,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AppCore\Helpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.5.0.121934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.5.0.121934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />

@@ -1,14 +1,14 @@
-﻿using Xamarin.Forms;
-
-namespace Travlendar.Core.AppCore.Model
+﻿namespace Travlendar.Core.AppCore.Model
 {
     public class TicketModel
     {
         public string Name { get; set; }
-        public Image Image { get; set; }
+        public string Image { get; set; }
+        public string Detail { get; set; }
 
-        public TicketModel ()
+        public override string ToString ()
         {
+            return this.Image.ToString ();
         }
     }
 }

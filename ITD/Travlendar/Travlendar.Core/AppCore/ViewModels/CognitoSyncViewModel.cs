@@ -45,12 +45,12 @@ namespace Travlendar.Core.AppCore.ViewModels
 
             Dataset dataset;
             dataset = syncManager.OpenOrCreateDataset (name);
-            dataset.SynchronizeOnConnectivity ();
+            dataset.SynchronizeAsync ();
 
             if ( !datasets.ContainsKey (name) )
                 datasets.Add (name, dataset);
             //else
-                //throw new System.Exception ("Do not create duplicated datasets");
+            //throw new System.Exception ("Do not create duplicated datasets");
         }
 
         public void WriteDataset (string dataset, string key, string value)
@@ -81,14 +81,24 @@ namespace Travlendar.Core.AppCore.ViewModels
             return local.Get (key);
         }
 
-        public void RemoveFromDataset (string dataset, string key, string value)
+        public IDictionary<string, string> ReadWholeDataset (string dataset)
+        {
+            Dataset local;
+            if ( !datasets.TryGetValue (dataset, out local) )
+                throw new System.Exception (string.Format ("Dataset: {0} not found.", dataset));
+
+            return local.ActiveRecords;
+
+        }
+
+        public void RemoveFromDataset (string dataset, string key)
         {
             Dataset local;
 
             if ( !datasets.TryGetValue (dataset, out local) )
                 throw new System.Exception (string.Format ("Dataset: {0} not found.", dataset));
 
-            if ( !string.IsNullOrEmpty (key) && !string.IsNullOrEmpty (value) )
+            if ( !string.IsNullOrEmpty (key) )
             {
                 local.Remove (key);
                 local.SynchronizeOnConnectivity ();
