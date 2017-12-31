@@ -13,7 +13,7 @@ namespace Travlendar.Core.AppCore.Pages
     public partial class AppointmentCreationPage : ContentPage
     {
         private static int flag = 0;
-        private static int counter = 0;
+        private const int id = 1;
         private Appointment appointment;
 
         public AppointmentCreationPage(ObservableCollection<Appointment> appointments, string message, Appointment appointment)
@@ -90,10 +90,12 @@ namespace Travlendar.Core.AppCore.Pages
         private async void IsAlertOnChanged(object sender, ToggledEventArgs e)
         {
             var switcher = (SwitchCell)sender;
-            if (switcher.On == true && TitleApp.Text == null)
+            if (TitleApp.Text == null)
             {
-                await DisplayAlert("Set title before activating an alert.", "", "Ok");
-                switcher.On = false;
+                if (switcher.On) {
+                    await DisplayAlert("Set title before activating an alert.", "", "Ok");
+                    switcher.On = false;    
+                }
                 return;
             }
 
@@ -109,13 +111,13 @@ namespace Travlendar.Core.AppCore.Pages
                         {
                             CrossLocalNotifications.Current.Show("Hey!",
                                                                  "Event " + TitleApp.Text + " is going to start within 10 minutes.",
-                                                                 counter++,
+                                                                 id,
                                                                  StartDatePicker.Date.AddMinutes(StartTimePicker.Time.Minutes - 10).AddSeconds(StartTimePicker.Time.Seconds));
                         }
                         break;
                     }
                 case false:
-                    CrossLocalNotifications.Current.Cancel(counter);
+                    CrossLocalNotifications.Current.Cancel(id);
                     break;
             }
         }

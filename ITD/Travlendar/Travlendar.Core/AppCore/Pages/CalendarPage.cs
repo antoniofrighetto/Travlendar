@@ -5,7 +5,6 @@ using Xamarin.Forms;
 
 using Telerik.XamarinForms.Input;
 using Telerik.XamarinForms.Common;
-using FormsPlugin.Iconize;
 
 namespace Travlendar.Core.AppCore.Pages
 {
@@ -46,10 +45,10 @@ namespace Travlendar.Core.AppCore.Pages
             }
 
 
-            var addAppointmentButton = new IconToolbarItem
+            var addAppointmentButton = new ToolbarItem
             {
                 Icon = Device.RuntimePlatform == Device.Android ? "add_ic" : "",
-                IconColor = Color.White,
+                //IconColor = Color.White,
                 Text = "Add",
                 Order = ToolbarItemOrder.Primary,
                 Priority = 1
@@ -57,18 +56,23 @@ namespace Travlendar.Core.AppCore.Pages
 
             addAppointmentButton.SetBinding(MenuItem.CommandProperty, new Binding("AddAppointmentCommand"));
 
-            var changeViewButton = new IconToolbarItem
+            var changeViewButton = new ToolbarItem
             {
                 Icon = Device.RuntimePlatform == Device.Android ? "day_ic" : "",
-                IconColor = Color.White,
+                //IconColor = Color.White,
                 Text = "BarButton",
                 Order = ToolbarItemOrder.Primary,
                 Priority = 0,
                 Command = new Command(() =>
                 {
+                    var selectedDate = calendar.SelectedDate;
                     if (calendar.ViewMode != CalendarViewMode.Day)
                     {
                         calendar.TrySetViewMode(CalendarViewMode.Day, true);
+                        if (selectedDate.HasValue) {
+                            calendar.DisplayDate = selectedDate.Value;
+                            calendar.SelectedDate = selectedDate;    
+                        }
                     }
                     else
                     {

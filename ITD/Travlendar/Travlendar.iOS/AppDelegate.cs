@@ -39,10 +39,6 @@ namespace Travlendar.iOS
             //Google Maps Config
             Xamarin.FormsMaps.Init ();
 
-            //Icons
-            FormsPlugin.Iconize.iOS.IconControls.Init();
-            Plugin.Iconize.Iconize.With(new Plugin.Iconize.Fonts.IoniconsModule());
-
             //Allow for notifications
             if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
             {
