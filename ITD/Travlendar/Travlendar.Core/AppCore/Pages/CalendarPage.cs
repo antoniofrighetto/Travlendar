@@ -48,7 +48,6 @@ namespace Travlendar.Core.AppCore.Pages
             var addAppointmentButton = new ToolbarItem
             {
                 Icon = Device.RuntimePlatform == Device.Android ? "add_ic" : "",
-                //IconColor = Color.White,
                 Text = "Add",
                 Order = ToolbarItemOrder.Primary,
                 Priority = 1
@@ -59,7 +58,6 @@ namespace Travlendar.Core.AppCore.Pages
             var changeViewButton = new ToolbarItem
             {
                 Icon = Device.RuntimePlatform == Device.Android ? "day_ic" : "",
-                //IconColor = Color.White,
                 Text = "BarButton",
                 Order = ToolbarItemOrder.Primary,
                 Priority = 0,

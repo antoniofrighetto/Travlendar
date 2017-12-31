@@ -13,7 +13,7 @@ namespace Travlendar.Core.AppCore.Pages
     public partial class AppointmentCreationPage : ContentPage
     {
         private static int flag = 0;
-        private const int id = 1;
+        private const int ID = 1;
         private Appointment appointment;
 
         public AppointmentCreationPage(ObservableCollection<Appointment> appointments, string message, Appointment appointment)
@@ -111,13 +111,13 @@ namespace Travlendar.Core.AppCore.Pages
                         {
                             CrossLocalNotifications.Current.Show("Hey!",
                                                                  "Event " + TitleApp.Text + " is going to start within 10 minutes.",
-                                                                 id,
+                                                                 ID,
                                                                  StartDatePicker.Date.AddMinutes(StartTimePicker.Time.Minutes - 10).AddSeconds(StartTimePicker.Time.Seconds));
                         }
                         break;
                     }
                 case false:
-                    CrossLocalNotifications.Current.Cancel(id);
+                    CrossLocalNotifications.Current.Cancel(ID);
                     break;
             }
         }

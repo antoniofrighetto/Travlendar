@@ -5,27 +5,28 @@ using Travlendar.Core.AppCore.Model;
 using Travlendar.Core.AppCore.Renderers;
 using Travlendar.Core.AppCore.ViewModels;
 using Xamarin.Forms;
+using System.Linq;
 
 namespace Travlendar.Core.AppCore.Pages
 {
     public class TicketsPage : ContentPage
     {
         public TicketsViewModel _viewModel;
+        private INavigation navigation;
         ListView listView;
         ObservableCollection<TicketModel> tickets { get; set; }
 
-        public TicketsPage (TicketsViewModel vm)
+        public TicketsPage (INavigation navigation, TicketsViewModel vm)
         {
             _viewModel = vm;
             _viewModel.PropertyChanged += _viewModel_PropertyChanged;
+            this.navigation = navigation;
             Title = "Tickets";
             BackgroundColor = Color.White;
 
             DependencyService.Get<IStatusBar> ().ShowStatusBar ();
 
-            tickets = new ObservableCollection<TicketModel> ();
             listView = new ListView ();
-            listView.ItemsSource = tickets;
 
             listView.ItemTemplate = new DataTemplate (typeof (CustomImageCell));
             listView.ItemTemplate.SetBinding (ImageCell.TextProperty, "Name");
@@ -46,35 +47,48 @@ namespace Travlendar.Core.AppCore.Pages
 
             ToolbarItems.Add (addTicket);
             Content = listView;
-            RefreshList ();
+            RefreshList (null);
         }
 
-        private void ListView_ItemTapped (object sender, ItemTappedEventArgs e)
+        private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var page = new FullscreenImagePage (e.Item.ToString ());
-            NavigationPage.SetHasNavigationBar (page, false);
-            Application.Current.MainPage.Navigation.PushAsync (page);
+            var page = new FullscreenImagePage((e.Item as TicketModel).Image);
+            if (Device.RuntimePlatform == Device.Android)
+                NavigationPage.SetHasNavigationBar(page, false);
+            await navigation.PushAsync(page);
         }
 
         private void _viewModel_PropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            RefreshList ();
+            RefreshList (e);
         }
 
-        private void RefreshList ()
+        private void RefreshList (System.ComponentModel.PropertyChangedEventArgs e)
         {
-            tickets = new ObservableCollection<TicketModel> ();
-            foreach ( KeyValuePair<string, string> element in _viewModel.Tickets )
-            {
-                tickets.Add (new TicketModel () { Name = "Ticket", Detail = element.Key, Image = element.Value });
+            if (tickets == null) {
+                tickets = new ObservableCollection<TicketModel>();
+                foreach (KeyValuePair<string, string> element in _viewModel.Tickets)
+                {
+                    tickets.Add(new TicketModel { Name = "Ticket", Detail = element.Key, Image = element.Value });
+                }
+            } else if (e != null) {
+                var item = tickets.FirstOrDefault(element => element.Detail == e.PropertyName);
+                if (item != null)
+                    tickets.Remove(item);
+            } else {
+                var item = _viewModel.Tickets.LastOrDefault();
+                var newTicket = new TicketModel { Name = "Ticket", Detail = item.Key, Image = item.Value };
+                if (!object.Equals(item, default(KeyValuePair<string, string>)) && !tickets.Contains(newTicket))
+                    tickets.Add(newTicket);
             }
+
             listView.ItemsSource = tickets;
         }
 
         private async void AddTicket_ClickedAsync (object sender, System.EventArgs e)
         {
             var page = new AddTicketPage (TicketsViewModel.GetInstance ());
-            await Navigation.PushAsync (page);
+            await navigation.PushAsync (page);
         }
     }
 }

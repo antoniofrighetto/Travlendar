@@ -7,7 +7,9 @@ namespace Travlendar.Core.AppCore.Pages
     {
         public FullscreenImagePage (string img)
         {
-            DependencyService.Get<IStatusBar> ().HideStatusBar ();
+            if (Device.RuntimePlatform == Device.Android)
+                DependencyService.Get<IStatusBar> ().HideStatusBar ();
+
             Content = new StackLayout
             {
                 Padding = 0,
@@ -16,7 +18,7 @@ namespace Travlendar.Core.AppCore.Pages
                     {
                         Source = ImageSource.FromFile(img),
                         HorizontalOptions = LayoutOptions.FillAndExpand,
-                        VerticalOptions= LayoutOptions.FillAndExpand,
+                        VerticalOptions = LayoutOptions.FillAndExpand,
                         Aspect = Aspect.AspectFit
                     }
                 }
@@ -26,7 +28,6 @@ namespace Travlendar.Core.AppCore.Pages
         protected override bool OnBackButtonPressed ()
         {
             DependencyService.Get<IStatusBar> ().ShowStatusBar ();
-            Navigation.PopAsync ();
             return true;
         }
     }

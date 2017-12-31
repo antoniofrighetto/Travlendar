@@ -162,8 +162,7 @@ namespace Travlendar.Core.AppCore.ViewModels
                 }
             }
 
-            if ( message == "Update" )
-            {
+            if ( message == "Update" ) {
                 appointments.Remove (appointment);
             }
 

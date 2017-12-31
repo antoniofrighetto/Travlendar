@@ -102,11 +102,13 @@ namespace Travlendar.Core.AppCore.ViewModels
         public void RemoveTicket (string name)
         {
             name = Tickets.FirstOrDefault (x => x.Value == name).Key;
-            Tickets.Remove (name);
+            if (name != null) {
+                Tickets.Remove(name);    
+            }
 
             CognitoSyncViewModel.GetInstance ().RemoveFromDataset (DATASET_NAME, name);
             if ( PropertyChanged != null )
-                PropertyChanged (this, null);
+                PropertyChanged (this, new PropertyChangedEventArgs(name));
         }
 
         private IDictionary<string, string> LoadTickets ()

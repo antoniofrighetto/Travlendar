@@ -83,7 +83,7 @@ namespace Travlendar.Core.AppCore.ViewModels
             {
                 return ticketsCommand ?? (ticketsCommand = new Command (async () =>
                 {
-                    await navigation.PushAsync (new TicketsPage (TicketsViewModel.GetInstance ()));
+                    await navigation.PushAsync (new TicketsPage (navigation, TicketsViewModel.GetInstance ()));
                 }));
             }
         }
