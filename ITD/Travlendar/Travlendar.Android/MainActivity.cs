@@ -17,7 +17,7 @@ using Xamarin.Facebook;
 [assembly: MetaData ("com.facebook.sdk.ApplicationName", Value = "@string/app_name")]
 namespace Travlendar.Droid
 {
-    [Activity (Label = "Travlendar", Icon = "@drawable/icon", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity (Label = "Travlendar", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
     {
