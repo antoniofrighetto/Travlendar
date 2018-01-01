@@ -77,10 +77,5 @@ namespace Travlendar.Core.AppCore.ViewModels
             }
             return;
         }
-
-        private bool CheckMapsApp ()
-        {
-            throw new NotImplementedException ();
-        }
     }
 }
