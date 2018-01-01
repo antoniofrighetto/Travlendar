@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="AppCore\Helpers\IExistance.cs" />
     <Compile Include="AppCore\Helpers\TicketEventArgs.cs" />
     <Compile Include="AppCore\Model\CognitoSyncModel.cs" />
     <Compile Include="AppCore\Model\LoginModel.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="AppCore\ViewModels\CognitoSyncViewModel.cs" />
     <Compile Include="AppCore\ViewModels\LoginViewModel.cs" />
     <Compile Include="AppCore\ViewModels\MapViewModel.cs" />
+    <Compile Include="AppCore\ViewModels\NavigationViewModel.cs" />
     <Compile Include="AppCore\ViewModels\SettingsViewModel.cs" />
     <Compile Include="AppCore\ViewModels\TicketsViewModel.cs" />
     <Compile Include="Constants.cs" />

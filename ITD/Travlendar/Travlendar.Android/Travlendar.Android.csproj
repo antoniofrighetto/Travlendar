@@ -138,6 +138,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dependencies\AppExistance.cs" />
     <Compile Include="Dependencies\MessageImpl.cs" />
     <Compile Include="Dependencies\StatusBarImpl.cs" />
     <Compile Include="Dependencies\ToolsService.cs" />

@@ -122,19 +122,21 @@
                     <ViewCell>
                         <StackLayout Orientation="Horizontal">
                             <StackLayout.Padding>
-                                    <OnPlatform x:TypeArguments="Thickness">
-                                        <On Platform="iOS">15,15,0,15</On>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <On Platform="iOS">15,15,0,15</On>
                                     <On Platform="Android">12,0,0,0</On>
-                                    </OnPlatform>
+                                </OnPlatform>
                             </StackLayout.Padding>
                             <Entry Placeholder="Notes" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" FontSize="17" Text="{Binding Detail}"/>
                         </StackLayout>
                     </ViewCell>
                 </TableSection>
-                <TableSection x:Name="RemoveButtonSection">
+                <TableSection x:Name="ButtonSection">
                     <TextCell Text="Remove event" StyleId="None" TextColor="Red" Command="{Binding RemoveAppointmentCommand}"/>
+                    <TextCell Text="Navigate to the event" StyleId="None" TextColor="White" Command="{Binding NavigateAppointmentCommand}"/>
                 </TableSection>
+
             </TableRoot>
         </TableView>
-	</ContentPage.Content>
+    </ContentPage.Content>
 </ContentPage>

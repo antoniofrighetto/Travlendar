@@ -18,5 +18,14 @@ namespace Travlendar
 
         //Font Color
         public static Color TravlendarWhite = Color.White;
+
+        //Google Maps Android
+        public static string NavigationURL_Android = "google.navigation:q=";
+
+        //Google Maps iOS
+        public static string NavigationURL_iOS = "https://www.google.com/maps/dir/?api=1&";
+
+        //Google Maps API KEY
+        public static string MapsKey = "AIzaSyCpVbZOXvTgri28nC6KnFbdO79HmoVCUKw";
     }
 }

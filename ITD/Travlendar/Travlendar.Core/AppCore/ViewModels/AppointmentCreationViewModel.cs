@@ -126,6 +126,20 @@ namespace Travlendar.Core.AppCore.ViewModels
             }
         }
 
+        private Command navigateAppointmentCommand;
+        public ICommand NavigateAppointmentCommand
+        {
+            get
+            {
+                SettingsViewModel settings = new SettingsViewModel (null, null);
+
+                return navigateAppointmentCommand ?? (navigateAppointmentCommand = new Command (async () =>
+                {
+                    NavigationViewModel.GetInstance ().Navigate ("Merate", settings.Car, settings.Bike, settings.PublicTransport, settings.MinimizeCarbonFootPrint);
+                }));
+            }
+        }
+
         public AppointmentCreationViewModel (AppointmentCreationPage page, INavigation navigation, ObservableCollection<Appointment> aps, string msg, Appointment a)
         {
             this.page = page;
