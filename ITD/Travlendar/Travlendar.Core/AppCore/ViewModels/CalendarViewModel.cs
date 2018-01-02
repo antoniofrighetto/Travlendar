@@ -11,12 +11,13 @@ using Xamarin.Forms;
 using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Travlendar.Core.AppCore.ViewModels
 {
     public class CalendarViewModel : BindableBaseNotify
     {
-        private const string DATASET_NAME = "Appointments";
+        private const string DATASET_NAME = "Appointment";
         private CalendarPage page;
         private INavigation navigation;
         private RadCalendar calendar;
@@ -118,8 +119,9 @@ namespace Travlendar.Core.AppCore.ViewModels
 
                 Appointment newAppointment = values[2] as Appointment;
                 appointmentsList.Add(newAppointment);
-                System.Diagnostics.Debug.WriteLine(newAppointment.GetHashCode().ToString());
-                CognitoSyncViewModel.GetInstance().WriteDataset(DATASET_NAME, newAppointment.GetHashCode().ToString(), JsonConvert.SerializeObject(newAppointment));
+
+                string json = JsonConvert.SerializeObject(newAppointment);
+                CognitoSyncViewModel.GetInstance().WriteDataset(DATASET_NAME, newAppointment.GetHashCode().ToString(), json);
 
                 LoadAppointments(false);
             });
@@ -181,11 +183,21 @@ namespace Travlendar.Core.AppCore.ViewModels
                 foreach (KeyValuePair<string, string> item in appointments)
                 {
                     Appointment a = JsonConvert.DeserializeObject<Appointment>(item.Value);
+                    a.Color = parseColor(item.Value);
                     appointmentsList.Add(a);
                 }
             }
 
             calendar.AppointmentsSource = AppointmentList;
+        }
+
+        private static Color parseColor(string json) {
+            JObject rootObject = JObject.Parse(json);
+            JObject color = (JObject)rootObject["Color"];
+            return new Color(color.Property("R").Value.ToObject<double>(),
+                             color.Property("G").Value.ToObject<double>(),
+                             color.Property("B").Value.ToObject<double>(),
+                             color.Property("A").Value.ToObject<double>());
         }
     }
 }

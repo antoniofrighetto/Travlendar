@@ -122,7 +122,7 @@ namespace Travlendar.Core.AppCore.ViewModels
                 return removeAppointmentCommand ?? (removeAppointmentCommand = new Command(async () =>
                 {
                     appointments.Remove(appointment);
-                    CognitoSyncViewModel.GetInstance().RemoveFromDataset("Appointments", appointment.GetHashCode().ToString());
+                    CognitoSyncViewModel.GetInstance().RemoveFromDataset("Appointment", appointment.GetHashCode().ToString());
                     await navigation.PopAsync(true);
                 }));
             }

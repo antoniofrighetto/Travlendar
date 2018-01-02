@@ -124,7 +124,10 @@
     <BundleResource Include="Resources\Icon-Small%402x.png" />
     <BundleResource Include="Resources\Icon-Small%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
-    <BundleResource Include="Resources\green_dot.png" />
+    <BundleResource Include="Resources\birthday.png" />
+    <BundleResource Include="Resources\festivity.png" />
+    <BundleResource Include="Resources\home.png" />
+    <BundleResource Include="Resources\work.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

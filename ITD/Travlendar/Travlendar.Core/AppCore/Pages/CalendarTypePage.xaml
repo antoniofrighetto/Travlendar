@@ -6,22 +6,25 @@
                 <TableSection Title="Event type">
                     <ViewCell x:Name="Work" ClassId="Work" Tapped="ViewCellTapped">
                         <StackLayout Padding="15,14,0,10" Orientation="Horizontal">
-                            <Image Source="green_dot.png" WidthRequest="7"/>
+                            <Image Source="work.png" WidthRequest="6"/>
                             <Label Text="Work" WidthRequest="90"/>
                         </StackLayout>
                     </ViewCell>
                     <ViewCell x:Name="Home" ClassId="Home" Tapped="ViewCellTapped">
                         <StackLayout Padding="15,14,0,10" Orientation="Horizontal">
+                            <Image Source="home.png" WidthRequest="6"/>
                             <Label Text="Home" WidthRequest="90"/>
                         </StackLayout>
                     </ViewCell>
                     <ViewCell x:Name="Birthday" ClassId="Birthday" Tapped="ViewCellTapped">
                         <StackLayout Padding="15,14,0,10" Orientation="Horizontal">
+                            <Image Source="birthday.png" WidthRequest="6"/>
                             <Label Text="Birthday" WidthRequest="90"/>
                         </StackLayout>
                     </ViewCell>
                     <ViewCell x:Name="Festivity" ClassId="Festivity" Tapped="ViewCellTapped">
                         <StackLayout Padding="15,14,0,10" Orientation="Horizontal">
+                            <Image Source="festivity.png" WidthRequest="6"/>
                             <Label Text="Festivity" WidthRequest="90"/>
                         </StackLayout>
                     </ViewCell>
