@@ -55,7 +55,7 @@
       <Version>3.3.1.26</Version>
     </PackageReference>
     <PackageReference Include="AWSSDK.Core">
-      <Version>3.3.21</Version>
+      <Version>3.3.21.6</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Bcl.Build">
       <Version>1.0.21</Version>
@@ -189,9 +189,6 @@
     <AndroidResource Include="Resources\drawable\login_background.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\splash.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\add_ic.png" />
   </ItemGroup>
   <ItemGroup>
@@ -234,6 +231,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\styles.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\splash_screen.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\splash_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
