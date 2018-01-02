@@ -33,28 +33,28 @@ namespace Travlendar.Core.AppCore.ViewModels
             set { SetProperty(ref isAllDayOn, value); }
         }
 
-        private DateTime startDate = DateTime.Now;
+        private DateTime startDate;
         public DateTime StartDate
         {
             get { return startDate; }
             set { SetProperty(ref startDate, value); }
         }
 
-        private TimeSpan startTime = DateTime.Now.TimeOfDay;
+        private TimeSpan startTime;
         public TimeSpan StartTime
         {
             get { return startTime; }
             set { SetProperty(ref startTime, value); }
         }
 
-        private DateTime endDate = DateTime.Now;
+        private DateTime endDate;
         public DateTime EndDate
         {
             get { return endDate; }
             set { SetProperty(ref endDate, value); }
         }
 
-        private TimeSpan endTime = DateTime.Now.TimeOfDay;
+        private TimeSpan endTime;
         public TimeSpan EndTime
         {
             get { return endTime; }
@@ -156,9 +156,16 @@ namespace Travlendar.Core.AppCore.ViewModels
                 this.TitleAppointment = a.Title;
                 this.StartDate = a.StartDate;
                 this.EndDate = a.EndDate;
+                this.StartTime = a.StartDate.TimeOfDay;
+                this.EndTime = a.EndDate.TimeOfDay;
                 this.Detail = a.Detail;
                 this.IsAllDayOn = a.IsAllDay;
                 this.Color = a.Color;
+            } else {
+                this.StartDate = DateTime.Now;
+                this.EndDate = DateTime.Now;
+                this.StartTime = DateTime.Now.TimeOfDay;
+                this.EndTime = DateTime.Now.TimeOfDay;
             }
 
             MessagingCenter.Subscribe<CalendarTypePage, Color>(this, "ColorEvent", (sender, color) =>
