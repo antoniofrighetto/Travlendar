@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Travlendar.Core.AppCore.Pages.CalendarTypePage">
-	<ContentPage.Content>
+    <ContentPage.Content>
         <TableView Intent="Form">
             <TableRoot>
                 <TableSection Title="Event type">
-                    <ViewCell ClassId="Work" Tapped="ViewCellTapped">
+                    <ViewCell x:Name="Work" ClassId="Work" Tapped="ViewCellTapped">
                         <StackLayout Padding="15,14,0,10" Orientation="Horizontal">
+                            <Image Source="green_dot.png" WidthRequest="7"/>
                             <Label Text="Work" WidthRequest="90"/>
                         </StackLayout>
                     </ViewCell>
-                    <ViewCell ClassId="Home" Tapped="ViewCellTapped">
+                    <ViewCell x:Name="Home" ClassId="Home" Tapped="ViewCellTapped">
                         <StackLayout Padding="15,14,0,10" Orientation="Horizontal">
                             <Label Text="Home" WidthRequest="90"/>
                         </StackLayout>
                     </ViewCell>
-                    <ViewCell ClassId="Birthday" Tapped="ViewCellTapped">
+                    <ViewCell x:Name="Birthday" ClassId="Birthday" Tapped="ViewCellTapped">
                         <StackLayout Padding="15,14,0,10" Orientation="Horizontal">
                             <Label Text="Birthday" WidthRequest="90"/>
                         </StackLayout>
                     </ViewCell>
-                    <ViewCell ClassId="Festivity" Tapped="ViewCellTapped">
+                    <ViewCell x:Name="Festivity" ClassId="Festivity" Tapped="ViewCellTapped">
                         <StackLayout Padding="15,14,0,10" Orientation="Horizontal">
                             <Label Text="Festivity" WidthRequest="90"/>
                         </StackLayout>
@@ -27,5 +28,5 @@
                 </TableSection>
             </TableRoot>
         </TableView>
-	</ContentPage.Content>
+    </ContentPage.Content>
 </ContentPage>

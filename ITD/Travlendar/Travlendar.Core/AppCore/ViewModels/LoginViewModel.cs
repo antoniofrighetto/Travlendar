@@ -59,7 +59,7 @@ namespace Travlendar.Core.AppCore.ViewModels
             }
             else
             {
-                displayAlert.Invoke (this, null);
+                /* displayAlert.Invoke (this, null); */
             }
             DependencyService.Get<ITools> ().LogoutFromFacebook ();
         }

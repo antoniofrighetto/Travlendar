@@ -133,9 +133,8 @@
                 </TableSection>
                 <TableSection x:Name="ButtonSection">
                     <TextCell Text="Remove event" StyleId="None" TextColor="Red" Command="{Binding RemoveAppointmentCommand}"/>
-                    <TextCell Text="Navigate to the event" StyleId="None" TextColor="White" Command="{Binding NavigateAppointmentCommand}"/>
+                    <TextCell Text="Navigate to the event" StyleId="None" TextColor="#007AFF" Command="{Binding NavigateAppointmentCommand}"/>
                 </TableSection>
-
             </TableRoot>
         </TableView>
     </ContentPage.Content>

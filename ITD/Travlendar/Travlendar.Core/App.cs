@@ -1,5 +1,6 @@
 ﻿using Travlendar.Core.AppCore.Pages;
 using Travlendar.Core.AppCore.ViewModels;
+using Travlendar.Core.Framework.Dependencies;
 using Xamarin.Forms;
 
 namespace Travlendar
@@ -34,10 +35,12 @@ namespace Travlendar
                 }
                 else
                 {
-                    if ( !(MainPage is LoginPage) )
+                    DependencyService.Get<IMessage>().ShortAlert("Could not login to Facebook.");
+                    /* Login page not yet implemented */
+                    /*if ( !(MainPage is LoginPage) )
                     {
                         MainPage = new LoginPage (vm);
-                    }
+                    }*/
                 }
             }
         }

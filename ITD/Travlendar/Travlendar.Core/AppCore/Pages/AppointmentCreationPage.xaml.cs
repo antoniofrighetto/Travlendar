@@ -15,6 +15,7 @@ namespace Travlendar.Core.AppCore.Pages
         private static int flag = 0;
         private const int ID = 1;
         private Appointment appointment;
+        private string location = null;
 
         public AppointmentCreationPage(ObservableCollection<Appointment> appointments, string message, Appointment appointment)
         {
@@ -29,7 +30,7 @@ namespace Travlendar.Core.AppCore.Pages
                 NavigationPage.SetHasBackButton(this, false);
 
             this.appointment = appointment;
-            BindingContext = new AppointmentCreationViewModel(this, this.Navigation, appointments, message, appointment);
+            BindingContext = new AppointmentCreationViewModel(this, this.Navigation, appointments, message, appointment, location);
 
             var saveAppointmentButton = new ToolbarItem
             {
@@ -54,12 +55,12 @@ namespace Travlendar.Core.AppCore.Pages
 
             CalendarTypeViewCell.Tapped += async (sender, e) =>
             {
-                await Navigation.PushAsync (new CalendarTypePage ());
+                await Navigation.PushAsync(new CalendarTypePage());
             };
 
             LocationViewCell.Tapped += async (sender, e) =>
             {
-                await Navigation.PushAsync (new MapPage());
+                await Navigation.PushAsync(new MapPage());
             };
 
             StartDatePicker.DateSelected += (sender, e) => {
@@ -71,6 +72,7 @@ namespace Travlendar.Core.AppCore.Pages
                 LocationLabel.FontSize = 10;
                 location = location.Replace("\n", " ");
                 LocationLabel.Text = location;
+                this.location = LocationLabel.Text;
             });
 
         }
@@ -92,9 +94,10 @@ namespace Travlendar.Core.AppCore.Pages
             var switcher = (SwitchCell)sender;
             if (TitleApp.Text == null)
             {
-                if (switcher.On) {
+                if (switcher.On)
+                {
                     await DisplayAlert("Set title before activating an alert.", "", "Ok");
-                    switcher.On = false;    
+                    switcher.On = false;
                 }
                 return;
             }
