@@ -7,28 +7,19 @@ using Travlendar.Core.AppCore.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Travlendar.Core.AppCore.Model;
-using Travlendar.Core.AppCore.ViewModels;
 using System.Collections.ObjectModel;
 
 namespace Travlendar.Core.AppCore.Pages
 {
-
     public partial class SettingsPage : ContentPage
     {
-
-
         List<int> timeIntervalOption = new List<int>();
-        
 
-        public SettingsPage(INavigation navigation,ObservableCollection<Appointment> appointments)
+        public SettingsPage(INavigation navigation, ObservableCollection<Appointment> appointments)
         {
             InitializeComponent();
             BindingContext = new SettingsViewModel(this, navigation);
-
-            
         }
-
-
 
         void Handle_OnChanged(object sender, Xamarin.Forms.ToggledEventArgs e)
         {
@@ -80,8 +71,6 @@ namespace Travlendar.Core.AppCore.Pages
                     picker.SelectedItem = "30";
                 }
             }
-
-
         }
     }
 }

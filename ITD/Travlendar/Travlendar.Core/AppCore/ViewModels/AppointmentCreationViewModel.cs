@@ -7,6 +7,7 @@ using Travlendar.Core.AppCore.Model;
 using Travlendar.Core.AppCore.Pages;
 using Travlendar.Framework.ViewModels;
 using Xamarin.Forms;
+using Newtonsoft.Json.Linq;
 
 namespace Travlendar.Core.AppCore.ViewModels
 {
@@ -18,7 +19,9 @@ namespace Travlendar.Core.AppCore.ViewModels
         private Appointment appointment;
         private string message;
         private string location;
-        static public object[] settingsValue;
+        private static object[] settingsValue = null;
+        private static bool flag = true;
+
         private string titleAppointment;
         public string TitleAppointment
         {
@@ -151,8 +154,6 @@ namespace Travlendar.Core.AppCore.ViewModels
             this.appointment = a;
             this.location = location;
 
-            
-
             if (message == "Update")
             {
                 this.TitleAppointment = a.Title;
@@ -170,15 +171,44 @@ namespace Travlendar.Core.AppCore.ViewModels
                 this.EndTime = DateTime.Now.TimeOfDay;
             }
 
+            /* It doesn't make sense reading every time the settings, we just read them the first time the constructor is invoked... */
+            if (flag)
+            {
+                ReadSettingsData();
+                flag = false;
+            }
+
+            /* ... and whenever settings are changed. */
+            MessagingCenter.Subscribe<SettingsPage>(this, "SettingsChangedEvent", (obj) => {
+                ReadSettingsData();
+            });
+
             MessagingCenter.Subscribe<CalendarTypePage, Color>(this, "ColorEvent", (sender, color) =>
             {
                 this.Color = color;
             });
         }
 
+        private void ReadSettingsData() {
+            try
+            {
+                string json = CognitoSyncViewModel.GetInstance().ReadDataset("Settings", "UserSettings");
+                System.Diagnostics.Debug.WriteLine(json);
+                JObject rootObject = JObject.Parse(json);
+                settingsValue = new object[3];
+                settingsValue[0] = rootObject["lunchBreak"].ToObject<bool>();
+                settingsValue[1] = rootObject["timeBreak"].ToObject<TimeSpan>();
+                settingsValue[2] = rootObject["timeInterval"].ToObject<TimeSpan>();
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("Dataset does not exist. Exception: " + e.Message);
+            }
+        }
+
         private async Task CreateAppointment(Appointment newAppointment)
         {
-            var overlappedEvent = appointments.FirstOrDefault(item => item.StartDate == newAppointment.StartDate || (item.StartDate <= newAppointment.EndDate && item.EndDate >= newAppointment.StartDate));
+            var overlappedEvent = appointments.FirstOrDefault(item => item.StartDate == newAppointment.StartDate || (item.StartDate <= newAppointment.EndDate && item.EndDate >= newAppointment.StartDate) && !newAppointment.IsAllDay);
             if (overlappedEvent != null && message != "Update")
             {
                 bool response = await page.DisplayAlert("Overlapped Event", String.Format("There's another event ({0}) scheduled for this time interval, are you sure to continue?", overlappedEvent.Title), "Continue", "Cancel");
@@ -188,19 +218,15 @@ namespace Travlendar.Core.AppCore.ViewModels
                 }
             }
 
-            if (System.Convert.ToBoolean(settingsValue[0])){
-
+            if (settingsValue != null && (bool)settingsValue[0]) {
                 TimeSpan timeBreak = (TimeSpan)settingsValue[1];
                 TimeSpan timeInterval = (TimeSpan)settingsValue[2];
-                if(newAppointment.StartDate.TimeOfDay == timeBreak || (timeBreak <= newAppointment.EndDate.TimeOfDay && timeBreak.Add(timeInterval) >= newAppointment.StartDate.TimeOfDay))
+                if (newAppointment.StartDate.TimeOfDay == timeBreak || (timeBreak <= newAppointment.EndDate.TimeOfDay && timeBreak.Add(timeInterval) >= newAppointment.StartDate.TimeOfDay))
                 {
                     if (!newAppointment.Title.ToLower().Contains("lunch"))
                     {
-                        bool response = await page.DisplayAlert("Overlapped Event", "Lunch Break is active, are you sure to continue?", "Continue", "Cancel");
-                        if (!response)
-                        {
-                            return;
-                        }
+                        await page.DisplayAlert("Overlapped Event", "LunchBreak mode is active and there's no space left for it. Disable settings if you want to save appointment anyway.", "Ok");
+                        return;
                     }
                 }
             }

@@ -126,39 +126,6 @@ namespace Travlendar.Core.AppCore.ViewModels
                 LoadAppointments(false);
             });
 
-            MessagingCenter.Subscribe<SettingsPage, object[]>(this, "LunchBreakAppointment", (sender, values) =>
-            {
-                bool lunchBreak = System.Convert.ToBoolean(values[0]);
-                if (lunchBreak)
-                {
-                    AppointmentCreationViewModel.settingsValue = new object[] { values[0], values[1], values[2] };
-                }
-                else
-                {
-                    AppointmentCreationViewModel.settingsValue[0] = lunchBreak;
-                }
-            });
-            //MessagingCenter.Subscribe<SettingsPage, List<Appointment>>(this, "LunchBreakAppointment", (sender, value) =>
-            //{
-            //    foreach (Appointment app in value)
-            //    {
-
-            //        if (appointmentsList.Contains<Appointment>(app) == true)
-            //        {
-            //            //do nothing
-            //        }
-            //        else
-            //        {
-            //            appointmentsList.Add(app);
-            //            //string json = JsonConvert.SerializeObject(value);
-            //            //CognitoSyncViewModel.GetInstance().WriteDataset(DATASET_NAME, value.GetHashCode().ToString(), json);
-
-            //            LoadAppointments(false);
-            //        }
-            //    }
-
-            //});
-
             calendar.AppointmentTapped += async (sender, e) =>
             {
                 await navigation.PushAsync(new AppointmentCreationPage(appointmentsList, "Update", (e.Appointment as Appointment)));

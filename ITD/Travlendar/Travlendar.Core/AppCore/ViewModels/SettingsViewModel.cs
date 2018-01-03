@@ -15,19 +15,15 @@ namespace Travlendar.Core.AppCore.ViewModels
 {
     class SettingsViewModel : BindableBaseNotify
     {
-
-        //private SQLiteConnection database = DependencyService.Get<ISQLite>().InitConnection();
         private SettingsPage page;
         private Settings settings;
         private INavigation navigation;
-
-
 
         private string age;
         public string Age
         {
             get { return this.age; }
-            set { this.SetProperty(ref this.age, value, "Age"); }
+            set { this.SetProperty(ref this.age, value); }
         }
 
         private bool car;
@@ -93,15 +89,12 @@ namespace Travlendar.Core.AppCore.ViewModels
             set { this.SetProperty(ref this.timeInterval, value); }
         }
 
-
-
         public SettingsViewModel(SettingsPage page, INavigation navigation)
         {
             this.page = page;
             this.navigation = navigation;
 
             LoadSettings();
-
         }
 
         private void LoadSettings()
@@ -130,7 +123,6 @@ namespace Travlendar.Core.AppCore.ViewModels
                 this.lunchBreak = settings.lunchBreak;
                 this.timeBreak = settings.timeBreak;
                 this.timeInterval = settings.timeInterval.TotalMinutes.ToString();
-                lunchBreakSync();
             }
             catch (Exception exception)
             {
@@ -173,31 +165,19 @@ namespace Travlendar.Core.AppCore.ViewModels
                             timeInterval = TimeSpan.FromMinutes(double.Parse(this.timeInterval))
                         };
 
-                        lunchBreakSync();
-
                         await page.DisplayAlert("Settings correctly inserted", "", "Ok");
-                        await (syncSettings(settings));
+                        await SyncSettings(settings);
                     }
                 }));
             }
         }
 
-
-        private async Task syncSettings(Settings settings)
+        private async Task SyncSettings(Settings settings)
         {
             string settingJSON = JsonConvert.SerializeObject(settings);
             CognitoSyncViewModel.GetInstance().WriteDataset("Settings", "UserSettings", settingJSON);
-
+            MessagingCenter.Send<SettingsPage>(this.page, "SettingsChangedEvent");
+            await navigation.PopAsync();
         }
-
-        public void lunchBreakSync()
-        {
-            object[] settingsValues = new object[] { this.lunchBreak, this.timeBreak, TimeSpan.FromMinutes(double.Parse(this.timeInterval))};
-            MessagingCenter.Send<SettingsPage, object[]>(SettingsPage, "LunchBreakAppointment", settingsValues);
-
-
-        }
-        
-       
     }
 }
