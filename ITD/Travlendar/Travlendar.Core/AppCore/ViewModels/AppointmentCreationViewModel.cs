@@ -18,7 +18,7 @@ namespace Travlendar.Core.AppCore.ViewModels
         private Appointment appointment;
         private string message;
         private string location;
-
+        static public object[] settingsValue;
         private string titleAppointment;
         public string TitleAppointment
         {
@@ -151,6 +151,8 @@ namespace Travlendar.Core.AppCore.ViewModels
             this.appointment = a;
             this.location = location;
 
+            
+
             if (message == "Update")
             {
                 this.TitleAppointment = a.Title;
@@ -176,6 +178,23 @@ namespace Travlendar.Core.AppCore.ViewModels
                 if (!response)
                 {
                     return;
+                }
+            }
+
+            if (System.Convert.ToBoolean(settingsValue[0])){
+
+                TimeSpan timeBreak = (TimeSpan)settingsValue[1];
+                TimeSpan timeInterval = (TimeSpan)settingsValue[2];
+                if(newAppointment.StartDate.TimeOfDay == timeBreak || (timeBreak <= newAppointment.EndDate.TimeOfDay && timeBreak.Add(timeInterval) >= newAppointment.StartDate.TimeOfDay))
+                {
+                    if (!newAppointment.Title.ToLower().Contains("lunch"))
+                    {
+                        bool response = await page.DisplayAlert("Overlapped Event", "Lunch Break is active, are you sure to continue?", "Continue", "Cancel");
+                        if (!response)
+                        {
+                            return;
+                        }
+                    }
                 }
             }
 

@@ -11,5 +11,6 @@ namespace Travlendar.Core.AppCore.Model
         public bool IsAllDay { get; set; }
         public string Detail { get; set; }
         public Color Color { get; set; }
+        
     }
 }

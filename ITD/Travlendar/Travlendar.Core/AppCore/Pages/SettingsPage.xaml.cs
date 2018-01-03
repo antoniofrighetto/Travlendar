@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using Travlendar.Core.AppCore.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Travlendar.Core.AppCore.Model;
+using Travlendar.Core.AppCore.ViewModels;
+using System.Collections.ObjectModel;
 
 namespace Travlendar.Core.AppCore.Pages
 {
@@ -15,20 +18,14 @@ namespace Travlendar.Core.AppCore.Pages
 
 
         List<int> timeIntervalOption = new List<int>();
-        //Label errorLabel = new Label
-        //{
-        //    Text = string.Concat("Sorry, select time from 11.30 to 14.00!"),
-        //    FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
-        //    HorizontalOptions = LayoutOptions.CenterAndExpand,
-        //    TextColor = Color.Red
+        
 
-        //};
-
-        public SettingsPage(INavigation navigation)
+        public SettingsPage(INavigation navigation,ObservableCollection<Appointment> appointments)
         {
             InitializeComponent();
             BindingContext = new SettingsViewModel(this, navigation);
 
+            
         }
 
 
@@ -40,6 +37,7 @@ namespace Travlendar.Core.AppCore.Pages
                 timer.IsVisible = true;
                 picker.IsVisible = true;
                 minutes.IsVisible = true;
+               
             }
             else
             {

@@ -38,7 +38,7 @@
                         <SwitchCell Text="Minimize Carboon Foot Print" On="{Binding MinimizeCarbonFootPrint}"/>
                     </TableSection>
                     <TableSection Title="Breaks">
-                        <SwitchCell Text="Lunch Break" On="{Binding LunchBreak}" OnChanged="Handle_OnChanged"/>
+                        <SwitchCell x:Name="lunchBreak" Text="Lunch Break" On="{Binding LunchBreak}" OnChanged="Handle_OnChanged"/>
                         <ViewCell>
                             <Grid>
                                 <Grid.RowDefinitions>

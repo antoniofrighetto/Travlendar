@@ -9,6 +9,7 @@ using Travlendar.Framework.ViewModels;
 using Travlendar.Core.AppCore.Model;
 using Travlendar.Core.AppCore.Pages;
 using Newtonsoft.Json;
+using System.Collections.ObjectModel;
 
 namespace Travlendar.Core.AppCore.ViewModels
 {
@@ -19,6 +20,7 @@ namespace Travlendar.Core.AppCore.ViewModels
         private SettingsPage page;
         private Settings settings;
         private INavigation navigation;
+
 
 
         private string age;
@@ -100,19 +102,9 @@ namespace Travlendar.Core.AppCore.ViewModels
 
             LoadSettings();
 
-            this.age = settings.age.ToString();
-            this.car = settings.car;
-            this.bike = settings.bike;
-            this.publicTransport = settings.publicTransport;
-            this.sharedCar = settings.sharedCar;
-            this.sharedBike = settings.sharedBike;
-            this.minimizeCarbonFootPrint = settings.minimizeCarbonFootPrint;
-            this.lunchBreak = settings.lunchBreak;
-            this.timeBreak = settings.timeBreak;
-            this.timeInterval = settings.timeInterval.ToString();
         }
 
-        private async void LoadSettings()
+        private void LoadSettings()
         {
             try
             {
@@ -121,24 +113,29 @@ namespace Travlendar.Core.AppCore.ViewModels
                 if (settingsStringFormat == null)
                 {
                     settings = new Settings();
+
                 }
                 else
                 {
                     settings = JsonConvert.DeserializeObject<Settings>(settingsStringFormat);
-                    int i = 0;
                 }
+
+                this.age = settings.age.ToString();
+                this.car = settings.car;
+                this.bike = settings.bike;
+                this.publicTransport = settings.publicTransport;
+                this.sharedCar = settings.sharedCar;
+                this.sharedBike = settings.sharedBike;
+                this.minimizeCarbonFootPrint = settings.minimizeCarbonFootPrint;
+                this.lunchBreak = settings.lunchBreak;
+                this.timeBreak = settings.timeBreak;
+                this.timeInterval = settings.timeInterval.TotalMinutes.ToString();
+                lunchBreakSync();
             }
             catch (Exception exception)
             {
                 System.Diagnostics.Debug.WriteLine(exception.Message);
             }
-
-            //database.CreateTable<Settings>();
-            //if (database.Table<Settings>().Any())
-            //{
-            //    settings = database.Get<Settings>(0);
-            //}
-            //else { settings = new Settings(); }
 
         }
 
@@ -173,8 +170,10 @@ namespace Travlendar.Core.AppCore.ViewModels
                             minimizeCarbonFootPrint = this.minimizeCarbonFootPrint,
                             lunchBreak = this.lunchBreak,
                             timeBreak = this.timeBreak,
-                            timeInterval = int.Parse(this.timeInterval)
+                            timeInterval = TimeSpan.FromMinutes(double.Parse(this.timeInterval))
                         };
+
+                        lunchBreakSync();
 
                         await page.DisplayAlert("Settings correctly inserted", "", "Ok");
                         await (syncSettings(settings));
@@ -190,5 +189,15 @@ namespace Travlendar.Core.AppCore.ViewModels
             CognitoSyncViewModel.GetInstance().WriteDataset("Settings", "UserSettings", settingJSON);
 
         }
+
+        public void lunchBreakSync()
+        {
+            object[] settingsValues = new object[] { this.lunchBreak, this.timeBreak, TimeSpan.FromMinutes(double.Parse(this.timeInterval))};
+            MessagingCenter.Send<SettingsPage, object[]>(SettingsPage, "LunchBreakAppointment", settingsValues);
+
+
+        }
+        
+       
     }
 }

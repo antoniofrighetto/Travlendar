@@ -44,7 +44,7 @@ namespace Travlendar.Core.AppCore.Model
 
         public TimeSpan timeBreak { get; set; }
 
-        public int timeInterval { get; set; }
+        public TimeSpan timeInterval { get; set; }
 
 
     }
