@@ -22,13 +22,14 @@ namespace Travlendar.Core.AppCore.Pages
             layout = new StackLayout
             {
                 VerticalOptions = LayoutOptions.Fill,
-                BackgroundColor = Color.White
             };
 
             backgroundImage = new Image
             {
-                Source = "login_background.jpg",
+                Source = "login_background.png",
             };
+            layout.Children.Add(backgroundImage);
+
 
             title = new Label ()
             {
@@ -74,8 +75,9 @@ namespace Travlendar.Core.AppCore.Pages
 
             //relativeLayout.Children.Add (backgroundImage, Constraint.Constant (0), Constraint.Constant (0));
             //relativeLayout.Children.Add (title, Constraint.RelativeToParent (parent => (parent.Width / 2) - 75), Constraint.RelativeToParent (parent => parent.Height / 2));
+            
 
-            layout.Children.Add (backgroundImage);
+            
             //buttons.Children.Add (registerButton);
             //buttons.Children.Add (loginButton);
 
@@ -83,6 +85,7 @@ namespace Travlendar.Core.AppCore.Pages
             layout.Children.Add (buttons);
 
             this.Content = layout;
+            
         }
 
         private void LandingPage_Appearing (object sender, System.EventArgs e)
