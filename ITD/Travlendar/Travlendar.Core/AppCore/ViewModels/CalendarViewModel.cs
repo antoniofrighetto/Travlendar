@@ -17,12 +17,11 @@ namespace Travlendar.Core.AppCore.ViewModels
 {
     public class CalendarViewModel : BindableBaseNotify
     {
-        private const string DATASET_NAME = "Appointment";
         private CalendarPage page;
         private INavigation navigation;
         private RadCalendar calendar;
 
-        private static ObservableCollection<Appointment> appointmentsList = new ObservableCollection<Appointment>();
+        private static ObservableCollection<Appointment> appointmentsList;
         public ObservableCollection<Appointment> AppointmentList
         {
             get { return appointmentsList; }
@@ -106,7 +105,7 @@ namespace Travlendar.Core.AppCore.ViewModels
             this.navigation = navigation;
             this.calendar = calendar;
 
-            LoadAppointments(true);
+            LoadAppointments();
 
             MessagingCenter.Subscribe<AppointmentCreationPage, object[]>(this, "CreationAppointments", (sender, values) =>
             {
@@ -114,21 +113,25 @@ namespace Travlendar.Core.AppCore.ViewModels
                 {
                     Appointment oldAppointment = values[1] as Appointment;
                     appointmentsList.Remove(oldAppointment);
-                    CognitoSyncViewModel.GetInstance().RemoveFromDataset(DATASET_NAME, oldAppointment.GetHashCode().ToString());
+                    CognitoSyncViewModel.GetInstance().RemoveFromDataset(Constants.APPOINTMENTS_DATASET_NAME, oldAppointment.Key);
                 }
 
                 Appointment newAppointment = values[2] as Appointment;
                 appointmentsList.Add(newAppointment);
 
                 string json = JsonConvert.SerializeObject(newAppointment);
-                CognitoSyncViewModel.GetInstance().WriteDataset(DATASET_NAME, newAppointment.GetHashCode().ToString(), json);
+                CognitoSyncViewModel.GetInstance().WriteDataset(Constants.APPOINTMENTS_DATASET_NAME, newAppointment.Key, json);
 
-                LoadAppointments(false);
+                calendar.AppointmentsSource = AppointmentList;
             });
 
             calendar.AppointmentTapped += async (sender, e) =>
             {
-                await navigation.PushAsync(new AppointmentCreationPage(appointmentsList, "Update", (e.Appointment as Appointment)));
+                Appointment a = (e.Appointment as Appointment);
+                var az = appointmentsList.FirstOrDefault(item => item.Title == a.Title && item.StartDate == a.StartDate && item.EndDate == a.EndDate && item.IsAllDay == a.IsAllDay);
+                /* We can safely assume we got the key */
+                a.Key = az.Key;
+                await navigation.PushAsync(new AppointmentCreationPage(appointmentsList, "Update", a));
             };
         }
 
@@ -174,20 +177,17 @@ namespace Travlendar.Core.AppCore.ViewModels
             }
         }
 
-        private void LoadAppointments(bool flag)
+        private void LoadAppointments()
         {
-            CognitoSyncViewModel.GetInstance().CreateDataset(DATASET_NAME);
-            IDictionary<string, string> appointments = CognitoSyncViewModel.GetInstance().ReadWholeDataset(DATASET_NAME);
-            if (appointments.Any() && flag && !AppointmentList.Any())
+            appointmentsList = new ObservableCollection<Appointment>();
+            CognitoSyncViewModel.GetInstance().CreateDataset(Constants.APPOINTMENTS_DATASET_NAME);
+            IDictionary<string, string> appointments = CognitoSyncViewModel.GetInstance().ReadWholeDataset(Constants.APPOINTMENTS_DATASET_NAME);
+            foreach (KeyValuePair<string, string> item in appointments)
             {
-                foreach (KeyValuePair<string, string> item in appointments)
-                {
-                    Appointment a = JsonConvert.DeserializeObject<Appointment>(item.Value);
-                    a.Color = parseColor(item.Value);
-                    appointmentsList.Add(a);
-                }
+                Appointment a = JsonConvert.DeserializeObject<Appointment>(item.Value);
+                a.Color = parseColor(item.Value);
+                appointmentsList.Add(a);
             }
-
             calendar.AppointmentsSource = AppointmentList;
         }
 
