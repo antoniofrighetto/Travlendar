@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="X5k-f2-b5h">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,19 +18,25 @@
                         <viewControllerLayoutGuide type="bottom" id="9ZL-r4-8FZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yd7-JS-zBw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Icon-60.png" translatesAutoresizingMaskIntoConstraints="NO" id="23">
-                                <rect key="frame" x="157.5" y="303.5" width="60" height="60"/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1832" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Icon.png">
+                                <rect key="frame" x="87.5" y="306" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="23" firstAttribute="centerY" secondItem="yd7-JS-zBw" secondAttribute="centerY" priority="1" id="39"/>
-                            <constraint firstItem="23" firstAttribute="centerX" secondItem="yd7-JS-zBw" secondAttribute="centerX" priority="1" id="41"/>
-                        </constraints>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="1832"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="1832"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XAI-xm-WK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -39,6 +45,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon-60.png" width="60" height="60"/>
+        <image name="Default-568h.png" width="320" height="568"/>
+        <image name="Default-Portrait.png" width="768" height="1004"/>
+        <image name="Default.png" width="320" height="480"/>
+        <image name="birthday.png" width="13" height="13"/>
+        <image name="festivity.png" width="13" height="13"/>
+        <image name="home.png" width="13" height="13"/>
+        <image name="work.png" width="13" height="13"/>
+        <image name="Icon.png" width="485" height="485"/>
+        <image name="login_background.png" width="500" height="500"/>
     </resources>
 </document>
