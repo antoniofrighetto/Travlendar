@@ -1,0 +1,46 @@
+\documentclass[epsfig,a4paper,12pt,titlepage,twoside,openany]{book}
+
+% Main packages used
+\usepackage{epsfig}
+\usepackage{plain}
+\usepackage[paperheight=29.7cm,paperwidth=21cm,outer=1.5cm,inner=2.5cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{titlesec}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{titlesec}
+\newcommand{\retrievalDate}{25th of October, 2017}
+\setlength{\parindent}{0pt}
+\addto\extrasenglish{%
+  \renewcommand{\chapterautorefname}{Chapter}%
+}
+
+% https://github.com/Angtrim/alloy-latex-highlighting
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+\usepackage[figuresright]{rotating}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\input{cover_page}
+	\clearpage
+
+	\tableofcontents
+	\mainmatter
+    
+	% Sections
+	\begingroup
+        \input{introduction}
+		\newpage	
+		\input{frameworks}
+		\newpage
+		\input{structure}
+        \newpage
+        \input{testing}
+	\endgroup
+
+	\appendix
+	\input{appendix}
+\end{document}
