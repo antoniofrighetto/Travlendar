@@ -13,6 +13,9 @@ namespace Travlendar
         //Facebook provide name
         public const string FB_PROVIDER = "graph.facebook.com";
 
+        //Appointments Dataset
+        public const string APPOINTMENTS_DATASET_NAME = "AppointmentDataset";
+
         //App Color
         public static Color TravlendarAquaGreen = Color.FromRgb (24, 149, 132);
 

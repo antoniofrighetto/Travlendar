@@ -111,6 +111,8 @@ namespace Travlendar.Core.AppCore.ViewModels
                             Detail = this.Detail,
                             Color = this.Color == Color.Default ? Color.FromRgb(28, 109, 107) : this.Color
                         };
+
+                        ap.Key = ap.GetHashCode().ToString();
                         await CreateAppointment(ap);
                     }
                 }));
@@ -124,8 +126,8 @@ namespace Travlendar.Core.AppCore.ViewModels
             {
                 return removeAppointmentCommand ?? (removeAppointmentCommand = new Command(async () =>
                 {
+                    CognitoSyncViewModel.GetInstance().RemoveFromDataset(Constants.APPOINTMENTS_DATASET_NAME, appointment.Key);
                     appointments.Remove(appointment);
-                    CognitoSyncViewModel.GetInstance().RemoveFromDataset("Appointment", appointment.GetHashCode().ToString());
                     await navigation.PopAsync(true);
                 }));
             }
@@ -208,9 +210,14 @@ namespace Travlendar.Core.AppCore.ViewModels
 
         private async Task CreateAppointment(Appointment newAppointment)
         {
-            var overlappedEvent = appointments.FirstOrDefault(item => item.StartDate == newAppointment.StartDate || (item.StartDate <= newAppointment.EndDate && item.EndDate >= newAppointment.StartDate) && !newAppointment.IsAllDay);
+            var overlappedEvent = appointments.FirstOrDefault(item => item.StartDate == newAppointment.StartDate || (item.StartDate <= newAppointment.EndDate && item.EndDate >= newAppointment.StartDate));
             if (overlappedEvent != null && message != "Update")
             {
+                if (overlappedEvent.Title == newAppointment.Title && overlappedEvent.EndDate == newAppointment.EndDate) {
+                    await page.DisplayAlert("Event already added.", "", "Ok");
+                    return;
+                }
+
                 bool response = await page.DisplayAlert("Overlapped Event", String.Format("There's another event ({0}) scheduled for this time interval, are you sure to continue?", overlappedEvent.Title), "Continue", "Cancel");
                 if (!response)
                 {
