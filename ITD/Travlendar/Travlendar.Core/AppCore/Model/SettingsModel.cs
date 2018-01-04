@@ -18,9 +18,6 @@ namespace Travlendar.Core.AppCore.Model
         public int userId { get; set; }
 
 
-        public int age { get; set; }
-
-
         public bool car { get; set; }
 
 
@@ -28,12 +25,6 @@ namespace Travlendar.Core.AppCore.Model
 
 
         public bool publicTransport { get; set; }
-
-
-        public bool sharedBike { get; set; }
-
-
-        public bool sharedCar { get; set; }
 
 
         public bool minimizeCarbonFootPrint { get; set; }
@@ -44,8 +35,8 @@ namespace Travlendar.Core.AppCore.Model
 
         public TimeSpan timeBreak { get; set; }
 
-        public TimeSpan timeInterval { get; set; }
 
+        public TimeSpan timeInterval { get; set; }
 
     }
 }

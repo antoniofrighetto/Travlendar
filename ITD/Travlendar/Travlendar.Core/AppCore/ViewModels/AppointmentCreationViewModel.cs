@@ -192,8 +192,8 @@ namespace Travlendar.Core.AppCore.ViewModels
         private void ReadSettingsData() {
             try
             {
+                CognitoSyncViewModel.GetInstance().CreateDataset("Settings");
                 string json = CognitoSyncViewModel.GetInstance().ReadDataset("Settings", "UserSettings");
-                System.Diagnostics.Debug.WriteLine(json);
                 JObject rootObject = JObject.Parse(json);
                 settingsValue = new object[3];
                 settingsValue[0] = rootObject["lunchBreak"].ToObject<bool>();

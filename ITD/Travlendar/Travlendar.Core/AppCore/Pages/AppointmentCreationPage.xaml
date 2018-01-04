@@ -123,7 +123,7 @@
                         <StackLayout Orientation="Horizontal">
                             <StackLayout.Padding>
                                 <OnPlatform x:TypeArguments="Thickness">
-                                    <On Platform="iOS">15,15,0,15</On>
+                                    <On Platform="iOS">15,7,0,0</On>
                                     <On Platform="Android">12,0,0,0</On>
                                 </OnPlatform>
                             </StackLayout.Padding>

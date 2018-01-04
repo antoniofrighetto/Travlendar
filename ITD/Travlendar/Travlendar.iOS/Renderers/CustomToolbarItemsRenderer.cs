@@ -1,4 +1,5 @@
-﻿using System;
+﻿/* Got inspiration from https://www.wintellect.com/creating-a-secondary-bottom-ios-toolbar-in-xamarin-forms/ */
+using System;
 using System.Linq;
 using UIKit;
 using CoreGraphics;

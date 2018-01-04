@@ -30,10 +30,10 @@
                         <SwitchCell Text="Bike" On="{Binding Bike}"/>
                         <SwitchCell Text="Public Transport" On="{Binding PublicTransport}"/>
                     </TableSection>
-                    <TableSection Title="Shared Transport">
+                    <!--<TableSection Title="Shared Transport">
                         <SwitchCell Text="Shared Car" On="{Binding SharedCar}"/>
                         <SwitchCell Text="Shared Bike" On="{Binding SharedBike}"/>
-                    </TableSection>
+                    </TableSection>-->
                     <TableSection Title="Habits">
                         <SwitchCell Text="Minimize Carboon Foot Print" On="{Binding MinimizeCarbonFootPrint}"/>
                     </TableSection>

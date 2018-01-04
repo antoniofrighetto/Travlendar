@@ -19,12 +19,12 @@ namespace Travlendar.Core.AppCore.ViewModels
         private Settings settings;
         private INavigation navigation;
 
-        private string age;
+        /* private string age;
         public string Age
         {
             get { return this.age; }
             set { this.SetProperty(ref this.age, value); }
-        }
+        } */
 
         private bool car;
         public bool Car
@@ -47,7 +47,7 @@ namespace Travlendar.Core.AppCore.ViewModels
             set { this.SetProperty(ref this.publicTransport, value); }
         }
 
-        private bool sharedCar;
+        /* private bool sharedCar;
         public bool SharedCar
         {
             get { return this.sharedCar; }
@@ -59,7 +59,7 @@ namespace Travlendar.Core.AppCore.ViewModels
         {
             get { return this.sharedBike; }
             set { this.SetProperty(ref this.sharedBike, value); }
-        }
+        } */
 
         private bool minimizeCarbonFootPrint;
         public bool MinimizeCarbonFootPrint
@@ -113,12 +113,9 @@ namespace Travlendar.Core.AppCore.ViewModels
                     settings = JsonConvert.DeserializeObject<Settings>(settingsStringFormat);
                 }
 
-                this.age = settings.age.ToString();
                 this.car = settings.car;
                 this.bike = settings.bike;
                 this.publicTransport = settings.publicTransport;
-                this.sharedCar = settings.sharedCar;
-                this.sharedBike = settings.sharedBike;
                 this.minimizeCarbonFootPrint = settings.minimizeCarbonFootPrint;
                 this.lunchBreak = settings.lunchBreak;
                 this.timeBreak = settings.timeBreak;
@@ -145,20 +142,17 @@ namespace Travlendar.Core.AppCore.ViewModels
                         return;
                     }
 
-                    if (int.TryParse(this.age, out var number) == false)
+                    /* if (int.TryParse(this.age, out var number) == false)
                     {
                         await page.DisplayAlert("Please insert a valid value", "", "Ok");
-                    }
+                    } */
                     else
                     {
                         Settings settings = new Settings
                         {
-                            age = int.Parse(this.age),
                             car = this.car,
                             bike = this.bike,
                             publicTransport = this.publicTransport,
-                            sharedCar = this.sharedCar,
-                            sharedBike = this.sharedBike,
                             minimizeCarbonFootPrint = this.minimizeCarbonFootPrint,
                             lunchBreak = this.lunchBreak,
                             timeBreak = this.timeBreak,
