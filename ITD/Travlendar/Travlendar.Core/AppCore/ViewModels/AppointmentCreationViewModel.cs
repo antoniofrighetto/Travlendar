@@ -119,7 +119,6 @@ namespace Travlendar.Core.AppCore.ViewModels
                             Location = this.Location
                         };
 
-                        System.Diagnostics.Debug.WriteLine(Location);
                         ap.Key = ap.GetHashCode().ToString();
                         await CreateAppointment(ap);
                     }
