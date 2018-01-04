@@ -210,10 +210,13 @@ namespace Travlendar.Core.AppCore.ViewModels
 
         private async Task CreateAppointment(Appointment newAppointment)
         {
-            var overlappedEvent = appointments.FirstOrDefault(item => item.StartDate == newAppointment.StartDate || (item.StartDate <= newAppointment.EndDate && item.EndDate >= newAppointment.StartDate));
+            var overlappedEvent = appointments.FirstOrDefault(item => item.StartDate == newAppointment.StartDate
+                                                              || (item.StartDate <= newAppointment.EndDate && item.EndDate >= newAppointment.StartDate)
+                                                              || (item.StartDate.Date == newAppointment.StartDate.Date && item.IsAllDay && newAppointment.IsAllDay)
+                                                             );
             if (overlappedEvent != null && message != "Update")
             {
-                if (overlappedEvent.Title == newAppointment.Title && overlappedEvent.EndDate == newAppointment.EndDate) {
+                if (overlappedEvent.Title == newAppointment.Title) {
                     await page.DisplayAlert("Event already added.", "", "Ok");
                     return;
                 }
@@ -238,6 +241,7 @@ namespace Travlendar.Core.AppCore.ViewModels
                 }
             }
 
+            System.Diagnostics.Debug.WriteLine("we out here " + newAppointment.Title);
             object[] values = new object[] { message, appointment, newAppointment };
             MessagingCenter.Send<AppointmentCreationPage, object[]>(this.page, "CreationAppointments", values);
             await navigation.PopAsync(true);
