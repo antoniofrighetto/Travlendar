@@ -21,15 +21,18 @@ namespace Travlendar.Core.AppCore.Pages
 
             layout = new StackLayout
             {
-                VerticalOptions = LayoutOptions.Fill,
+                VerticalOptions = LayoutOptions.Fill
             };
 
             backgroundImage = new Image
             {
                 Source = "login_background.png",
+                Margin = new Thickness(0, Device.OnPlatform(100,0,0), 0, 0)
             };
+
             layout.Children.Add(backgroundImage);
 
+            BackgroundColor = Color.White;
 
             title = new Label ()
             {

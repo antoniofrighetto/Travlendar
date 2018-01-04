@@ -30,7 +30,6 @@ namespace Travlendar.Droid
 			global::PCLCrypto.Resource.String.Hello = global::Travlendar.Droid.Resource.String.Hello;
 			global::PCLStorage.Resource.String.ApplicationName = global::Travlendar.Droid.Resource.String.ApplicationName;
 			global::PCLStorage.Resource.String.Hello = global::Travlendar.Droid.Resource.String.Hello;
-			global::Plugin.LocalNotifications.Resource.Drawable.plugin_lc_smallicon = global::Travlendar.Droid.Resource.Drawable.plugin_lc_smallicon;
 			global::Telerik.XamarinForms.Common.Android.Resource.Animation.abc_fade_in = global::Travlendar.Droid.Resource.Animation.abc_fade_in;
 			global::Telerik.XamarinForms.Common.Android.Resource.Animation.abc_fade_out = global::Travlendar.Droid.Resource.Animation.abc_fade_out;
 			global::Telerik.XamarinForms.Common.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::Travlendar.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -10705,25 +10704,25 @@ namespace Travlendar.Droid
 			public const int notify_panel_notification_icon_bg = 2130837877;
 			
 			// aapt resource value: 0x7f020176
-			public const int plugin_lc_smallicon = 2130837878;
+			public const int pressable_item_background = 2130837878;
 			
 			// aapt resource value: 0x7f020177
-			public const int pressable_item_background = 2130837879;
+			public const int selectable_item_background = 2130837879;
 			
 			// aapt resource value: 0x7f020178
-			public const int selectable_item_background = 2130837880;
+			public const int shade_bottom = 2130837880;
 			
 			// aapt resource value: 0x7f020179
-			public const int shade_bottom = 2130837881;
+			public const int shade_corner = 2130837881;
 			
 			// aapt resource value: 0x7f02017a
-			public const int shade_corner = 2130837882;
+			public const int shade_right = 2130837882;
 			
 			// aapt resource value: 0x7f02017b
-			public const int shade_right = 2130837883;
+			public const int splash_logo = 2130837883;
 			
 			// aapt resource value: 0x7f02017c
-			public const int splash = 2130837884;
+			public const int splash_screen = 2130837884;
 			
 			// aapt resource value: 0x7f02017d
 			public const int tab_view_popup_background = 2130837885;

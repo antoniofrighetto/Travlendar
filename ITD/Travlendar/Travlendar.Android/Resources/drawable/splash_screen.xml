@@ -7,6 +7,6 @@
     <bitmap
         android:src="@drawable/splash_logo"
         android:tileMode="disabled"
-        android:gravity="fill_horizontal"/>
+        android:gravity="center"/>
   </item>
 </layer-list>

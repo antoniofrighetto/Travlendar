@@ -106,6 +106,7 @@
     <Compile Include="Renderers\CustomTimePicker.cs" />
     <Compile Include="Renderers\CustomToolbarItemsRenderer.cs" />
     <Compile Include="Renderers\CustomViewCell.cs" />
+    <Compile Include="Renderers\CustomPicker.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -113,21 +114,14 @@
     <BundleResource Include="Resources\Default-Portrait%402x.png" />
     <BundleResource Include="Resources\Default.png" />
     <BundleResource Include="Resources\Default%402x.png" />
-    <BundleResource Include="Resources\Icon-60%402x.png" />
-    <BundleResource Include="Resources\Icon-60%403x.png" />
-    <BundleResource Include="Resources\Icon-76.png" />
-    <BundleResource Include="Resources\Icon-76%402x.png" />
-    <BundleResource Include="Resources\Icon-Small-40.png" />
-    <BundleResource Include="Resources\Icon-Small-40%402x.png" />
-    <BundleResource Include="Resources\Icon-Small-40%403x.png" />
-    <BundleResource Include="Resources\Icon-Small.png" />
-    <BundleResource Include="Resources\Icon-Small%402x.png" />
-    <BundleResource Include="Resources\Icon-Small%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <BundleResource Include="Resources\birthday.png" />
     <BundleResource Include="Resources\festivity.png" />
     <BundleResource Include="Resources\home.png" />
     <BundleResource Include="Resources\work.png" />
+    <BundleResource Include="Resources\Icon%402x.png" />
+    <BundleResource Include="Resources\Icon%403x.png" />
+    <BundleResource Include="Resources\login_background.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -176,6 +170,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon60%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon40%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon76%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon76%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon60%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon29%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
