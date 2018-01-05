@@ -228,10 +228,13 @@ namespace Travlendar.Core.AppCore.ViewModels
                 }
             }
 
-            if (settingsValue != null && (bool)settingsValue[0]) {
-                TimeSpan timeBreak = (TimeSpan)settingsValue[1];
-                TimeSpan timeInterval = (TimeSpan)settingsValue[2];
-                if (newAppointment.StartDate.TimeOfDay == timeBreak || (timeBreak <= newAppointment.EndDate.TimeOfDay && timeBreak.Add(timeInterval) >= newAppointment.StartDate.TimeOfDay))
+            if ( settingsValue != null && (bool) settingsValue [0] )
+            {
+                TimeSpan timeInterval;
+                TimeSpan timeBreak = (TimeSpan) settingsValue [1];
+                if ( settingsValue [2] != null )
+                    timeInterval = (TimeSpan) settingsValue [2];
+                if ( newAppointment.StartDate.TimeOfDay == timeBreak || (timeBreak <= newAppointment.EndDate.TimeOfDay && timeBreak.Add (timeInterval) >= newAppointment.StartDate.TimeOfDay) )
                 {
                     if (!newAppointment.Title.ToLower().Contains("lunch"))
                     {
