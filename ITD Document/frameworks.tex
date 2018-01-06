@@ -1,0 +1,20 @@
+\chapter{Tools, Frameworks and Functionalities}
+\label{cha:framworks}
+
+\section{Tools}
+\label{sec:tools}
+\href{https://www.visualstudio.com/downloads/}{Visual Studio 2017} version 15.5.2 (Community/Professional/Enterprise) \\(Install .NET Desktop Development and Mobile Development with .NET)\\
+\href{http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html}{Java JDK 1.8}\\
+\href{https://developer.android.com/studio/releases/platform-tools.html}{Android SDK 8 - 26 With Platform Tools and Build Tools}\\
+\href{https://developer.android.com/studio/releases/platform-tools.html}{Emulator} \textit{Recommended}
+Keytool procedure?
+
+\section{Frameworks}
+The mobile application has been implemented as a cross-platform mobile application using Xamarin.Forms. As stated in the Overview of the Architectural Design, the main language has been C\#, despite some user interfaces has been written in XAML.
+Thanks to Xamarin.Forms we had the opportunity of using the .NET Framework allowing a much broader support solving the problems that we faced.\\
+The architectural pattern follows the decision took in the Design Document, the MVVM. Designing the majority of the application logic in the ViewModels helps to keep a neat distinction between the UI code.\\
+Referring to the DD, we used AWS Cognito as the main player of our data synchronization functionality, implementing the .NET AWS Client that consumes the service authenticating the user on the Identity Pool of Travlendar+. 
+The login process to authenticate the user has been implemented with the Facebook client for Xamarin, consuming the wrapped APIs to retrieve the identity of the users.
+
+\section{Functionalities}
+Referring to the RASD and the DD documents, we have implemented the majority of the functionalities stated.

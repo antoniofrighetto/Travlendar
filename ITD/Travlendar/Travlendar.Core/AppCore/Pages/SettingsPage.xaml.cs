@@ -25,16 +25,16 @@ namespace Travlendar.Core.AppCore.Pages
         {
             if (e.Value)
             {
-                timer.IsEnabled = true;
-                picker.IsEnabled = true;
-                minutes.IsEnabled = true;
+                timer.IsVisible = true;
+                picker.IsVisible = true;
+                minutes.IsVisible = true;
                
             }
             else
             {
-                picker.IsEnabled = false;
-                minutes.IsEnabled = false;
-                timer.IsEnabled = false;
+                picker.IsVisible = false;
+                minutes.IsVisible = false;
+                timer.IsVisible = false;
             }
         }
 

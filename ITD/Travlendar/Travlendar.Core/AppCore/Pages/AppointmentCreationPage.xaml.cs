@@ -15,6 +15,7 @@ namespace Travlendar.Core.AppCore.Pages
         private static int flag = 0;
         private const int ID = 1;
         private Appointment appointment;
+        private string location = null;
 
         public AppointmentCreationPage(ObservableCollection<Appointment> appointments, string message, Appointment appointment)
         {
@@ -23,19 +24,13 @@ namespace Travlendar.Core.AppCore.Pages
             if (message == "Creation")
             {
                 Table.RemoveAt(3);
-            } else {
-                if (LocationLabel.Text != null && LocationLabel.Text != "Location") {
-                    LocationLabel.TextColor = Color.Black;
-                    LocationLabel.WidthRequest = 250;
-                    LocationLabel.FontSize = 10;
-                }
             }
 
             if (Device.RuntimePlatform == Device.iOS)
                 NavigationPage.SetHasBackButton(this, false);
 
             this.appointment = appointment;
-            BindingContext = new AppointmentCreationViewModel(this, this.Navigation, appointments, message, appointment);
+            BindingContext = new AppointmentCreationViewModel(this, this.Navigation, appointments, message, appointment, location);
 
             var saveAppointmentButton = new ToolbarItem
             {
@@ -77,8 +72,9 @@ namespace Travlendar.Core.AppCore.Pages
                 LocationLabel.FontSize = 10;
                 location = location.Replace("\n", " ");
                 LocationLabel.Text = location;
-                MessagingCenter.Send(this, "LocationNameSaved", LocationLabel.Text);
+                this.location = LocationLabel.Text;
             });
+
         }
 
         private void IsAllDayOnChanged(object sender, ToggledEventArgs e)

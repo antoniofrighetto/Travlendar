@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Net;
-using Travlendar.Core.AppCore.Helpers;
 using Travlendar.Core.Framework.Dependencies;
 using Xamarin.Forms;
 
@@ -55,15 +54,6 @@ namespace Travlendar.Core.AppCore.ViewModels
                 case "w":
                     DependencyService.Get<IMessage> ().ShortAlert ("Navigate Walking");
                     break;
-            }
-
-            if ( Device.RuntimePlatform == Device.iOS )
-            {
-                if ( !DependencyService.Get<IExistance> ().ApplicationExistance ("comgooglemaps://") )
-                {
-                    DependencyService.Get<IMessage> ().LongAlert ("No navigation app available");
-                    return;
-                }
             }
 
             switch ( Device.RuntimePlatform )

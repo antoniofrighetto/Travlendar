@@ -133,45 +133,45 @@ namespace Travlendar.Core.AppCore.ViewModels
         {
             get
             {
-                return save ?? (save = new Command(async () =>
+                return save ?? (save = new Command (async () =>
 
-                {
-                    if ((this.timeBreak.TotalMinutes < 690 || this.timeBreak.TotalMinutes > 840))
-                    {
-                        await page.DisplayAlert("Please insert a valid time from 11.30 to 14.00", "", "OK");
-                        return;
-                    }
+                 {
+                     if ( (this.timeBreak.TotalMinutes < 690 || this.timeBreak.TotalMinutes > 840) )
+                     {
+                         await page.DisplayAlert ("Please insert a valid time from 11.30 to 14.00", "", "OK");
+                         return;
+                     }
 
-                    /* if (int.TryParse(this.age, out var number) == false)
-                    {
-                        await page.DisplayAlert("Please insert a valid value", "", "Ok");
-                    } */
-                    else
-                    {
-                        Settings settings = new Settings
-                        {
-                            car = this.car,
-                            bike = this.bike,
-                            publicTransport = this.publicTransport,
-                            minimizeCarbonFootPrint = this.minimizeCarbonFootPrint,
-                            lunchBreak = this.lunchBreak,
-                            timeBreak = this.timeBreak,
-                            timeInterval = TimeSpan.FromMinutes(double.Parse(this.timeInterval))
-                        };
+                     /* if (int.TryParse(this.age, out var number) == false)
+                     {
+                         await page.DisplayAlert("Please insert a valid value", "", "Ok");
+                     } */
+                     else
+                     {
+                         Settings settings = new Settings
+                         {
+                             car = this.car,
+                             bike = this.bike,
+                             publicTransport = this.publicTransport,
+                             minimizeCarbonFootPrint = this.minimizeCarbonFootPrint,
+                             lunchBreak = this.lunchBreak,
+                             timeBreak = this.timeBreak,
+                             timeInterval = TimeSpan.FromMinutes (double.Parse (this.timeInterval))
+                         };
 
-                        await page.DisplayAlert("Settings correctly inserted", "", "Ok");
-                        await SyncSettings(settings);
-                    }
-                }));
+                         DependencyService.Get<IMessage> ().LongAlert ("Settings correctly inserted");
+                         await SyncSettings (settings);
+                     }
+                 }));
             }
         }
 
-        private async Task SyncSettings(Settings settings)
+        private async Task SyncSettings (Settings settings)
         {
-            string settingJSON = JsonConvert.SerializeObject(settings);
-            CognitoSyncViewModel.GetInstance().WriteDataset("Settings", "UserSettings", settingJSON);
-            MessagingCenter.Send<SettingsPage>(this.page, "SettingsChangedEvent");
-            await navigation.PopAsync();
+            string settingJSON = JsonConvert.SerializeObject (settings);
+            CognitoSyncViewModel.GetInstance ().WriteDataset ("Settings", "UserSettings", settingJSON);
+            MessagingCenter.Send<SettingsPage> (this.page, "SettingsChangedEvent");
+            await navigation.PopAsync ();
         }
     }
 }
