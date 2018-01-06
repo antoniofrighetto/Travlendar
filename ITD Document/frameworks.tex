@@ -3,18 +3,77 @@
 
 \section{Tools}
 \label{sec:tools}
-\href{https://www.visualstudio.com/downloads/}{Visual Studio 2017} version 15.5.2 (Community/Professional/Enterprise) \\(Install .NET Desktop Development and Mobile Development with .NET)\\
-\href{http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html}{Java JDK 1.8}\\
-\href{https://developer.android.com/studio/releases/platform-tools.html}{Android SDK 8 - 26 With Platform Tools and Build Tools}\\
-\href{https://developer.android.com/studio/releases/platform-tools.html}{Emulator} \textit{Recommended}
-Keytool procedure?
+Here are the tools we relied on while developing the application:
+\begin{itemize}
+\item \href{https://www.visualstudio.com/downloads/}{Visual Studio 2017 IDE} version 15.5.2 (Community/Professional/Enterprise), with .NET Desktop Development and Mobile Development with .NET installed, both for Windows and macOS.
+\item \href{http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html}{Java JDK 1.8}.
+\item \href{https://developer.android.com/studio/releases/platform-tools.html}{Android SDK 8 - 26 With Platform Tools and Build Tools}.
+\item \href{https://developer.android.com/studio/releases/platform-tools.html}{Android emulator}.
+\item \href{https://developer.apple.com/library/content/documentation/IDEs/Conceptual/iOS_Simulator_Guide/Introduction/Introduction.html}{iOS simulator}.
+\end{itemize}
+
 
 \section{Frameworks}
-The mobile application has been implemented as a cross-platform mobile application using Xamarin.Forms. As stated in the Overview of the Architectural Design, the main language has been C\#, despite some user interfaces has been written in XAML.
-Thanks to Xamarin.Forms we had the opportunity of using the .NET Framework allowing a much broader support solving the problems that we faced.\\
-The architectural pattern follows the decision took in the Design Document, the MVVM. Designing the majority of the application logic in the ViewModels helps to keep a neat distinction between the UI code.\\
-Referring to the DD, we used AWS Cognito as the main player of our data synchronization functionality, implementing the .NET AWS Client that consumes the service authenticating the user on the Identity Pool of Travlendar+. 
-The login process to authenticate the user has been implemented with the Facebook client for Xamarin, consuming the wrapped APIs to retrieve the identity of the users.
+The application has been implemented as a cross-platform mobile application using the \textit{Xamarin.Forms} framework. As stated in the Overview of the Architectural Design, the programming language used is C\#. With Xamarin.Forms we had the opportunity of using the .NET Framework which allows a much broader support to solve the problems that we faced. The architectural pattern follows the decision took in the Design Document, the Model-View-ViewModel (MVVM). Designing the majority of the application logic in the ViewModel helps to keep a neat distinction between the UI code.\\ 
+
+As said in the DD, the client-server model is achieved with AWS Cognito, the main player of our data synchronization functionality by implementing the .NET AWS Client that consumes the service authenticating the users on the Identity Pool of Travlendar+. The login process to authenticate the user has been implemented with the Facebook client for Xamarin, consuming the wrapped APIs to retrieve the identity of the users. \\
+
+For the basic user interface of the calendar we relied on a Telerik plugin, which provides us with some basic APIs to change view (e.g. switching from Months to Years), but after that, we've customized it by ourselves. \\
+
+For the Maps, we used Xamarin.Forms.Maps APIs which wraps native maps APIs. For the navigation, we relied on Google Maps, which is where the user is redirected to (already set up with user settings) when navigation occurs.
 
 \section{Functionalities}
 Referring to the RASD and the DD documents, we have implemented the majority of the functionalities stated.
+First of all, a user must log in with his Facebook Account in order to access to the main interface of Travlendar+.
+
+\subsection*{Main Interface}
+The main interface of Travlendar+ consists on a calendar that allows the user to manage the main activity that a calendar can offer and other custom functionality. In particular:
+\begin{itemize}
+\item The user can switch through different calendar view: Week, Month and Day. Additionally if he should go back to today's date, a simple button in the tool-bar has been implemented for this functionality.
+\item In the month and day view, every meetings that the user has added before are shown in the respective day cell so that he can visualize his appointments easily ad quickly. 
+\item Through the tool-bar the user can add a new appointments to his calendar, visualize the settings of the behavior of Travlendar+ logic, manage his transport tickets and logout from the application. 
+\end{itemize}
+
+\subsection*{Add appointment interface}
+The "Add appointment" page is the main functionality of Travlendar+, that allows the user to create new appointment by following the rule of Travlendar+ logic. 
+The add appointment page is organized in the following way:
+\begin{itemize}
+\item \textbf{Title:} the name of the appointment that must not be empty
+\item \textbf{Location:} the address of the appointment is set through a redirect to Google Maps where a user can write down the address manually or take his current position. 
+\item \textbf{All day}: a simple toggle that allows the user to add appointment in his calendar that cover all day.
+\item \textbf{Start and End}: these are the information of the event's beginning and the event's end.
+\item \textbf{Alert}: the toggle, if selected, will notify the user 10 minutes ahead of schedule that the appointment is going to start.
+\item \textbf{Calendar}: a event can have a category such that Work, Home, Birthday, Festivity.
+\item \textbf{Notes}: section where the user can specify some additional information of the event.
+\end{itemize}
+
+The logic behind the "Add appointment" page offers the main functionality of Travlendar+. In particular:
+\begin{itemize}
+\item An event already added cannot be inserted into the calendar.
+\item Two events cannot be overlapped. An alert will be displayed in order to notify the user.
+\item Considering the settings information that the user can modify in the main page, if the lunch break is selected, the application automatically reserve slot for the lunch break so that any appointment cannot be added during the lunch time set by the user.
+\end{itemize}
+
+Once a event has been added, the user can easily see all the information by clicking on the event. In particular the user can modify all the information added before, remove the event from his calendar and especially navigate to the event's location. 
+If the user has set the application settings, before lunching Google Maps the navigation functionality creates the correct navigation with the settings information, in particular by inserting the correct means of transport or the habits.
+
+\subsection*{Settings page}
+In this section the user can define various kind of user preferences. The settings supports different travel means such that car, bike or public transport and the user can activate or deactivate each of these.
+Additionally the user can also activate the carbon foot print constraint that automatically select the combination of transportation means.
+At the end, the lunch break toggle allows the user to reserve slot every day for the lunch break. In particular the user can define the start time and how many minutes long is the lunch break. The time slot must be between 11.30am and 14.00pm and it must be at least half an hour long. 
+If the user has not respected this constraint for the lunch break, the settings cannot be saved and an alert notifies the user to select the correct start time.
+
+\subsection*{Tickets page}
+This page allows the user to save their personal Tickets, providing a fast access to them as they are presented as a List, identifying each of them with a specific name.\\
+The user can either import the tickets from the media gallery of the device or take a picture of the physical ticket and keep it in Travlendar+.
+Tapping on a specific Ticket will be showed up in full-screen allowing the inspection.\\
+When taking or choosing a picture, the user will be previewed with the result before saving it. 
+The tickets are saved on the device and specifically for the user, meaning that if a different user will login won't see the other user's tickets.
+Long pressing on the Ticket will allow the user to view the ticket or deleting it.
+
+
+
+
+
+
+
