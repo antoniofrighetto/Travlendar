@@ -13,6 +13,7 @@ namespace Travlendar.Core.AppCore.Pages
         Map map;
         SearchBar searchBar;
 
+        //Page displaying the map and search bar
         public MapPage ()
         {
             BindingContext = new MapViewModel (this.Navigation, this);

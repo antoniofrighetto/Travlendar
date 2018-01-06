@@ -5,26 +5,20 @@ using Android.Content.PM;
 using Android.OS;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
-using System.IO;
-using System.Threading.Tasks;
 using Xamarin.Facebook;
 
 //Permissions needed for Facebook SDK on Android
 [assembly: Permission (Name = Android.Manifest.Permission.Internet)]
 [assembly: Permission (Name = Android.Manifest.Permission.WriteExternalStorage)]
-//You need to add this metadata to initialize FacebookActivity, you can add it on your strings.xml file
+//Metadata to initialize the Facebook SDK on Android
 [assembly: MetaData ("com.facebook.sdk.ApplicationId", Value = "@string/app_id")]
 [assembly: MetaData ("com.facebook.sdk.ApplicationName", Value = "@string/app_name")]
 namespace Travlendar.Droid
 {
     [Activity (Label = "Travlendar", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
     {
         public static ICallbackManager CallbackManager;
-        // Field, property, and method for Picture Picker
-        public static readonly int PickImageId = 1000;
-        public TaskCompletionSource<Stream> PickImageTaskCompletionSource { set; get; }
 
         protected override void OnCreate (Bundle bundle)
         {
@@ -47,8 +41,6 @@ namespace Travlendar.Droid
             //Google Maps Config
             Xamarin.FormsMaps.Init (this, bundle);
 
-            //Start
-
             ActionBar.SetIcon (Android.Resource.Color.Transparent);
             LoadApplication (new App ());
         }
@@ -56,32 +48,12 @@ namespace Travlendar.Droid
         /* 
             Override OnActivityResult to catch Facebook result Intent data.
             Then pass the values to the CallBackManager instance and this will trigger the
-            FacebookCallbackManager<LoginResult> We have define on the Renderer.
-
-            If you use other intents that pass through this method, you should identify them by yourself
+            FacebookCallbackManager<LoginResult> We have define on the FacebookButtonRenderer.
         */
         protected override void OnActivityResult (int requestCode, Result resultCode, Intent intent)
         {
             base.OnActivityResult (requestCode, resultCode, intent);
-
-            //For Facebook Login
             CallbackManager.OnActivityResult (requestCode, (int) resultCode, intent);
-
-            if ( requestCode == PickImageId )
-            {
-                if ( (resultCode == Result.Ok) && (intent != null) )
-                {
-                    Android.Net.Uri uri = intent.Data;
-                    Stream stream = ContentResolver.OpenInputStream (uri);
-
-                    // Set the Stream as the completion of the Task
-                    PickImageTaskCompletionSource.SetResult (stream);
-                }
-                else
-                {
-                    PickImageTaskCompletionSource.SetResult (null);
-                }
-            }
         }
 
         public override void OnRequestPermissionsResult (int requestCode, string [] permissions, Android.Content.PM.Permission [] grantResults)

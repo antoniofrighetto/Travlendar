@@ -18,6 +18,7 @@ namespace Travlendar.Core.AppCore.Pages
         public Entry username;
         public Entry password;
 
+        //Future implementation of the AWS Login with Email/Password
         public LoginPage (LoginViewModel vm)
         {
             DependencyService.Get<IStatusBar> ().HideStatusBar ();
@@ -87,7 +88,6 @@ namespace Travlendar.Core.AppCore.Pages
         private void Password_Completed (object sender, System.EventArgs e)
         {
             throw new System.NotImplementedException ();
-            //Need to implement the AWS Cognito standard login
         }
 
         private void RegisterEvents ()

@@ -6,6 +6,7 @@ namespace Travlendar.Core.AppCore.Renderers
 {
     public class CustomImageCell : ImageCell
     {
+        //Custom cell for displaying tickets
         public CustomImageCell ()
         {
             var moreAction = new MenuItem { Text = "View Ticket" };
@@ -24,9 +25,9 @@ namespace Travlendar.Core.AppCore.Renderers
         {
             var mi = ((MenuItem) sender);
             var page = new FullscreenImagePage (mi.CommandParameter.ToString ());
-            if (Device.RuntimePlatform == Device.Android)
+            if ( Device.RuntimePlatform == Device.Android )
                 NavigationPage.SetHasNavigationBar (page, false);
-            Application.Current.MainPage.Navigation.PushAsync(page);
+            Application.Current.MainPage.Navigation.PushAsync (page);
         }
 
         private void DeleteAction_Clicked (object sender, System.EventArgs e)

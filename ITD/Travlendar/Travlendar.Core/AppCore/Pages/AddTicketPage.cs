@@ -32,6 +32,7 @@ namespace Travlendar.Core.AppCore.Pages
             FillLayout ("Ticket Name");
         }
 
+        //Event that saves the user ticket choice
         private async void Save_ClickedAsync (object sender, EventArgs e)
         {
             if ( filePath == null )
@@ -45,6 +46,7 @@ namespace Travlendar.Core.AppCore.Pages
             await Navigation.PopAsync ();
         }
 
+        //Redraw the layout with the image selected by the user for preview purposes
         private void FillLayout (string entryName, Image tempTicket = null)
         {
             layout = new StackLayout
@@ -91,6 +93,7 @@ namespace Travlendar.Core.AppCore.Pages
             this.Content = layout;
         }
 
+        //Handling the ticket name
         private void TicketName_TextChanged (object sender, TextChangedEventArgs e)
         {
             if ( string.IsNullOrWhiteSpace (e.NewTextValue) )
@@ -106,11 +109,13 @@ namespace Travlendar.Core.AppCore.Pages
             }
         }
 
+        //Handling the ticket name
         private void TicketName_Completed (object sender, EventArgs e)
         {
             entry = ((Entry) sender).Text;
         }
 
+        //Handling the take picture functionality
         private async void TakePictureButton_ClickedAsync (object sender, EventArgs e)
         {
             var x = await _viewModel.TakePictureAsync (entry);
@@ -120,6 +125,7 @@ namespace Travlendar.Core.AppCore.Pages
             }
         }
 
+        //Handling the pick picture functionality
         private async void PickPictureButton_ClickedAsync (object sender, EventArgs e)
         {
             var x = await _viewModel.PickPictureAsync (entry);

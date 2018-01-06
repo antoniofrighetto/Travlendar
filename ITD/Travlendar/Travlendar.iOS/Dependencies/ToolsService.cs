@@ -1,18 +1,20 @@
-using System;
-using Travlendar.iOS.Dependencies;
+﻿using Facebook.LoginKit;
 using Travlendar.Framework.Dependencies;
+using Travlendar.iOS.Dependencies;
 using Xamarin.Forms;
-using Facebook.LoginKit;
 
-[assembly: Dependency(typeof(ToolsService))]
+[assembly: Dependency (typeof (ToolsService))]
 namespace Travlendar.iOS.Dependencies
 {
     public class ToolsService : ITools
     {
-        public void LogoutFromFacebook()
+        /// <summary>
+        /// Implementing the native logout from Facebook.
+        /// </summary>
+        public void LogoutFromFacebook ()
         {
-            var fbSession = new LoginManager();
-            fbSession.LogOut();
+            var fbSession = new LoginManager ();
+            fbSession.LogOut ();
         }
     }
 }

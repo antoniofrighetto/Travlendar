@@ -9,6 +9,7 @@ namespace Travlendar.Droid.Dependencies
 {
     public class StatusBarImplementation : IStatusBar
     {
+        //Given a page for the Android project, this will hide and show the status bars
         WindowManagerFlags _originalFlags;
 
         #region IStatusBar implementation

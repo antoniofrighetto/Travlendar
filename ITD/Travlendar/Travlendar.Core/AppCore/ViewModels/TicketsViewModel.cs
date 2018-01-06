@@ -13,6 +13,9 @@ using Xamarin.Forms;
 
 namespace Travlendar.Core.AppCore.ViewModels
 {
+    /// <summary>
+    /// TicketsViewModel singleton class that handle the tickets
+    /// </summary>
     public class TicketsViewModel : AViewModel<TicketModel>
     {
         private const string DATASET_NAME = "Tickets";
@@ -44,6 +47,9 @@ namespace Travlendar.Core.AppCore.ViewModels
 
         }
 
+        /// <summary>
+        /// Pick picture method that will handle the choice of the ticket from the User's media gallery
+        /// </summary>
         public async Task<MediaFile> PickPictureAsync (string name)
         {
             if ( !CrossMedia.Current.IsPickPhotoSupported )
@@ -62,6 +68,9 @@ namespace Travlendar.Core.AppCore.ViewModels
             return file;
         }
 
+        /// <summary>
+        /// Take picture method that will handle the process of taking a picture of a ticket
+        /// </summary>
         public async Task<MediaFile> TakePictureAsync (string name)
         {
             if ( !CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported )
@@ -83,6 +92,9 @@ namespace Travlendar.Core.AppCore.ViewModels
             return file;
         }
 
+        /// <summary>
+        /// Saving the ticket path in AWS and locally
+        /// </summary>
         public void SaveTicket (string name, string path)
         {
             try
@@ -99,18 +111,25 @@ namespace Travlendar.Core.AppCore.ViewModels
             CognitoSyncViewModel.GetInstance ().WriteDataset (DATASET_NAME, name, path);
         }
 
+        /// <summary>
+        /// Removing the ticket.
+        /// </summary>
         public void RemoveTicket (string name)
         {
             name = Tickets.FirstOrDefault (x => x.Value == name).Key;
-            if (name != null) {
-                Tickets.Remove(name);    
+            if ( name != null )
+            {
+                Tickets.Remove (name);
             }
 
             CognitoSyncViewModel.GetInstance ().RemoveFromDataset (DATASET_NAME, name);
             if ( PropertyChanged != null )
-                PropertyChanged (this, new PropertyChangedEventArgs(name));
+                PropertyChanged (this, new PropertyChangedEventArgs (name));
         }
 
+        /// <summary>
+        /// Loading the saved tickets.
+        /// </summary>
         private IDictionary<string, string> LoadTickets ()
         {
             CognitoSyncViewModel.GetInstance ().CreateDataset ("Tickets");

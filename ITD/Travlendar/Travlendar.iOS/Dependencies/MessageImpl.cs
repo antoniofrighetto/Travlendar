@@ -6,6 +6,9 @@ using UIKit;
 [assembly: Xamarin.Forms.Dependency (typeof (MessageImpl))]
 namespace Travlendar.iOS.Dependencies
 {
+    /// <summary>
+    /// MessageImpl class that implements the Toast notifications.
+    /// </summary>
     public class MessageImpl : IMessage
     {
         const double LONG_DELAY = 3.5;

@@ -3,6 +3,7 @@ using Xamarin.Forms;
 
 namespace Travlendar.Core.AppCore.Renderers
 {
+    //Custom Facebook Event
     public class FacebookEventArgs : EventArgs
     {
         public string UserId { get; set; }
@@ -10,6 +11,7 @@ namespace Travlendar.Core.AppCore.Renderers
         public DateTime TokenExpiration { get; set; }
     }
 
+    //Custom Facebook Button
     public class FacebookButton : Button
     {
         public Action<object, FacebookEventArgs> OnLogin;

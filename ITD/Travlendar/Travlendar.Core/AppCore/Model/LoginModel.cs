@@ -2,5 +2,6 @@
 {
     public class LoginModel
     {
+        //Future autologin options here
     }
 }

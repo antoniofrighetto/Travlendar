@@ -2,13 +2,17 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Travlendar.Core.AppCore.Model;
+using Travlendar.Core.AppCore.Renderers;
+using Travlendar.Core.Framework.Dependencies;
 using Travlendar.Framework.Dependencies;
 using Travlendar.Framework.ViewModels;
-using Travlendar.Core.AppCore.Renderers;
 using Xamarin.Forms;
 
 namespace Travlendar.Core.AppCore.ViewModels
 {
+    /// <summary>
+    /// LoginViewModel singleton class that handle the login functionality.
+    /// </summary>
     sealed public class LoginViewModel : AViewModel<LoginModel>
     {
         private static LoginViewModel _instance = new LoginViewModel ();
@@ -42,24 +46,21 @@ namespace Travlendar.Core.AppCore.ViewModels
             return _instance;
         }
 
+        //Validating the custom event info and logging in AWS Cognito
         public void LoginWithFacebook (object sender, FacebookEventArgs e)
         {
-            //
-            // IMPLEMENT AS WELL https://gist.github.com/guitarrapc/719a13ba709558da1a84e38786c937b4
-            //
             Success = (!string.IsNullOrEmpty (e.UserId) &&
-                            !string.IsNullOrEmpty (e.AccessToken) &&
-                            e.TokenExpiration != null);
+                !string.IsNullOrEmpty (e.AccessToken) &&
+                e.TokenExpiration != null);
 
             if ( Success )
             {
                 //Logging in AWS Cognito Federal Entities Pool
                 cognitoSyncViewModel.AWSLogin (Constants.FB_PROVIDER, e.AccessToken);
-
             }
             else
             {
-                /* displayAlert.Invoke (this, null); */
+                DependencyService.Get<IMessage> ().LongAlert ("Unsuccesful login");
             }
             DependencyService.Get<ITools> ().LogoutFromFacebook ();
         }

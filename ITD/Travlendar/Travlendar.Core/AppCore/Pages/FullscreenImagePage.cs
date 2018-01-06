@@ -5,9 +5,11 @@ namespace Travlendar.Core.AppCore.Pages
 {
     public class FullscreenImagePage : ContentPage
     {
+        //Page that preview and image (Ticket in our case)
+        //and set it in full screen mode
         public FullscreenImagePage (string img)
         {
-            if (Device.RuntimePlatform == Device.Android)
+            if ( Device.RuntimePlatform == Device.Android )
                 DependencyService.Get<IStatusBar> ().HideStatusBar ();
 
             Content = new StackLayout

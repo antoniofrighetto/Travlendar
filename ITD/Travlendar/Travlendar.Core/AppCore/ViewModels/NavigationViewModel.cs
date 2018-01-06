@@ -5,6 +5,9 @@ using Xamarin.Forms;
 
 namespace Travlendar.Core.AppCore.ViewModels
 {
+    /// <summary>
+    /// NavigationViewModel singleton class handling the Navigation to a place
+    /// </summary>
     sealed public class NavigationViewModel
     {
         private static NavigationViewModel _instance = new NavigationViewModel ();
@@ -16,13 +19,17 @@ namespace Travlendar.Core.AppCore.ViewModels
             return _instance;
         }
 
+        /// <summary>
+        /// Navigate logic which optimize the mean of transport options
+        /// </summary>
         public void Navigate (string location, bool car, bool bike, bool publicTransport, bool minimizeCarbonFootPrint)
         {
-            string mean = "w";
+            string mean = "d";
 
             //to be added && distance to location > 15 min
             if ( minimizeCarbonFootPrint )
             {
+                mean = "w";
                 if ( bike )
                     mean = "b";
                 if ( publicTransport )
@@ -40,6 +47,7 @@ namespace Travlendar.Core.AppCore.ViewModels
                     mean = "d";
             }
 
+            //Advising the user of which mean of transport is going to use
             switch ( mean )
             {
                 case "b":
@@ -56,6 +64,7 @@ namespace Travlendar.Core.AppCore.ViewModels
                     break;
             }
 
+            //Each platform uses a different url for opening the Navigation app
             switch ( Device.RuntimePlatform )
             {
                 case Device.iOS:

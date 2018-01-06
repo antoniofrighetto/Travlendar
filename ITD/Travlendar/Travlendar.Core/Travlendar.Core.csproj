@@ -48,14 +48,12 @@
     <Compile Include="AppCore\Model\MapModel.cs" />
     <Compile Include="AppCore\Model\SettingsModel.cs" />
     <Compile Include="AppCore\Model\TicketModel.cs" />
-    <Compile Include="AppCore\Navigator\INavigator.cs" />
     <Compile Include="AppCore\Pages\AddTicketPage.cs" />
     <Compile Include="AppCore\Pages\CalendarPage.cs" />
     <Compile Include="AppCore\Pages\FullscreenImagePage.cs" />
     <Compile Include="AppCore\Pages\LandingPage.cs" />
     <Compile Include="AppCore\Pages\LoginPage.cs" />
     <Compile Include="AppCore\Pages\MapPage.cs" />
-    <Compile Include="AppCore\Pages\MenuPage.cs" />
     <Compile Include="AppCore\Pages\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
@@ -73,7 +71,6 @@
     <Compile Include="Framework\Dependencies\IMessage.cs" />
     <Compile Include="Framework\ViewModels\BindableBaseNotify.cs" />
     <Compile Include="Framework\Dependencies\IParse.cs" />
-    <Compile Include="Framework\Dependencies\ISyncManager.cs" />
     <Compile Include="Framework\Dependencies\ITools.cs" />
     <Compile Include="Framework\Events\ModelEventArgs.cs" />
     <Compile Include="Framework\ViewModels\AViewModel.cs" />

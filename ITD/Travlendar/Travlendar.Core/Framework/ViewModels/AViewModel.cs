@@ -4,6 +4,9 @@ using Xamarin.Forms;
 
 namespace Travlendar.Framework.ViewModels
 {
+    /// <summary>
+    /// Base class from ViewModels
+    /// </summary>
     public abstract class AViewModel<T> : IViewModel, INotifyPropertyChanged
     {
         private INavigation _navigation;
@@ -28,7 +31,6 @@ namespace Travlendar.Framework.ViewModels
 
         protected T _model;
 
-
         public T Model
         {
             get
@@ -40,8 +42,6 @@ namespace Travlendar.Framework.ViewModels
                 _model = value;
             }
         }
-
-
 
         /// <summary>
         /// Extends this for inits logics.

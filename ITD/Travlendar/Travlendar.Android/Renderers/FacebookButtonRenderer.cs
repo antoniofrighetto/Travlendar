@@ -34,45 +34,41 @@ namespace Travlendar.Droid.Renderers
             if ( e.OldElement != null || this.Element == null )
                 return;
 
+            //Native Button
             loginButton = new LoginButton (_context);
             loginButton.TextAlignment = Android.Views.TextAlignment.TextEnd;
             loginButton.LoginBehavior = LoginBehavior.NativeWithFallback;
+
             //Implement FacebookCallback with LoginResult type to handle Callback's result
             var loginCallback = new FacebookCallback<LoginResult>
             {
                 HandleSuccess = loginResult =>
                 {
-                    /*
-                        If login success, We can now retrieve our needed data and build our 
-                        FacebookEventArgs parameters
-                    */
+                    //If login success, We can now retrieve our needed data and build our FacebookEventArgs parameters
+
                     FacebookButton facebookButton = (FacebookButton) e.NewElement;
                     FacebookEventArgs fbArgs = new FacebookEventArgs ();
                     if ( loginResult.AccessToken != null )
                     {
                         fbArgs.UserId = loginResult.AccessToken.UserId;
                         fbArgs.AccessToken = loginResult.AccessToken.Token;
-
                         //Hack from Java.Util.Date to DateTime
-                        //TODO checkout in iOS
                         fbArgs.TokenExpiration = FromUnixTime (loginResult.AccessToken.Expires.Time);
                     }
-                    /*
-                        Pass the parameters into Login method in the FacebookButton 
-                        object and handle it on Xamarin.Forms side
-                    */
+
+                    //Pass the parameters into Login method in the FacebookButton 
+                    //object and handle it on Xamarin.Forms side
                     facebookButton.Login (facebookButton, fbArgs);
                 },
                 HandleCancel = () =>
                 {
                     //Handle any cancel the user has perform
-                    Console.WriteLine ("User cancel de login operation");
+                    Console.WriteLine ("User deleted the login operation");
                 },
                 HandleError = loginError =>
                 {
                     //Handle any error happends here
                     //TODO: we have to decide what to do here
-                    //Console.WriteLine ("Operation throws an error: " + loginError.Cause.Message);
                 }
             };
             LoginManager.Instance.RegisterCallback (MainActivity.CallbackManager, loginCallback);
@@ -80,6 +76,7 @@ namespace Travlendar.Droid.Renderers
             SetNativeControl (loginButton);
         }
 
+        //Autologin functionality, to be implemented
         public bool IsLogged ()
         {
             var token = AccessToken.CurrentAccessToken;

@@ -29,13 +29,10 @@ namespace Travlendar.Core.AppCore.Pages
                 Source = Device.RuntimePlatform == Device.iOS ? "Icon@2x.png" : "login_background.png",
                 Margin = new Thickness (0, Device.OnPlatform (100, 0, 0), 0, 0)
             };
+            BackgroundColor = Color.White;
 
             if ( Device.RuntimePlatform == Device.iOS )
                 backgroundImage.WidthRequest = 180;
-
-            layout.Children.Add (backgroundImage);
-
-            BackgroundColor = Color.White;
 
             title = new Label ()
             {
@@ -49,7 +46,9 @@ namespace Travlendar.Core.AppCore.Pages
             fbButton.HorizontalOptions = LayoutOptions.Center;
             fbButton.HeightRequest = 50;
             fbButton.VerticalOptions = LayoutOptions.Center;
+
             buttons.Children.Add (fbButton);
+            layout.Children.Add (backgroundImage);
 
             //Future AWS Cognito Identity Authentication Implementation
 
@@ -77,23 +76,20 @@ namespace Travlendar.Core.AppCore.Pages
             //    WidthRequest = 155
             //};
 
-            RegisterEvents ();
-
             //relativeLayout.Children.Add (backgroundImage, Constraint.Constant (0), Constraint.Constant (0));
             //relativeLayout.Children.Add (title, Constraint.RelativeToParent (parent => (parent.Width / 2) - 75), Constraint.RelativeToParent (parent => parent.Height / 2));
-            
-
-            
             //buttons.Children.Add (registerButton);
             //buttons.Children.Add (loginButton);
 
+            RegisterEvents ();
             buttons.Children.Add (fbButton);
             layout.Children.Add (buttons);
 
             this.Content = layout;
-            
+
         }
 
+        //Fullscreen page
         private void LandingPage_Appearing (object sender, System.EventArgs e)
         {
             DependencyService.Get<IStatusBar> ().HideStatusBar ();
@@ -123,7 +119,6 @@ namespace Travlendar.Core.AppCore.Pages
 
             //registerButton.Clicked -= RegisterButton_Clicked;
             //registerButton.Clicked += RegisterButton_Clicked;
-
             //loginButton.Clicked -= LoginButton_ClickedAsync;
             //loginButton.Clicked += LoginButton_ClickedAsync;
         }

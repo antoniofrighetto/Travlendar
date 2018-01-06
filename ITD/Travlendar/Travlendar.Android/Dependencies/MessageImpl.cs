@@ -9,6 +9,8 @@ namespace Travlendar.Droid.Dependencies
 {
     public class MessageImpl : IMessage
     {
+        //Native toast notifications
+
         public void LongAlert (string message)
         {
             Toast.MakeText (Application.Context, message, ToastLength.Long).Show ();

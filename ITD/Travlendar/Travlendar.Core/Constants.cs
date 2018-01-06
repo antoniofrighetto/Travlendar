@@ -2,6 +2,9 @@
 
 namespace Travlendar
 {
+    /// <summary>
+    /// Class containing the Applications constants.
+    /// </summary>
     public class Constants
     {
         //AWS Federal Identities Identity Pool ID
