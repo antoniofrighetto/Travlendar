@@ -30,6 +30,7 @@ namespace Travlendar.Core.AppCore.Pages
         protected override bool OnBackButtonPressed ()
         {
             DependencyService.Get<IStatusBar> ().ShowStatusBar ();
+            Navigation.PopAsync ();
             return true;
         }
     }
