@@ -26,10 +26,13 @@ namespace Travlendar.Core.AppCore.Pages
 
             backgroundImage = new Image
             {
-                Source = "login_background.png",
-                Margin = new Thickness(0, Device.OnPlatform(100,0,0), 0, 0)
+                Source = "Icon@2x.png",
+                Margin = new Thickness(0, Device.OnPlatform(100, 0, 0), 0, 0)
             };
 
+            if (Device.RuntimePlatform == Device.iOS)
+                backgroundImage.WidthRequest = 180;
+            
             layout.Children.Add(backgroundImage);
 
             BackgroundColor = Color.White;

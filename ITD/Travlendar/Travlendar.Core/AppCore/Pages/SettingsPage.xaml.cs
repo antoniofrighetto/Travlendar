@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Travlendar.Core.AppCore.ViewModels;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using Travlendar.Core.AppCore.Model;
 using System.Collections.ObjectModel;
 
@@ -15,7 +14,7 @@ namespace Travlendar.Core.AppCore.Pages
     {
         List<int> timeIntervalOption = new List<int>();
 
-        public SettingsPage(INavigation navigation, ObservableCollection<Appointment> appointments)
+        public SettingsPage(INavigation navigation)
         {
             InitializeComponent();
             BindingContext = new SettingsViewModel(this, navigation);

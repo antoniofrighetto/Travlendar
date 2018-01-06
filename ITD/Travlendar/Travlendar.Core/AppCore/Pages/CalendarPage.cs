@@ -14,6 +14,8 @@ namespace Travlendar.Core.AppCore.Pages
         private double height = 0;
         private RadCalendar calendar;
 
+        /* After pushing CalendarPage() into the NavigationPage stack (App.cs:33), constructor is invoked. Here, an instance of a calendar is created, some of its properties and event are
+         * set up. All the buttons shown in CalendarPage() are instances of ToolbarItems. The business logic of this page can be found in CalendarViewModel(). */
         public CalendarPage()
         {
             DependencyService.Get<IStatusBar>().ShowStatusBar();
@@ -24,8 +26,6 @@ namespace Travlendar.Core.AppCore.Pages
                 DayNamesDisplayMode = DisplayMode.Show,
                 GridLinesWidth = 0,
             };
-
-
 
             this.BindingContext = new CalendarViewModel(this, this.Navigation, calendar);
             calendar.ViewChanged += ((CalendarViewModel)this.BindingContext).calendarViewChanged;
@@ -45,7 +45,6 @@ namespace Travlendar.Core.AppCore.Pages
             {
                 Content = calendar;
             }
-
 
             var addAppointmentButton = new ToolbarItem
             {

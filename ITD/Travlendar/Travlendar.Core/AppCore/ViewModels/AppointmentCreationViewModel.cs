@@ -244,7 +244,6 @@ namespace Travlendar.Core.AppCore.ViewModels
                 }
             }
 
-            System.Diagnostics.Debug.WriteLine("we out here " + newAppointment.Title);
             object[] values = new object[] { message, appointment, newAppointment };
             MessagingCenter.Send<AppointmentCreationPage, object[]>(this.page, "CreationAppointments", values);
             await navigation.PopAsync(true);

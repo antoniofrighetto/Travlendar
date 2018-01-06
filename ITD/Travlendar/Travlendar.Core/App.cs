@@ -16,7 +16,9 @@ namespace Travlendar
             navigationPage = new NavigationPage (new LandingPage (LoginViewModel.GetInstance ()));
             NavigationPage.SetHasNavigationBar (navigationPage, false);
 
-            // The root page of application
+            /* Application's entrypoint. navigationPage handles a stack of pages so that we are able to navigate through the various views when interacting
+             * with the application. Whenever we a new view is displayed, a page is pushed into the handled stack, when we are done, it is popped out. First 
+             * page we push in is LandingPage(). */
             MainPage = navigationPage;
         }
 
@@ -25,6 +27,7 @@ namespace Travlendar
             var vm = sender as LoginViewModel;
             if ( e.PropertyName == "Success" )
             {
+                /* If we successfully log in to Facebook, a CalendarPage() is shown. */
                 if ( vm.Success )
                 {
                     var page = new CalendarPage ();

@@ -62,7 +62,7 @@ namespace Travlendar.Core.AppCore.ViewModels
             {
                 return settingsCommand ?? (settingsCommand = new Command(async () =>
                 {
-                    await navigation.PushAsync(new SettingsPage(navigation,appointmentsList));
+                    await navigation.PushAsync(new SettingsPage(navigation));
                 }));
             }
         }
@@ -99,6 +99,9 @@ namespace Travlendar.Core.AppCore.ViewModels
             set { this.SetProperty(ref changeViewButton, value, "ChangeViewButton"); }
         }
 
+        /* CalendarViewModel handles mostly all the events that may be triggered when interacting with buttons/gestures of CalendarPage, which may be, for example,
+         * a change of view mode (Month mode to Years mode), a new page may be pushed (if Settings button is pressed, a SettingsPage() will be shown. If a new appointment is
+         * added, we will switch to AppointmentCreationPage(). */
         public CalendarViewModel(CalendarPage page, INavigation navigation, RadCalendar calendar)
         {
             this.page = page;
