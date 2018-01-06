@@ -10,6 +10,7 @@ using Travlendar.Core.AppCore.Model;
 using Travlendar.Core.AppCore.Pages;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
+using Travlendar.Core.Framework.Dependencies;
 
 namespace Travlendar.Core.AppCore.ViewModels
 {
