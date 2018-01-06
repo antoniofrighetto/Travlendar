@@ -18,7 +18,6 @@ namespace Travlendar.Core.AppCore.ViewModels
         private ObservableCollection<Appointment> appointments;
         private Appointment appointment;
         private string message;
-        private string location;
         private static object[] settingsValue = null;
         private static bool flag = true;
 
@@ -27,6 +26,13 @@ namespace Travlendar.Core.AppCore.ViewModels
         {
             get { return titleAppointment; }
             set { this.SetProperty(ref titleAppointment, value); }
+        }
+
+        private string location;
+        public string Location
+        {
+            get { return location; }
+            set { this.SetProperty(ref location, value); }
         }
 
         private bool isAllDayOn;
@@ -109,7 +115,8 @@ namespace Travlendar.Core.AppCore.ViewModels
                             StartDate = this.StartDate.AddHours(StartTime.Hours).AddMinutes(StartTime.Minutes),
                             EndDate = this.EndDate.AddHours(EndTime.Hours).AddMinutes(EndTime.Minutes),
                             Detail = this.Detail,
-                            Color = this.Color == Color.Default ? Color.FromRgb(28, 109, 107) : this.Color
+                            Color = this.Color == Color.Default ? Color.FromRgb(28, 109, 107) : this.Color,
+                            Location = this.Location
                         };
 
                         ap.Key = ap.GetHashCode().ToString();
@@ -142,19 +149,18 @@ namespace Travlendar.Core.AppCore.ViewModels
 
                 return navigateAppointmentCommand ?? (navigateAppointmentCommand = new Command(() =>
                 {
-                    NavigationViewModel.GetInstance().Navigate(location, settings.Car, settings.Bike, settings.PublicTransport, settings.MinimizeCarbonFootPrint);
+                    NavigationViewModel.GetInstance().Navigate(Location, settings.Car, settings.Bike, settings.PublicTransport, settings.MinimizeCarbonFootPrint);
                 }));
             }
         }
 
-        public AppointmentCreationViewModel(AppointmentCreationPage page, INavigation navigation, ObservableCollection<Appointment> aps, string msg, Appointment a, string location)
+        public AppointmentCreationViewModel(AppointmentCreationPage page, INavigation navigation, ObservableCollection<Appointment> aps, string msg, Appointment a)
         {
             this.page = page;
             this.navigation = navigation;
             this.appointments = aps;
             this.message = msg;
             this.appointment = a;
-            this.location = location;
 
             if (message == "Update")
             {
@@ -166,11 +172,15 @@ namespace Travlendar.Core.AppCore.ViewModels
                 this.Detail = a.Detail;
                 this.IsAllDayOn = a.IsAllDay;
                 this.Color = a.Color;
-            } else {
+                this.Location = a.Location;
+            }
+            else
+            {
                 this.StartDate = DateTime.Now;
                 this.EndDate = DateTime.Now;
                 this.StartTime = DateTime.Now.TimeOfDay;
                 this.EndTime = DateTime.Now.TimeOfDay;
+                this.Location = "Location";
             }
 
             /* It doesn't make sense reading every time the settings, we just read them the first time the constructor is invoked... */
@@ -189,9 +199,15 @@ namespace Travlendar.Core.AppCore.ViewModels
             {
                 this.Color = color;
             });
+
+            MessagingCenter.Subscribe<AppointmentCreationPage, string>(this.page, "LocationNameSaved", (sender, loc) => {
+                this.Location = loc;
+            });
+
         }
 
-        private void ReadSettingsData() {
+        private void ReadSettingsData()
+        {
             try
             {
                 CognitoSyncViewModel.GetInstance().CreateDataset("Settings");
@@ -216,7 +232,8 @@ namespace Travlendar.Core.AppCore.ViewModels
                                                              );
             if (overlappedEvent != null && message != "Update")
             {
-                if (overlappedEvent.Title == newAppointment.Title) {
+                if (overlappedEvent.Title == newAppointment.Title)
+                {
                     await page.DisplayAlert("Event already added.", "", "Ok");
                     return;
                 }
@@ -228,7 +245,8 @@ namespace Travlendar.Core.AppCore.ViewModels
                 }
             }
 
-            if (settingsValue != null && (bool)settingsValue[0]) {
+            if (settingsValue != null && (bool)settingsValue[0])
+            {
                 TimeSpan timeBreak = (TimeSpan)settingsValue[1];
                 TimeSpan timeInterval = (TimeSpan)settingsValue[2];
                 if (newAppointment.StartDate.TimeOfDay == timeBreak || (timeBreak <= newAppointment.EndDate.TimeOfDay && timeBreak.Add(timeInterval) >= newAppointment.StartDate.TimeOfDay))
