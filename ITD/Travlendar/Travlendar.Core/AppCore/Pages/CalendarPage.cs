@@ -25,6 +25,8 @@ namespace Travlendar.Core.AppCore.Pages
                 GridLinesWidth = 0,
             };
 
+
+
             this.BindingContext = new CalendarViewModel(this, this.Navigation, calendar);
             calendar.ViewChanged += ((CalendarViewModel)this.BindingContext).calendarViewChanged;
             calendar.DisplayDateChanged += ((CalendarViewModel)this.BindingContext).dateChanged;
