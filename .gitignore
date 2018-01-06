@@ -46,4 +46,3 @@ _ReSharper*/
 *.ide-shm
 APP/.vs/Travlendar/v15/Server/sqlite3/storage.ide
 ITD/.vs/Travlendar/v15/Server/sqlite3/storage.ide
-ITD/packages/
