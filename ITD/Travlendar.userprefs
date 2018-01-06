@@ -1,29 +1,17 @@
-﻿<Properties StartupConfiguration="{188D1C9B-5655-48FA-9B49-590AC8D0F3B9}|Default">
-  <MonoDevelop.Ide.ItemProperties.Travlendar.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.9F7DE15C-9B00-460A-9A77-02D81D39B42B" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Travlendar/Travlendar.Core/AppCore/Pages/SettingsPage.xaml">
+﻿<Properties StartupConfiguration="{66257EB7-ADB4-494D-9886-640A9E73CA30}|Default">
+  <MonoDevelop.Ide.ItemProperties.Travlendar.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.9F7DE15C-9B00-460A-9A77-02D81D39B42B" automaticSigning="False" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Travlendar/Travlendar.Core/AppCore/Pages/SettingsPage.xaml.cs">
     <Files>
-      <File FileName="Travlendar/Travlendar.iOS/Renderers/CustomPicker.cs" Line="12" Column="82" />
-      <File FileName="Travlendar/Travlendar.iOS/Renderers/CustomEntryCell.cs" Line="23" Column="2" />
+      <File FileName="Travlendar/Travlendar.Core/AppCore/Pages/CalendarPage.cs" Line="28" Column="1" />
       <File FileName="Travlendar/Travlendar.Core/AppCore/Pages/LandingPage.cs" Line="29" Column="49" />
-      <File FileName="Travlendar/Travlendar.Android/SplashActivity.cs" Line="1" Column="1" />
-      <File FileName="Travlendar/Travlendar.Android/Resources/values/styles.xml" Line="1" Column="1" />
-      <File FileName="Travlendar/Travlendar.Android/Resources/drawable/splash_screen.xml" Line="10" Column="32" />
-      <File FileName="Travlendar/Travlendar.iOS/Main.cs" Line="21" Column="1" />
-      <File FileName="Travlendar/Travlendar.Core/AppCore/Pages/CalendarPage.cs" Line="1" Column="1" />
-      <File FileName="Travlendar/Travlendar.Core/AppCore/ViewModels/CalendarViewModel.cs" Line="1" Column="1" />
-      <File FileName="Travlendar/Travlendar.Core/AppCore/ViewModels/AppointmentCreationViewModel.cs" Line="198" Column="27" />
-      <File FileName="Travlendar/Travlendar.Core/AppCore/ViewModels/SettingsViewModel.cs" Line="159" Column="90" />
-      <File FileName="Travlendar/Travlendar.Core/AppCore/ViewModels/CognitoSyncViewModel.cs" Line="33" Column="1" />
       <File FileName="Travlendar/Travlendar.Core/AppCore/Pages/SettingsPage.xaml" Line="87" Column="1" />
+      <File FileName="Travlendar/Travlendar.iOS/Info.plist" />
+      <File FileName="Travlendar/Travlendar.Core/AppCore/ViewModels/SettingsViewModel.cs" Line="163" Column="52" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/michelegivoli/Documents/Application/FrighettoGivoliYessou/ITD/Travlendar/Travlendar.Core/AppCore/ViewModels/AppointmentCreationViewModel.cs" relfile="Travlendar/Travlendar.Core/AppCore/ViewModels/AppointmentCreationViewModel.cs" line="231" column="1" />
-      <Breakpoint file="/Users/michelegivoli/Documents/Application/FrighettoGivoliYessou/ITD/Travlendar/Travlendar.Core/AppCore/ViewModels/AppointmentCreationViewModel.cs" relfile="Travlendar/Travlendar.Core/AppCore/ViewModels/AppointmentCreationViewModel.cs" line="197" column="1" />
-      <Breakpoint file="/Users/michelegivoli/Documents/Application/FrighettoGivoliYessou/ITD/Travlendar/Travlendar.Core/AppCore/ViewModels/SettingsViewModel.cs" relfile="Travlendar/Travlendar.Core/AppCore/ViewModels/SettingsViewModel.cs" line="151" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Travlendar.Android PreferredExecutionTarget="Android.9a1fb8e3" />
