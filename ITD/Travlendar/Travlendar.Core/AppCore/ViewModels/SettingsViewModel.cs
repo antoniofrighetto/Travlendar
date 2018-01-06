@@ -137,7 +137,7 @@ namespace Travlendar.Core.AppCore.ViewModels
                 return save ?? (save = new Command (async () =>
 
                  {
-                     if ( (this.timeBreak.TotalMinutes < 690 || this.timeBreak.TotalMinutes > 840) )
+                    if ( this.lunchBreak && (this.timeBreak.TotalMinutes < 690 || this.timeBreak.TotalMinutes > 840) )
                      {
                          await page.DisplayAlert ("Please insert a valid time from 11.30 to 14.00", "", "OK");
                          return;
