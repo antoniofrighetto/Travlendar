@@ -35,11 +35,11 @@ The main interface of Travlendar+ consists on a calendar that allows the user to
 \end{itemize}
 
 \subsection*{Add appointment interface}
-The "Add appointment" page is the main functionality of Travlendar+, that allows the user to create new appointment by following the rule of Travlendar+ logic. 
-The add appointment page is organized in the following way:
+The Add appointment page is the main functionality of Travlendar+, that allows the user to create new appointment by following the rule of Travlendar+ logic. 
+The add appointment page lets the user adding, removing and modifying the following items:
 \begin{itemize}
 \item \textbf{Title:} the name of the appointment that must not be empty
-\item \textbf{Location:} the address of the appointment is set through a redirect to Google Maps where a user can write down the address manually or take his current position. 
+\item \textbf{Location:} the address of the appointment is set through a redirect to Maps where a user can write down the address manually or take his current position. 
 \item \textbf{All day}: a simple toggle that allows the user to add appointment in his calendar that cover all day.
 \item \textbf{Start and End}: these are the information of the event's beginning and the event's end.
 \item \textbf{Alert}: the toggle, if selected, will notify the user 10 minutes ahead of schedule that the appointment is going to start.
@@ -47,33 +47,21 @@ The add appointment page is organized in the following way:
 \item \textbf{Notes}: section where the user can specify some additional information of the event.
 \end{itemize}
 
-The logic behind the "Add appointment" page offers the main functionality of Travlendar+. In particular:
+The logic behind the Add appointment page offers the main functionality of Travlendar+. In particular:
 \begin{itemize}
 \item An event already added cannot be inserted into the calendar.
 \item Two events cannot be overlapped. An alert will be displayed in order to notify the user.
-\item Considering the settings information that the user can modify in the main page, if the lunch break is selected, the application automatically reserve slot for the lunch break so that any appointment cannot be added during the lunch time set by the user.
+\item Considering the settings information that the user can modify in the main page, if the lunch break is selected, the application automatically reserve a time slot for the lunch break so that any appointment cannot be added during the lunch time set by the user.
 \end{itemize}
 
-Once a event has been added, the user can easily see all the information by clicking on the event. In particular the user can modify all the information added before, remove the event from his calendar and especially navigate to the event's location. 
-If the user has set the application settings, before lunching Google Maps the navigation functionality creates the correct navigation with the settings information, in particular by inserting the correct means of transport or the habits.
+Once a event has been added, the user can easily see all the information by clicking on the event. In particular the user can modify all the informations added before, remove the event from his calendar and navigate to the event's location. If the user has set the application settings, before lunching Google Maps the navigation functionality creates the correct navigation with the settings information, in particular by inserting the correct means of transport or the habits.
 
 \subsection*{Settings page}
-In this section the user can define various kind of user preferences. The settings supports different travel means such that car, bike or public transport and the user can activate or deactivate each of these.
-Additionally the user can also activate the carbon foot print constraint that automatically select the combination of transportation means.
-At the end, the lunch break toggle allows the user to reserve slot every day for the lunch break. In particular the user can define the start time and how many minutes long is the lunch break. The time slot must be between 11.30am and 14.00pm and it must be at least half an hour long. 
-If the user has not respected this constraint for the lunch break, the settings cannot be saved and an alert notifies the user to select the correct start time.
+In this section the user can define various kind of user preferences. The settings supports different travel means such that car, bike or public transport and the user can activate or deactivate each of these. Additionally the user can also activate the carbon foot print constraint that automatically select the combination of transportation means. At the end, the lunch break toggle allows the user to reserve slot every day for the lunch break. In particular the user can define the start time and how many minutes long is the lunch break. The time slot must be between 11.30am and 14.00pm and it must be at least half an hour long. If the user has not respected this constraint for the lunch break, the settings cannot be saved and an alert notifies the user to select the correct start time.
 
 \subsection*{Tickets page}
-This page allows the user to save their personal Tickets, providing a fast access to them as they are presented as a List, identifying each of them with a specific name.\\
-The user can either import the tickets from the media gallery of the device or take a picture of the physical ticket and keep it in Travlendar+.
-Tapping on a specific Ticket will be showed up in full-screen allowing the inspection.\\
-When taking or choosing a picture, the user will be previewed with the result before saving it. 
-The tickets are saved on the device and specifically for the user, meaning that if a different user will login won't see the other user's tickets.
-Long pressing on the Ticket will allow the user to view the ticket or deleting it.
+This page allows the user to save their personal Tickets, providing a fast access to them as they are presented as a List, identifying each of them with a specific name. The user can either import the tickets from the media gallery of the device or take a picture of the physical ticket and keep it in Travlendar+. Tapping on a specific Ticket will be showed up in full-screen allowing the inspection. When taking or choosing a picture, the user will be previewed with the result before saving it.  The tickets are saved on the device and specifically for the user, meaning that if a different user will login won't see the other user's tickets.
+Long pressing on the Ticket will allow the user to view the ticket or deleting it. \\
 
-
-
-
-
-
+We wondered ourselves what we should have created for handling the tickets. Perhaps one of the simplest solution was to redirect the user to an application like ATM or of that kind, so that he could directly buy the tickets from there. However, this limited the user to use it around Milan, and as soon as one wishes to expand the geographic area, ATM would not have worked anymore. Then another application should have been added through which the user would have been redirected to. This would have created maintainability issues in the long term, and that is exactly what drove us to develop such ticket page!
 
