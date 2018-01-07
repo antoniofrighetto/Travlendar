@@ -2,7 +2,22 @@
 \label{cha:testing}
 
 \section{Installation}
-Grab here the zip folder with the solution and the code inside. Unzip it, open it with Visual Studio and then compile it with the aforementioned tools. All the packages needed will be restored by Visual Studio automatically. If you don't have access to the code, you can find the \verb|.apk| here (for testing the application on Android) and the \verb|.ipa| here (for testing the application on iOS). Of course, to have a better experience the application should be tested on both platforms. Remind that, - unless you're jailbroken - Apple strictly forbids you to run unsigned code. This means that a own provisioning self-signed profile must be created if you plan to test it on iOS too.
+Grab \href{https://www.dropbox.com/s/k4f3rba3lldi6g0/Travlendar.zip?dl=0}{here} the zip folder with the main solution and all the code inside. Unzip it, open it with Visual Studio and then compile it with the aforementioned tools. All the packages needed will be restored by Visual Studio automatically. 
+In order to allow the Facebook Login API to verify the authenticity of the machine that builds the application, it's needed to generate and add your Development Key Hash inside the Facebook Developers portal.\\
+Generating your Development Key Hash will require your Xamarin debug.keystore that usually is placed in: \begin{verbatim}C:\Users\USERNAME\AppData\Local\Xamarin\Mono for Android\debug.keystore \end{verbatim}
+for Windows users, while for macOS users it should be in: \begin{verbatim}~/.local/share/Xamarin/Mono for Android/debug.keystore\end{verbatim}
+Once located the keystore we will generate the unique Hash Key for your machine with the command (Windows and macOS)
+\begin{verbatim}
+keytool -exportcert -alias androiddebugkey -keystore debug.keystore | 
+openssl sha1 -binary | openssl base64 
+ \end{verbatim}
+It should be a string in the format of tOv9E7+ETK8kjylFQBKlr5QErBk= and you will need to send it to one member of our team as well as the Facebook account that will be used for the test. \\
+This is needed due to Facebook strict rules on non-reviewed applications. Submitting the Facebook integration for an approval would have required more effort without knowing if it would have been accepted by the Facebook Developers team.
+
+
+Here you can find the \verb|.apk| (for testing the application on Android) and the \verb|.ipa| (for testing the application on iOS). Of course, to have a better experience the application should be tested on both platforms. Remind that, - unless you're jailbroken - Apple strictly forbids you to run unsigned code. This means that an own provisioning self-signed profile must be created if you plan to test it on iOS too.
+
+Regarding Android instead, it's just needed to check Unknown sources under the System/Security section of your device.
 
 \section{Testing}
 Each Travlendar feature has been tested mainly according to the rules of the well-known \textit{Test Driven Development} (TDD) technique. Specifically, localized tests were implemented in order to better study the behavior of the application and the resolution of errors or bugs. This implies that we continued focusing on the next feature only after that the software had passed the generated tests. As said in the DD, we have tested the performance of our application with Xamarin Profiler tool. The tool has allowed us to collect information about our mobile application, regarding time complexity, usage of particular method and the memory being allocated. Xamarin Profiler has enabled us to drill deep and analyze these metrics to pinpoint problem areas in code. Furthermore this tool has helped us to take care to understand where most of the time was spent in our application, and how much memory was used by our mobile application.\\
