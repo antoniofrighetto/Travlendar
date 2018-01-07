@@ -30,26 +30,31 @@ namespace Travlendar.Core.AppCore.Pages
                         Festivity.StyleId = "checkmark"; break;
                 }
             }
+
+            if ( Device.RuntimePlatform == Device.Android )
+            {
+                BackgroundColor = Color.FromRgb (227, 227, 227);
+            }
         }
 
-        void ViewCellTapped(object sender, EventArgs e)
+        void ViewCellTapped (object sender, EventArgs e)
         {
             Color color = Color.Default;
-            ViewCell cell = (ViewCell)sender;
+            ViewCell cell = (ViewCell) sender;
             checkedViewCell = cell.ClassId;
             cell.StyleId = "checkmark";
-            switch (cell.ClassId)
+            switch ( cell.ClassId )
             {
                 case "Work":
-                    color = Color.FromRgb(28, 109, 107); break;
+                    color = Color.FromRgb (28, 109, 107); break;
                 case "Home":
-                    color = Color.FromRgb(24, 164, 247); break;
+                    color = Color.FromRgb (24, 164, 247); break;
                 case "Birthday":
-                    color = Color.FromRgb(24, 89, 127); break;
+                    color = Color.FromRgb (24, 89, 127); break;
                 case "Festivity":
-                    color = Color.FromRgb(3, 109, 81); break;
+                    color = Color.FromRgb (3, 109, 81); break;
             }
-            MessagingCenter.Send(this, "ColorEvent", color);
+            MessagingCenter.Send (this, "ColorEvent", color);
         }
     }
 }
