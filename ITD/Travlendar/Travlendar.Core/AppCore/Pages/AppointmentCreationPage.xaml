@@ -28,7 +28,7 @@
                     </ViewCell>
                 </TableSection>
                 <TableSection>
-                    <SwitchCell Text="All day" On="{Binding IsAllDayOn, Mode=TwoWay}" OnChanged="IsAllDayOnChanged"/>
+                    <SwitchCell Text="All day" On="{Binding IsAllDayOn, Mode=TwoWay}" OnChanged="IsAllDayOnChanged" />
                     <ViewCell>
                         <Grid ColumnSpacing="0">
                             <Grid.RowDefinitions>
@@ -132,8 +132,8 @@
                     </ViewCell>
                 </TableSection>
                 <TableSection x:Name="ButtonSection">
-                    <TextCell Text="Navigate to the event" StyleId="None" TextColor="#007AFF" Command="{Binding NavigateAppointmentCommand}"/>
                     <TextCell Text="Remove event" StyleId="None" TextColor="Red" Command="{Binding RemoveAppointmentCommand}"/>
+                    <TextCell Text="Navigate to the event" StyleId="None" TextColor="#007AFF" Command="{Binding NavigateAppointmentCommand}"/>
                 </TableSection>
             </TableRoot>
         </TableView>
