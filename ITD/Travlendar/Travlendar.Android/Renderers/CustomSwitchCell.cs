@@ -14,17 +14,14 @@ namespace Travlendar.Droid.Renderers
         {
 
             var cell = base.GetCellCore(item, convertView, parent, context);
-
-
             var child1 = ((LinearLayout)cell).GetChildAt(1);
+
             var label = (TextView)((LinearLayout)child1).GetChildAt(0);
             label.SetTextColor(Android.Graphics.Color.Black);
 
             return cell;
 
         }
-
-
 
     }
 }
