@@ -84,7 +84,11 @@ namespace Travlendar.Core.AppCore.Pages
                 MessagingCenter.Send (this, "LocationNameSaved", LocationLabel.Text);
             });
 
-            BackgroundColor = Color.White;
+
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                BackgroundColor = Color.FromRgb(227,227,227);
+            }
 
         }
 
