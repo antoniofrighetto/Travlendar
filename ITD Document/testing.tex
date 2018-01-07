@@ -1,0 +1,16 @@
+x\chapter{Installation and testing}
+\label{cha:testing}
+
+\section{Installation}
+If you have access to the code, you can clone the project, and then compile it with the aforementioned tools. All the packages needed will be restored by Visual Studio automatically. If you don't have access to the code, you can find the \verb|.apk| here (for testing the application on Android) and the \verb|.ipa| here (for testing the application on iOS). Of course, to have a better experience the application should be tested on both platforms. Remind that, - unless you're jailbroken - Apple strictly forbids you to run unsigned code. This means that a own provisioning self-signed profile must be created if you plan to test it on iOS too.
+
+\section{Testing}
+Each Travlendar features have been tested according to the rules of the Test Driven Development.
+Specifically, localized tests were implemented in order to better study the behavior of the application and the resolution of errors or bugs.\\ 
+As said in the DD, we have tested the performance of our application with Xamarin Profiler tool. This tool has allowed us to collect information about our mobile application, in particular time complexity, usage of particular method and the memory being allocated. Xamarin Profiler has enabled us to drill deep and analyze these metrics to pinpoint problem areas in code. Furthermore this tool has helped us to take care to understand where most of the time is spend in our application, and how memory is used by our mobile application.\\
+We decided to use Xamarin Profiler because, especially in mobile application, unoptimized code is much noticeable and the success of our app depends on beautiful and optimized code that runs efficiently. \\
+Additionally, just for the iOS application, we used Test Flight, a online service for over-the-air installation and testing of mobile applications.
+We have distributed our application to external beta testers, who could subsequently send feedback about the application.
+This approach was very helpful for testing quickly every functionality of our application and for retrieving any consideration from external users. 
+
+
