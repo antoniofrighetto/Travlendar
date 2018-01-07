@@ -18,13 +18,13 @@ namespace Travlendar.Core.AppCore.Pages
             InitializeComponent ();
 
             Title = message == "Creation" ? "New Event" : "Modify Event";
-            if ( message == "Creation" )
+            if (message == "Creation")
             {
                 Table.RemoveAt (3);
             }
             else
             {
-                if ( LocationLabel.Text != null && LocationLabel.Text != "Location" )
+                if (appointment.Location != null && appointment.Location != "Location")
                 {
                     LocationLabel.TextColor = Color.Black;
                     LocationLabel.WidthRequest = 250;
@@ -32,7 +32,7 @@ namespace Travlendar.Core.AppCore.Pages
                 }
             }
 
-            if ( Device.RuntimePlatform == Device.iOS )
+            if (Device.RuntimePlatform == Device.iOS)
                 NavigationPage.SetHasBackButton (this, false);
 
             this.appointment = appointment;
@@ -47,7 +47,7 @@ namespace Travlendar.Core.AppCore.Pages
             saveAppointmentButton.SetBinding (MenuItem.CommandProperty, new Binding ("SaveAppointmentCommand"));
             ToolbarItems.Add (saveAppointmentButton);
 
-            if ( Device.RuntimePlatform == Device.iOS )
+            if (Device.RuntimePlatform == Device.iOS)
             {
                 var cancelButton = new ToolbarItem
                 {
@@ -90,7 +90,7 @@ namespace Travlendar.Core.AppCore.Pages
 
         private void IsAllDayOnChanged (object sender, ToggledEventArgs e)
         {
-            switch ( ((SwitchCell) sender).On )
+            switch (((SwitchCell) sender).On)
             {
                 case true:
                     StartTimePicker.IsVisible = false; EndTimePicker.IsVisible = false; EndDatePicker.Date = StartDatePicker.Date; break;
@@ -103,9 +103,9 @@ namespace Travlendar.Core.AppCore.Pages
         private async void IsAlertOnChanged (object sender, ToggledEventArgs e)
         {
             var switcher = (SwitchCell) sender;
-            if ( TitleApp.Text == null )
+            if (TitleApp.Text == null)
             {
-                if ( switcher.On )
+                if (switcher.On)
                 {
                     await DisplayAlert ("Set title before activating an alert.", "", "Ok");
                     switcher.On = false;
@@ -113,11 +113,11 @@ namespace Travlendar.Core.AppCore.Pages
                 return;
             }
 
-            switch ( switcher.On )
+            switch (switcher.On)
             {
                 case true:
                     {
-                        if ( flag == 0 )
+                        if (flag == 0)
                         {
                             await DisplayAlert ("Alert enabled", "You will be notified 10 minutes ahead of schedule.", "Ok");
                             flag = 1;
@@ -134,6 +134,7 @@ namespace Travlendar.Core.AppCore.Pages
                     CrossLocalNotifications.Current.Cancel (ID);
                     break;
             }
+            MessagingCenter.Send(this, "AlertChangedEvent", switcher.On);
         }
     }
 }

@@ -13,5 +13,6 @@ namespace Travlendar.Core.AppCore.Model
         public string Detail { get; set; }
         public Color Color { get; set; }
         public string Location { get; set; }
+        public bool IsAlertOn { get; set; }
     }
 }
