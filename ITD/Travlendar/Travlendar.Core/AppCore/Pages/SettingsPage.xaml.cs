@@ -18,7 +18,11 @@ namespace Travlendar.Core.AppCore.Pages
         {
             InitializeComponent();
             BindingContext = new SettingsViewModel(this, navigation);
-            BackgroundColor = Color.White;
+
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                BackgroundColor = Color.FromRgb(227, 227, 227);
+            }
         }
 
         void Handle_OnChanged(object sender, Xamarin.Forms.ToggledEventArgs e)

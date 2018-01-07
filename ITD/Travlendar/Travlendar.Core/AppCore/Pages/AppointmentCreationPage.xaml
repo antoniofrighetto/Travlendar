@@ -28,7 +28,7 @@
                     </ViewCell>
                 </TableSection>
                 <TableSection>
-                    <SwitchCell Text="All day" On="{Binding IsAllDayOn, Mode=TwoWay}" OnChanged="IsAllDayOnChanged"/>
+                    <SwitchCell Text="All day" On="{Binding IsAllDayOn, Mode=TwoWay}" OnChanged="IsAllDayOnChanged" />
                     <ViewCell>
                         <Grid ColumnSpacing="0">
                             <Grid.RowDefinitions>
