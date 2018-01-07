@@ -19,6 +19,8 @@ namespace Travlendar.Droid.Renderers
             {
                 Control.SetBackgroundColor (Android.Graphics.Color.Transparent);
                 Control.Gravity = GravityFlags.CenterVertical; 
+                Control.SetTextColor(Android.Graphics.Color.Black);
+                Control.SetWidth(300);
             }
 
         }

@@ -16,6 +16,7 @@ namespace Travlendar.Core.AppCore.Pages
         public AppointmentCreationPage (ObservableCollection<Appointment> appointments, string message, Appointment appointment)
         {
             InitializeComponent ();
+
             Title = message == "Creation" ? "New Event" : "Modify Event";
             if ( message == "Creation" )
             {
@@ -58,6 +59,7 @@ namespace Travlendar.Core.AppCore.Pages
                 ToolbarItems.Add (cancelButton);
             }
 
+
             CalendarTypeViewCell.Tapped += async (sender, e) =>
             {
                 await Navigation.PushAsync (new CalendarTypePage ());
@@ -81,6 +83,9 @@ namespace Travlendar.Core.AppCore.Pages
                 LocationLabel.Text = location;
                 MessagingCenter.Send (this, "LocationNameSaved", LocationLabel.Text);
             });
+
+            BackgroundColor = Color.White;
+
         }
 
         private void IsAllDayOnChanged (object sender, ToggledEventArgs e)

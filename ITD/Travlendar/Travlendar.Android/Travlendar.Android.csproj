@@ -153,6 +153,7 @@
     <Compile Include="SplashActivity.cs" />
     <Compile Include="Renderers\CustomLabel.cs" />
     <Compile Include="Renderers\CustomPicker.cs" />
+    <Compile Include="Renderers\CustomSwitchCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -18,6 +18,7 @@ namespace Travlendar.Droid.Renderers
             if (Control != null)
             {
                 Control.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                Control.SetTextColor(Android.Graphics.Color.Black);
 
             }
         }

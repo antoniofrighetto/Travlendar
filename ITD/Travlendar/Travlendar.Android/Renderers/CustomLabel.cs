@@ -18,9 +18,11 @@ namespace Travlendar.Droid.Renderers
             base.OnElementChanged(e);
             if (Control != null)
             {
-                
+
                 Control.Gravity = GravityFlags.CenterVertical;
+                Control.SetTextColor(Android.Graphics.Color.Black);
             }
+
         }
     }
 }

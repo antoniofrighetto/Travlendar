@@ -26,7 +26,7 @@
                         <EntryCell Label="Age" Text="{Binding Age}"/>
                     </TableSection>-->
                     <TableSection Title="Means of Transport">
-                        <SwitchCell Text="Car" On="{Binding Car}"/>
+                        <SwitchCell Text="Car" On="{Binding Car}" />
                         <SwitchCell Text="Bike" On="{Binding Bike}"/>
                         <SwitchCell Text="Public Transport" On="{Binding PublicTransport}"/>
                     </TableSection>
