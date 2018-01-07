@@ -24,46 +24,46 @@ For the Maps, we used Xamarin.Forms.Maps APIs which wraps native maps APIs. For 
 
 \section{Functionalities}
 Referring to the RASD and the DD documents, we have implemented the majority of the functionalities stated.
-First of all, a user must log in with his Facebook Account in order to access to the main interface of Travlendar+.
+First of all, a user must log in to his Facebook Account in order to access to the main interface of Travlendar+.
 
 \subsection*{Main Interface}
-The main interface of Travlendar+ consists on a calendar that allows the user to manage the main activity that a calendar can offer and other custom functionality. In particular:
+The main interface of Travlendar+ consists of a calendar that allows the user to manage the main activity that a calendar can offer and other custom functionality. In particular:
 \begin{itemize}
-\item The user can switch through different calendar view: Week, Month and Day. Additionally if he should go back to today's date, a simple button in the tool-bar has been implemented for this functionality.
-\item In the month and day view, every meetings that the user has added before are shown in the respective day cell so that he can visualize his appointments easily ad quickly. 
-\item Through the tool-bar the user can add a new appointments to his calendar, visualize the settings of the behavior of Travlendar+ logic, manage his transport tickets and logout from the application. 
+\item The user can switch to different calendar views: Week, Month and Day. Additionally, if he should go back to today's date, a simple button in the toolbar has been implemented for this functionality.
+\item In the month and day view, every meeting that the user has added before are shown on the respective day cell so that he can visualize his appointments easily and quickly. 
+\item Through the tool-bar the user can add new appointments to his calendar, visualize the settings of the behaviour of Travlendar+ logic, manage his transport tickets and logout from the application. 
 \end{itemize}
 
 \subsection*{Add appointment interface}
-The Add appointment page is the main functionality of Travlendar+, that allows the user to create new appointment by following the rule of Travlendar+ logic. 
+The Add appointment page is the main functionality of Travlendar+, that allows the user to create a new appointment by following the rule of Travlendar+ logic. 
 The add appointment page lets the user adding, removing and modifying the following items:
 \begin{itemize}
 \item \textbf{Title:} the name of the appointment that must not be empty
 \item \textbf{Location:} the address of the appointment is set through a redirect to Maps where a user can write down the address manually or take his current position. 
-\item \textbf{All day}: a simple toggle that allows the user to add appointment in his calendar that cover all day.
+\item \textbf{All day}: a simple toggle that allows the user to add an appointment in his calendar that covers all day.
 \item \textbf{Start and End}: these are the information of the event's beginning and the event's end.
 \item \textbf{Alert}: the toggle, if selected, will notify the user 10 minutes ahead of schedule that the appointment is going to start.
-\item \textbf{Calendar}: a event can have a category such that Work, Home, Birthday, Festivity.
-\item \textbf{Notes}: section where the user can specify some additional information of the event.
+\item \textbf{Calendar}: an event can have a category such that Work, Home, Birthday, Festivity.
+\item \textbf{Notes}: a section where the user can specify some additional information about the event.
 \end{itemize}
 
 The logic behind the Add appointment page offers the main functionality of Travlendar+. In particular:
 \begin{itemize}
 \item An event already added cannot be inserted into the calendar.
 \item Two events cannot be overlapped. An alert will be displayed in order to notify the user.
-\item Considering the settings information that the user can modify in the main page, if the lunch break is selected, the application automatically reserve a time slot for the lunch break so that any appointment cannot be added during the lunch time set by the user.
+\item Considering the settings information that the user can modify in the main page if the lunch break is selected, the application automatically reserve a time slot for the lunch break so that an appointment cannot be added during the lunchtime set by the user.
 \end{itemize}
 
-Once a event has been added, the user can easily see all the information by clicking on the event. In particular the user can modify all the informations added before, remove the event from his calendar and navigate to the event's location. If the user has set the application settings, before lunching Google Maps the navigation functionality creates the correct navigation with the settings information, in particular by inserting the correct means of transport or the habits.
+Once an event has been added, the user can easily see all the information by clicking on the event. In particular, the user can modify all the information added before, remove the event from his calendar and navigate to the event's location. If the user has set the application settings, before launching Google Maps the navigation functionality creates the correct navigation with the settings information, in particular by inserting the correct means of transport or the habits.
 
 \subsection*{Settings page}
-In this section the user can define various kind of user preferences. The settings supports different travel means such that car, bike or public transport and the user can activate or deactivate each of these. Additionally the user can also activate the carbon foot print constraint that automatically select the combination of transportation means. At the end, the lunch break toggle allows the user to reserve slot every day for the lunch break. In particular the user can define the start time and how many minutes long is the lunch break. The time slot must be between 11.30am and 14.00pm and it must be at least half an hour long. If the user has not respected this constraint for the lunch break, the settings cannot be saved and an alert notifies the user to select the correct start time.
+In this section, the user can define various kind of user preferences. The settings support different travel means such that car, bike or public transport and the user can activate or deactivate each of these. Additionally, the user can also activate the carbon footprint constraint that automatically selects the combination of transportation means. At the end, the lunch break toggle allows the user to reserve slot every day for the lunch break. In particular, the user can define the start time and how many minutes long is the lunch break. The time slot must be between 11.30am and 14.00pm and it must be at least half an hour long. If the user has not respected this constraint for the lunch break, the settings cannot be saved and an alert notifies the user to select the correct start time.
 
 \subsection*{Tickets page}
 This page allows the user to save their personal Tickets, providing a fast access to them as they are presented as a List, identifying each of them with a specific name. The user can either import the tickets from the media gallery of the device or take a picture of the physical ticket and keep it in Travlendar+. Tapping on a specific Ticket will be showed up in full-screen allowing the inspection. When taking or choosing a picture, the user will be previewed with the result before saving it.  The tickets are saved on the device and specifically for the user, meaning that if a different user will login won't see the other user's tickets.
 Long pressing on the Ticket will allow the user to view the ticket or deleting it. \\
 
-We wondered ourselves what we should have created for handling the tickets. Perhaps one of the simplest solution was to redirect the user to an application like ATM or of that kind, so that he could directly buy the tickets from there. However, this limited the user to use it around Milan, and as soon as one wishes to expand the geographic area, ATM would not have worked anymore. Then another application should have been added through which the user would have been redirected to. This would have created maintainability issues in the long term, and that is exactly what drove us to develop such ticket page!
+We wondered ourselves what we should have created for handling the tickets. Perhaps one of the simplest solutions was to redirect the user to an application like ATM or of that kind so that he could directly buy the tickets from there. However, this limited the user to use it around Milan, and as soon as one wishes to expand the geographic area, ATM would not have worked anymore. Then another application should have been added through which the user would have been redirected to. This would have created maintainability issues in the long term, and that is exactly what drove us to develop such ticket page!
 
 
 
