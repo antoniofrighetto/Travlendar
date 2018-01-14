@@ -1,10 +1,8 @@
 \chapter{Installation setup}
 \label{cha:installation}
 
-To install the project we basically followed the guide in the README markdown on Github. We cloned the project, imported as a Maven project and after downloading every dependencies from the pom.xml file, started compiling. Since we are used to using IntelliJ IDEA, we thought - for simplicity's sake - to give it a try with such IDE without installing another one. It seemed it worked, the project compiled correctly, but an error occurred when we have tried to use the calendar page in their Travlendar+ web application: \textit{Widgetset 'com.vaadin.DefaultWidgetSet' does not contain an implementation for org.vaadin.addon.calendar.Calendar. Check the connector's @Connect mapping, the widgetset's GWT module description file and re-compile your widgetset.} This error was handling by the group in the README markdown on Github, but unfortunately any suggestion by them has not solved the problem.\\
-So we tried to download Netbeans IDE, with which the project has been developed, configure correctly MySQL by following the instruction of the group and finally Travlendar+ web application worked.
-
-
+To install the project we basically followed the guide in the README markdown on Github. We cloned the project, imported as a Maven project and after downloading every dependencies from the pom.xml file, started compiling. Since we are used to using IntelliJ IDEA, we thought - for simplicity's sake - to give it a try with such IDE without installing another one. It seemed it worked, the project compiled correctly, but an error occurred when we have tried to launch the Travlendar+ web application - more precisely in the calendar page -, and we got: \textit{Widgetset 'com.vaadin.DefaultWidgetSet' does not contain an implementation for org.vaadin.addon.calendar.Calendar. Check the connector's @Connect mapping, the widgetset's GWT module description file and re-compile your widgetset}. We've seen however that they experienced the same error as well, but neither with their suggestion it worked.
+So we just changed dev-environment, switching to NetBeans IDE, the one the project was developed with, configured MySQL properly, and finally the web application worked.
 
 
 
