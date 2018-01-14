@@ -1,7 +1,7 @@
 \chapter{Testing}
 \label{cha:testing}
 
-Here are the various test cases we applied in order to verify the consistency of the application and that the all functionalities and constraints mentioned in the ITD work as guaranteed. Then, we compared them with those described in the RASD to check what functionalities were actually developed.
+Here are the various test cases we applied in order to verify the consistency of the application and that all functionalities and constraints mentioned in the ITD work as guaranteed. Then, we compared them with those described in the RASD to check what functionalities were actually developed.
 
 \begin{itemize}
 \item \textit{G1. Allow a guest user to register to Travlendar+ by filling the registration form with the data needed.} \\
@@ -11,10 +11,24 @@ No email was received after adding our account during the registration process. 
 Settings worked as said, but when inserting in the user profile text fields a string longer than 255 chars, an Unhandled Exception is raised.
 
 \item \textit{G3. Allow the user to easily create an organized and customizable agenda based on his preferences.} \\
-It seems like this requirement has not been completely tested. First, the text field of the locations accept an invalid location as well (better, any user input). It makes little sense considering that a specific button for handling locations has been implemented (they could have been disabled in write-mode and just show the location inserted after having set them up with the button). Layout is not completely responsive, since the window that shows up after pressing \textit{See location form} button, is not scrollable. Secondly, if no priority is inserted, a NullReference Exception is raised. It should be enough checking if the priority preference object passed in method \texttt{private String convertPref(PreferenceLevel p)} (\texttt{com.polimi.travlendar.backend.beans.EventService.java:120}) is null. 
+It seems like this requirement has not been completely tested. First, the text field of the locations accept an invalid location as well (better, any user input). It makes little sense considering that a specific button for handling locations has been implemented (they could have been disabled in write-mode and just show the location inserted after having set them up with the button). The layout is not completely responsive, since the window that shows up after pressing \textit{See location form} button, is not scrollable. Secondly, if no priority is inserted, a NullReference Exception is raised. It should be enough checking if the priority preference object passed in method \texttt{private String convertPref(PreferenceLevel p)} (\texttt{com.polimi.travlendar.backend.beans.EventService.java:120}) is null. 
 
 \item \textit{G4. To help the user plan his movements in a clever and efficient way.}\\
 The system allows correctly to insert if the user has a driving license and declare which vehicle owns, but I have to point out that the motorbike option is not present. \\
 Therefore in the \textit{See location form} it's mandatory for the user to insert the starting location and the arrival location even if it's already present in the previous section. It would have been helpful to set the starting position as the current position of the user and the arrival location to the location present inside the Create/Edit Event form. The form doesn't provide to the user the used mean of transport for the directions and it doesn't take account for the settings inserted by the user, resulting in the same direction whatever means of transport is available.
+
+\item \textit{G5. To guarantee the user no to be late for his appointment}\\
+This goal is not achieved and will be developed in the feature as written in the ITD document. So we cannot test this goal.
+
+\item \textit{G6. To let the users buy bus or train tickets (both single or seasonal) }\\
+The system allows you to buy fake tickets and the payment of the amount is withdrawn from the account balance.
+The balance can be topped with credit from credit cards and it's handled correctly with Stripe, notifying which card is used and if it exists.
+
+\item \textit{G7. To let the user find vehicles form vehicle sharing systems}\\
+This goal is not achieved and the application redirects the user to the external website of the service provider.
+
+\item \textbf{G8. Allow the user to buy in advance tickets which can be used later on.}
+The goal has been achieved and we are allowed to either select and buy the tickets. The expiration of the tickets works correctly and an expired ticket can't be activated as expected.
+
 
 \end{itemize}
